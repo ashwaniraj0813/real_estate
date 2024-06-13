@@ -10,6 +10,11 @@ import UserProfile from "./pages/UserProfile";
 import LogIn from "./pages/LogIn";
 import Register from "./pages/Register";
 import PropertyExplorePage from "./pages/PropertyExplorePage";
+import UserPreviouslyContacted from "./pages/UserPreviouslyContacted";
+import UserPreviouslySaved from "./pages/UserPreviouslySaved";
+import UserPreviouslyViewed from "./pages/UserPreviouslyViewed";
+import UserPastSearches from "./pages/UserPastSearches";
+import UserProperties from "./pages/UserProperties";
 
 function App() {
   const action = useNavigationType();
@@ -47,6 +52,26 @@ function App() {
         title = "";
         metaDescription = "";
         break;
+      case "/user-previously-contacted0":
+        title = "";
+        metaDescription = "";
+        break;
+      case "/user-previously-saved0":
+        title = "";
+        metaDescription = "";
+        break;
+      case "/user-previously-viewed0":
+        title = "";
+        metaDescription = "";
+        break;
+      case "/user-past-searches0":
+        title = "";
+        metaDescription = "";
+        break;
+      case "/user-properties0":
+        title = "";
+        metaDescription = "";
+        break;
     }
 
     if (title) {
@@ -70,6 +95,17 @@ function App() {
       <Route path="/log-in" element={<LogIn />} />
       <Route path="/register" element={<Register />} />
       <Route path="/property-explore-page" element={<PropertyExplorePage />} />
+      <Route
+        path="/user-previously-contacted0"
+        element={<UserPreviouslyContacted />}
+      />
+      <Route path="/user-previously-saved0" element={<UserPreviouslySaved />} />
+      <Route
+        path="/user-previously-viewed0"
+        element={<UserPreviouslyViewed />}
+      />
+      <Route path="/user-past-searches0" element={<UserPastSearches />} />
+      <Route path="/user-properties0" element={<UserProperties />} />
     </Routes>
   );
 }

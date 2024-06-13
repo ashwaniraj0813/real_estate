@@ -1,4 +1,5 @@
 import { FunctionComponent, useCallback } from "react";
+import { useNavigate } from "react-router-dom";
 import styles from "./Sidebar.module.css";
 
 export type SidebarType = {
@@ -6,25 +7,27 @@ export type SidebarType = {
 };
 
 const Sidebar: FunctionComponent<SidebarType> = ({ className = "" }) => {
+  const navigate = useNavigate();
+
   const onMyPropertiesTextClick = useCallback(() => {
-    // Please sync "User Properties-0" to the project
-  }, []);
+    navigate("/user-properties0");
+  }, [navigate]);
 
   const onPastSearchesTextClick = useCallback(() => {
-    // Please sync "User Past Searches-0" to the project
-  }, []);
+    navigate("/user-past-searches0");
+  }, [navigate]);
 
   const onPreviouslyViewedTextClick = useCallback(() => {
-    // Please sync "User Previously viewed-0" to the project
-  }, []);
+    navigate("/user-previously-viewed0");
+  }, [navigate]);
 
   const onSavedTextClick = useCallback(() => {
-    // Please sync "User Previously saved-0" to the project
-  }, []);
+    navigate("/user-previously-saved0");
+  }, [navigate]);
 
   const onContactedTextClick = useCallback(() => {
-    // Please sync "User Previously Contacted-0" to the project
-  }, []);
+    navigate("/user-previously-contacted0");
+  }, [navigate]);
 
   return (
     <div className={[styles.sidebar, className].join(" ")}>

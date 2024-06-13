@@ -82,7 +82,7 @@
   width: 85px;
   flex-direction: column;
   justify-content: flex-start;
-  padding: 62px 0 0;
+  padding: var(--padding-43xl) 0 0;
   box-sizing: border-box;
 }
 .profileDetails {

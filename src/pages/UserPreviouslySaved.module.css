@@ -1,0 +1,191 @@
+.sidebarChild {
+  width: 289px;
+  height: 922px;
+  position: relative;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-400);
+  box-sizing: border-box;
+  display: none;
+}
+.profileSettings {
+  height: 24px;
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1;
+}
+.profileSettingsWrapper {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0 var(--padding-4xs) 0 var(--padding-2xs);
+}
+.myProperties {
+  width: 186px;
+  flex-shrink: 0;
+}
+.myProperties,
+.pastSearches {
+  height: 24px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1;
+}
+.pastSearchesWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0 var(--padding-2xl) 0 var(--padding-4xl);
+}
+.previouslyViewed,
+.saved {
+  height: 24px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+.previouslyViewed {
+  align-self: stretch;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+.saved {
+  font-weight: 700;
+}
+.savedWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0 var(--padding-39xl) 0 var(--padding-47xl);
+  color: var(--color-slateblue);
+}
+.contacted {
+  height: 24px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1;
+}
+.sidebarItems {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0 var(--padding-16xl) 0 var(--padding-24xl);
+}
+.notifications {
+  height: 24px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+.sidebarItems1 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0 var(--padding-lg);
+}
+.logOut {
+  height: 31px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+.sidebarItems2 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0 var(--padding-30xl) 0 var(--padding-38xl);
+}
+.sidebar,
+.sidebarParent {
+  display: flex;
+  box-sizing: border-box;
+}
+.sidebar {
+  height: 922px;
+  width: 289px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-400);
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: var(--padding-37xl) var(--padding-30xl);
+  gap: var(--gap-52xl);
+  min-width: 289px;
+}
+.sidebarParent {
+  width: 1104px;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 0 var(--padding-xl) 0 0;
+  max-width: 100%;
+  gap: var(--gap-xl);
+  text-align: center;
+  font-size: var(--font-size-xl);
+  color: var(--color-black);
+  font-family: var(--font-montserrat);
+}
+.userPreviouslySaved0 {
+  width: 100%;
+  position: relative;
+  background-color: var(--color-white);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  line-height: normal;
+  letter-spacing: normal;
+}
+@media screen and (max-width: 925px) {
+  .sidebar {
+    flex: 1;
+    padding-top: var(--padding-17xl);
+    padding-bottom: var(--padding-17xl);
+    box-sizing: border-box;
+  }
+  .sidebarParent {
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 450px) {
+  .contacted,
+  .logOut,
+  .myProperties,
+  .notifications,
+  .pastSearches,
+  .previouslyViewed,
+  .profileSettings,
+  .saved {
+    font-size: var(--font-size-base);
+  }
+  .sidebar {
+    gap: var(--gap-16xl);
+    padding: var(--padding-4xl) var(--padding-xl);
+    box-sizing: border-box;
+  }
+}
