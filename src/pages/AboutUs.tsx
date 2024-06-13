@@ -1,6 +1,6 @@
 import { FunctionComponent, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
-import Nav from "../components/Nav";
+import Nav from "../components/Nav3";
 import AboutContent from "../components/AboutContent";
 import GroupComponent from "../components/GroupComponent";
 import styles from "./AboutUs.module.css";

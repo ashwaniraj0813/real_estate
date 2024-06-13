@@ -1,11 +1,11 @@
 import { FunctionComponent, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
-import Nav from "../components/Nav";
+import Nav from "../components/Nav3";
 import FrameComponent5 from "../components/FrameComponent5";
-import FrameComponent4 from "../components/FrameComponent4";
+import FrameComponent4 from "../components/FrameComponent41";
 import Breadcrumb from "../components/Breadcrumb";
 import GalleryAndDescription from "../components/GalleryAndDescription";
-import FrameComponent1 from "../components/FrameComponent1";
+import FrameComponent1 from "../components/FrameComponent12";
 import Amenities from "../components/Amenities";
 import styles from "./PropertyDetailsPage.module.css";
 

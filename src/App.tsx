@@ -15,8 +15,8 @@ import UserPreviouslyViewed from "./pages/UserPreviouslyViewed";
 import UserPastSearches from "./pages/UserPastSearches";
 import UserProperties from "./pages/UserProperties";
 import AboutUs from "./pages/AboutUs";
-import PropertyListingsPage from "./pages/PropertyListingsPage";
 import PropertyDetailsPage from "./pages/PropertyDetailsPage";
+import PropertyListingsPage from "./pages/PropertyListingsPage";
 import PropertyExplorePage from "./pages/PropertyExplorePage";
 
 function App() {
@@ -75,11 +75,11 @@ function App() {
         title = "";
         metaDescription = "";
         break;
-      case "/property-listings-page":
+      case "/property-details-page":
         title = "";
         metaDescription = "";
         break;
-      case "/property-details-page":
+      case "/property-listings-page":
         title = "";
         metaDescription = "";
         break;
@@ -121,11 +121,11 @@ function App() {
       <Route path="/user-past-searches0" element={<UserPastSearches />} />
       <Route path="/user-properties0" element={<UserProperties />} />
       <Route path="/aboutus" element={<AboutUs />} />
+      <Route path="/property-details-page" element={<PropertyDetailsPage />} />
       <Route
         path="/property-listings-page"
         element={<PropertyListingsPage />}
       />
-      <Route path="/property-details-page" element={<PropertyDetailsPage />} />
       <Route path="/property-explore-page" element={<PropertyExplorePage />} />
     </Routes>
   );

@@ -1,8 +1,8 @@
 import { FunctionComponent, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
-import Nav from "../components/Nav";
+import Nav from "../components/Nav3";
 import SortAndFilter from "../components/SortAndFilter";
-import FrameComponent from "../components/FrameComponent";
+import FrameComponent from "../components/FrameComponent2";
 import styles from "./PropertyListingsPage.module.css";
 
 const PropertyListingsPage: FunctionComponent = () => {

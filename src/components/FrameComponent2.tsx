@@ -1,80 +1,61 @@
-import { FunctionComponent } from "react";
-import styles from "./FrameComponent21.module.css";
+import { FunctionComponent, useCallback } from "react";
+import { useNavigate } from "react-router-dom";
+import PropertyCard from "./PropertyCard";
+import styles from "./FrameComponent2.module.css";
 
-export type FrameComponent2Type = {
+export type FrameComponentType = {
   className?: string;
 };
 
-const FrameComponent2: FunctionComponent<FrameComponent2Type> = ({
+const FrameComponent: FunctionComponent<FrameComponentType> = ({
   className = "",
 }) => {
+  const navigate = useNavigate();
+
+  const onPropertyCardContainerClick = useCallback(() => {
+    navigate("/property-details-page");
+  }, [navigate]);
+
   return (
-    <div className={[styles.citiesParent, className].join(" ")}>
-      <div className={styles.cities}>
-        <div className={styles.frameParent}>
-          <div className={styles.exploreByCityWrapper}>
-            <h2 className={styles.exploreByCity}>Explore by City</h2>
-          </div>
-          <button className={styles.viewMoreBtn}>
-            <div className={styles.viewMoreBtnChild} />
-            <div className={styles.viewMore}>View More</div>
-          </button>
-        </div>
-        <div className={styles.cityCardParent}>
-          <div className={styles.cityCard}>
-            <img className={styles.web51Icon} alt="" src="/web5-1@2x.png" />
-            <div className={styles.web12} />
-            <div className={styles.london}>LONDON</div>
-          </div>
-          <div className={styles.cityCardWrapper}>
-            <div className={styles.cityCard1}>
-              <img className={styles.web71Icon} alt="" src="/web7-1@2x.png" />
-              <div className={styles.web121} />
-              <div className={styles.boston}>BOSTON</div>
+    <div className={[styles.frameParent, className].join(" ")}>
+      <div className={styles.propertyCardWrapper}>
+        <div
+          className={styles.propertyCard}
+          onClick={onPropertyCardContainerClick}
+        >
+          <div className={styles.propertyCardChild} />
+          <img className={styles.image4Icon} alt="" src="/image-41@2x.png" />
+          <div className={styles.villaWithSpaciousAndLargeParent}>
+            <div className={styles.villaWithSpacious}>
+              Villa with spacious and Large Garden
             </div>
-          </div>
-          <div className={styles.cityCardContainer}>
-            <div className={styles.cityCard2}>
-              <img className={styles.web81Icon} alt="" src="/web8-1@2x.png" />
-              <div className={styles.web122} />
-              <div className={styles.sydney}>SYDNEY</div>
+            <div className={styles.frameGroup}>
+              <div className={styles.mapPinParent}>
+                <img
+                  className={styles.mapPinIcon}
+                  alt=""
+                  src="/map-pin1@2x.png"
+                />
+                <div className={styles.puneWrapper}>
+                  <div className={styles.pune}>Pune</div>
+                </div>
+              </div>
+              <div className={styles.frameWrapper}>
+                <div className={styles.xxAcresParent}>
+                  <div className={styles.xxAcres}>xx acres</div>
+                  <div className={styles.rsXCrores}>Rs. x crores</div>
+                </div>
+              </div>
             </div>
-          </div>
-          <div className={styles.cityCard3}>
-            <img className={styles.web101Icon} alt="" src="/web10-1@2x.png" />
-            <div className={styles.web123} />
-            <div className={styles.macao}>MACAO</div>
           </div>
         </div>
       </div>
-      <div className={styles.cityCardGroup}>
-        <div className={styles.cityCard4}>
-          <img className={styles.web131Icon} alt="" src="/web13-1@2x.png" />
-          <div className={styles.web124} />
-          <div className={styles.tokyo}>TOKYO</div>
-        </div>
-        <div className={styles.cityCardFrame}>
-          <div className={styles.cityCard5}>
-            <img className={styles.web111Icon} alt="" src="/web11-1@2x.png" />
-            <div className={styles.web125} />
-            <div className={styles.aix}>AIX</div>
-          </div>
-        </div>
-        <div className={styles.frameDiv}>
-          <div className={styles.cityCard6}>
-            <img className={styles.web121Icon} alt="" src="/web12-1@2x.png" />
-            <div className={styles.web126} />
-            <div className={styles.vienna}>VIENNA</div>
-          </div>
-        </div>
-        <div className={styles.cityCard7}>
-          <img className={styles.web91Icon} alt="" src="/web9-1@2x.png" />
-          <div className={styles.web127} />
-          <b className={styles.dubai}>DUBAI</b>
-        </div>
-      </div>
+      <PropertyCard
+        onPropertyCardContainer6Click={onPropertyCardContainerClick}
+      />
+      <PropertyCard />
     </div>
   );
 };
 
-export default FrameComponent2;
+export default FrameComponent;

@@ -1,7 +1,7 @@
 import { FunctionComponent } from "react";
 import Navbar from "../components/Navbar";
 import FrameComponent3 from "../components/FrameComponent3";
-import FrameComponent2 from "../components/FrameComponent2";
+import FrameComponent2 from "../components/FrameComponent21";
 import Popular from "../components/Popular";
 import styles from "./PropertyExplorePage.module.css";
 
