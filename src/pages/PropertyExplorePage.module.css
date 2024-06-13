@@ -1,0 +1,46 @@
+.frameParent {
+  width: 1208px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-58xl);
+  max-width: 100%;
+}
+.propertyExplorePage,
+.propertyExplorePageInner {
+  display: flex;
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+.propertyExplorePageInner {
+  width: 1428px;
+  flex-direction: row;
+  justify-content: center;
+  padding: 0 var(--padding-xl);
+  max-width: 100%;
+}
+.propertyExplorePage {
+  width: 100%;
+  position: relative;
+  background-color: var(--color-white);
+  overflow: hidden;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 0 0 167px;
+  gap: var(--gap-58xl);
+  line-height: normal;
+  letter-spacing: normal;
+}
+@media screen and (max-width: 750px) {
+  .frameParent,
+  .propertyExplorePage {
+    gap: var(--gap-19xl);
+  }
+}
+@media screen and (max-width: 450px) {
+  .frameParent,
+  .propertyExplorePage {
+    gap: var(--gap-lgi);
+  }
+}

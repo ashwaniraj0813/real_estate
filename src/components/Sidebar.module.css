@@ -1,0 +1,166 @@
+.sidebarChild {
+  width: 289px;
+  height: 922px;
+  position: relative;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-400);
+  box-sizing: border-box;
+  display: none;
+}
+.profileSettings {
+  height: 24px;
+  position: relative;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+.sidebarItems {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0 var(--padding-4xs) 0 var(--padding-2xs);
+  color: var(--color-slateblue);
+}
+.myProperties {
+  width: 186px;
+  flex-shrink: 0;
+}
+.myProperties,
+.pastSearches {
+  height: 24px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1;
+}
+.sidebarItems1 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0 var(--padding-2xl) 0 var(--padding-4xl);
+}
+.previouslyViewed {
+  align-self: stretch;
+  flex-shrink: 0;
+}
+.previouslyViewed,
+.saved {
+  height: 24px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1;
+}
+.sidebarItems2 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0 var(--padding-39xl) 0 var(--padding-47xl);
+}
+.contacted {
+  height: 24px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1;
+}
+.sidebarItems3 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0 var(--padding-16xl) 0 var(--padding-24xl);
+}
+.notifications {
+  height: 24px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+.sidebarItems4 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0 var(--padding-lg);
+}
+.logOut {
+  height: 31px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+.sidebar,
+.sidebarItems5 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0 var(--padding-30xl) 0 var(--padding-38xl);
+}
+.sidebar {
+  margin-left: -416px;
+  height: 922px;
+  width: 289px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-400);
+  box-sizing: border-box;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: var(--padding-37xl) var(--padding-30xl);
+  gap: var(--gap-52xl);
+  min-width: 289px;
+  flex-shrink: 0;
+  debug_commit: 69da668;
+  text-align: center;
+  font-size: var(--font-size-xl);
+  color: var(--color-black);
+  font-family: var(--font-montserrat);
+}
+@media screen and (max-width: 1425px) {
+  .sidebar {
+    flex: 1;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .sidebar {
+    padding-top: var(--padding-17xl);
+    padding-bottom: var(--padding-17xl);
+    box-sizing: border-box;
+  }
+}
+@media screen and (max-width: 450px) {
+  .contacted,
+  .logOut,
+  .myProperties,
+  .notifications,
+  .pastSearches,
+  .previouslyViewed,
+  .profileSettings,
+  .saved {
+    font-size: var(--font-size-base);
+  }
+  .sidebar {
+    gap: var(--gap-16xl);
+    padding: var(--padding-4xl) var(--padding-xl);
+    box-sizing: border-box;
+  }
+}

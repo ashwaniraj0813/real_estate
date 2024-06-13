@@ -1,0 +1,93 @@
+.withItsOwn {
+  width: 209px;
+  height: 70px;
+  position: relative;
+  font-weight: 300;
+  display: inline-block;
+  flex-shrink: 0;
+}
+.frameChild,
+.image3Icon {
+  position: absolute;
+  border-radius: var(--br-11xl);
+}
+.image3Icon {
+  width: calc(100% - 20px);
+  top: 16px;
+  right: 10px;
+  left: 10px;
+  max-width: 100%;
+  overflow: hidden;
+  height: 216.7px;
+  object-fit: cover;
+}
+.frameChild {
+  top: 0;
+  left: 0;
+  border: 2px solid var(--color-black);
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.mapPinIcon {
+  position: absolute;
+  top: 345px;
+  left: 21px;
+  width: 45px;
+  height: 45px;
+  object-fit: contain;
+  z-index: 2;
+}
+.image3Parent {
+  width: 100%;
+  height: 400px;
+  position: absolute;
+  margin: 0 !important;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+.mumbai {
+  height: 30px;
+  flex: 1;
+  position: relative;
+  display: inline-block;
+  z-index: 2;
+}
+.mumbaiWrapper {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 0 0 var(--padding-16xl);
+  font-size: var(--font-size-5xl);
+}
+.withItsOwnPoolParent {
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: var(--padding-241xl) var(--padding-18xl) 0 var(--padding-20xl);
+  box-sizing: border-box;
+  position: relative;
+  gap: var(--gap-6xl);
+  text-align: left;
+  font-size: var(--font-size-8xl-5);
+  color: var(--color-black);
+  font-family: var(--font-montserrat);
+}
+@media screen and (max-width: 450px) {
+  .withItsOwn {
+    font-size: var(--font-size-3xl);
+  }
+  .mumbai {
+    font-size: var(--font-size-lgi);
+  }
+  .withItsOwnPoolParent {
+    padding-top: var(--padding-47xl);
+    box-sizing: border-box;
+  }
+}
