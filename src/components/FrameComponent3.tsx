@@ -1,4 +1,5 @@
 import { FunctionComponent, useCallback } from "react";
+import { useNavigate } from "react-router-dom";
 import styles from "./FrameComponent3.module.css";
 
 export type FrameComponent3Type = {
@@ -8,21 +9,11 @@ export type FrameComponent3Type = {
 const FrameComponent3: FunctionComponent<FrameComponent3Type> = ({
   className = "",
 }) => {
+  const navigate = useNavigate();
+
   const onMostPopularPropertyCardClick = useCallback(() => {
-    // Please sync "Property Details Page" to the project
-  }, []);
-
-  const onMostPopularPropertyCard2Click = useCallback(() => {
-    // Please sync "Property Details Page" to the project
-  }, []);
-
-  const onMostPopularPropertyCard3Click = useCallback(() => {
-    // Please sync "Property Details Page" to the project
-  }, []);
-
-  const onMostPopularPropertyCard4Click = useCallback(() => {
-    // Please sync "Property Details Page" to the project
-  }, []);
+    navigate("/property-details-page");
+  }, [navigate]);
 
   return (
     <div className={[styles.frameWrapper, className].join(" ")}>
@@ -51,7 +42,7 @@ const FrameComponent3: FunctionComponent<FrameComponent3Type> = ({
             <div className={styles.mostPopularPropertyCardWrapper}>
               <div
                 className={styles.mostPopularPropertyCard1}
-                onClick={onMostPopularPropertyCard2Click}
+                onClick={onMostPopularPropertyCardClick}
               >
                 <img
                   className={styles.web21Icon}
@@ -73,7 +64,7 @@ const FrameComponent3: FunctionComponent<FrameComponent3Type> = ({
         <div className={styles.mostPopularPropertyCardContainer}>
           <div
             className={styles.mostPopularPropertyCard2}
-            onClick={onMostPopularPropertyCard3Click}
+            onClick={onMostPopularPropertyCardClick}
           >
             <img
               className={styles.web31Icon}
@@ -98,13 +89,13 @@ const FrameComponent3: FunctionComponent<FrameComponent3Type> = ({
           <div className={styles.mostPopularPropertyCardFrame}>
             <div
               className={styles.mostPopularPropertyCard3}
-              onClick={onMostPopularPropertyCard4Click}
+              onClick={onMostPopularPropertyCardClick}
             >
               <img
                 className={styles.web41Icon}
                 loading="lazy"
                 alt=""
-                src="/web4-1@2x.png"
+                src="/web4-11@2x.png"
               />
               <div className={styles.theLyraLondonContainer}>
                 <p className={styles.theLyraLondon}>The Lyra, London</p>

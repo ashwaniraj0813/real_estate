@@ -13,9 +13,9 @@ const HomePage1: FunctionComponent<HomePage1Type> = ({ className = "" }) => {
     navigate("/log-in");
   }, [navigate]);
 
-  const onBuyText1Click = useCallback(() => {
-    // Please sync "Property Listings Page" to the project
-  }, []);
+  const onBuyTextClick = useCallback(() => {
+    navigate("/property-listings-page");
+  }, [navigate]);
 
   const onSearchClick = useCallback(() => {
     navigate("/property-explore-page");
@@ -79,7 +79,7 @@ const HomePage1: FunctionComponent<HomePage1Type> = ({ className = "" }) => {
           <h1 className={styles.yourDreamHome}>Your Dream Home Awaits</h1>
         </div>
       </div>
-      <a className={styles.buy1} onClick={onBuyText1Click}>
+      <a className={styles.buy1} onClick={onBuyTextClick}>
         Buy
       </a>
       <div className={styles.searchBar}>

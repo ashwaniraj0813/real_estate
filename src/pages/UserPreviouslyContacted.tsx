@@ -1,6 +1,6 @@
 import { FunctionComponent, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
-import Nav from "../components/Nav";
+import Nav from "../components/Nav2";
 import styles from "./UserPreviouslyContacted.module.css";
 
 const UserPreviouslyContacted: FunctionComponent = () => {
@@ -10,19 +10,11 @@ const UserPreviouslyContacted: FunctionComponent = () => {
     navigate("/");
   }, [navigate]);
 
-  const onHomeText1Click = useCallback(() => {
-    navigate("/");
-  }, [navigate]);
-
   const onBuyTextClick = useCallback(() => {
-    // Please sync "Property Listings Page" to the project
-  }, []);
+    navigate("/property-listings-page");
+  }, [navigate]);
 
   const onHomeIconClick = useCallback(() => {
-    navigate("/user-profile");
-  }, [navigate]);
-
-  const onProfileSettingsTextClick = useCallback(() => {
     navigate("/user-profile");
   }, [navigate]);
 
@@ -42,15 +34,11 @@ const UserPreviouslyContacted: FunctionComponent = () => {
     navigate("/user-previously-saved0");
   }, [navigate]);
 
-  const onHomeContainerClick = useCallback(() => {
-    navigate("/");
-  }, [navigate]);
-
   return (
     <div className={styles.userPreviouslyContacted0}>
       <Nav
         onLOGOTextClick={onLOGOTextClick}
-        onHomeText1Click={onHomeText1Click}
+        onHomeText1Click={onLOGOTextClick}
         onBuyTextClick={onBuyTextClick}
         onHomeIconClick={onHomeIconClick}
       />
@@ -58,10 +46,7 @@ const UserPreviouslyContacted: FunctionComponent = () => {
         <div className={styles.sidebar}>
           <div className={styles.sidebarChild} />
           <div className={styles.profileSettingsWrapper}>
-            <div
-              className={styles.profileSettings}
-              onClick={onProfileSettingsTextClick}
-            >
+            <div className={styles.profileSettings} onClick={onHomeIconClick}>
               Profile settings
             </div>
           </div>
@@ -117,7 +102,7 @@ const UserPreviouslyContacted: FunctionComponent = () => {
               have contacted the advertiser
             </p>
             <div className={styles.homeWrapper}>
-              <div className={styles.home} onClick={onHomeContainerClick}>
+              <div className={styles.home} onClick={onLOGOTextClick}>
                 <div className={styles.homeButton}>
                   <div className={styles.homeButtonChild} />
                   <img

@@ -1,6 +1,6 @@
 import { FunctionComponent, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
-import Nav from "../components/Nav";
+import Nav from "../components/Nav2";
 import styles from "./UserPastSearches.module.css";
 
 const UserPastSearches: FunctionComponent = () => {
@@ -10,19 +10,11 @@ const UserPastSearches: FunctionComponent = () => {
     navigate("/");
   }, [navigate]);
 
-  const onHomeText1Click = useCallback(() => {
-    navigate("/");
-  }, [navigate]);
-
   const onBuyTextClick = useCallback(() => {
-    // Please sync "Property Listings Page" to the project
-  }, []);
+    navigate("/property-listings-page");
+  }, [navigate]);
 
   const onLeftIconClick = useCallback(() => {
-    navigate("/user-profile");
-  }, [navigate]);
-
-  const onProfileSettingsTextClick = useCallback(() => {
     navigate("/user-profile");
   }, [navigate]);
 
@@ -42,15 +34,11 @@ const UserPastSearches: FunctionComponent = () => {
     navigate("/user-previously-contacted0");
   }, [navigate]);
 
-  const onHomeButtonClick = useCallback(() => {
-    navigate("/");
-  }, [navigate]);
-
   return (
     <div className={styles.userPastSearches0}>
       <Nav
         onLOGOTextClick={onLOGOTextClick}
-        onHomeText1Click={onHomeText1Click}
+        onHomeText1Click={onLOGOTextClick}
         onBuyTextClick={onBuyTextClick}
         onHomeIconClick={onLeftIconClick}
       />
@@ -59,10 +47,7 @@ const UserPastSearches: FunctionComponent = () => {
           <div className={styles.sidebar}>
             <div className={styles.sidebarChild} />
             <div className={styles.profileSettingsWrapper}>
-              <div
-                className={styles.profileSettings}
-                onClick={onProfileSettingsTextClick}
-              >
+              <div className={styles.profileSettings} onClick={onLeftIconClick}>
                 Profile settings
               </div>
             </div>
@@ -115,7 +100,7 @@ const UserPastSearches: FunctionComponent = () => {
                 <div className={styles.homeButtonWrapper}>
                   <button
                     className={styles.homeButton}
-                    onClick={onHomeButtonClick}
+                    onClick={onLOGOTextClick}
                   >
                     <div className={styles.homeButtonChild} />
                     <img

@@ -1,8 +1,8 @@
 import { FunctionComponent, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
-import Nav from "../components/Nav";
-import Sidebar from "../components/Sidebar";
-import FrameComponent1 from "../components/FrameComponent1";
+import Nav from "../components/Nav2";
+import Sidebar from "../components/Sidebar1";
+import FrameComponent1 from "../components/FrameComponent11";
 import styles from "./UserPreviouslyViewed.module.css";
 
 const UserPreviouslyViewed: FunctionComponent = () => {
@@ -12,13 +12,9 @@ const UserPreviouslyViewed: FunctionComponent = () => {
     navigate("/");
   }, [navigate]);
 
-  const onHomeText1Click = useCallback(() => {
-    navigate("/");
-  }, [navigate]);
-
   const onBuyTextClick = useCallback(() => {
-    // Please sync "Property Listings Page" to the project
-  }, []);
+    navigate("/property-listings-page");
+  }, [navigate]);
 
   const onHomeIconClick = useCallback(() => {
     navigate("/user-profile");
@@ -28,7 +24,7 @@ const UserPreviouslyViewed: FunctionComponent = () => {
     <div className={styles.userPreviouslyViewed0}>
       <Nav
         onLOGOTextClick={onLOGOTextClick}
-        onHomeText1Click={onHomeText1Click}
+        onHomeText1Click={onLOGOTextClick}
         onBuyTextClick={onBuyTextClick}
         onHomeIconClick={onHomeIconClick}
       />

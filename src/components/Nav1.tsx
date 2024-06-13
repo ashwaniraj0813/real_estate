@@ -1,4 +1,5 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent, useCallback } from "react";
+import { useNavigate } from "react-router-dom";
 import styles from "./Nav1.module.css";
 
 export type Nav1Type = {
@@ -14,6 +15,12 @@ const Nav1: FunctionComponent<Nav1Type> = ({
   onLOGOTextClick,
   onHomeLinkContainerClick,
 }) => {
+  const navigate = useNavigate();
+
+  const onLOGOTextClick1 = useCallback(() => {
+    navigate("/");
+  }, [navigate]);
+
   return (
     <header className={[styles.nav2, className].join(" ")}>
       <div className={styles.nav2Child} />

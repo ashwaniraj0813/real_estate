@@ -11,15 +11,11 @@ const Register: FunctionComponent = () => {
     navigate("/");
   }, [navigate]);
 
-  const onHomeLinkContainerClick = useCallback(() => {
-    navigate("/");
-  }, [navigate]);
-
   return (
     <div className={styles.register}>
       <Nav1
         onLOGOTextClick={onLOGOTextClick}
-        onHomeLinkContainerClick={onHomeLinkContainerClick}
+        onHomeLinkContainerClick={onLOGOTextClick}
       />
       <section className={styles.content}>
         <FormContainer />

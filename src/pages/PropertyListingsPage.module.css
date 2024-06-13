@@ -1,0 +1,857 @@
+.sortAndFilterWrapper {
+  height: 922px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 var(--padding-3xl) 0 0;
+  box-sizing: border-box;
+}
+.propertyCardChild {
+  width: 295px;
+  height: 288px;
+  position: relative;
+  border-radius: var(--br-3xs);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-500);
+  box-sizing: border-box;
+  display: none;
+}
+.image4Icon {
+  width: 275px;
+  flex: 1;
+  position: relative;
+  border-radius: var(--br-4xs);
+  max-height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+.villaWithSpacious {
+  align-self: stretch;
+  height: 46.2px;
+  font-weight: 300;
+  display: inline-block;
+  flex-shrink: 0;
+  text-shadow: 1px 0 0 rgba(0, 0, 0, 0.3), 0 1px 0 rgba(0, 0, 0, 0.3),
+    -1px 0 0 rgba(0, 0, 0, 0.3), 0-1px 0 rgba(0, 0, 0, 0.3);
+  debug_commit: 69da668;
+}
+.mapPinIcon,
+.pune,
+.villaWithSpacious {
+  position: relative;
+  z-index: 1;
+}
+.mapPinIcon {
+  height: 33.7px;
+  width: 32.1px;
+  object-fit: cover;
+}
+.pune {
+  text-shadow: 1px 0 0 rgba(0, 0, 0, 0.3), 0 1px 0 rgba(0, 0, 0, 0.3),
+    -1px 0 0 rgba(0, 0, 0, 0.3), 0-1px 0 rgba(0, 0, 0, 0.3);
+}
+.mapPinParent,
+.puneWrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.puneWrapper {
+  flex-direction: column;
+  padding: var(--padding-8xs) 0 0;
+  margin-left: -0.1px;
+}
+.mapPinParent {
+  flex-direction: row;
+}
+.rsXCrores,
+.xxAcres {
+  position: relative;
+  font-weight: 300;
+  text-shadow: 1px 0 0 rgba(0, 0, 0, 0.3), 0 1px 0 rgba(0, 0, 0, 0.3),
+    -1px 0 0 rgba(0, 0, 0, 0.3), 0-1px 0 rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+.frameDiv,
+.xxAcresParent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.xxAcresParent {
+  justify-content: flex-start;
+  gap: var(--gap-11xs);
+}
+.frameDiv {
+  justify-content: flex-end;
+  padding: 0 0 var(--padding-4xs-7);
+  font-size: var(--font-size-sm);
+}
+.frameContainer {
+  width: 257px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-shrink: 0;
+  debug_commit: 69da668;
+  gap: var(--gap-xl);
+}
+.propertyCard,
+.propertyCardWrapper,
+.villaWithSpaciousAndLargeParent {
+  align-self: stretch;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.villaWithSpaciousAndLargeParent {
+  flex-direction: column;
+  gap: var(--gap-8xs-8);
+}
+.propertyCard,
+.propertyCardWrapper {
+  flex: 1;
+}
+.propertyCard {
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: var(--br-3xs);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-500);
+  flex-direction: column;
+  padding: var(--padding-5xs) 0 var(--padding-8xs-3) var(--padding-4xs);
+  gap: var(--gap-sm);
+  cursor: pointer;
+}
+.propertyCardWrapper {
+  flex-direction: row;
+  padding: 0 0 0 var(--padding-11xs);
+}
+.propertyCardItem {
+  width: 295px;
+  height: 288px;
+  position: relative;
+  border-radius: var(--br-3xs);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-500);
+  box-sizing: border-box;
+  display: none;
+}
+.image4Icon1 {
+  width: 275px;
+  flex: 1;
+  position: relative;
+  border-radius: var(--br-4xs);
+  max-height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+.villaWithSpacious1 {
+  align-self: stretch;
+  height: 46.2px;
+  font-weight: 300;
+  display: inline-block;
+  flex-shrink: 0;
+  text-shadow: 1px 0 0 rgba(0, 0, 0, 0.3), 0 1px 0 rgba(0, 0, 0, 0.3),
+    -1px 0 0 rgba(0, 0, 0, 0.3), 0-1px 0 rgba(0, 0, 0, 0.3);
+  debug_commit: 69da668;
+}
+.mapPinIcon1,
+.pune1,
+.villaWithSpacious1 {
+  position: relative;
+  z-index: 1;
+}
+.mapPinIcon1 {
+  height: 33.7px;
+  width: 32.1px;
+  object-fit: cover;
+}
+.pune1 {
+  text-shadow: 1px 0 0 rgba(0, 0, 0, 0.3), 0 1px 0 rgba(0, 0, 0, 0.3),
+    -1px 0 0 rgba(0, 0, 0, 0.3), 0-1px 0 rgba(0, 0, 0, 0.3);
+}
+.mapPinGroup,
+.puneContainer {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.puneContainer {
+  flex-direction: column;
+  padding: var(--padding-8xs) 0 0;
+  margin-left: -0.1px;
+}
+.mapPinGroup {
+  flex-direction: row;
+}
+.rsXCrores1,
+.xxAcres1 {
+  position: relative;
+  font-weight: 300;
+  text-shadow: 1px 0 0 rgba(0, 0, 0, 0.3), 0 1px 0 rgba(0, 0, 0, 0.3),
+    -1px 0 0 rgba(0, 0, 0, 0.3), 0-1px 0 rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+.frameWrapper1,
+.xxAcresGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.xxAcresGroup {
+  justify-content: flex-start;
+  gap: var(--gap-11xs);
+}
+.frameWrapper1 {
+  justify-content: flex-end;
+  padding: 0 0 var(--padding-4xs-7);
+  font-size: var(--font-size-sm);
+}
+.frameParent1 {
+  width: 257px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-shrink: 0;
+  debug_commit: 69da668;
+  gap: var(--gap-xl);
+}
+.villaWithSpaciousAndLargeGroup {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-8xs-8);
+}
+.propertyCard1,
+.propertyCardInner {
+  border-radius: var(--br-3xs);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-500);
+}
+.propertyCard1 {
+  align-self: stretch;
+  flex: 0.9503;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-5xs) 0 var(--padding-8xs-3) var(--padding-4xs);
+  gap: var(--gap-sm);
+  cursor: pointer;
+}
+.propertyCardInner {
+  width: 295px;
+  height: 288px;
+  position: relative;
+  box-sizing: border-box;
+  display: none;
+}
+.image4Icon2,
+.villaWithSpacious2 {
+  position: relative;
+  flex-shrink: 0;
+  debug_commit: 69da668;
+  z-index: 1;
+}
+.image4Icon2 {
+  width: 275px;
+  flex: 1;
+  border-radius: var(--br-4xs);
+  max-height: 100%;
+  object-fit: cover;
+}
+.villaWithSpacious2 {
+  align-self: stretch;
+  height: 46.2px;
+  font-weight: 300;
+  display: inline-block;
+  text-shadow: 1px 0 0 rgba(0, 0, 0, 0.3), 0 1px 0 rgba(0, 0, 0, 0.3),
+    -1px 0 0 rgba(0, 0, 0, 0.3), 0-1px 0 rgba(0, 0, 0, 0.3);
+}
+.image4Parent {
+  align-self: stretch;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-sm);
+}
+.mapPinIcon2 {
+  height: 33.7px;
+  width: 32.1px;
+  position: relative;
+  object-fit: cover;
+}
+.pune2 {
+  align-self: stretch;
+  height: 24px;
+  position: relative;
+  display: inline-block;
+  text-shadow: 1px 0 0 rgba(0, 0, 0, 0.3), 0 1px 0 rgba(0, 0, 0, 0.3),
+    -1px 0 0 rgba(0, 0, 0, 0.3), 0-1px 0 rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+.mapPinContainer,
+.puneFrame {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.puneFrame {
+  flex: 1;
+  flex-direction: column;
+  padding: var(--padding-8xs) 0 0;
+  margin-left: -0.1px;
+}
+.mapPinContainer {
+  width: 86px;
+  flex-direction: row;
+}
+.rsXCrores2,
+.xxAcres2 {
+  height: 17px;
+  position: relative;
+  font-weight: 300;
+  display: inline-block;
+  text-shadow: 1px 0 0 rgba(0, 0, 0, 0.3), 0 1px 0 rgba(0, 0, 0, 0.3),
+    -1px 0 0 rgba(0, 0, 0, 0.3), 0-1px 0 rgba(0, 0, 0, 0.3);
+}
+.xxAcres2 {
+  width: 55px;
+}
+.rsXCrores2 {
+  align-self: stretch;
+}
+.incompleteListingDetails {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-11xs);
+}
+.incompleteListingDetailsWrapper {
+  width: 77px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0 0 var(--padding-4xs-7);
+  box-sizing: border-box;
+  font-size: var(--font-size-sm);
+}
+.frameParent2 {
+  width: 257px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--gap-xl);
+}
+.propertyCard2 {
+  align-self: stretch;
+  flex: 0.9503;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: var(--br-3xs);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-500);
+  padding: var(--padding-5xs) 0 var(--padding-8xs-3) var(--padding-4xs);
+  gap: var(--gap-8xs-8);
+}
+.frameGroup,
+.frameWrapper,
+.propertyCard2 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.frameGroup {
+  align-self: stretch;
+  height: 968px;
+  gap: var(--gap-33xl);
+}
+.frameWrapper {
+  height: 922px;
+  width: 297px;
+  padding: var(--padding-29xl) 0 0;
+  box-sizing: border-box;
+}
+.rectangleDiv {
+  width: 295px;
+  height: 288px;
+  position: relative;
+  border-radius: var(--br-3xs);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-500);
+  box-sizing: border-box;
+  display: none;
+}
+.image4Icon3 {
+  width: 275px;
+  flex: 1;
+  position: relative;
+  border-radius: var(--br-4xs);
+  max-height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+.villaWithSpacious3 {
+  align-self: stretch;
+  height: 46.2px;
+  font-weight: 300;
+  display: inline-block;
+  flex-shrink: 0;
+  text-shadow: 1px 0 0 rgba(0, 0, 0, 0.3), 0 1px 0 rgba(0, 0, 0, 0.3),
+    -1px 0 0 rgba(0, 0, 0, 0.3), 0-1px 0 rgba(0, 0, 0, 0.3);
+  debug_commit: 69da668;
+}
+.mapPinIcon3,
+.pune3,
+.villaWithSpacious3 {
+  position: relative;
+  z-index: 1;
+}
+.mapPinIcon3 {
+  height: 33.7px;
+  width: 32.1px;
+  object-fit: cover;
+}
+.pune3 {
+  text-shadow: 1px 0 0 rgba(0, 0, 0, 0.3), 0 1px 0 rgba(0, 0, 0, 0.3),
+    -1px 0 0 rgba(0, 0, 0, 0.3), 0-1px 0 rgba(0, 0, 0, 0.3);
+}
+.mapPinParent1,
+.puneWrapper1 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.puneWrapper1 {
+  flex-direction: column;
+  padding: var(--padding-8xs) 0 0;
+  margin-left: -0.1px;
+}
+.mapPinParent1 {
+  flex-direction: row;
+}
+.rsXCrores3,
+.xxAcres3 {
+  position: relative;
+  font-weight: 300;
+  text-shadow: 1px 0 0 rgba(0, 0, 0, 0.3), 0 1px 0 rgba(0, 0, 0, 0.3),
+    -1px 0 0 rgba(0, 0, 0, 0.3), 0-1px 0 rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+.frameWrapper3,
+.xxAcresContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.xxAcresContainer {
+  justify-content: flex-start;
+  gap: var(--gap-11xs);
+}
+.frameWrapper3 {
+  justify-content: flex-end;
+  padding: 0 0 var(--padding-4xs-7);
+  font-size: var(--font-size-sm);
+}
+.frameParent4 {
+  width: 257px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-shrink: 0;
+  debug_commit: 69da668;
+  gap: var(--gap-xl);
+}
+.propertyCard3,
+.propertyCardContainer,
+.villaWithSpaciousAndLargeContainer {
+  align-self: stretch;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.villaWithSpaciousAndLargeContainer {
+  flex-direction: column;
+  gap: var(--gap-8xs-8);
+}
+.propertyCard3,
+.propertyCardContainer {
+  flex: 1;
+}
+.propertyCard3 {
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: var(--br-3xs);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-500);
+  flex-direction: column;
+  padding: var(--padding-5xs) 0 var(--padding-8xs-3) var(--padding-4xs);
+  gap: var(--gap-sm);
+  cursor: pointer;
+}
+.propertyCardContainer {
+  flex-direction: row;
+  padding: 0 0 0 var(--padding-11xs);
+}
+.propertyCardChild1 {
+  width: 295px;
+  height: 288px;
+  position: relative;
+  border-radius: var(--br-3xs);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-500);
+  box-sizing: border-box;
+  display: none;
+}
+.image4Icon4 {
+  width: 275px;
+  flex: 1;
+  position: relative;
+  border-radius: var(--br-4xs);
+  max-height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+.villaWithSpacious4 {
+  align-self: stretch;
+  height: 46.2px;
+  font-weight: 300;
+  display: inline-block;
+  flex-shrink: 0;
+  text-shadow: 1px 0 0 rgba(0, 0, 0, 0.3), 0 1px 0 rgba(0, 0, 0, 0.3),
+    -1px 0 0 rgba(0, 0, 0, 0.3), 0-1px 0 rgba(0, 0, 0, 0.3);
+  debug_commit: 69da668;
+}
+.mapPinIcon4,
+.pune4,
+.villaWithSpacious4 {
+  position: relative;
+  z-index: 1;
+}
+.mapPinIcon4 {
+  height: 33.7px;
+  width: 32.1px;
+  object-fit: cover;
+}
+.pune4 {
+  text-shadow: 1px 0 0 rgba(0, 0, 0, 0.3), 0 1px 0 rgba(0, 0, 0, 0.3),
+    -1px 0 0 rgba(0, 0, 0, 0.3), 0-1px 0 rgba(0, 0, 0, 0.3);
+}
+.mapPinParent2,
+.puneWrapper2 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.puneWrapper2 {
+  flex-direction: column;
+  padding: var(--padding-8xs) 0 0;
+  margin-left: -0.1px;
+}
+.mapPinParent2 {
+  flex-direction: row;
+}
+.rsXCrores4,
+.xxAcres4 {
+  position: relative;
+  font-weight: 300;
+  text-shadow: 1px 0 0 rgba(0, 0, 0, 0.3), 0 1px 0 rgba(0, 0, 0, 0.3),
+    -1px 0 0 rgba(0, 0, 0, 0.3), 0-1px 0 rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+.frameWrapper4,
+.xxAcresParent1 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.xxAcresParent1 {
+  justify-content: flex-start;
+  gap: var(--gap-11xs);
+}
+.frameWrapper4 {
+  justify-content: flex-end;
+  padding: 0 0 var(--padding-4xs-7);
+  font-size: var(--font-size-sm);
+}
+.frameParent5 {
+  width: 257px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-shrink: 0;
+  debug_commit: 69da668;
+  gap: var(--gap-xl);
+}
+.villaWithSpaciousAndLargeParent1 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-8xs-8);
+}
+.propertyCard4,
+.propertyCardChild2 {
+  border-radius: var(--br-3xs);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-500);
+}
+.propertyCard4 {
+  align-self: stretch;
+  flex: 0.9503;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-5xs) 0 var(--padding-8xs-3) var(--padding-4xs);
+  gap: var(--gap-sm);
+  cursor: pointer;
+}
+.propertyCardChild2 {
+  width: 295px;
+  height: 288px;
+  position: relative;
+  box-sizing: border-box;
+  display: none;
+}
+.image4Icon5 {
+  height: 166px;
+  flex: 1;
+  position: relative;
+  border-radius: var(--br-4xs);
+  max-width: 100%;
+  overflow: hidden;
+  object-fit: cover;
+  z-index: 1;
+}
+.image4Wrapper {
+  width: 275px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 0 9.2px;
+  box-sizing: border-box;
+}
+.villaWithSpacious5 {
+  align-self: stretch;
+  height: 46.2px;
+  position: relative;
+  font-weight: 300;
+  display: inline-block;
+  flex-shrink: 0;
+  text-shadow: 1px 0 0 rgba(0, 0, 0, 0.3), 0 1px 0 rgba(0, 0, 0, 0.3),
+    -1px 0 0 rgba(0, 0, 0, 0.3), 0-1px 0 rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+.mapPinIcon5 {
+  height: 33.7px;
+  width: 32.1px;
+  position: relative;
+  object-fit: cover;
+}
+.pune5 {
+  align-self: stretch;
+  height: 24px;
+  position: relative;
+  display: inline-block;
+  text-shadow: 1px 0 0 rgba(0, 0, 0, 0.3), 0 1px 0 rgba(0, 0, 0, 0.3),
+    -1px 0 0 rgba(0, 0, 0, 0.3), 0-1px 0 rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+.mapPinParent3,
+.puneWrapper3 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.puneWrapper3 {
+  flex: 1;
+  flex-direction: column;
+  padding: var(--padding-8xs) 0 0;
+  margin-left: -0.1px;
+}
+.mapPinParent3 {
+  width: 86px;
+  flex-direction: row;
+}
+.rsXCrores5,
+.xxAcres5 {
+  height: 17px;
+  position: relative;
+  font-weight: 300;
+  display: inline-block;
+  text-shadow: 1px 0 0 rgba(0, 0, 0, 0.3), 0 1px 0 rgba(0, 0, 0, 0.3),
+    -1px 0 0 rgba(0, 0, 0, 0.3), 0-1px 0 rgba(0, 0, 0, 0.3);
+}
+.xxAcres5 {
+  width: 55px;
+}
+.rsXCrores5 {
+  align-self: stretch;
+}
+.incompleteLocation,
+.incompleteLocationWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.incompleteLocation {
+  align-self: stretch;
+  justify-content: flex-start;
+  gap: var(--gap-11xs);
+}
+.incompleteLocationWrapper {
+  width: 77px;
+  justify-content: flex-end;
+  padding: 0 0 var(--padding-4xs-7);
+  box-sizing: border-box;
+  font-size: var(--font-size-sm);
+}
+.frameParent6 {
+  width: 257px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--gap-xl);
+}
+.propertyCard5 {
+  align-self: stretch;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: var(--br-3xs);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-500);
+  display: flex;
+  align-items: flex-start;
+  padding: var(--padding-7xs) 0 var(--padding-10xs) var(--padding-4xs);
+  gap: var(--gap-8xs-8);
+}
+.frameParent3,
+.frameWrapper2,
+.propertyCard5 {
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.frameParent3 {
+  align-self: stretch;
+  height: 968px;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--gap-33xl);
+}
+.frameWrapper2 {
+  height: 922px;
+  width: 300px;
+  padding: var(--padding-29xl) var(--padding-10xs) 94px 0;
+}
+.frameParent,
+.frameWrapper2,
+.propertyCards {
+  display: flex;
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+.propertyCards {
+  height: 922px;
+  width: 297px;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: var(--padding-29xl) 0 0;
+}
+.frameParent {
+  flex-direction: row;
+  justify-content: center;
+  padding: 0 var(--padding-xl) 0 0;
+  gap: var(--gap-31xl);
+  max-width: 100%;
+  text-align: left;
+  font-size: var(--font-size-xl);
+  color: var(--color-gray-300);
+  font-family: var(--font-montserrat);
+}
+.propertyListingsPage {
+  width: 100%;
+  position: relative;
+  background-color: var(--color-white);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  line-height: normal;
+  letter-spacing: normal;
+}
+@media screen and (max-width: 1300px) {
+  .frameParent {
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 1125px) {
+  .frameWrapper {
+    padding-top: var(--padding-12xl);
+    box-sizing: border-box;
+  }
+  .frameWrapper2 {
+    padding-bottom: 61px;
+  }
+  .frameWrapper2,
+  .propertyCards {
+    padding-top: var(--padding-12xl);
+    box-sizing: border-box;
+  }
+}
+@media screen and (max-width: 800px) {
+  .frameWrapper,
+  .propertyCards {
+    padding-top: var(--padding-xl);
+    box-sizing: border-box;
+  }
+  .frameParent {
+    gap: var(--gap-6xl);
+  }
+}
+@media screen and (max-width: 450px) {
+  .pune,
+  .pune1,
+  .pune2,
+  .villaWithSpacious,
+  .villaWithSpacious1,
+  .villaWithSpacious2 {
+    font-size: var(--font-size-base);
+  }
+  .frameGroup {
+    gap: var(--gap-7xl);
+  }
+  .pune3,
+  .pune4,
+  .pune5,
+  .villaWithSpacious3,
+  .villaWithSpacious4,
+  .villaWithSpacious5 {
+    font-size: var(--font-size-base);
+  }
+  .frameParent3 {
+    gap: var(--gap-7xl);
+  }
+  .frameWrapper2 {
+    padding-top: var(--padding-xl);
+    padding-bottom: var(--padding-21xl);
+    box-sizing: border-box;
+  }
+}

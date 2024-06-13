@@ -1,0 +1,55 @@
+.realEstatePhotographyP1900Icon {
+  align-self: stretch;
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+.aboutUs,
+.realEstatePhotographyP1900Parent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  box-sizing: border-box;
+}
+.realEstatePhotographyP1900Parent {
+  align-self: stretch;
+  height: 2831px;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-black);
+  overflow-y: auto;
+  flex-shrink: 0;
+  padding: var(--padding-82xl) 0 0;
+  gap: var(--gap-31xl);
+  debug_commit: 69da668;
+  max-width: 100%;
+  margin-top: -86px;
+}
+.aboutUs {
+  width: 100%;
+  height: 2847px;
+  position: relative;
+  padding: 0 0 2745px;
+  line-height: normal;
+  letter-spacing: normal;
+}
+@media screen and (max-width: 1200px) {
+  .realEstatePhotographyP1900Parent {
+    padding-top: var(--padding-82xl);
+    box-sizing: border-box;
+  }
+}
+@media screen and (max-width: 1050px) {
+  .aboutUs,
+  .realEstatePhotographyP1900Parent {
+    height: auto;
+  }
+}
+@media screen and (max-width: 750px) {
+  .realEstatePhotographyP1900Parent {
+    gap: var(--gap-6xl);
+  }
+}

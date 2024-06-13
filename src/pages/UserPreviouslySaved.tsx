@@ -1,7 +1,7 @@
 import { FunctionComponent, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
-import Nav from "../components/Nav";
-import FrameComponent from "../components/FrameComponent";
+import Nav from "../components/Nav2";
+import FrameComponent from "../components/FrameComponent4";
 import styles from "./UserPreviouslySaved.module.css";
 
 const UserPreviouslySaved: FunctionComponent = () => {
@@ -11,23 +11,11 @@ const UserPreviouslySaved: FunctionComponent = () => {
     navigate("/");
   }, [navigate]);
 
-  const onHomeText1Click = useCallback(() => {
-    navigate("/");
-  }, [navigate]);
-
   const onBuyTextClick = useCallback(() => {
-    // Please sync "Property Listings Page" to the project
-  }, []);
+    navigate("/property-listings-page");
+  }, [navigate]);
 
   const onFirstIconClick = useCallback(() => {
-    navigate("/user-profile");
-  }, [navigate]);
-
-  const onHomeContainerClick = useCallback(() => {
-    navigate("/");
-  }, [navigate]);
-
-  const onProfileSettingsTextClick = useCallback(() => {
     navigate("/user-profile");
   }, [navigate]);
 
@@ -51,7 +39,7 @@ const UserPreviouslySaved: FunctionComponent = () => {
     <div className={styles.userPreviouslySaved0}>
       <Nav
         onLOGOTextClick={onLOGOTextClick}
-        onHomeText1Click={onHomeText1Click}
+        onHomeText1Click={onLOGOTextClick}
         onBuyTextClick={onBuyTextClick}
         onHomeIconClick={onFirstIconClick}
       />
@@ -59,10 +47,7 @@ const UserPreviouslySaved: FunctionComponent = () => {
         <div className={styles.sidebar}>
           <div className={styles.sidebarChild} />
           <div className={styles.profileSettingsWrapper}>
-            <div
-              className={styles.profileSettings}
-              onClick={onProfileSettingsTextClick}
-            >
+            <div className={styles.profileSettings} onClick={onFirstIconClick}>
               Profile settings
             </div>
           </div>
@@ -105,7 +90,7 @@ const UserPreviouslySaved: FunctionComponent = () => {
           httpslottiefilescomanimat="/httpslottiefilescomanimationshousebyxzsxrupb@2x.png"
           youHaventSavedAnyProperty="You haven’t saved any property lately!"
           allThePropertiesAndProjec="All the properties and projects that you have saved will start appearing here. Search or explore cities now."
-          onHomeContainerClick={onHomeContainerClick}
+          onHomeContainerClick={onLOGOTextClick}
         />
       </main>
     </div>

@@ -1,4 +1,10 @@
-import { FunctionComponent, useMemo, type CSSProperties } from "react";
+import {
+  FunctionComponent,
+  useMemo,
+  type CSSProperties,
+  useCallback,
+} from "react";
+import { useNavigate } from "react-router-dom";
 import styles from "./FrameComponent4.module.css";
 
 export type FrameComponentType = {
@@ -68,6 +74,12 @@ const FrameComponent: FunctionComponent<FrameComponentType> = ({
       display: propDisplay,
     };
   }, [propHeight1, propDisplay]);
+
+  const navigate = useNavigate();
+
+  const onHomeContainerClick1 = useCallback(() => {
+    navigate("/");
+  }, [navigate]);
 
   return (
     <div

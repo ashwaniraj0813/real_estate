@@ -10,14 +10,14 @@ const Footer: FunctionComponent<FooterType> = ({ className = "" }) => {
   const navigate = useNavigate();
 
   const onAboutUsTextClick = useCallback(() => {
-    // Please sync "about-us" to the project
-  }, []);
+    navigate("/aboutus");
+  }, [navigate]);
 
-  const onBuyText2Click = useCallback(() => {
-    // Please sync "Property Listings Page" to the project
-  }, []);
+  const onBuyTextClick = useCallback(() => {
+    navigate("/property-listings-page");
+  }, [navigate]);
 
-  const onLoginText1Click = useCallback(() => {
+  const onLoginTextClick = useCallback(() => {
     navigate("/log-in");
   }, [navigate]);
 
@@ -40,14 +40,14 @@ const Footer: FunctionComponent<FooterType> = ({ className = "" }) => {
         </b>
       </div>
       <div className={styles.footerLinks}>
-        <b className={styles.buy} onClick={onBuyText2Click}>
+        <b className={styles.buy} onClick={onBuyTextClick}>
           Buy
         </b>
         <div className={styles.rentParent}>
           <b className={styles.rent}>Rent</b>
           <div className={styles.testimonialTwo}>
             <b className={styles.sell}>Sell</b>
-            <b className={styles.login} onClick={onLoginText1Click}>
+            <b className={styles.login} onClick={onLoginTextClick}>
               Login
             </b>
           </div>

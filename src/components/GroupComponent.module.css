@@ -1,0 +1,132 @@
+.frameChild {
+  height: 400px;
+  width: 1440px;
+  position: relative;
+  background-color: var(--color-black);
+  display: none;
+  max-width: 100%;
+}
+.itIsA,
+.logo {
+  position: relative;
+  font-weight: 600;
+  display: inline-block;
+  flex-shrink: 0;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  z-index: 1;
+}
+.logo {
+  width: 88px;
+  height: 28px;
+}
+.itIsA {
+  margin: 0;
+  align-self: stretch;
+  height: 36px;
+  font-size: var(--font-size-mini);
+}
+.footerInfo {
+  width: 360px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-xl);
+  max-width: 100%;
+}
+.buy {
+  width: 67px;
+  display: inline-block;
+  flex-shrink: 0;
+  debug_commit: 69da668;
+  cursor: pointer;
+}
+.buy,
+.login,
+.rent,
+.sell {
+  position: relative;
+  font-weight: 600;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  z-index: 1;
+}
+.rent,
+.sell {
+  align-self: stretch;
+  height: 28px;
+  display: inline-block;
+  flex-shrink: 0;
+}
+.login {
+  line-height: 28px;
+  cursor: pointer;
+}
+.rentLink,
+.sellParent {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-lg);
+}
+.rentLink {
+  gap: var(--gap-4xl);
+  flex-shrink: 0;
+  debug_commit: 69da668;
+}
+.buyParent,
+.rectangleParent {
+  display: flex;
+  align-items: flex-start;
+  box-sizing: border-box;
+  gap: var(--gap-xl);
+}
+.buyParent {
+  height: 113px;
+  width: 138px;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 0 0 var(--padding-58xl);
+}
+.rectangleParent {
+  align-self: stretch;
+  background-color: var(--color-black);
+  flex-direction: row;
+  justify-content: space-between;
+  padding: var(--padding-70xl) var(--padding-165xl) var(--padding-179xl)
+    var(--padding-101xl);
+  max-width: 100%;
+  flex-shrink: 0;
+  z-index: 1;
+  text-align: left;
+  font-size: var(--font-size-4xl);
+  color: var(--color-white);
+  font-family: var(--font-montserrat);
+}
+@media screen and (max-width: 1050px) {
+  .rectangleParent {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 750px) {
+  .rectangleParent {
+    padding-left: var(--padding-41xl);
+    padding-right: var(--padding-73xl);
+    box-sizing: border-box;
+  }
+}
+@media screen and (max-width: 450px) {
+  .buy,
+  .login,
+  .logo,
+  .rent,
+  .sell {
+    font-size: var(--font-size-lg);
+  }
+  .rectangleParent {
+    padding: var(--padding-82xl) var(--padding-xl) var(--padding-110xl);
+    box-sizing: border-box;
+  }
+}

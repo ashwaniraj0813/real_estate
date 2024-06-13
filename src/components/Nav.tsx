@@ -13,13 +13,9 @@ const Nav: FunctionComponent<NavType> = ({ className = "" }) => {
     navigate("/");
   }, [navigate]);
 
-  const onHomeTextClick = useCallback(() => {
-    navigate("/");
-  }, [navigate]);
-
   const onBuyTextClick = useCallback(() => {
-    // Please sync "Property Listings Page" to the project
-  }, []);
+    navigate("/property-listings-page");
+  }, [navigate]);
 
   return (
     <header className={[styles.nav3, className].join(" ")}>
@@ -47,7 +43,7 @@ const Nav: FunctionComponent<NavType> = ({ className = "" }) => {
       <div className={styles.linkButtonsWrapper}>
         <div className={styles.linkButtons}>
           <div className={styles.homeWrapper}>
-            <a className={styles.home} onClick={onHomeTextClick}>
+            <a className={styles.home} onClick={onLOGOTextClick}>
               Home
             </a>
           </div>

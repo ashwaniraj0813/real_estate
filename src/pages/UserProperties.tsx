@@ -1,7 +1,7 @@
 import { FunctionComponent, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
-import Nav from "../components/Nav";
-import FrameComponent from "../components/FrameComponent";
+import Nav from "../components/Nav2";
+import FrameComponent from "../components/FrameComponent4";
 import styles from "./UserProperties.module.css";
 
 const UserProperties: FunctionComponent = () => {
@@ -11,23 +11,11 @@ const UserProperties: FunctionComponent = () => {
     navigate("/");
   }, [navigate]);
 
-  const onHomeText1Click = useCallback(() => {
-    navigate("/");
-  }, [navigate]);
-
   const onBuyTextClick = useCallback(() => {
-    // Please sync "Property Listings Page" to the project
-  }, []);
+    navigate("/property-listings-page");
+  }, [navigate]);
 
   const onHomeIconClick = useCallback(() => {
-    navigate("/user-profile");
-  }, [navigate]);
-
-  const onHomeContainerClick = useCallback(() => {
-    navigate("/");
-  }, [navigate]);
-
-  const onProfileSettingsTextClick = useCallback(() => {
     navigate("/user-profile");
   }, [navigate]);
 
@@ -47,15 +35,11 @@ const UserProperties: FunctionComponent = () => {
     navigate("/user-previously-contacted0");
   }, [navigate]);
 
-  const onLogOutTextClick = useCallback(() => {
-    navigate("/");
-  }, [navigate]);
-
   return (
     <div className={styles.userProperties0}>
       <Nav
         onLOGOTextClick={onLOGOTextClick}
-        onHomeText1Click={onHomeText1Click}
+        onHomeText1Click={onLOGOTextClick}
         onBuyTextClick={onBuyTextClick}
         onHomeIconClick={onHomeIconClick}
       />
@@ -63,10 +47,7 @@ const UserProperties: FunctionComponent = () => {
         <div className={styles.sidebar}>
           <div className={styles.sidebarChild} />
           <div className={styles.profileSettingsWrapper}>
-            <div
-              className={styles.profileSettings}
-              onClick={onProfileSettingsTextClick}
-            >
+            <div className={styles.profileSettings} onClick={onHomeIconClick}>
               Profile settings
             </div>
           </div>
@@ -99,7 +80,7 @@ const UserProperties: FunctionComponent = () => {
             <div className={styles.notifications}>Notifications</div>
           </div>
           <div className={styles.sidebarItems2}>
-            <div className={styles.logOut} onClick={onLogOutTextClick}>
+            <div className={styles.logOut} onClick={onLOGOTextClick}>
               Log out
             </div>
           </div>
@@ -116,7 +97,7 @@ const UserProperties: FunctionComponent = () => {
           propMaxHeight="100%"
           propHeight1="unset"
           propDisplay="unset"
-          onHomeContainerClick={onHomeContainerClick}
+          onHomeContainerClick={onLOGOTextClick}
         />
       </main>
     </div>

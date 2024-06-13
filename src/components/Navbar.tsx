@@ -13,13 +13,9 @@ const Navbar: FunctionComponent<NavbarType> = ({ className = "" }) => {
     navigate("/");
   }, [navigate]);
 
-  const onHomeTextClick = useCallback(() => {
-    navigate("/");
-  }, [navigate]);
-
   const onBuyTextClick = useCallback(() => {
-    // Please sync "Property Listings Page" to the project
-  }, []);
+    navigate("/property-listings-page");
+  }, [navigate]);
 
   const onVectorIconClick = useCallback(() => {
     navigate("/user-profile");
@@ -50,7 +46,7 @@ const Navbar: FunctionComponent<NavbarType> = ({ className = "" }) => {
       </div>
       <div className={styles.frameParent}>
         <div className={styles.homeWrapper}>
-          <a className={styles.home} onClick={onHomeTextClick}>
+          <a className={styles.home} onClick={onLOGOTextClick}>
             Home
           </a>
         </div>
@@ -69,7 +65,7 @@ const Navbar: FunctionComponent<NavbarType> = ({ className = "" }) => {
           className={styles.vectorIcon}
           loading="lazy"
           alt=""
-          src="/vector2.svg"
+          src="/vector21.svg"
           onClick={onVectorIconClick}
         />
       </div>

@@ -1,4 +1,5 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent, useCallback } from "react";
+import { useNavigate } from "react-router-dom";
 import styles from "./Nav2.module.css";
 
 export type NavType = {
@@ -18,6 +19,20 @@ const Nav: FunctionComponent<NavType> = ({
   onBuyTextClick,
   onHomeIconClick,
 }) => {
+  const navigate = useNavigate();
+
+  const onLOGOTextClick1 = useCallback(() => {
+    navigate("/");
+  }, [navigate]);
+
+  const onBuyTextClick1 = useCallback(() => {
+    navigate("/property-listings-page");
+  }, [navigate]);
+
+  const onHomeIconClick1 = useCallback(() => {
+    navigate("/user-profile");
+  }, [navigate]);
+
   return (
     <header className={[styles.nav3, className].join(" ")}>
       <div className={styles.nav3Child} />

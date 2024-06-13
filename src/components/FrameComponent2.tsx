@@ -1,5 +1,5 @@
 import { FunctionComponent } from "react";
-import styles from "./FrameComponent2.module.css";
+import styles from "./FrameComponent21.module.css";
 
 export type FrameComponent2Type = {
   className?: string;

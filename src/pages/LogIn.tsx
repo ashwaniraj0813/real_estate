@@ -11,15 +11,11 @@ const LogIn: FunctionComponent = () => {
     navigate("/");
   }, [navigate]);
 
-  const onHomeLinkContainerClick = useCallback(() => {
-    navigate("/");
-  }, [navigate]);
-
   return (
     <div className={styles.logIn}>
       <Nav1
         onLOGOTextClick={onLOGOTextClick}
-        onHomeLinkContainerClick={onHomeLinkContainerClick}
+        onHomeLinkContainerClick={onLOGOTextClick}
       />
       <LoginForm />
     </div>
