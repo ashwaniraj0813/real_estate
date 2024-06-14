@@ -6,7 +6,6 @@ import {
   useLocation,
 } from "react-router-dom";
 import HomePage from "./pages/HomePage";
-import PropertyListingsPage from "./pages/PropertyListingsPage";
 import UserProfile from "./pages/UserProfile";
 import LogIn from "./pages/LogIn";
 import Register from "./pages/Register";
@@ -17,6 +16,7 @@ import UserPastSearches from "./pages/UserPastSearches";
 import UserProperties from "./pages/UserProperties";
 import AboutUs from "./pages/AboutUs";
 import PropertyExplorePage from "./pages/PropertyExplorePage";
+import PropertyListingsPage from "./pages/PropertyListingsPage";
 import PropertyDetailsPage from "./pages/PropertyDetailsPage";
 
 function App() {
@@ -36,10 +36,6 @@ function App() {
 
     switch (pathname) {
       case "/":
-        title = "";
-        metaDescription = "";
-        break;
-      case "/property-listings-page":
         title = "";
         metaDescription = "";
         break;
@@ -83,6 +79,10 @@ function App() {
         title = "";
         metaDescription = "";
         break;
+      case "/property-listings-page":
+        title = "";
+        metaDescription = "";
+        break;
       case "/property-details-page":
         title = "";
         metaDescription = "";
@@ -106,10 +106,6 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
-      <Route
-        path="/property-listings-page"
-        element={<PropertyListingsPage />}
-      />
       <Route path="/user-profile" element={<UserProfile />} />
       <Route path="/log-in" element={<LogIn />} />
       <Route path="/register" element={<Register />} />
@@ -126,6 +122,10 @@ function App() {
       <Route path="/user-properties0" element={<UserProperties />} />
       <Route path="/aboutus" element={<AboutUs />} />
       <Route path="/property-explore-page" element={<PropertyExplorePage />} />
+      <Route
+        path="/property-listings-page"
+        element={<PropertyListingsPage />}
+      />
       <Route path="/property-details-page" element={<PropertyDetailsPage />} />
     </Routes>
   );

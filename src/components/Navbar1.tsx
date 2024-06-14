@@ -1,6 +1,6 @@
 import { FunctionComponent, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
-import styles from "./Navbar1.module.css";
+import styles from "./Navbar11.module.css";
 
 export type Navbar1Type = {
   className?: string;

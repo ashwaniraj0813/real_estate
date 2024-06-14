@@ -1,6 +1,6 @@
 import { FunctionComponent, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
-import Nav from "../components/Nav3";
+import Navbar from "../components/Navbar";
 import SortAndFilter from "../components/SortAndFilter";
 import PropertyCard from "../components/PropertyCard";
 import styles from "./PropertyListingsPage.module.css";
@@ -8,28 +8,13 @@ import styles from "./PropertyListingsPage.module.css";
 const PropertyListingsPage: FunctionComponent = () => {
   const navigate = useNavigate();
 
-  const onHomeTextClick = useCallback(() => {
-    navigate("/");
-  }, [navigate]);
-
-  const onVectorIconClick = useCallback(() => {
-    navigate("/user-profile");
-  }, [navigate]);
-
   const onPropertyCardContainerClick = useCallback(() => {
     navigate("/property-details-page");
   }, [navigate]);
 
   return (
     <div className={styles.propertyListingsPage}>
-      <Nav
-        icbaselineSearch="/icbaselinesearch1.svg"
-        vector="/vector1.svg"
-        rectangleDivPadding="var(--padding-12xl) var(--padding-110xl) var(--padding-12xl) var(--padding-93xl)"
-        rectangleDivDebugCommit="unset"
-        onHomeTextClick={onHomeTextClick}
-        onVectorIconClick={onVectorIconClick}
-      />
+      <Navbar />
       <main className={styles.sortAndFilterParent}>
         <SortAndFilter />
         <section className={styles.listings}>
