@@ -42,19 +42,19 @@ const FrameComponent: FunctionComponent<FrameComponentType> = ({
   propDisplay,
   onHomeContainerClick,
 }) => {
-  const frameDiv2Style: CSSProperties = useMemo(() => {
+  const frameDivStyle: CSSProperties = useMemo(() => {
     return {
       padding: propPadding,
     };
   }, [propPadding]);
 
-  const frameDiv3Style: CSSProperties = useMemo(() => {
+  const frameDiv1Style: CSSProperties = useMemo(() => {
     return {
       gap: propGap,
     };
   }, [propGap]);
 
-  const frameDiv4Style: CSSProperties = useMemo(() => {
+  const frameDiv2Style: CSSProperties = useMemo(() => {
     return {
       padding: propPadding1,
     };
@@ -84,12 +84,12 @@ const FrameComponent: FunctionComponent<FrameComponentType> = ({
   return (
     <div
       className={[styles.frameWrapper, className].join(" ")}
-      style={frameDiv2Style}
+      style={frameDivStyle}
     >
-      <div className={styles.frameParent} style={frameDiv3Style}>
+      <div className={styles.frameParent} style={frameDiv1Style}>
         <div
           className={styles.httpslottiefilescomanimatWrapper}
-          style={frameDiv4Style}
+          style={frameDiv2Style}
         >
           <img
             className={styles.httpslottiefilescomanimatIcon}

@@ -22,14 +22,14 @@ const HomePage1: FunctionComponent<HomePage1Type> = ({ className = "" }) => {
   }, [navigate]);
 
   return (
-    <div className={[styles.homePage, className].join(" ")}>
+    <section className={[styles.homePage, className].join(" ")}>
       <img className={styles.image1Icon} alt="" src="/image-1@2x.png" />
       <a className={styles.logo}>LOGO</a>
       <div className={styles.firstName}>First Name</div>
-      <div className={styles.actionsParent}>
-        <div className={styles.actions}>
-          <div className={styles.actionButtonsParent}>
-            <div className={styles.actionButtons}>
+      <div className={styles.actionButtons}>
+        <div className={styles.buttonsAndMap}>
+          <div className={styles.buttonContainer}>
+            <div className={styles.buyRentButtons}>
               <a className={styles.buy}>Buy</a>
               <a className={styles.rent}>Rent</a>
             </div>
@@ -39,36 +39,36 @@ const HomePage1: FunctionComponent<HomePage1Type> = ({ className = "" }) => {
             </a>
           </div>
         </div>
-        <div className={styles.appointmentForm}>
-          <div className={styles.appointmentFormChild} />
-          <div className={styles.submitButton}>
+        <div className={styles.rectangleParent}>
+          <div className={styles.frameChild} />
+          <div className={styles.appointmentBanner}>
             <h3 className={styles.bookAppointment}>BOOK APPOINTMENT</h3>
           </div>
-          <div className={styles.nameFields}>
+          <div className={styles.contactForm}>
             <input
-              className={styles.firstNameField}
+              className={styles.firstNameInput}
               placeholder="First Name"
               type="text"
             />
             <input
-              className={styles.lastNameField}
+              className={styles.lastNameInput}
               placeholder="Last Name"
               type="text"
             />
           </div>
-          <div className={styles.contactFields}>
+          <div className={styles.emailPhoneInputs}>
             <input
-              className={styles.emailField}
+              className={styles.emailInput}
               placeholder="Your Email"
               type="text"
             />
             <input
-              className={styles.phoneField}
+              className={styles.phoneInput}
               placeholder="Your Phone"
               type="text"
             />
           </div>
-          <div className={styles.getAppointmentButtonWrapper}>
+          <div className={styles.submitButton}>
             <button className={styles.getAppointmentButton}>
               <div className={styles.getAppointmentButtonChild} />
               <div className={styles.getYourAppointment}>
@@ -94,7 +94,7 @@ const HomePage1: FunctionComponent<HomePage1Type> = ({ className = "" }) => {
           />
         </header>
       </div>
-    </div>
+    </section>
   );
 };
 

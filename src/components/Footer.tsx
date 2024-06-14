@@ -23,9 +23,9 @@ const Footer: FunctionComponent<FooterType> = ({ className = "" }) => {
 
   return (
     <section className={[styles.footer, className].join(" ")}>
-      <div className={styles.footerChild} />
-      <div className={styles.testimonial}>
-        <div className={styles.testimonialOneContent}>
+      <section className={styles.footerChild} />
+      <div className={styles.footerContent}>
+        <div className={styles.companyInfo}>
           <b className={styles.logo}>LOGO</b>
           <p className={styles.itIsA}>
             It is a long established fact that a reader will be distracted by
@@ -39,13 +39,13 @@ const Footer: FunctionComponent<FooterType> = ({ className = "" }) => {
           About us
         </b>
       </div>
-      <div className={styles.footerLinks}>
+      <div className={styles.navigationLinks}>
         <b className={styles.buy} onClick={onBuyTextClick}>
           Buy
         </b>
-        <div className={styles.rentParent}>
+        <div className={styles.rentLink}>
           <b className={styles.rent}>Rent</b>
-          <div className={styles.testimonialTwo}>
+          <div className={styles.accountLinks}>
             <b className={styles.sell}>Sell</b>
             <b className={styles.login} onClick={onLoginTextClick}>
               Login

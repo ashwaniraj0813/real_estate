@@ -1,0 +1,150 @@
+.web31Icon {
+  position: absolute;
+  top: 0;
+  left: 0.2px;
+  width: 250px;
+  height: 200px;
+  object-fit: cover;
+}
+.blankLine,
+.chapterIslingtonLondon {
+  margin: 0;
+}
+.from390week {
+  margin: 0;
+  font-size: var(--font-size-mini);
+}
+.chapterIslingtonLondonContainer {
+  position: absolute;
+  top: 225px;
+  left: 0;
+  display: inline-block;
+  width: 250px;
+  height: 82px;
+}
+.mostPopularPropertyCard,
+.web11Icon {
+  position: absolute;
+  top: 97px;
+  left: 636px;
+  width: 250.2px;
+  height: 307px;
+}
+.web11Icon {
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 200px;
+  object-fit: cover;
+}
+.blankLine1,
+.coppermakerSquareLondon {
+  margin: 0;
+}
+.from3723month {
+  margin: 0;
+  font-size: var(--font-size-mini);
+}
+.coppermakerSquareLondonContainer {
+  position: absolute;
+  top: 225px;
+  left: 0;
+  display: inline-block;
+  width: 250px;
+  height: 82px;
+}
+.mostPopularPropertyCard1,
+.web41Icon {
+  position: absolute;
+  top: 97px;
+  left: 10px;
+  width: 250px;
+  height: 307px;
+}
+.web41Icon {
+  top: 0;
+  left: 0.1px;
+  height: 200px;
+  object-fit: cover;
+}
+.blankLine2,
+.theLyraLondon {
+  margin: 0;
+}
+.from390week1 {
+  margin: 0;
+  font-size: var(--font-size-mini);
+}
+.theLyraLondonContainer {
+  position: absolute;
+  top: 224.8px;
+  left: 0;
+  display: inline-block;
+  width: 250px;
+  height: 82px;
+}
+.mostPopularPropertyCard2,
+.web21Icon {
+  position: absolute;
+  top: 103px;
+  left: 949px;
+  width: 250.1px;
+  height: 306.8px;
+}
+.web21Icon {
+  top: 0;
+  left: 0.2px;
+  width: 250px;
+  height: 200px;
+  object-fit: cover;
+}
+.blankLine3,
+.ovoArenaBuilding {
+  margin: 0;
+}
+.from2195month {
+  margin: 0;
+  font-size: var(--font-size-mini);
+}
+.ovoArenaBuildingContainer {
+  position: absolute;
+  top: 225.5px;
+  left: 0;
+  display: inline-block;
+  width: 250px;
+  height: 82px;
+}
+.mostPopularPropertyCard3 {
+  position: absolute;
+  top: 99.5px;
+  left: 323px;
+  width: 250.2px;
+  height: 307.5px;
+}
+.similarProperties1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: var(--font-size-21xl);
+}
+.similarProperties {
+  position: absolute;
+  top: 4352px;
+  left: 114px;
+  width: 1199.1px;
+  height: 409.8px;
+  text-align: left;
+  font-size: var(--font-size-xl);
+  color: var(--color-gray-300);
+  font-family: var(--font-montserrat);
+}
+@media screen and (max-width: 767px) {
+  .similarProperties1 {
+    font-size: var(--font-size-13xl);
+  }
+}
+@media screen and (max-width: 450px) {
+  .similarProperties1 {
+    font-size: var(--font-size-5xl);
+  }
+}

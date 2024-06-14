@@ -1,4 +1,4 @@
-.footerChild {
+.frameChild {
   width: 1440px;
   height: 600px;
   position: relative;
@@ -16,7 +16,7 @@
   display: inline-block;
   z-index: 1;
 }
-.readMore {
+.realEstateTitle {
   align-self: stretch;
   display: flex;
   flex-direction: row;
@@ -31,7 +31,7 @@
   object-fit: contain;
   z-index: 1;
 }
-.homeContent {
+.futureTitle {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -48,7 +48,7 @@
   min-width: 339px;
   z-index: 1;
 }
-.homeContentParent {
+.futureContent {
   width: 589px;
   display: flex;
   flex-direction: row;
@@ -92,7 +92,7 @@
   justify-content: flex-start;
   padding: var(--padding-lgi) 0 0;
 }
-.buyingProcess {
+.loremIpsum {
   align-self: stretch;
   flex-direction: row;
   justify-content: flex-start;
@@ -100,31 +100,31 @@
   font-size: var(--font-size-xl);
   font-family: var(--font-inter);
 }
-.buyingProcess,
-.futureContent,
-.theFutureOfSellingAndBuyiParent {
+.futureContainer,
+.futureDescription,
+.loremIpsum {
   display: flex;
   align-items: flex-start;
   max-width: 100%;
 }
-.theFutureOfSellingAndBuyiParent {
+.futureDescription {
   flex: 1;
   flex-direction: column;
   justify-content: flex-start;
   gap: var(--gap-7xl);
   min-width: 451px;
 }
-.futureContent {
+.futureContainer {
   align-self: stretch;
   flex-direction: row;
   justify-content: center;
   gap: var(--gap-51xl);
 }
-.readMore1 {
+.readMore {
   position: relative;
   z-index: 1;
 }
-.readMoreWrapper {
+.readMoreButton {
   align-self: stretch;
   display: flex;
   flex-direction: row;
@@ -133,20 +133,20 @@
   padding: 0 var(--padding-xl);
   font-size: var(--font-size-xl);
 }
-.footer,
-.futureContentParent {
+.futureContainerParent,
+.rectangleParent {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
   max-width: 100%;
 }
-.futureContentParent {
+.futureContainerParent {
   width: 1353px;
   gap: var(--gap-6xl);
   font-size: var(--font-size-21xl);
 }
-.footer {
+.rectangleParent {
   align-self: stretch;
   background-color: var(--color-slateblue);
   padding: var(--padding-10xl) var(--padding-12xl) var(--padding-18xl);
@@ -158,10 +158,10 @@
   font-family: var(--font-montserrat);
 }
 @media screen and (max-width: 1275px) {
-  .homeContentParent {
+  .futureContent {
     flex: 1;
   }
-  .futureContent {
+  .futureContainer {
     flex-wrap: wrap;
   }
 }
@@ -169,7 +169,7 @@
   .realEstateAround {
     font-size: var(--font-size-17xl);
   }
-  .homeContentParent {
+  .futureContent {
     flex-wrap: wrap;
     gap: var(--gap-5xl);
     min-width: 100%;
@@ -180,17 +180,17 @@
   .contraryToPopular {
     min-width: 100%;
   }
-  .buyingProcess {
+  .loremIpsum {
     flex-wrap: wrap;
     gap: var(--gap-5xl);
   }
-  .theFutureOfSellingAndBuyiParent {
+  .futureDescription {
     min-width: 100%;
   }
-  .futureContent {
+  .futureContainer {
     gap: var(--gap-16xl);
   }
-  .footer {
+  .rectangleParent {
     gap: var(--gap-mini);
     padding-top: var(--padding-xl);
     padding-bottom: var(--padding-5xl);
@@ -210,10 +210,10 @@
   .contraryToPopular {
     font-size: var(--font-size-base);
   }
-  .futureContent {
+  .futureContainer {
     gap: var(--gap-mid);
   }
-  .readMore1 {
+  .readMore {
     font-size: var(--font-size-base);
   }
 }

@@ -26,7 +26,7 @@ const FrameComponent1: FunctionComponent<FrameComponent1Type> = ({
   propLeft,
   propPadding1,
 }) => {
-  const frameDivStyle: CSSProperties = useMemo(() => {
+  const frameDiv7Style: CSSProperties = useMemo(() => {
     return {
       padding: propPadding,
     };
@@ -45,7 +45,7 @@ const FrameComponent1: FunctionComponent<FrameComponent1Type> = ({
     };
   }, [propLeft]);
 
-  const frameDiv1Style: CSSProperties = useMemo(() => {
+  const frameDiv8Style: CSSProperties = useMemo(() => {
     return {
       padding: propPadding1,
     };
@@ -54,7 +54,7 @@ const FrameComponent1: FunctionComponent<FrameComponent1Type> = ({
   return (
     <div
       className={[styles.withItsOwnPoolParent, className].join(" ")}
-      style={frameDivStyle}
+      style={frameDiv7Style}
     >
       <div className={styles.withItsOwn} style={withItsOwnStyle}>
         {withItsOwnPool}
@@ -65,11 +65,11 @@ const FrameComponent1: FunctionComponent<FrameComponent1Type> = ({
         <img
           className={styles.mapPinIcon}
           alt=""
-          src="/map-pin@2x.png"
+          src="/map-pin2@2x.png"
           style={mapPinIconStyle}
         />
       </div>
-      <div className={styles.mumbaiWrapper} style={frameDiv1Style}>
+      <div className={styles.mumbaiWrapper} style={frameDiv8Style}>
         <div className={styles.mumbai}>{mumbai}</div>
       </div>
     </div>

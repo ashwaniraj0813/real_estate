@@ -417,7 +417,7 @@
     min-width: 100%;
   }
   .sidebarParent {
-    gap: 32px;
+    gap: var(--gap-13xl);
     padding-left: var(--padding-84xl);
     padding-right: var(--padding-84xl);
     box-sizing: border-box;

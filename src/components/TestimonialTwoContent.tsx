@@ -9,10 +9,10 @@ const TestimonialTwoContent: FunctionComponent<TestimonialTwoContentType> = ({
   className = "",
 }) => {
   return (
-    <div className={[styles.testimonialTwoContent, className].join(" ")}>
-      <div className={styles.testimonialDetails}>
+    <div className={[styles.cardContent, className].join(" ")}>
+      <div className={styles.wonderfulServiceParent}>
         <div className={styles.wonderfulService}>Wonderful service!</div>
-        <div className={styles.happyTradeTitle}>
+        <div className={styles.reviewDescription}>
           <i className={styles.loremIpsumHas}>
             Lorem Ipsum has been the industry's standard dummy text ever since
             the 1500s, when an unknown printer took a galley of type and
@@ -21,8 +21,8 @@ const TestimonialTwoContent: FunctionComponent<TestimonialTwoContentType> = ({
           </i>
         </div>
       </div>
-      <div className={styles.testimonialTwoContentChild} />
-      <div className={styles.testimonialTwoDescription}>
+      <div className={styles.cardContentChild} />
+      <div className={styles.reviewAuthor}>
         <div className={styles.thejidmeinsDentist}>-Thejidmeins, dentist</div>
       </div>
     </div>

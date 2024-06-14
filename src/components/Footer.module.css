@@ -8,6 +8,7 @@
 }
 .itIsA,
 .logo {
+  height: 36px;
   position: relative;
   font-weight: 600;
   display: inline-block;
@@ -17,15 +18,13 @@
 }
 .logo {
   width: 88px;
-  height: 28px;
 }
 .itIsA {
   margin: 0;
   align-self: stretch;
-  height: 129px;
   font-size: var(--font-size-mini);
 }
-.testimonialOneContent {
+.companyInfo {
   align-self: stretch;
   display: flex;
   flex-direction: column;
@@ -34,7 +33,7 @@
   gap: var(--gap-xl);
 }
 .aboutUs {
-  height: 28px;
+  height: 36px;
   position: relative;
   font-weight: 600;
   display: inline-block;
@@ -43,7 +42,7 @@
   cursor: pointer;
   z-index: 2;
 }
-.testimonial {
+.footerContent {
   width: 360px;
   display: flex;
   flex-direction: column;
@@ -61,7 +60,7 @@
   z-index: 2;
 }
 .rent {
-  height: 28px;
+  height: 36px;
   display: inline-block;
   flex-shrink: 0;
 }
@@ -75,7 +74,7 @@
 }
 .sell {
   align-self: stretch;
-  height: 28px;
+  height: 36px;
   display: inline-block;
   flex-shrink: 0;
 }
@@ -83,28 +82,28 @@
   line-height: 28px;
   cursor: pointer;
 }
-.rentParent,
-.testimonialTwo {
+.accountLinks,
+.rentLink {
   align-self: stretch;
   flex-direction: column;
 }
-.testimonialTwo {
+.accountLinks {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
   gap: var(--gap-lg);
 }
-.rentParent {
+.rentLink {
   gap: var(--gap-4xl);
 }
 .footer,
-.footerLinks,
-.rentParent {
+.navigationLinks,
+.rentLink {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
 }
-.footerLinks {
+.navigationLinks {
   width: 67px;
   flex-direction: column;
   gap: var(--gap-xl);
@@ -145,7 +144,7 @@
   .logo {
     font-size: var(--font-size-lg);
   }
-  .testimonial {
+  .footerContent {
     gap: var(--gap-42xl);
   }
   .buy,

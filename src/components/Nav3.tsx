@@ -57,7 +57,7 @@ const Nav: FunctionComponent<NavType> = ({
     };
   }, [rectangleDivPadding, rectangleDivDebugCommit]);
 
-  const frameDiv5Style: CSSProperties = useMemo(() => {
+  const frameDiv3Style: CSSProperties = useMemo(() => {
     return {
       padding: lOGOPadding,
     };
@@ -69,7 +69,7 @@ const Nav: FunctionComponent<NavType> = ({
     };
   }, [frameDivColor]);
 
-  const frameDiv6Style: CSSProperties = useMemo(() => {
+  const frameDiv4Style: CSSProperties = useMemo(() => {
     return {
       width: actionsWidth,
       padding: actionsPadding,
@@ -88,13 +88,13 @@ const Nav: FunctionComponent<NavType> = ({
     };
   }, [buyPadding]);
 
-  const frameDiv7Style: CSSProperties = useMemo(() => {
+  const frameDiv5Style: CSSProperties = useMemo(() => {
     return {
       padding: rentPadding,
     };
   }, [rentPadding]);
 
-  const frameDiv8Style: CSSProperties = useMemo(() => {
+  const frameDiv6Style: CSSProperties = useMemo(() => {
     return {
       padding: sellPadding,
     };
@@ -117,7 +117,7 @@ const Nav: FunctionComponent<NavType> = ({
   return (
     <header className={[styles.nav3, className].join(" ")} style={nav3Style}>
       <div className={styles.nav3Child} />
-      <div className={styles.logoWrapper} style={frameDiv5Style}>
+      <div className={styles.logoWrapper} style={frameDiv3Style}>
         <a className={styles.logo} onClick={onLOGOTextClick}>
           LOGO
         </a>
@@ -138,7 +138,7 @@ const Nav: FunctionComponent<NavType> = ({
           />
         </div>
       </div>
-      <div className={styles.actionsWrapper} style={frameDiv6Style}>
+      <div className={styles.actionsWrapper} style={frameDiv4Style}>
         <div className={styles.actions}>
           <div className={styles.homeButton} style={homeButtonStyle}>
             <a className={styles.home} onClick={onHomeTextClick}>
@@ -150,10 +150,10 @@ const Nav: FunctionComponent<NavType> = ({
               Buy
             </a>
           </div>
-          <div className={styles.rentWrapper} style={frameDiv7Style}>
+          <div className={styles.rentWrapper} style={frameDiv5Style}>
             <a className={styles.rent}>Rent</a>
           </div>
-          <div className={styles.sellWrapper} style={frameDiv8Style}>
+          <div className={styles.sellWrapper} style={frameDiv6Style}>
             <a className={styles.sell}>Sell</a>
           </div>
           <img

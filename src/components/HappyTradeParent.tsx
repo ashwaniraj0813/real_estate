@@ -10,20 +10,25 @@ const HappyTradeParent: FunctionComponent<HappyTradeParentType> = ({
   className = "",
 }) => {
   return (
-    <section className={[styles.happyTradeParent, className].join(" ")}>
-      <div className={styles.happyTradeParentChild} />
-      <div className={styles.customerHeadingWrapper}>
-        <div className={styles.customerHeading}>
+    <section className={[styles.rectangleParent, className].join(" ")}>
+      <section className={styles.frameChild} />
+      <div className={styles.customerContainer}>
+        <div className={styles.customerTitle}>
           <h1 className={styles.happyCustomers}>HAPPY CUSTOMERS</h1>
-          <div className={styles.happyTradeWrapper}>
-            <b className={styles.happyTrade}>HAPPY TRADE</b>
+          <div className={styles.happyTrade}>
+            <h2 className={styles.happyTrade1}>HAPPY TRADE</h2>
           </div>
         </div>
       </div>
       <div className={styles.testimonial}>
-        <div className={styles.footerSellLogin}>
-          <div className={styles.testimonialTwoAuthor}>
-            <img className={styles.vectorIcon} alt="" src="/vector-2.svg" />
+        <div className={styles.testimonialCard}>
+          <div className={styles.cardImage}>
+            <img
+              className={styles.vectorIcon}
+              loading="lazy"
+              alt=""
+              src="/vector-2.svg"
+            />
           </div>
           <TestimonialTwoContent />
         </div>

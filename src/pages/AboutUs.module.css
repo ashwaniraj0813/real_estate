@@ -23,7 +23,7 @@
   overflow-y: auto;
   flex-shrink: 0;
   padding: var(--padding-82xl) 0 0;
-  gap: var(--gap-31xl);
+  gap: 50px;
   debug_commit: 69da668;
   max-width: 100%;
   margin-top: -86px;

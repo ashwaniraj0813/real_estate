@@ -14,25 +14,25 @@
   font-style: italic;
   z-index: 3;
 }
-.happyTradeTitle,
-.testimonialDetails {
+.reviewDescription,
+.wonderfulServiceParent {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
 }
-.happyTradeTitle {
+.reviewDescription {
   align-self: stretch;
   flex-direction: row;
   padding: 0 var(--padding-5xs) 0 var(--padding-6xs);
   text-align: left;
   font-size: var(--font-size-mini);
 }
-.testimonialDetails {
+.wonderfulServiceParent {
   width: 238px;
   flex-direction: column;
   gap: var(--gap-sm);
 }
-.testimonialTwoContentChild {
+.cardContentChild {
   width: 329px;
   height: 339px;
   position: relative;
@@ -46,8 +46,8 @@
   position: relative;
   z-index: 1;
 }
-.testimonialTwoContent,
-.testimonialTwoDescription {
+.cardContent,
+.reviewAuthor {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -55,7 +55,7 @@
   padding: 0 var(--padding-15xl);
   font-size: var(--font-size-mini);
 }
-.testimonialTwoContent {
+.cardContent {
   border-radius: var(--br-21xl);
   border: 3px solid var(--color-black);
   box-sizing: border-box;
@@ -74,7 +74,7 @@
   .wonderfulService {
     font-size: var(--font-size-xl);
   }
-  .testimonialTwoContent {
+  .cardContent {
     padding-left: var(--padding-xl);
     padding-right: var(--padding-xl);
     box-sizing: border-box;

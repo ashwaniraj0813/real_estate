@@ -12,7 +12,7 @@
 }
 .logo {
   text-decoration: none;
-  height: 28px;
+  height: 36px;
   width: 138px;
   position: relative;
   font-weight: 600;
@@ -47,7 +47,7 @@
   display: inline-block;
   z-index: 3;
 }
-.actionButtons {
+.buyRentButtons {
   flex: 1;
   display: flex;
   flex-direction: row;
@@ -64,7 +64,7 @@
   z-index: 3;
 }
 .sell {
-  height: 28px;
+  height: 36px;
   width: 54px;
   display: inline-block;
   flex-shrink: 0;
@@ -73,47 +73,48 @@
   line-height: 28px;
   cursor: pointer;
 }
-.actionButtonsParent,
-.actions {
+.buttonContainer,
+.buttonsAndMap {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   max-width: 100%;
 }
-.actionButtonsParent {
+.buttonContainer {
   flex: 1;
   justify-content: flex-start;
   gap: var(--gap-14xl-5);
 }
-.actions {
+.buttonsAndMap {
   width: 384px;
   justify-content: flex-end;
   padding: 0 var(--padding-3xl);
   box-sizing: border-box;
 }
-.appointmentFormChild {
+.bookAppointment,
+.frameChild {
+  position: relative;
+  max-width: 100%;
+}
+.frameChild {
   width: 725px;
   height: 498px;
-  position: relative;
   border-radius: var(--br-11xl);
   background-color: var(--color-gainsboro-100);
   display: none;
-  max-width: 100%;
   z-index: 0;
 }
 .bookAppointment {
   margin: 0;
-  height: 40px;
+  height: 52px;
   flex: 1;
-  position: relative;
   font-size: inherit;
   font-weight: 400;
   font-family: inherit;
   display: inline-block;
-  max-width: 100%;
   z-index: 4;
 }
-.submitButton {
+.appointmentBanner {
   width: 603px;
   display: flex;
   flex-direction: row;
@@ -123,7 +124,7 @@
   box-sizing: border-box;
   max-width: 100%;
 }
-.firstNameField {
+.firstNameInput {
   width: 100%;
   border: 0;
   outline: 0;
@@ -138,15 +139,15 @@
   min-width: 194px;
   z-index: 5;
 }
-.firstNameField,
-.lastNameField,
-.nameFields {
+.contactForm,
+.firstNameInput,
+.lastNameInput {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   justify-content: flex-start;
 }
-.lastNameField {
+.lastNameInput {
   width: 100%;
   border: 0;
   outline: 0;
@@ -161,12 +162,12 @@
   min-width: 194px;
   z-index: 4;
 }
-.nameFields {
+.contactForm {
   align-self: stretch;
   padding: 0 0 var(--padding-mid);
   gap: var(--gap-19xl);
 }
-.emailField {
+.emailInput {
   width: 100%;
   border: 0;
   outline: 0;
@@ -181,15 +182,15 @@
   min-width: 194px;
   z-index: 4;
 }
-.contactFields,
-.emailField,
-.phoneField {
+.emailInput,
+.emailPhoneInputs,
+.phoneInput {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   justify-content: flex-start;
 }
-.phoneField {
+.phoneInput {
   width: 100%;
   border: 0;
   outline: 0;
@@ -204,7 +205,7 @@
   min-width: 194px;
   z-index: 4;
 }
-.contactFields {
+.emailPhoneInputs {
   align-self: stretch;
   padding: 0 0 var(--padding-xl);
   gap: var(--gap-19xl);
@@ -227,7 +228,7 @@
   z-index: 5;
 }
 .getAppointmentButton,
-.getAppointmentButtonWrapper {
+.submitButton {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -245,7 +246,7 @@
   justify-content: center;
   z-index: 4;
 }
-.getAppointmentButtonWrapper {
+.submitButton {
   align-self: stretch;
   justify-content: flex-start;
   padding: 0 var(--padding-20xl);
@@ -253,7 +254,7 @@
 .yourDreamHome {
   margin: 0 !important;
   width: 627px;
-  height: 156px;
+  height: 389px;
   position: absolute;
   top: -186px;
   left: -557px;
@@ -264,14 +265,14 @@
   display: inline-block;
   z-index: 7;
 }
-.actionsParent,
-.appointmentForm {
+.actionButtons,
+.rectangleParent {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   max-width: 100%;
 }
-.appointmentForm {
+.rectangleParent {
   align-self: stretch;
   border-radius: var(--br-11xl);
   background-color: var(--color-gainsboro-100);
@@ -285,7 +286,7 @@
   font-size: var(--font-size-13xl);
   color: var(--color-black);
 }
-.actionsParent {
+.actionButtons {
   width: 725px;
   align-items: flex-end;
   gap: var(--gap-274xl);
@@ -382,13 +383,13 @@
   .bookAppointment {
     font-size: var(--font-size-7xl);
   }
-  .submitButton {
+  .appointmentBanner {
     padding-left: var(--padding-14xl);
     padding-right: var(--padding-14xl);
     box-sizing: border-box;
   }
-  .contactFields,
-  .nameFields {
+  .contactForm,
+  .emailPhoneInputs {
     flex-wrap: wrap;
     gap: var(--gap-lgi);
   }
@@ -398,14 +399,14 @@
   .yourDreamHome {
     font-size: var(--font-size-32xl);
   }
-  .appointmentForm {
+  .rectangleParent {
     gap: var(--gap-xl);
     padding-left: var(--padding-6xl);
     padding-top: var(--padding-9xl);
     padding-bottom: var(--padding-6xl);
     box-sizing: border-box;
   }
-  .actionsParent {
+  .actionButtons {
     gap: var(--gap-127xl);
   }
   .homePage {
@@ -421,14 +422,14 @@
   .firstName {
     font-size: var(--font-size-lgi);
   }
-  .actionButtonsParent {
+  .buttonContainer {
     gap: var(--gap-mid);
   }
   .bookAppointment {
     font-size: var(--font-size-lgi);
   }
-  .emailField,
-  .firstNameField {
+  .emailInput,
+  .firstNameInput {
     flex: 1;
   }
   .getYourAppointment {
@@ -437,7 +438,7 @@
   .yourDreamHome {
     font-size: var(--font-size-19xl);
   }
-  .actionsParent {
+  .actionButtons {
     gap: var(--gap-54xl);
   }
   .buy1 {

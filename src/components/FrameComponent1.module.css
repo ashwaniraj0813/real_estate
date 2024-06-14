@@ -49,7 +49,7 @@
   left: 0;
 }
 .mumbai {
-  height: 30px;
+  height: 70px;
   flex: 1;
   position: relative;
   display: inline-block;
@@ -87,7 +87,7 @@
     font-size: var(--font-size-lgi);
   }
   .withItsOwnPoolParent {
-    padding-top: var(--padding-47xl);
+    padding-top: var(--padding-24xl);
     box-sizing: border-box;
   }
 }

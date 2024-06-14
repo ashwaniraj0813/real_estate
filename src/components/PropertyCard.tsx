@@ -33,7 +33,7 @@ const PropertyCard: FunctionComponent<PropertyCardType> = ({
         <div className={styles.frameParent}>
           <div className={styles.mapPinParent}>
             <img className={styles.mapPinIcon} alt="" src="/map-pin1@2x.png" />
-            <div className={styles.puneWrapper}>
+            <div className={styles.city}>
               <div className={styles.pune}>Pune</div>
             </div>
           </div>

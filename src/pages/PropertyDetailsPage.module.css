@@ -1,78 +1,165 @@
-.description {
-  position: relative;
+.image13Icon {
+  position: absolute;
+  top: 70px;
+  left: 0;
+  width: 57.1px;
+  height: 60.5px;
+  object-fit: contain;
+}
+.location1,
+.portalWNorth {
+  position: absolute;
+  top: 81px;
+  left: 90.2px;
+  display: flex;
+  align-items: center;
+  width: 752px;
+}
+.location1 {
+  top: 0;
+  left: 0;
+  font-size: var(--font-size-21xl);
+  width: 184.5px;
+}
+.locationOnMap {
+  top: 151px;
+  left: 0;
+  width: 1200px;
+  height: 520px;
+  object-fit: cover;
+}
+.div,
+.location,
+.locationOnMap {
+  position: absolute;
+}
+.location {
+  top: 2967px;
+  left: 122px;
+  width: 1200px;
+  height: 671px;
+  text-align: left;
+  font-size: var(--font-size-11xl);
+  color: var(--color-gray-300);
+  font-family: var(--font-montserrat);
+}
+.div {
+  top: 112px;
+  left: 0;
+  line-height: 35px;
+  font-weight: 300;
+  white-space: nowrap;
+}
+.facilitiesAndAmenities {
+  position: absolute;
+  top: 2424px;
+  left: 117px;
+  width: 966px;
+  height: 352px;
+  text-align: left;
+  font-size: 35px;
+  color: var(--color-black);
+  font-family: var(--font-montserrat);
+}
+.description1 {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 .loremIpsumHas {
   display: block;
 }
+.loremIpsumHasContainer1 {
+  width: 100%;
+}
 .loremIpsumHasContainer {
   margin: 0;
-  align-self: stretch;
-  height: 148px;
-  position: relative;
+  position: absolute;
+  top: 86px;
+  left: 0;
   font-size: var(--font-size-11xl);
   display: flex;
   align-items: center;
-}
-.location {
   width: 1216px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: var(--gap-18xl);
-  max-width: 100%;
 }
-.propertyDetailsPage,
-.similarProperties {
-  display: flex;
-  align-items: flex-start;
-  box-sizing: border-box;
-}
-.similarProperties {
-  align-self: stretch;
-  flex-direction: row;
-  justify-content: center;
-  padding: 0 var(--padding-xl) 138px var(--padding-11xl);
-  max-width: 100%;
+.description {
+  position: absolute;
+  top: 2024px;
+  left: 117px;
+  width: 1216px;
+  height: 234px;
   text-align: left;
   font-size: var(--font-size-21xl);
   color: var(--color-gray-300);
   font-family: var(--font-montserrat);
 }
+.homeUk {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-weight: 300;
+  white-space: pre-wrap;
+  display: inline-block;
+  text-shadow: 1px 0 0#1f1f1f, 0 1px 0#1f1f1f, -1px 0 0#1f1f1f, 0-1px 0#1f1f1f;
+  width: 100%;
+  height: 100%;
+}
+.navigation {
+  position: absolute;
+  top: 130px;
+  left: 112px;
+  width: 321px;
+  height: 24px;
+}
 .propertyDetailsPage {
   width: 100%;
+  height: 5000px;
   position: relative;
   background-color: var(--color-white);
   overflow: hidden;
-  flex-direction: column;
-  justify-content: flex-start;
-  padding: 0 0 238.2px;
-  gap: var(--gap-9xl);
   line-height: normal;
   letter-spacing: normal;
+  text-align: left;
+  font-size: var(--font-size-xl);
+  color: var(--color-gray-300);
+  font-family: var(--font-montserrat);
 }
-@media screen and (max-width: 1050px) {
-  .description {
+@media screen and (max-width: 767px) {
+  .portalWNorth {
+    font-size: var(--font-size-5xl);
+  }
+  .location1 {
+    font-size: var(--font-size-13xl);
+  }
+  .div {
+    font-size: 28px;
+    line-height: 28px;
+  }
+  .description1 {
     font-size: var(--font-size-13xl);
   }
   .loremIpsumHasContainer {
     font-size: var(--font-size-5xl);
   }
 }
-@media screen and (max-width: 750px) {
-  .location {
-    gap: var(--gap-lg);
-  }
-}
 @media screen and (max-width: 450px) {
-  .description {
+  .portalWNorth {
+    font-size: var(--font-size-lg);
+  }
+  .location1 {
+    font-size: var(--font-size-5xl);
+  }
+  .div {
+    font-size: 21px;
+    line-height: 21px;
+  }
+  .description1 {
     font-size: var(--font-size-5xl);
   }
   .loremIpsumHasContainer {
     font-size: var(--font-size-lg);
   }
-  .similarProperties {
-    padding-bottom: var(--padding-71xl);
-    box-sizing: border-box;
+  .homeUk {
+    font-size: var(--font-size-base);
   }
 }

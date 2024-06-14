@@ -1,0 +1,208 @@
+.starsIcon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 60px;
+}
+.reviews {
+  position: absolute;
+  top: 63px;
+  left: 26px;
+  font-weight: 500;
+}
+.ratings {
+  position: absolute;
+  top: 4px;
+  left: 981px;
+  width: 250px;
+  height: 93px;
+}
+.apartment,
+.ft,
+.furnished {
+  position: absolute;
+  top: 0;
+  left: 238px;
+  font-weight: 600;
+}
+.ft,
+.furnished {
+  top: 201px;
+}
+.ft {
+  top: 134px;
+  left: 232px;
+}
+.bedrooms,
+.type {
+  position: absolute;
+  left: 1px;
+  font-weight: 300;
+}
+.type {
+  top: 0;
+  display: inline-block;
+  min-width: 70px;
+}
+.bedrooms {
+  top: 268px;
+}
+.furnishing {
+  top: 201px;
+  left: 1px;
+}
+.area,
+.furnishing,
+.status {
+  position: absolute;
+  font-weight: 300;
+}
+.area {
+  top: 134px;
+  left: 1px;
+  display: inline-block;
+  min-width: 68px;
+}
+.status {
+  top: 67px;
+  left: 0;
+  min-width: 95px;
+}
+.b,
+.price,
+.status {
+  display: inline-block;
+}
+.b {
+  position: absolute;
+  top: 268px;
+  left: 240px;
+  font-weight: 600;
+  min-width: 21px;
+}
+.price {
+  top: 402px;
+  left: 0;
+  font-weight: 300;
+  min-width: 75px;
+}
+.bathrooms,
+.div,
+.price {
+  position: absolute;
+}
+.div {
+  top: 402px;
+  left: 232px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.bathrooms {
+  top: 335px;
+  left: 1px;
+  font-weight: 300;
+}
+.b1,
+.readyToMove {
+  position: absolute;
+  font-weight: 600;
+}
+.b1 {
+  top: 335px;
+  left: 239px;
+  display: inline-block;
+  min-width: 18px;
+}
+.readyToMove {
+  top: 67px;
+  left: 238px;
+}
+.specifications {
+  position: absolute;
+  top: 169px;
+  left: 581px;
+  width: 469px;
+  height: 439px;
+  font-size: var(--font-size-11xl);
+}
+.web141Icon {
+  position: absolute;
+  top: 153px;
+  left: 0;
+  width: 500px;
+  height: 500px;
+  object-fit: cover;
+}
+.portalNorthAction,
+.theLyra {
+  position: absolute;
+  top: 76px;
+  left: 0;
+}
+.theLyra {
+  margin: 0;
+  top: 0;
+  font-size: var(--font-size-36xl);
+  font-weight: 800;
+  font-family: inherit;
+}
+.propertyDetails {
+  position: absolute;
+  top: 211px;
+  left: 112px;
+  width: 1231px;
+  height: 653px;
+  text-align: left;
+  font-size: var(--font-size-6xl);
+  color: var(--color-gray-300);
+  font-family: var(--font-montserrat);
+}
+@media screen and (max-width: 767px) {
+  .apartment,
+  .area,
+  .b,
+  .b1,
+  .bathrooms,
+  .bedrooms,
+  .div,
+  .ft,
+  .furnished,
+  .furnishing,
+  .price,
+  .readyToMove,
+  .status,
+  .type {
+    font-size: var(--font-size-5xl);
+  }
+  .theLyra {
+    font-size: var(--font-size-25xl);
+  }
+}
+@media screen and (max-width: 450px) {
+  .reviews {
+    font-size: var(--font-size-xl);
+  }
+  .apartment,
+  .area,
+  .b,
+  .b1,
+  .bathrooms,
+  .bedrooms,
+  .div,
+  .ft,
+  .furnished,
+  .furnishing,
+  .price,
+  .readyToMove,
+  .status,
+  .type {
+    font-size: var(--font-size-lg);
+  }
+  .portalNorthAction {
+    font-size: var(--font-size-xl);
+  }
+  .theLyra {
+    font-size: var(--font-size-14xl);
+  }
+}
