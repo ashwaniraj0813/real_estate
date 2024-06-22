@@ -1,0 +1,376 @@
+.nav3Child {
+  height: 102px;
+  width: 1440px;
+  position: relative;
+  background: linear-gradient(90deg, #2697e0, #784dc6);
+  display: none;
+  max-width: 100%;
+}
+.logo {
+  text-decoration: none;
+  position: relative;
+  font-weight: 700;
+  color: inherit;
+  display: inline-block;
+  min-width: 62px;
+  white-space: nowrap;
+  cursor: pointer;
+  z-index: 1;
+}
+.actionButtons {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0 0 var(--padding-5xs);
+}
+.searchBarChild {
+  height: 40px;
+  width: 400px;
+  position: relative;
+  border-radius: var(--br-3xl);
+  background-color: var(--color-white);
+  display: none;
+  max-width: 100%;
+}
+.icbaselineSearchIcon {
+  height: 24px;
+  width: 24px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+  min-height: 24px;
+  z-index: 1;
+}
+.searchBar,
+.searchBarContainer,
+.searchInput {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  box-sizing: border-box;
+}
+.searchInput {
+  width: 110px;
+  border: 0;
+  outline: 0;
+  background-color: transparent;
+  height: 24px;
+  flex-direction: column;
+  padding: var(--padding-9xs) 0 0;
+  font-family: var(--font-montserrat);
+  font-weight: 300;
+  font-size: var(--font-size-xs);
+  color: var(--color-black);
+}
+.searchBar,
+.searchBarContainer {
+  max-width: 100%;
+}
+.searchBar {
+  align-self: stretch;
+  border-radius: var(--br-3xl);
+  background-color: var(--color-white);
+  flex-direction: row;
+  padding: var(--padding-5xs) var(--padding-2xs);
+  gap: var(--gap-9xs);
+  z-index: 1;
+}
+.searchBarContainer {
+  width: 407px;
+  flex-direction: column;
+  padding: 0 var(--padding-6xs) 0 0;
+}
+.home {
+  text-decoration: none;
+  position: relative;
+  font-weight: 600;
+  color: inherit;
+  display: inline-block;
+  min-width: 51px;
+  cursor: pointer;
+  z-index: 1;
+}
+.homeButtonContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-7xs) 0 0;
+}
+.buy {
+  text-decoration: none;
+  position: relative;
+  font-weight: 600;
+  color: inherit;
+  display: inline-block;
+  min-width: 33px;
+  cursor: pointer;
+  z-index: 1;
+}
+.actionButtons2 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-6xs) var(--padding-5xs) 0 0;
+}
+.rent {
+  text-decoration: none;
+  position: relative;
+  font-weight: 600;
+  color: inherit;
+  display: inline-block;
+  min-width: 40px;
+  cursor: pointer;
+  z-index: 1;
+}
+.homeIconBackground {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-6xs) var(--padding-10xs) 0 0;
+}
+.sell {
+  text-decoration: none;
+  position: relative;
+  font-weight: 600;
+  color: inherit;
+  display: inline-block;
+  min-width: 30px;
+  cursor: pointer;
+  z-index: 1;
+}
+.sellWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-6xs) var(--padding-5xs) 0 0;
+}
+.homeIcon {
+  height: 33.3px;
+  width: 33.3px;
+  position: relative;
+  cursor: pointer;
+  z-index: 1;
+}
+.propertyActions {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--gap-xl);
+}
+.actionButtons1,
+.nav3 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+.actionButtons1 {
+  width: 458.3px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0 0 var(--padding-10xs-7);
+  font-size: var(--font-size-base);
+}
+.nav3 {
+  align-self: stretch;
+  background: linear-gradient(90deg, #2697e0, #784dc6);
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: var(--padding-12xl) var(--padding-110xl) var(--padding-12xl)
+    var(--padding-93xl);
+  top: 0;
+  z-index: 99;
+  position: sticky;
+  gap: var(--gap-xl);
+  text-align: center;
+  font-size: var(--font-size-xl);
+  color: var(--color-white);
+  font-family: var(--font-montserrat);
+}
+.httpslottiefilescomanimatIcon {
+  width: 350px;
+  position: relative;
+  max-height: 100%;
+  object-fit: cover;
+  max-width: 100%;
+}
+.illustrationContainer {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0 var(--padding-xl) 0 var(--padding-6xl);
+  box-sizing: border-box;
+  max-width: 100%;
+}
+.youHaventBought {
+  position: relative;
+  font-weight: 600;
+}
+.emptyStateMessage {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0 var(--padding-10xl) 0 var(--padding-14xl);
+}
+.allTheProperties {
+  align-self: stretch;
+  position: relative;
+}
+.homeButtonChild {
+  height: 40px;
+  width: 107px;
+  position: relative;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: var(--br-9xs);
+  background: linear-gradient(90deg, #2697e0, #5170d2 52%, #784dc6);
+  display: none;
+}
+.home2,
+.tablerhomeIcon {
+  position: relative;
+  z-index: 1;
+}
+.tablerhomeIcon {
+  height: 24px;
+  width: 24px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.home2 {
+  font-weight: 600;
+  display: inline-block;
+  min-width: 38px;
+}
+.homeLabelContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0 0 var(--padding-9xs);
+}
+.home1,
+.homeButton {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.homeButton {
+  flex: 1;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: var(--br-9xs);
+  background: linear-gradient(90deg, #2697e0, #5170d2 52%, #784dc6);
+  align-items: flex-end;
+  padding: var(--padding-5xs) var(--padding-smi);
+  gap: var(--gap-2xs);
+}
+.home1 {
+  width: 107px;
+  align-items: flex-start;
+  cursor: pointer;
+}
+.emptyState,
+.homeAction {
+  align-self: stretch;
+  display: flex;
+}
+.homeAction {
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0 var(--padding-xl);
+  font-size: var(--font-size-xs);
+  color: var(--color-snow);
+}
+.emptyState {
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: var(--gap-8xl);
+  max-width: 100%;
+}
+.emptyStateIllustration,
+.sidebarContainer {
+  display: flex;
+  align-items: flex-start;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+.emptyStateIllustration {
+  width: 521px;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: var(--padding-93xl) 0 0;
+  min-width: 521px;
+}
+.sidebarContainer {
+  width: 1104px;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 var(--padding-xl) 0 0;
+  gap: var(--gap-xl);
+  text-align: center;
+  font-size: var(--font-size-xl);
+  color: var(--color-black);
+  font-family: var(--font-montserrat);
+}
+.userProperties0 {
+  width: 100%;
+  position: relative;
+  background-color: var(--color-white);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  line-height: normal;
+  letter-spacing: normal;
+}
+@media screen and (max-width: 925px) {
+  .propertyActions {
+    display: none;
+  }
+  .actionButtons1 {
+    width: 0;
+  }
+  .nav3 {
+    padding-left: var(--padding-37xl);
+    padding-right: var(--padding-45xl);
+    box-sizing: border-box;
+  }
+  .emptyStateIllustration {
+    flex: 1;
+  }
+  .sidebarContainer {
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 700px) {
+  .emptyStateIllustration {
+    padding-top: 73px;
+    box-sizing: border-box;
+    min-width: 100%;
+  }
+}
+@media screen and (max-width: 450px) {
+  .nav3 {
+    padding-left: var(--padding-xl);
+    padding-right: var(--padding-xl);
+    box-sizing: border-box;
+  }
+  .allTheProperties,
+  .youHaventBought {
+    font-size: var(--font-size-base);
+  }
+}

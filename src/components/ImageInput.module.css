@@ -1,0 +1,58 @@
+.imageInputChild {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  background-color: var(--color-gainsboro-100);
+  display: none;
+}
+.materialSymbolsimagesmodeOuIcon {
+  height: 50px;
+  width: 50px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+  z-index: 1;
+}
+.materialSymbolsimagesmodeOuWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 var(--padding-18xl);
+}
+.addImages {
+  margin: 0;
+  position: relative;
+  font-size: inherit;
+  font-weight: 400;
+  font-family: inherit;
+  display: inline-block;
+  min-width: 121px;
+  z-index: 1;
+}
+.imageInput {
+  width: 300px;
+  background-color: var(--color-gainsboro-100);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: var(--padding-81xl) var(--padding-xl) var(--padding-96xl);
+  box-sizing: border-box;
+  gap: var(--gap-2xs);
+  min-width: 300px;
+  text-align: left;
+  font-size: var(--font-size-xl);
+  color: var(--color-black);
+  font-family: var(--font-montserrat);
+}
+@media screen and (max-width: 1000px) {
+  .imageInput {
+    flex: 1;
+  }
+}
+@media screen and (max-width: 450px) {
+  .addImages {
+    font-size: var(--font-size-base);
+  }
+}
