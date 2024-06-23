@@ -33,6 +33,8 @@ const LoginForm: FunctionComponent<LoginFormType> = ({ className = "" }) => {
       const token = response.data.token;
       axios.defaults.headers.common["Authorization"] = `bearer ${token}`;
 
+      localStorage.setItem('authToken', token);
+
       console.log(response.data);
       navigate("/user-profile"); // after successful login , navigate or add your logic as per your req .
       return response.data;

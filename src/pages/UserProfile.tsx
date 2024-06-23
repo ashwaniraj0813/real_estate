@@ -1,10 +1,38 @@
-import { FunctionComponent, useCallback } from "react";
+import { FunctionComponent, useCallback, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
+import { jwtDecode } from "jwt-decode";
 import styles from "./UserProfile.module.css";
+
+interface DecodedToken {
+  firstname: string;
+  email: string;
+  phoneNumber: string;
+  lastname: string;
+}
 
 const UserProfile: FunctionComponent = () => {
   const navigate = useNavigate();
+
+  const [firstName, setFirstName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [lastName, setLastName] = useState("");
+
+  useEffect(() => {
+    const authToken = localStorage.getItem('authToken');
+    if (authToken) {
+      try {
+        const decodedToken: DecodedToken = jwtDecode(authToken);
+        setFirstName(decodedToken.firstname);
+        setEmail(decodedToken.email);
+        setPhoneNumber(decodedToken.phoneNumber);
+        setLastName(decodedToken.lastname);
+      } catch (error) {
+        console.error('Error decoding authToken:', error);
+      }
+    }
+  }, []);
 
   const onMyPropertiesTextClick = useCallback(() => {
     navigate("/user-properties0");
@@ -118,7 +146,7 @@ const UserProfile: FunctionComponent = () => {
                       <div className={styles.profilePictureParent}>
                         <div className={styles.profilePicture}>
                           <div className={styles.profilePictureChild} />
-                          <div className={styles.firstName1}>First Name</div>
+                          <div className={styles.firstName1}>{firstName}</div>
                         </div>
                         <input
                           className={styles.phoneNumber}
@@ -134,6 +162,7 @@ const UserProfile: FunctionComponent = () => {
                           <div className={styles.phoneNumberRowChild} />
                           <input
                             className={styles.lastName1}
+                            value={lastName}
                             placeholder="Last Name"
                             type="text"
                           />
@@ -145,6 +174,7 @@ const UserProfile: FunctionComponent = () => {
                     <div className={styles.frameChild} />
                     <input
                       className={styles.phoneNo}
+                      value={phoneNumber}
                       placeholder="Phone no."
                       type="text"
                     />
@@ -156,6 +186,7 @@ const UserProfile: FunctionComponent = () => {
                     <div className={styles.emailInputChild} />
                     <input
                       className={styles.mail1}
+                      value={email}
                       placeholder="Mail"
                       type="text"
                     />
