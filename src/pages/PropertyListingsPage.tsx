@@ -96,13 +96,11 @@ const PropertyListingsPage: FunctionComponent = () => {
       <main className={styles.sortAndFilterParent}>
         <SortAndFilter />
         <section className={styles.gridContainer}>
-     
-
               {propertyData.map((property, index) => (
                 <PropertyCard
                 //  className="listingRow"
                   key={index}
-                  imageSrc={property.imageSrc}
+                  imageSrc="/image-41@2x.png"
                   title={property.title}
                   location={property.location}
                   acres={property.acres}
