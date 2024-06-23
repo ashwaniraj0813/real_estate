@@ -36,24 +36,17 @@ const PropertyCard: FunctionComponent<PropertyCardType> = ({
       className={[styles.propertyCard, className].join(" ")}
       onClick={onCardClick}
     >
-      <div className={styles.propertyCardChild} />
-      <img className={styles.image4Icon} alt={title} src={imageUrl} />
-      <div className={styles.villaWithSpaciousAndLargeParent}>
-        <div className={styles.villaWithSpacious}>
-          {title}
-        </div>
+      <img className={styles.image} alt={title} src={imageUrl} />
+      <div className={styles.information}>
+        <div className={styles.title}>{title}</div>
         <div className={styles.frameParent}>
-          <div className={styles.mapPinParent}>
-            <img className={styles.mapPinIcon} alt="Location" src="/map-pin11@2x.png" />
-            <div className={styles.city}>
-              <div className={styles.cityName}>{city}</div>
-            </div>
+          <div className={styles.location}>
+            <img className={styles.mapPinIcon} alt="Location" src="/map-pin@2x.png" />
+            <div className={styles.city}>{city}</div>
           </div>
-          <div className={styles.frameWrapper}>
-            <div className={styles.xxAcresParent}>
-              <div className={styles.area}>{area} acres</div>
-              <div className={styles.price}> Rs. {price}</div>
-            </div>
+          <div className={styles.details}>
+            <div className={styles.area}>{area} acres</div>
+            <div className={styles.price}> Rs. {price}</div>
           </div>
         </div>
       </div>

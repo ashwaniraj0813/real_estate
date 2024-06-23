@@ -54,8 +54,6 @@ const PropertyListingsPage: FunctionComponent = () => {
       <main className={styles.sortAndFilterParent}>
         <SortAndFilter />
         <section className={styles.listings}>
-          <div className={styles.cardGrid}>
-            <div className={styles.content}>
               {properties.map(property => (
                   <PropertyCard
                     key={property._id}
@@ -65,8 +63,8 @@ const PropertyListingsPage: FunctionComponent = () => {
                     area={property.area}
                   />
                 ))}
-            </div>
-          </div>
+            {/* </div>
+          </div> */}
         </section>
       </main>
     </div>
