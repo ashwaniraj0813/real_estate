@@ -7,6 +7,45 @@
   border: 1px solid var(--color-gray-500);
   box-sizing: border-box;
   display: none;
+  
+}
+.gridContainer {
+  display: grid;
+  gap: 10px;
+  padding: 10px;
+}
+.gridContainer > div {
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  padding: 20px;
+  text-align: center;
+  font-size: 18px;
+}
+
+/* Default: 2 cards */
+.gridContainer {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* Medium screens: 3 cards */
+@media (min-width: 600px) {
+  .gridContainer {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Large screens: 4 cards */
+@media (min-width: 900px) {
+  .gridContainer {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Extra large screens: 5 cards */
+@media (min-width: 1200px) {
+  .gridContainer {
+    grid-template-columns: repeat(5, 1fr);
+  }
 }
 .image4Icon {
   width: 275px;
@@ -114,6 +153,7 @@
   padding: var(--padding-5xs) 0 var(--padding-8xs-3) var(--padding-4xs);
   gap: var(--gap-sm);
   cursor: pointer;
+  /* min-height: 2000px; */
 }
 .propertyCardItem {
   width: 295px;
@@ -379,18 +419,7 @@
   gap: 55px;
   grid-template-columns: repeat(3, minmax(226px, 1fr));
 }
-.cardGrid,
-.listings {
-  flex-direction: column;
-}
-.cardGrid {
-  align-self: stretch;
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-start;
-  gap: 109px;
-  max-width: 100%;
-}
+
 .listings {
   flex: 1;
   padding: 122px 0 0;
@@ -426,9 +455,7 @@
   letter-spacing: normal;
 }
 @media screen and (max-width: 1000px) {
-  .cardGrid {
-    gap: 54px;
-  }
+
 }
 @media screen and (max-width: 975px) {
   .content,
@@ -453,10 +480,7 @@
   .propertyCardParent {
     gap: var(--gap-7xl);
   }
-  .cardGrid,
-  .content {
-    gap: var(--gap-8xl);
-  }
+
   .sortAndFilterParent {
     gap: var(--gap-13xl);
   }
@@ -486,3 +510,6 @@
     gap: var(--gap-base);
   }
 }
+/* .info{
+  margin-bottom: 25px
+} */
