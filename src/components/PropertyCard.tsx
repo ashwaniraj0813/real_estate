@@ -3,44 +3,56 @@ import { useNavigate } from "react-router-dom";
 import styles from "./PropertyCard.module.css";
 
 export type PropertyCardType = {
+  title: string;
+  city: string;
+  price: string;
+  area: string;
+  imageUrl?: string;
   className?: string;
-
-  /** Action props */
-  onPropertyCardContainer6Click?: () => void;
+  onPropertyCardContainerClick?: () => void;
 };
 
 const PropertyCard: FunctionComponent<PropertyCardType> = ({
+  title,
+  city,
+  price,
+  area,
+  imageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Deras-TreeHouse.JPG/242px-Deras-TreeHouse.JPG",
   className = "",
-  onPropertyCardContainer6Click,
+  onPropertyCardContainerClick,
 }) => {
   const navigate = useNavigate();
 
-  const onPropertyCardContainerClick = useCallback(() => {
-    navigate("/property-details-page");
-  }, [navigate]);
+  const onCardClick = useCallback(() => {
+    if (onPropertyCardContainerClick) {
+      onPropertyCardContainerClick();
+    } else {
+      navigate("/property-details-page");
+    }
+  }, [onPropertyCardContainerClick, navigate]);
 
   return (
     <div
       className={[styles.propertyCard, className].join(" ")}
-      onClick={onPropertyCardContainer6Click}
+      onClick={onCardClick}
     >
       <div className={styles.propertyCardChild} />
-      <img className={styles.image4Icon} alt="" src="/image-41@2x.png" />
+      <img className={styles.image4Icon} alt={title} src={imageUrl} />
       <div className={styles.villaWithSpaciousAndLargeParent}>
         <div className={styles.villaWithSpacious}>
-          Villa with spacious and Large Garden
+          {title}
         </div>
         <div className={styles.frameParent}>
           <div className={styles.mapPinParent}>
-            <img className={styles.mapPinIcon} alt="" src="/map-pin11@2x.png" />
+            <img className={styles.mapPinIcon} alt="Location" src="/map-pin11@2x.png" />
             <div className={styles.city}>
-              <div className={styles.pune}>Pune</div>
+              <div className={styles.cityName}>{city}</div>
             </div>
           </div>
           <div className={styles.frameWrapper}>
             <div className={styles.xxAcresParent}>
-              <div className={styles.xxAcres}>xx acres</div>
-              <div className={styles.rsXCrores}>Rs. x crores</div>
+              <div className={styles.area}>{area} acres</div>
+              <div className={styles.price}> Rs. {price}</div>
             </div>
           </div>
         </div>

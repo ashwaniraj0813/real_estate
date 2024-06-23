@@ -28,6 +28,7 @@ const UserProfile: FunctionComponent = () => {
         setEmail(decodedToken.email);
         setPhoneNumber(decodedToken.phoneNumber);
         setLastName(decodedToken.lastname);
+        
       } catch (error) {
         console.error('Error decoding authToken:', error);
       }
