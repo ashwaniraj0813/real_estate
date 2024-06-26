@@ -1,4 +1,4 @@
-.mainChild {
+.formContainerChild {
   width: 535px;
   height: 623px;
   position: relative;
@@ -11,6 +11,7 @@
   max-width: 100%;
 }
 .register {
+  height: 20px;
   width: 190px;
   position: relative;
   font-weight: 600;
@@ -18,7 +19,7 @@
   flex-shrink: 0;
   z-index: 1;
 }
-.registerHeader {
+.registerWrapper {
   align-self: stretch;
   display: flex;
   flex-direction: row;
@@ -26,13 +27,13 @@
   justify-content: center;
   padding: 0 var(--padding-xl) 0 var(--padding-7xl);
 }
-.firstName {
+.firstName1 {
   width: 121px;
   position: relative;
   display: inline-block;
   z-index: 1;
 }
-.frameChild {
+.confirmFirstNameInputChild {
   height: 42px;
   width: 188px;
   position: relative;
@@ -43,7 +44,7 @@
   box-sizing: border-box;
   display: none;
 }
-.firstName1 {
+.firstName2 {
   width: 100%;
   border: 0;
   outline: 0;
@@ -60,7 +61,7 @@
   padding: 0;
   z-index: 2;
 }
-.rectangleParent {
+.confirmFirstNameInput {
   align-self: stretch;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: var(--br-11xs);
@@ -76,22 +77,20 @@
 }
 .phoneNumber {
   position: relative;
-  display: inline-block;
-  min-width: 96px;
   z-index: 1;
 }
-.firstNameDuplicate,
-.firstNameInput {
+.emailPassword,
+.firstName {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
 }
-.firstNameDuplicate {
+.emailPassword {
   align-self: stretch;
   gap: var(--gap-mid);
 }
-.firstNameInput {
+.firstName {
   flex: 1;
   gap: var(--gap-xs);
   min-width: 122px;
@@ -102,7 +101,7 @@
   display: inline-block;
   z-index: 1;
 }
-.frameItem {
+.confirmLastNameInputChild {
   height: 42px;
   width: 188px;
   position: relative;
@@ -130,12 +129,12 @@
   padding: 0;
   z-index: 2;
 }
-.lastNameDuplicate,
-.rectangleGroup {
+.confirmLastName,
+.confirmLastNameInput {
   align-self: stretch;
   justify-content: flex-start;
 }
-.rectangleGroup {
+.confirmLastNameInput {
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: var(--br-11xs);
   background-color: var(--color-white);
@@ -147,17 +146,17 @@
     var(--padding-4xs);
   z-index: 1;
 }
-.lastNameDuplicate {
+.confirmLastName {
   flex-direction: column;
-  gap: var(--gap-5xs);
+  gap: var(--gap-xs);
 }
-.lastNameDuplicate,
-.lastNameInput,
-.nameInput {
+.confirmLastName,
+.content,
+.namePhone {
   display: flex;
   align-items: flex-start;
 }
-.lastNameInput {
+.content {
   flex: 1;
   flex-direction: column;
   justify-content: flex-start;
@@ -165,14 +164,14 @@
   box-sizing: border-box;
   min-width: 122px;
 }
-.nameInput {
+.namePhone {
   align-self: stretch;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   gap: var(--gap-3xl);
 }
-.frameInner {
+.phoneNumberInputChild {
   height: 42px;
   width: 295px;
   position: relative;
@@ -198,14 +197,14 @@
   padding: 0;
   z-index: 2;
 }
-.phoneNumberInput,
-.rectangleContainer {
+.phoneNumber1,
+.phoneNumberInput {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   justify-content: flex-start;
 }
-.rectangleContainer {
+.phoneNumberInput {
   flex: 1;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: var(--br-11xs);
@@ -214,42 +213,41 @@
   padding: var(--padding-6xs) var(--padding-2xs);
   z-index: 1;
 }
-.phoneNumberInput {
+.phoneNumber1 {
   width: 295px;
   padding: 0 0 var(--padding-3xs);
   box-sizing: border-box;
 }
-.credentialsInput,
-.registerForm {
+.credentials,
+.registrationForm {
   align-self: stretch;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 }
-.credentialsInput {
+.credentials {
   align-items: flex-start;
   gap: var(--gap-6xs);
   text-align: left;
   font-size: var(--font-size-xs);
   font-family: var(--font-inter);
 }
-.registerForm {
+.registrationForm {
   align-items: flex-end;
-  gap: var(--gap-16xl);
+  gap: var(--gap-10xl);
 }
 .alreadyHaveAn,
 .loginNow {
+  margin-top: 20px;
   position: relative;
   z-index: 1;
 }
 .loginNow {
   text-decoration: underline;
   color: var(--color-cornflowerblue-200);
-  display: inline-block;
-  min-width: 65px;
   cursor: pointer;
 }
-.loginPrompt {
+.login {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -265,12 +263,14 @@
   display: none;
 }
 .register1 {
+  height: 19px;
   flex: 1;
   position: relative;
   font-size: var(--font-size-xs);
   font-family: var(--font-montserrat);
   color: var(--color-white);
   text-align: center;
+  display: inline-block;
   z-index: 1;
 }
 .submitButton {
@@ -285,24 +285,24 @@
   flex-direction: row;
   z-index: 1;
 }
-.submissionContent,
-.submitButton,
-.submitButtonWrapper {
+.account,
+.submit,
+.submitButton {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
 }
-.submitButtonWrapper {
+.submit {
   width: 208px;
   flex-direction: row;
   padding: 0 var(--padding-4xs);
   box-sizing: border-box;
 }
-.submissionContent {
+.account {
   flex-direction: column;
   gap: var(--gap-smi);
 }
-.main,
+.formContainer,
 .submission {
   display: flex;
   flex-direction: row;
@@ -313,7 +313,7 @@
   max-width: 100%;
   font-size: var(--font-size-xs);
 }
-.main {
+.formContainer {
   width: 535px;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: var(--br-13xl);
@@ -331,7 +331,7 @@
   font-family: var(--font-montserrat);
 }
 @media screen and (max-width: 750px) {
-  .main {
+  .formContainer {
     gap: var(--gap-42xl);
     padding: var(--padding-xl) var(--padding-15xl) var(--padding-xl)
       var(--padding-14xl);
@@ -339,20 +339,17 @@
   }
 }
 @media screen and (max-width: 450px) {
-  .firstName1,
+  .firstName2,
   .lastName1,
   .phoneNo {
     font-size: var(--font-size-base);
-  }
-  .registerForm {
-    gap: var(--gap-mid);
   }
   .submission {
     padding-left: var(--padding-xl);
     padding-right: var(--padding-xl);
     box-sizing: border-box;
   }
-  .main {
+  .formContainer {
     gap: var(--gap-12xl);
   }
 }
