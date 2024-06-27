@@ -126,6 +126,17 @@ const UserProfile: FunctionComponent = () => {
                   />
                 </div>
               </div>
+              <div className={styles.editButtonWrapper}>
+                <button className={styles.editButton}>
+                  <div className={styles.editButtonChild} />
+                  <a className={styles.edit}>Edit</a>
+                  <img
+                    className={styles.materialSymbolseditIcon}
+                    alt=""
+                    src="/materialsymbolsedit.svg"
+                  />
+                </button>
+              </div>
             </div>
             <div className={styles.profileInfo}>
               <div className={styles.frameParent}>
