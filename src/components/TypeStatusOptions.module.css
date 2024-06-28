@@ -1,0 +1,743 @@
+.propertyName {
+  flex: 1;
+  position: relative;
+}
+.propertyNameWrapper {
+  width: 125px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 var(--padding-11xs);
+  box-sizing: border-box;
+}
+.propertyNameInputChild {
+  height: 42px;
+  width: 671px;
+  position: relative;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: var(--br-11xs);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-400);
+  box-sizing: border-box;
+  display: none;
+  max-width: 100%;
+}
+.propertyName1 {
+  width: 113px;
+  border: 0;
+  outline: 0;
+  font-family: var(--font-montserrat);
+  font-size: var(--font-size-mini);
+  background-color: transparent;
+  height: 18px;
+  position: relative;
+  color: var(--color-gray-200);
+  text-align: left;
+  display: inline-block;
+  padding: 0;
+  z-index: 1;
+}
+.propertyNameInput {
+  align-self: stretch;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: var(--br-11xs);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-400);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-3xs) var(--padding-sm);
+  max-width: 100%;
+}
+.location {
+  width: 151px;
+  position: relative;
+  display: inline-block;
+}
+.locationInputChild {
+  height: 42px;
+  width: 671px;
+  position: relative;
+  border-radius: var(--br-11xs);
+  display: none;
+  max-width: 100%;
+}
+.location1 {
+  width: 61px;
+  border: 0;
+  outline: 0;
+  font-family: var(--font-montserrat);
+  font-size: var(--font-size-mini);
+  background-color: transparent;
+  height: 18px;
+  position: relative;
+  color: var(--color-gray-200);
+  text-align: left;
+  display: inline-block;
+  padding: 0;
+  z-index: 1;
+}
+.locationInput,
+.locationParent,
+.propertyDetailsContent {
+  align-self: stretch;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  max-width: 100%;
+}
+.locationInput {
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: var(--br-11xs);
+  background-color: var(--color-white);
+  border: 0 solid var(--color-gray-400);
+  box-sizing: border-box;
+  flex-direction: row;
+  padding: var(--padding-xs) var(--padding-sm);
+}
+.locationParent,
+.propertyDetailsContent {
+  flex-direction: column;
+  gap: var(--gap-9xs);
+}
+.propertyDetailsContent {
+  gap: var(--gap-base);
+}
+.type {
+  flex: 1;
+  position: relative;
+}
+.typeWrapper {
+  width: 100px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 var(--padding-11xs);
+  box-sizing: border-box;
+}
+.frameChild {
+  height: 42px;
+  width: 295px;
+  position: relative;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: var(--br-11xs);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-400);
+  box-sizing: border-box;
+  display: none;
+}
+.type1 {
+  width: 36px;
+  border: 0;
+  outline: 0;
+  font-family: var(--font-montserrat);
+  font-size: var(--font-size-mini);
+  background-color: transparent;
+  height: 18px;
+  position: relative;
+  color: var(--color-gray-200);
+  text-align: left;
+  display: inline-block;
+  padding: 0;
+  z-index: 1;
+}
+.primaryOptionButtons,
+.rectangleParent {
+  align-self: stretch;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.rectangleParent {
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: var(--br-11xs);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-400);
+  flex-direction: row;
+  padding: var(--padding-6xs) var(--padding-sm) var(--padding-smi);
+}
+.primaryOptionButtons {
+  flex-direction: column;
+  gap: var(--gap-6xs);
+}
+.status {
+  flex: 1;
+  position: relative;
+}
+.statusWrapper {
+  width: 89px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 var(--padding-11xs);
+  box-sizing: border-box;
+}
+.frameItem {
+  height: 42px;
+  width: 295px;
+  position: relative;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-400);
+  box-sizing: border-box;
+  display: none;
+}
+.status1 {
+  width: 48px;
+  border: 0;
+  outline: 0;
+  font-family: var(--font-montserrat);
+  font-size: var(--font-size-mini);
+  background-color: transparent;
+  height: 18px;
+  position: relative;
+  color: var(--color-gray-200);
+  text-align: left;
+  display: inline-block;
+  padding: 0;
+  z-index: 1;
+}
+.primaryOptionButtons1,
+.rectangleGroup {
+  align-self: stretch;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.rectangleGroup {
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-400);
+  flex-direction: row;
+  padding: var(--padding-xs) var(--padding-sm) var(--padding-5xs);
+}
+.primaryOptionButtons1 {
+  flex-direction: column;
+  gap: var(--gap-5xs);
+}
+.bedrooms {
+  flex: 1;
+  position: relative;
+}
+.bedroomsWrapper {
+  width: 91px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 var(--padding-10xs);
+  box-sizing: border-box;
+}
+.frameInner {
+  height: 42px;
+  width: 295px;
+  position: relative;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-400);
+  box-sizing: border-box;
+  display: none;
+}
+.bedrooms1 {
+  width: 79px;
+  border: 0;
+  outline: 0;
+  font-family: var(--font-montserrat);
+  font-size: var(--font-size-mini);
+  background-color: transparent;
+  height: 18px;
+  position: relative;
+  color: var(--color-gray-200);
+  text-align: left;
+  display: inline-block;
+  padding: 0;
+  z-index: 1;
+}
+.primaryOptionButtons2,
+.rectangleContainer {
+  align-self: stretch;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.rectangleContainer {
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-400);
+  flex-direction: row;
+  padding: var(--padding-2xs) var(--padding-sm) var(--padding-4xs);
+}
+.primaryOptionButtons2 {
+  flex-direction: column;
+  gap: var(--gap-7xs);
+}
+.price {
+  flex: 1;
+  position: relative;
+}
+.priceWrapper,
+.primaryOptions {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.priceWrapper {
+  width: 155px;
+  flex-direction: row;
+  padding: 0 var(--padding-11xs);
+  box-sizing: border-box;
+}
+.primaryOptions {
+  width: 295px;
+  flex-direction: column;
+  gap: var(--gap-xl);
+}
+.area,
+.rectangleDiv {
+  width: 85px;
+  position: relative;
+  display: inline-block;
+}
+.rectangleDiv {
+  height: 42px;
+  width: 295px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: var(--br-11xs);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-400);
+  box-sizing: border-box;
+  display: none;
+}
+.area1 {
+  width: 35px;
+  border: 0;
+  outline: 0;
+  font-family: var(--font-montserrat);
+  font-size: var(--font-size-mini);
+  background-color: transparent;
+  height: 18px;
+  position: relative;
+  color: var(--color-gray-200);
+  text-align: left;
+  display: inline-block;
+  padding: 0;
+  z-index: 1;
+}
+.frameDiv,
+.listingContent {
+  align-self: stretch;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.frameDiv {
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: var(--br-11xs);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-400);
+  flex-direction: row;
+  padding: var(--padding-6xs) var(--padding-3xs) var(--padding-smi);
+}
+.listingContent {
+  flex-direction: column;
+  gap: var(--gap-5xs);
+}
+.frameChild1,
+.furnishing {
+  width: 85px;
+  position: relative;
+  display: inline-block;
+}
+.frameChild1 {
+  height: 42px;
+  width: 295px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-400);
+  box-sizing: border-box;
+  display: none;
+}
+.furnishing1 {
+  width: 82px;
+  border: 0;
+  outline: 0;
+  font-family: var(--font-montserrat);
+  font-size: var(--font-size-mini);
+  background-color: transparent;
+  height: 18px;
+  position: relative;
+  color: var(--color-gray-200);
+  text-align: left;
+  display: inline-block;
+  padding: 0;
+  z-index: 1;
+}
+.listingHeader,
+.rectangleParent1 {
+  align-self: stretch;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.rectangleParent1 {
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-400);
+  flex-direction: row;
+  padding: var(--padding-2xs) var(--padding-3xs) var(--padding-4xs);
+}
+.listingHeader {
+  flex-direction: column;
+  gap: var(--gap-8xs);
+}
+.bathrooms,
+.frameChild2 {
+  width: 85px;
+  position: relative;
+  display: inline-block;
+}
+.frameChild2 {
+  height: 42px;
+  width: 295px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-400);
+  box-sizing: border-box;
+  display: none;
+}
+.bathroom {
+  width: 77px;
+  border: 0;
+  outline: 0;
+  font-family: var(--font-montserrat);
+  font-size: var(--font-size-mini);
+  background-color: transparent;
+  height: 18px;
+  position: relative;
+  color: var(--color-gray-200);
+  text-align: left;
+  display: inline-block;
+  padding: 0;
+  z-index: 1;
+}
+.rectangleParent2 {
+  align-self: stretch;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-400);
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-7xs) var(--padding-xs) var(--padding-sm);
+}
+.bathroomsParent {
+  align-self: stretch;
+  gap: var(--gap-8xs);
+}
+.bathroomsParent,
+.secondaryOptionButtons,
+.secondaryOptions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.secondaryOptionButtons {
+  align-self: stretch;
+  gap: var(--gap-3xl);
+}
+.secondaryOptions {
+  width: 295px;
+  padding: var(--padding-11xs) 0 0;
+  box-sizing: border-box;
+}
+.propertyOptionsContent {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--gap-xl);
+}
+.priceInputLabelChild {
+  height: 42px;
+  width: 671px;
+  position: relative;
+  border-radius: var(--br-11xs);
+  display: none;
+  max-width: 100%;
+}
+.price1 {
+  width: 38px;
+  border: 0;
+  outline: 0;
+  font-family: var(--font-montserrat);
+  font-size: var(--font-size-mini);
+  background-color: transparent;
+  height: 18px;
+  position: relative;
+  color: var(--color-gray-200);
+  text-align: left;
+  display: inline-block;
+  padding: 0;
+  z-index: 1;
+}
+.priceInputLabel {
+  align-self: stretch;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: var(--br-11xs);
+  background-color: var(--color-white);
+  border: 0 solid var(--color-gray-400);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-2xs) var(--padding-sm) var(--padding-smi);
+  max-width: 100%;
+}
+.description {
+  flex: 1;
+  position: relative;
+}
+.descriptionInput,
+.descriptionWrapper {
+  width: 157px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 var(--padding-10xs);
+  box-sizing: border-box;
+}
+.descriptionInput {
+  border: 0 solid var(--color-gray-400);
+  background-color: var(--color-white);
+  height: 87px;
+  width: auto;
+  outline: 0;
+  align-self: stretch;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: var(--br-11xs);
+  padding: var(--padding-5xs) var(--padding-sm);
+  font-family: var(--font-montserrat);
+  font-size: var(--font-size-mini);
+  color: var(--color-gray-200);
+}
+.frameParent,
+.priceInputLabelParent,
+.propertyOptionsContentParent {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-9xs);
+}
+.priceInputLabelParent,
+.propertyOptionsContentParent {
+  gap: var(--gap-mini);
+  max-width: 100%;
+}
+.propertyOptionsContentParent {
+  gap: var(--gap-2xs);
+}
+.amenities {
+  flex: 1;
+  position: relative;
+}
+.amenitiesWrapper {
+  width: 159px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 var(--padding-9xs);
+  box-sizing: border-box;
+}
+.amenitiesInputChild {
+  height: 42px;
+  width: 671px;
+  position: relative;
+  border-radius: var(--br-11xs);
+  display: none;
+  max-width: 100%;
+}
+.amenities1 {
+  width: 77px;
+  border: 0;
+  outline: 0;
+  font-family: var(--font-montserrat);
+  font-size: var(--font-size-mini);
+  background-color: transparent;
+  height: 18px;
+  position: relative;
+  color: var(--color-gray-200);
+  text-align: left;
+  display: inline-block;
+  padding: 0;
+  z-index: 1;
+}
+.amenitiesInput,
+.frameGroup {
+  align-self: stretch;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  max-width: 100%;
+}
+.amenitiesInput {
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: var(--br-11xs);
+  background-color: var(--color-white);
+  border: 0 solid var(--color-gray-400);
+  box-sizing: border-box;
+  flex-direction: row;
+  padding: var(--padding-2xs) var(--padding-sm) var(--padding-smi);
+}
+.frameGroup {
+  flex-direction: column;
+  gap: var(--gap-9xs);
+}
+.additionalPhone {
+  position: relative;
+  display: inline-block;
+  min-width: 106px;
+}
+.phoneInput {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 var(--padding-7xs);
+}
+.mailInputChild {
+  height: 42px;
+  width: 295px;
+  position: relative;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-400);
+  box-sizing: border-box;
+  display: none;
+}
+.additionalPhone1 {
+  width: 132px;
+  border: 0;
+  outline: 0;
+  font-family: var(--font-montserrat);
+  font-size: var(--font-size-mini);
+  background-color: transparent;
+  height: 18px;
+  position: relative;
+  color: var(--color-gray-200);
+  text-align: left;
+  display: inline-block;
+  padding: 0;
+  z-index: 1;
+}
+.contactInputs,
+.mailInput {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.mailInput {
+  align-self: stretch;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-400);
+  flex-direction: row;
+  padding: var(--padding-4xs) var(--padding-sm) var(--padding-2xs);
+}
+.contactInputs {
+  width: 295px;
+  flex-direction: column;
+  gap: var(--gap-8xs);
+}
+.additionalMail {
+  position: relative;
+  display: inline-block;
+  min-width: 95px;
+}
+.frameChild3 {
+  height: 42px;
+  width: 295px;
+  position: relative;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-400);
+  box-sizing: border-box;
+  display: none;
+}
+.additionalMail1 {
+  width: 115px;
+  border: 0;
+  outline: 0;
+  font-family: var(--font-montserrat);
+  font-size: var(--font-size-mini);
+  background-color: transparent;
+  height: 18px;
+  position: relative;
+  color: var(--color-gray-200);
+  text-align: left;
+  display: inline-block;
+  padding: 0;
+  z-index: 1;
+}
+.contactInputs1,
+.rectangleParent3 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.rectangleParent3 {
+  align-self: stretch;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-400);
+  flex-direction: row;
+  padding: var(--padding-3xs) var(--padding-3xl);
+}
+.contactInputs1 {
+  width: 295px;
+  flex-direction: column;
+  gap: var(--gap-8xs);
+}
+.contactInputsParent {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--gap-xl);
+}
+.typeStatusOptions {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-2xl-3);
+  min-width: 439px;
+  max-width: 100%;
+  text-align: left;
+  font-size: var(--font-size-xs);
+  color: var(--color-black);
+  font-family: var(--font-inter);
+}
+@media screen and (max-width: 725px) {
+  .contactInputsParent,
+  .propertyOptionsContent {
+    flex-wrap: wrap;
+  }
+  .typeStatusOptions {
+    min-width: 100%;
+  }
+}

@@ -1,0 +1,25 @@
+/* * {border: 1px solid green;}  */
+
+.propertyListingsPage {
+  background-color: var(--color-white);
+  overflow: hidden;
+}
+
+.sortAndFilterParent {
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+}
+
+.listings {
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 40px;
+  width: 100%;
+}
+
+.listings > * {
+  height: fit-content;
+}

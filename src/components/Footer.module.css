@@ -1,0 +1,139 @@
+.footerChild {
+  height: 400px;
+  width: 1440px;
+  position: relative;
+  background-color: var(--color-black);
+  display: none;
+  max-width: 100%;
+}
+.logo {
+  width: 88px;
+  display: inline-block;
+}
+.aboutUs,
+.itIsA,
+.logo {
+  position: relative;
+  font-weight: 600;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  z-index: 2;
+}
+.itIsA {
+  align-self: stretch;
+  font-size: var(--font-size-mini);
+}
+.aboutUs {
+  width: 123px;
+  display: inline-block;
+  cursor: pointer;
+}
+.logoParent {
+  width: 360px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-10xl);
+  max-width: 100%;
+}
+.buy {
+  align-self: stretch;
+  position: relative;
+  font-weight: 600;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  z-index: 2;
+}
+.rent {
+  display: inline-block;
+  min-width: 67px;
+}
+.admin,
+.rent,
+.sell {
+  position: relative;
+  font-weight: 600;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  z-index: 2;
+}
+.sell {
+  align-self: stretch;
+}
+.admin {
+  display: inline-block;
+  min-width: 67px;
+}
+.rentParent,
+.rentSell {
+  align-self: stretch;
+  flex-direction: column;
+}
+.rentSell {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-7xl);
+}
+.rentParent {
+  gap: var(--gap-12xl);
+}
+.companyInfo,
+.footer,
+.rentParent {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.companyInfo {
+  width: 67px;
+  flex-direction: column;
+  gap: var(--gap-9xl);
+}
+.footer {
+  align-self: stretch;
+  background-color: var(--color-black);
+  flex-direction: row;
+  padding: var(--padding-70xl) var(--padding-101xl) var(--padding-49xl);
+  box-sizing: border-box;
+  gap: var(--gap-619xl);
+  max-width: 100%;
+  z-index: 1;
+  text-align: left;
+  font-size: var(--font-size-4xl);
+  color: var(--color-white);
+  font-family: var(--font-montserrat);
+}
+@media screen and (max-width: 1275px) {
+  .footer {
+    flex-wrap: wrap;
+    gap: var(--gap-300xl);
+    padding-left: var(--padding-41xl);
+    padding-right: var(--padding-41xl);
+    box-sizing: border-box;
+  }
+}
+@media screen and (max-width: 750px) {
+  .footer {
+    gap: var(--gap-140xl);
+    padding-left: var(--padding-11xl);
+    padding-right: var(--padding-11xl);
+    box-sizing: border-box;
+  }
+}
+@media screen and (max-width: 450px) {
+  .aboutUs,
+  .buy,
+  .admin,
+  .logo,
+  .rent,
+  .sell {
+    font-size: var(--font-size-lg);
+  }
+  .footer {
+    gap: var(--gap-61xl);
+    padding-top: var(--padding-39xl);
+    padding-bottom: var(--padding-25xl);
+    box-sizing: border-box;
+  }
+}

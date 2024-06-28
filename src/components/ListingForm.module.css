@@ -1,0 +1,681 @@
+.rentYourProperty {
+  margin: 0;
+  position: relative;
+  font-size: inherit;
+  font-weight: 400;
+  font-family: inherit;
+}
+.header {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0 var(--padding-xl) 0 var(--padding-182xl);
+}
+.propertyName1 {
+  flex: 1;
+  position: relative;
+}
+.nameLabel {
+  width: 125px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 var(--padding-11xs);
+  box-sizing: border-box;
+}
+.nameValueChild {
+  height: 42px;
+  width: 671px;
+  position: relative;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: var(--br-11xs);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-400);
+  box-sizing: border-box;
+  display: none;
+  max-width: 100%;
+}
+.propertyName2 {
+  width: 113px;
+  border: 0;
+  outline: 0;
+  font-family: var(--font-montserrat);
+  font-size: var(--font-size-mini);
+  background-color: transparent;
+  height: 18px;
+  position: relative;
+  color: var(--color-gray-200);
+  text-align: left;
+  display: inline-block;
+  padding: 0;
+  z-index: 1;
+}
+.nameValue {
+  align-self: stretch;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: var(--br-11xs);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-400);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-3xs);
+  max-width: 100%;
+}
+.location {
+  width: 151px;
+  position: relative;
+  display: inline-block;
+}
+.locationValueChild {
+  height: 42px;
+  width: 671px;
+  position: relative;
+  border-radius: var(--br-11xs);
+  display: none;
+  max-width: 100%;
+}
+.location1 {
+  width: 61px;
+  border: 0;
+  outline: 0;
+  font-family: var(--font-montserrat);
+  font-size: var(--font-size-mini);
+  background-color: transparent;
+  height: 18px;
+  position: relative;
+  color: var(--color-gray-200);
+  text-align: left;
+  display: inline-block;
+  padding: 0;
+  z-index: 1;
+}
+.locationInput,
+.locationValue,
+.propertyName {
+  align-self: stretch;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  max-width: 100%;
+}
+.locationValue {
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: var(--br-11xs);
+  background-color: var(--color-white);
+  border: 0 solid var(--color-gray-400);
+  box-sizing: border-box;
+  flex-direction: row;
+  padding: var(--padding-xs) var(--padding-3xs);
+}
+.locationInput,
+.propertyName {
+  flex-direction: column;
+  gap: var(--gap-9xs);
+}
+.propertyName {
+  gap: var(--gap-4xs);
+}
+.type {
+  flex: 1;
+  position: relative;
+}
+.typeWrapper {
+  width: 100px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 var(--padding-11xs);
+  box-sizing: border-box;
+}
+.frameChild {
+  height: 42px;
+  width: 295px;
+  position: relative;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: var(--br-11xs);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-400);
+  box-sizing: border-box;
+  display: none;
+}
+.type1 {
+  width: 36px;
+  border: 0;
+  outline: 0;
+  font-family: var(--font-montserrat);
+  font-size: var(--font-size-mini);
+  background-color: transparent;
+  height: 18px;
+  position: relative;
+  color: var(--color-gray-200);
+  text-align: left;
+  display: inline-block;
+  padding: 0;
+  z-index: 1;
+}
+.frameParent,
+.rectangleParent {
+  align-self: stretch;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.rectangleParent {
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: var(--br-11xs);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-400);
+  flex-direction: row;
+  padding: var(--padding-3xs);
+}
+.frameParent {
+  flex-direction: column;
+  padding: 0 0 var(--padding-9xs);
+  gap: var(--gap-6xs);
+}
+.status {
+  flex: 1;
+  position: relative;
+}
+.statusWrapper {
+  width: 89px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 var(--padding-11xs);
+  box-sizing: border-box;
+}
+.frameItem {
+  height: 42px;
+  width: 295px;
+  position: relative;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-400);
+  box-sizing: border-box;
+  display: none;
+}
+.status1 {
+  width: 48px;
+  border: 0;
+  outline: 0;
+  font-family: var(--font-montserrat);
+  font-size: var(--font-size-mini);
+  background-color: transparent;
+  height: 18px;
+  position: relative;
+  color: var(--color-gray-200);
+  text-align: left;
+  display: inline-block;
+  padding: 0;
+  z-index: 1;
+}
+.frameGroup,
+.rectangleGroup {
+  align-self: stretch;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.rectangleGroup {
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-400);
+  flex-direction: row;
+  padding: var(--padding-5xs) var(--padding-3xs) var(--padding-xs);
+}
+.frameGroup {
+  flex-direction: column;
+  gap: var(--gap-5xs);
+}
+.bedrooms {
+  flex: 1;
+  position: relative;
+}
+.bedroomsWrapper {
+  width: 91px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 var(--padding-10xs);
+  box-sizing: border-box;
+}
+.frameInner {
+  height: 42px;
+  width: 295px;
+  position: relative;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-400);
+  box-sizing: border-box;
+  display: none;
+}
+.bedrooms1 {
+  width: 79px;
+  border: 0;
+  outline: 0;
+  font-family: var(--font-montserrat);
+  font-size: var(--font-size-mini);
+  background-color: transparent;
+  height: 18px;
+  position: relative;
+  color: var(--color-gray-200);
+  text-align: left;
+  display: inline-block;
+  padding: 0;
+  z-index: 1;
+}
+.frameContainer,
+.rectangleContainer {
+  align-self: stretch;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.rectangleContainer {
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-400);
+  flex-direction: row;
+  padding: var(--padding-3xs);
+}
+.frameContainer {
+  flex-direction: column;
+  gap: var(--gap-6xs);
+}
+.price {
+  flex: 1;
+  position: relative;
+}
+.priceInput {
+  width: 155px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 var(--padding-11xs);
+  box-sizing: border-box;
+}
+.bathroomFurnishingInputs,
+.typeStatusInputs {
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.typeStatusInputs {
+  width: 295px;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--gap-lg);
+}
+.bathroomFurnishingInputs {
+  align-self: stretch;
+  gap: var(--gap-3xl);
+}
+.bathroomFurnishing,
+.bathroomFurnishingInputs,
+.typeStatus {
+  display: flex;
+  align-items: flex-start;
+}
+.bathroomFurnishing {
+  width: 295px;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: var(--padding-11xs) 0 0;
+  box-sizing: border-box;
+}
+.typeStatus {
+  align-self: stretch;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: var(--gap-xl);
+}
+.rectangleIcon {
+  height: 42px;
+  width: 671px;
+  position: relative;
+  border-radius: var(--br-11xs);
+  display: none;
+  max-width: 100%;
+}
+.price1 {
+  width: 38px;
+  border: 0;
+  outline: 0;
+  font-family: var(--font-montserrat);
+  font-size: var(--font-size-mini);
+  background-color: transparent;
+  height: 18px;
+  position: relative;
+  color: var(--color-gray-200);
+  text-align: left;
+  display: inline-block;
+  padding: 0;
+  z-index: 1;
+}
+.typeStatusBedroomsInner,
+.vectorParent {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+.vectorParent {
+  flex: 1;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: var(--br-11xs);
+  background-color: var(--color-white);
+  border: 0 solid var(--color-gray-400);
+  padding: var(--padding-xs) var(--padding-3xs);
+}
+.typeStatusBedroomsInner {
+  align-self: stretch;
+  padding: 0 0 var(--padding-sm);
+}
+.description {
+  flex: 1;
+  position: relative;
+}
+.descriptionLabel {
+  width: 157px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 var(--padding-10xs);
+  box-sizing: border-box;
+}
+.descriptionInput,
+.descriptionValue,
+.typeStatusBedrooms {
+  align-self: stretch;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.descriptionValue {
+  border: 0 solid var(--color-gray-400);
+  background-color: var(--color-white);
+  height: 87px;
+  width: auto;
+  outline: 0;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: var(--br-11xs);
+  box-sizing: border-box;
+  flex-direction: row;
+  padding: 0 var(--padding-3xs);
+  font-family: var(--font-montserrat);
+  font-size: var(--font-size-mini);
+  color: var(--color-gray-200);
+}
+.descriptionInput,
+.typeStatusBedrooms {
+  flex-direction: column;
+  gap: var(--gap-7xs);
+}
+.typeStatusBedrooms {
+  max-width: 100%;
+}
+.amenities {
+  flex: 1;
+  position: relative;
+}
+.amenitiesLabel {
+  width: 159px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 var(--padding-9xs);
+  box-sizing: border-box;
+}
+.amenitiesValueChild {
+  height: 42px;
+  width: 671px;
+  position: relative;
+  border-radius: var(--br-11xs);
+  display: none;
+  max-width: 100%;
+}
+.amenities1 {
+  width: 77px;
+  border: 0;
+  outline: 0;
+  font-family: var(--font-montserrat);
+  font-size: var(--font-size-mini);
+  background-color: transparent;
+  height: 18px;
+  position: relative;
+  color: var(--color-gray-200);
+  text-align: left;
+  display: inline-block;
+  padding: 0;
+  z-index: 1;
+}
+.amenitiesInput,
+.amenitiesValue {
+  align-self: stretch;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  max-width: 100%;
+}
+.amenitiesValue {
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: var(--br-11xs);
+  background-color: var(--color-white);
+  border: 0 solid var(--color-gray-400);
+  box-sizing: border-box;
+  flex-direction: row;
+  padding: var(--padding-3xs) var(--padding-3xs) var(--padding-sm);
+}
+.amenitiesInput {
+  flex-direction: column;
+  gap: var(--gap-7xs);
+}
+.additionalPhone {
+  position: relative;
+  display: inline-block;
+  min-width: 106px;
+}
+.phoneInput {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 var(--padding-7xs);
+}
+.mailInputChild {
+  height: 42px;
+  width: 295px;
+  position: relative;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-400);
+  box-sizing: border-box;
+  display: none;
+}
+.additionalPhone1 {
+  width: 132px;
+  border: 0;
+  outline: 0;
+  font-family: var(--font-montserrat);
+  font-size: var(--font-size-mini);
+  background-color: transparent;
+  height: 18px;
+  position: relative;
+  color: var(--color-gray-200);
+  text-align: left;
+  display: inline-block;
+  padding: 0;
+  z-index: 1;
+}
+.mailInput,
+.phoneMailInputs {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.mailInput {
+  align-self: stretch;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-400);
+  flex-direction: row;
+  padding: var(--padding-3xs);
+}
+.phoneMailInputs {
+  width: 295px;
+  flex-direction: column;
+  gap: var(--gap-8xs);
+}
+.additionalMail {
+  position: relative;
+  display: inline-block;
+  min-width: 95px;
+}
+.rectangleDiv {
+  height: 42px;
+  width: 295px;
+  position: relative;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-400);
+  box-sizing: border-box;
+  display: none;
+}
+.additionalMail1 {
+  width: 115px;
+  border: 0;
+  outline: 0;
+  font-family: var(--font-montserrat);
+  font-size: var(--font-size-mini);
+  background-color: transparent;
+  height: 18px;
+  position: relative;
+  color: var(--color-gray-200);
+  text-align: left;
+  display: inline-block;
+  padding: 0;
+  z-index: 1;
+}
+.frameDiv,
+.phoneMailInputs1 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.frameDiv {
+  align-self: stretch;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-400);
+  flex-direction: row;
+  padding: var(--padding-3xs) var(--padding-5xs);
+}
+.phoneMailInputs1 {
+  width: 295px;
+  flex-direction: column;
+  gap: var(--gap-8xs);
+}
+.bathFurnish,
+.contactInfo {
+  align-self: stretch;
+  gap: var(--gap-xl);
+}
+.contactInfo {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.bathFurnish {
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.bathFurnish,
+.imageUpload,
+.listingForm,
+.propertyDetails {
+  display: flex;
+  align-items: flex-start;
+  max-width: 100%;
+}
+.propertyDetails {
+  flex: 1;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: var(--padding-sm) 0 0;
+  box-sizing: border-box;
+  min-width: 439px;
+}
+.imageUpload,
+.listingForm {
+  align-self: stretch;
+  flex-direction: row;
+  justify-content: center;
+  gap: var(--gap-60xl);
+  font-size: var(--font-size-xs);
+  font-family: var(--font-inter);
+}
+.listingForm {
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: var(--gap-29xl);
+  text-align: left;
+  font-size: var(--font-size-21xl);
+  color: var(--color-black);
+  font-family: var(--font-montserrat);
+}
+@media screen and (max-width: 1050px) {
+  .imageUpload {
+    gap: var(--gap-20xl);
+  }
+}
+@media screen and (max-width: 1000px) {
+  .rentYourProperty {
+    font-size: var(--font-size-13xl);
+  }
+  .imageUpload {
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 725px) {
+  .header {
+    padding-left: var(--padding-81xl);
+    box-sizing: border-box;
+  }
+  .contactInfo,
+  .typeStatus {
+    flex-wrap: wrap;
+  }
+  .propertyDetails {
+    min-width: 100%;
+  }
+  .imageUpload {
+    gap: var(--gap-xl);
+  }
+  .listingForm {
+    gap: var(--gap-5xl);
+  }
+}
+@media screen and (max-width: 450px) {
+  .rentYourProperty {
+    font-size: var(--font-size-5xl);
+  }
+  .header {
+    padding-left: var(--padding-xl);
+    box-sizing: border-box;
+  }
+}
