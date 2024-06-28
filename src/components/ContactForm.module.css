@@ -1,0 +1,93 @@
+.ContactForm * {
+    font-family: var(--font-montserrat);
+}
+
+.ContactForm {
+    width: 100%;
+    padding: 8vw;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.heading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.contact {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.contact > * {
+    width: 550px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+}
+
+.form > * {
+    width: 100%;
+    font-size: 20px;
+    line-height: 30px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    background-color: var(--color-whitesmoke-100);
+}
+
+.form > textarea {
+    max-width: 550px;
+    min-width: 550px;
+    max-height: 200px;
+    min-height: 200px;
+}
+
+.btn {
+    border-radius: 50px;
+    padding: 10px 50px;
+    width: min-content;
+    color: var(--color-white);
+    background: linear-gradient(
+        90deg, 
+        var(--color-cornflowerblue-200),
+        var(--color-slateblue)
+    );
+}
+
+.broker {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.datarow {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.basis {
+    width: 130px;
+    padding: 10px;
+}
+
+.data {
+    width: 400px;
+    padding: 10px;
+    font-weight: 700;
+}

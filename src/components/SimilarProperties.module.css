@@ -1,0 +1,31 @@
+.SimilarProperties * {
+    font-family: var(--font-montserrat);
+}
+
+.SimilarProperties {
+    width: 100%;
+    padding: 8vw;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.heading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.similarlistings {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    width: 100%;
+}
+
+.similarlistings > * {
+    height: fit-content;
+}
