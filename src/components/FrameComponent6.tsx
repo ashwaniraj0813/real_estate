@@ -1,37 +1,43 @@
 import { FunctionComponent } from "react";
 import styles from "./FrameComponent6.module.css";
 
-export type FrameComponent6Type = {
-  className?: string;
+export type FrameComponent6Props = {
+  title: string;
+  city: string;
+  price: string;
+  area: string;
 };
 
-const FrameComponent6: FunctionComponent<FrameComponent6Type> = ({
-  className = "",
+const FrameComponent6: FunctionComponent<FrameComponent6Props> = ({
+  title,
+  city,
+  price,
+  area,
 }) => {
   return (
-    <section className={[styles.breadcrumbWrapper, className].join(" ")}>
+    <section className={styles.breadcrumbWrapper}>
       <div className={styles.breadcrumb}>
-        <div className={styles.homeUk}>{`Home  > UK > London > The Lyra`}</div>
+        <div className={styles.homeUk}>{`Home > ${city} > ${title}`}</div>
         <div className={styles.propertyInfo}>
           <div className={styles.propertyDetails}>
             <div className={styles.propertyAttributes}>
               <div className={styles.attributeLabels}>
-                <div className={styles.type}>Type</div>
+                <div className={styles.type}>Type: Apartment</div>
               </div>
-              <div className={styles.status}>Status</div>
+              <div className={styles.status}>Status: Ready to move</div>
               <div className={styles.attributeLabels1}>
-                <div className={styles.area}>Area</div>
+                <div className={styles.area}>Area: {area}</div>
               </div>
               <div className={styles.furnishingLabel}>
-                <div className={styles.furnishing}>Furnishing</div>
+                <div className={styles.furnishing}>Furnishing: Furnished</div>
               </div>
               <div className={styles.attributeLabels2}>
-                <div className={styles.bedrooms}>Bedrooms</div>
+                <div className={styles.bedrooms}>Bedrooms: 4</div>
               </div>
               <div className={styles.attributeLabels3}>
-                <div className={styles.bathrooms}>Bathrooms</div>
+                <div className={styles.bathrooms}>Bathrooms: 2</div>
               </div>
-              <div className={styles.price}>Price</div>
+              <div className={styles.price}>Price: £ {price}</div>
             </div>
             <div className={styles.rating}>
               <div className={styles.ratingStars}>
@@ -54,7 +60,7 @@ const FrameComponent6: FunctionComponent<FrameComponent6Type> = ({
                 <div className={styles.summaryValues1}>
                   <div className={styles.readyToMove}>Ready to move</div>
                 </div>
-                <div className={styles.ft}> 189.45 ft²</div>
+                <div className={styles.ft}> {area} </div>
                 <div className={styles.summaryValues2}>
                   <div className={styles.furnished}>Furnished</div>
                 </div>
@@ -64,7 +70,7 @@ const FrameComponent6: FunctionComponent<FrameComponent6Type> = ({
                 <div className={styles.summaryValues4}>
                   <div className={styles.div1}>2</div>
                 </div>
-                <div className={styles.div2}> £ 390000</div>
+                <div className={styles.div2}> £ {price}</div>
               </div>
             </div>
           </div>
@@ -75,10 +81,10 @@ const FrameComponent6: FunctionComponent<FrameComponent6Type> = ({
             src="/web14-1@2x.png"
           />
           <div className={styles.propertyTitle}>
-            <h2 className={styles.theLyra}>The Lyra</h2>
+            <h2 className={styles.theLyra}>{title}</h2>
             <div
               className={styles.portalNorthAction}
-            >{`Portal North Action, London, England `}</div>
+            >{`${city}, England `}</div>
           </div>
         </div>
       </div>

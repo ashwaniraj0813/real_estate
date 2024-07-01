@@ -137,7 +137,7 @@ function App() {
       />
       <Route path="/rent" element={<Rent />} />
       <Route path="/sell" element={<Sell />} />
-      <Route path="/property-details-page" element={<PropertyDetailsPage />} />
+      <Route path="/property-details-page/:property_id" element={<PropertyDetailsPage />} />
       <Route
         path="/user-previously-viewed0"
         element={<UserPreviouslyViewed />}

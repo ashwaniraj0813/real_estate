@@ -28,6 +28,7 @@ const PropertyExplorePage: FunctionComponent = () => {
     navigate("/user-profile");
   }, [navigate]);
 
+  
   return (
     <div className={styles.propertyExplorePage}>
       <header className={styles.navbar}>

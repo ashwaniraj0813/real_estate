@@ -1,5 +1,5 @@
 import { FunctionComponent, useCallback, useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import Navbar from "../components/Navbar1";
 import SortAndFilter from "../components/SortAndFilter";
 import PropertyCard from "../components/PropertyCard";
@@ -16,8 +16,8 @@ const PropertyListingsPage: FunctionComponent = () => {
         const response = await fetch("http://localhost:5000/api/property", {
           method: "GET",
           headers: {
-            "Content-Type": 'application/json'
-          }
+            "Content-Type": "application/json",
+          },
         });
 
         if (!response.ok) {
@@ -26,15 +26,13 @@ const PropertyListingsPage: FunctionComponent = () => {
 
         const result = await response.json();
         setProperties(result);
-        
-      } 
-      catch (error) {
-        console.log("Error came when fetching property cards" ,error);
+      } catch (error) {
+        console.log("Error fetching property cards:", error);
       }
     };
 
     fetchProperties();
-  }, [properties]);
+  }, []); // Empty array to ensure it runs only once when the component mounts
 
   const onRentTextClick = useCallback(() => {
     navigate("/rent");
@@ -44,27 +42,26 @@ const PropertyListingsPage: FunctionComponent = () => {
     navigate("/sell");
   }, [navigate]);
 
-  const onPropertyCardContainerClick = useCallback(() => {
-    navigate("/property-details-page");
-  }, [navigate]);
-
   return (
     <div className={styles.propertyListingsPage}>
       <Navbar />
       <main className={styles.sortAndFilterParent}>
         <SortAndFilter />
         <section className={styles.listings}>
-              {properties.map(property => (
-                  <PropertyCard
-                    key={property._id}
-                    title={property.title}
-                    city={property.city}
-                    price={property.price}
-                    area={property.area}
-                  />
-                ))}
-            {/* </div>
-          </div> */}
+          {properties.map((property) => (
+            <Link
+              key={property._id}
+              to={`/property-details-page/${property._id}`} // Fixed string interpolation with backticks
+              className={styles.linkWrapper} // Add any necessary styles for the Link
+            >
+              <PropertyCard
+                title={property.title}
+                city={property.city}
+                price={property.price.toString()} // Ensure price is converted to string if necessary
+                area={property.area.toString()} // Ensure area is converted to string if necessary
+              />
+            </Link>
+          ))}
         </section>
       </main>
     </div>

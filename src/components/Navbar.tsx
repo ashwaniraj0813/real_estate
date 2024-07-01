@@ -17,12 +17,20 @@ const Navbar: FunctionComponent<NavbarType> = ({ className = "" }) => {
     navigate("/property-listings-page");
   }, [navigate]);
 
+  const onRentTextClick = useCallback(() => {
+    navigate("/rent");
+  }, [navigate]);
+
   const onSellTextClick = useCallback(() => {
     navigate("/sell");
   }, [navigate]);
-
+  
   const onHomeIconClick = useCallback(() => {
     navigate("/user-profile");
+  }, [navigate]);
+
+  const onSearchContainerClick = useCallback(() => {
+    navigate("/property-explore-page");
   }, [navigate]);
 
   return (
@@ -61,7 +69,9 @@ const Navbar: FunctionComponent<NavbarType> = ({ className = "" }) => {
             </a>
           </div>
           <div className={styles.linkButtons1}>
-            <a className={styles.rent}>Rent</a>
+            <a className={styles.rent} onClick={onRentTextClick}>
+              Rent
+            </a>
           </div>
           <div className={styles.linkButtons2}>
             <a className={styles.sell} onClick={onSellTextClick}>
