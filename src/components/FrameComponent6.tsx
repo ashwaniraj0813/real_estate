@@ -53,25 +53,6 @@ const FrameComponent6: FunctionComponent<FrameComponent6Props> = ({
                   </div>
                 </div>
               </div>
-              <div className={styles.propertySummary}>
-                <div className={styles.summaryValues}>
-                  <div className={styles.apartment}>Apartment</div>
-                </div>
-                <div className={styles.summaryValues1}>
-                  <div className={styles.readyToMove}>Ready to move</div>
-                </div>
-                <div className={styles.ft}> {area} </div>
-                <div className={styles.summaryValues2}>
-                  <div className={styles.furnished}>Furnished</div>
-                </div>
-                <div className={styles.summaryValues3}>
-                  <div className={styles.div}>4</div>
-                </div>
-                <div className={styles.summaryValues4}>
-                  <div className={styles.div1}>2</div>
-                </div>
-                <div className={styles.div2}> £ {price}</div>
-              </div>
             </div>
           </div>
           <img
@@ -82,9 +63,7 @@ const FrameComponent6: FunctionComponent<FrameComponent6Props> = ({
           />
           <div className={styles.propertyTitle}>
             <h2 className={styles.theLyra}>{title}</h2>
-            <div
-              className={styles.portalNorthAction}
-            >{`${city}, England `}</div>
+            <div className={styles.portalNorthAction}>{city}</div>
           </div>
         </div>
       </div>
