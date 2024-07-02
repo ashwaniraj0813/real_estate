@@ -1,27 +1,216 @@
-.homePageParent {
-  align-self: stretch;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  max-width: 100%;
+/* * {border: 1px solid green;} */
+
+.homePage * {
+  font-family: var(--font-montserrat);
 }
-.homePageChild {
-  align-self: stretch;
-  height: 400px;
+
+.hero {
   position: relative;
-  background-color: var(--color-black);
-  display: none;
-}
-.homePage {
+  height: 100vh;
   width: 100%;
-  position: relative;
-  background-color: var(--color-white);
-  overflow: hidden;
+  padding: 4vw 8vw;
+  background: url("/image-1@2x.png");
+  background-size: cover;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.introtext {
+  align-self: flex-start;
+  padding: 80px 0px;
+  width: 600px;
+  font-size: 60px;
+  color: var(--color-white);
+  font-weight: 700;
+}
+
+.aptform * {
+  font-size: 22px;
+}
+
+.aptform {
+  width: 500px;  
+  padding: 50px;
+  background-color: var(--color-gainsboro-100);
+  border-radius: 50px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  line-height: normal;
-  letter-spacing: normal;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
 }
+
+.book {
+  font-weight: 700;
+}
+
+.fullname {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.fname,
+.lname {
+  width: 45%;
+  background-color: var(--color-white);
+  border: none;
+  border-radius: 10px;
+  padding: 5px;
+} 
+
+.email,
+.phno {
+  width: 100%;
+  background-color: var(--color-white);
+  border: none;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.bookappointment {
+  border: none;
+  color: var(--color-white);
+  border-radius: 30px;
+  padding: 8px 30px;
+  background-image: linear-gradient(90deg, #2895DF, #764EC6);
+}
+
+.popularfeatures {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 6vw 8vw;
+  gap: 10px;
+}
+
+.heading { 
+  font-size: 50px;
+}
+
+.subheading { 
+  font-size: 25px;
+  color: #2457C5;
+}
+
+.features {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 80px;
+  padding: 50px;
+}
+
+.feature {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.feature > img {
+  padding: 25px;
+  height: 150px;
+  width: 150px;
+  border: 2px solid #2457C5;
+}
+
+.feature > p {
+  font-size: 20px;
+}
+
+.featuredlocations {
+  width: 100%;
+  padding: 6vw 8vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.articles {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 6vw 8vw;
+  gap: 40px;
+  background-color: #764EC6;
+  color: var(--color-white);
+}
+
+.article {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 50px;
+}
+
+.article > img {
+  height: 500px;
+  width: 500px;
+}
+
+.articles > .heading { 
+  font-weight: 700;
+}
+
+.content {
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.title {
+  font-size: 35px;
+}
+
+.info {
+  font-size: 22px;
+}
+
+.readmore {
+  font-size: 25px;
+  align-self: flex-end;
+}
+
+.happycustomers {
+  background-color: var(--color-whitesmoke-100);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 6vw 8vw;
+  gap: 20px;
+}
+
+.reviews {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 12px;
+}
+
+
+
+
+
+
+
+
+
+
+
