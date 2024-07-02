@@ -35,58 +35,17 @@ const Navbar: FunctionComponent<NavbarType> = ({ className = "" }) => {
 
   return (
     <header className={[styles.navbar, className].join(" ")}>
-      <div className={styles.navbarChild} />
-      <div className={styles.logoWrapper}>
-        <a className={styles.logo} onClick={onLOGOTextClick}>
-          LOGO
-        </a>
+      <a className={`${styles.navitem} ${styles.logo}`} onClick={onLOGOTextClick}>LOGO</a>
+      <div className={`${styles.navitem} ${styles.searchBar}`}>
+          <img className={styles.searchicon} src="/icbaselinesearch1.svg" />
+          <input className={styles.searchinput} placeholder="Luxurious Penthouses ..." type="text"/>
       </div>
-      <div className={styles.searchBarWrapper}>
-        <div className={styles.searchBar}>
-          <div className={styles.searchBarChild} />
-          <img
-            className={styles.icbaselineSearchIcon}
-            alt=""
-            src="/icbaselinesearch1.svg"
-          />
-          <input
-            className={styles.searchBarItem}
-            placeholder="Search here..."
-            type="text"
-          />
-        </div>
-      </div>
-      <div className={styles.pageLinks}>
-        <div className={styles.links}>
-          <div className={styles.homeButton}>
-            <a className={styles.home} onClick={onLOGOTextClick}>
-              Home
-            </a>
-          </div>
-          <div className={styles.linkButtons}>
-            <a className={styles.buy} onClick={onBuyTextClick}>
-              Buy
-            </a>
-          </div>
-          <div className={styles.linkButtons1}>
-            <a className={styles.rent} onClick={onRentTextClick}>
-              Rent
-            </a>
-          </div>
-          <div className={styles.linkButtons2}>
-            <a className={styles.sell} onClick={onSellTextClick}>
-              Sell
-            </a>
-          </div>
-          <img
-            className={styles.homeIcon}
-            loading="lazy"
-            alt=""
-            src="/vector1.svg"
-            onClick={onHomeIconClick}
-          />
-        </div>
-      </div>
+      <a className={`${styles.navitem} ${styles.buy}`} onClick={onBuyTextClick}>Buy</a>
+      <a className={`${styles.navitem} ${styles.rent}`} onClick={onRentTextClick}>Rent</a>
+      <a className={`${styles.navitem} ${styles.sell}`} onClick={onSellTextClick}>Sell</a>
+      <a className={`${styles.navitem} ${styles.profile}`} onClick={onHomeIconClick}>
+        <img className={styles.homeIcon} src="/vector1.svg"/>
+      </a>
     </header>
   );
 };

@@ -1,13 +1,10 @@
 import { FunctionComponent, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import Navbar1 from "../components/Navbar11";
-import FrameComponent6 from "../components/FrameComponent6";
-import FrameComponent5 from "../components/FrameComponent5";
-import Amenities from "../components/Amenities";
-import FrameComponent4 from "../components/FrameComponent41";
-import FrameComponent1 from "../components/FrameComponent12";
-import FrameComponent from "../components/FrameComponent";
+import Navbar from "../components/Navbar";
 import styles from "./PropertyDetailsPage.module.css";
+import PropertyDetails from "../components/PropertyDetails";
+import ContactForm from "../components/ContactForm";
+import SimilarProperties from "../components/SimilarProperties";
 
 interface Property {
   _id: string;
@@ -59,34 +56,12 @@ const PropertyDetailsPage: FunctionComponent = () => {
 
   return (
     <div className={styles.propertyDetailsPage}>
-      <Navbar1 />
       {property ? (
-        <div>
-          <FrameComponent6
-            title={property.title}
-            city={property.city}
-            price={property.price.toString()}
-            area={property.area.toString()}
-            type={property.type}
-            status={property.status}
-            bedrooms={property.Bhk}
-            bathrooms={property.Bhk} // Update if there is a separate bathrooms property
-          />
-          <FrameComponent5 />
-          <section className={styles.descriptionWrapper}>
-            <div className={styles.description}>
-              <b className={styles.description1}>Description</b>
-              <div className={styles.loremIpsumHasContainer}>
-                <span>
-                  <p className={styles.loremIpsumHas}>{property.description}</p>
-                </span>
-              </div>
-            </div>
-          </section>
-          <Amenities amenities={property.amenities} /> Pass amenities as prop
-          <FrameComponent4 />
-          <FrameComponent1 />
-          <FrameComponent />
+        <div>      
+          <Navbar/>
+          <PropertyDetails property={property}/>
+          <ContactForm/>
+          <SimilarProperties/>
         </div>
       ) : (
         <p className={styles.loading}>Loading...</p>

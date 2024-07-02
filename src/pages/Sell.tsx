@@ -1,32 +1,12 @@
-import { FunctionComponent, useCallback } from "react";
-import { useNavigate } from "react-router-dom";
-import Navbar from "../components/Navbar1";
+import { FunctionComponent } from "react";
+import Navbar from "../components/Navbar";
 import ListingHeader from "../components/ListingHeader";
 import styles from "./Sell.module.css";
 
 const Sell: FunctionComponent = () => {
-  const navigate = useNavigate();
-
-  const onLOGOTextClick = useCallback(() => {
-    navigate("/");
-  }, [navigate]);
-
-  const onBuyTextClick = useCallback(() => {
-    navigate("/property-listings-page");
-  }, [navigate]);
-
-  const onRentTextClick = useCallback(() => {
-    navigate("/rent");
-  }, [navigate]);
-
   return (
     <div className={styles.sell}>
-      <Navbar
-        navbarPadding="var(--padding-12xl) 137px var(--padding-12xl) var(--padding-93xl)"
-        onLOGOTextClick={onLOGOTextClick}
-        onBuyTextClick={onBuyTextClick}
-        onRentTextClick={onRentTextClick}
-      />
+      <Navbar/>
       <main className={styles.listingContentWrapper}>
         <form className={styles.listingContent}>
           <ListingHeader />

@@ -1,6 +1,6 @@
 import { FunctionComponent, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
-import Nav from "../components/Nav2";
+import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar1";
 import styles from "./UserPreviouslyContacted.module.css";
 
@@ -21,7 +21,7 @@ const UserPreviouslyContacted: FunctionComponent = () => {
 
   return (
     <div className={styles.userPreviouslyContacted0}>
-      <Nav />
+      <Navbar />
       <main className={styles.sidebarParent}>
         <Sidebar
           onSavedTextClick={onSavedTextClick}

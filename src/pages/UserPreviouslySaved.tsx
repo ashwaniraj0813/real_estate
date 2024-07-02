@@ -1,6 +1,6 @@
 import { FunctionComponent, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
-import Nav from "../components/Nav4";
+import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar1";
 import FrameComponent from "../components/FrameComponent4";
 import styles from "./UserPreviouslySaved.module.css";
@@ -18,7 +18,7 @@ const UserPreviouslySaved: FunctionComponent = () => {
 
   return (
     <div className={styles.userPreviouslySaved0}>
-      <Nav />
+      <Navbar/>
       <main className={styles.sidebarParent}>
         <Sidebar
           propColor="#784dc6"

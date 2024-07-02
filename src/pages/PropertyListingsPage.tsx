@@ -1,6 +1,6 @@
 import { FunctionComponent, useCallback, useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import Navbar from "../components/Navbar1";
+import Navbar from "../components/Navbar";
 import SortAndFilter from "../components/SortAndFilter";
 import PropertyCard from "../components/PropertyCard";
 import styles from "./PropertyListingsPage.module.css";

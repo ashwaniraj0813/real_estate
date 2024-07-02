@@ -1,5 +1,5 @@
 import { FunctionComponent } from "react";
-import PropertyCardOne from "./PropertyCardOne";
+import PropertyCardOne from "../components/PropertyCardOne";
 import styles from "./FrameComponent.module.css";
 
 export type FrameComponentType = {
