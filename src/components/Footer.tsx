@@ -25,43 +25,29 @@ const Footer: FunctionComponent<FooterType> = ({ className = "" }) => {
     navigate("/sell");
   }, [navigate]);
 
-  const onLoginTextClick = useCallback(() => {
-    navigate("/log-in");
+  const onAdminTextClick = useCallback(() => {
+    navigate("/admin-login");
   }, [navigate]);
 
   return (
     <section className={[styles.footer, className].join(" ")}>
-      <div className={styles.footerChild} />
-      <div className={styles.logoParent}>
-        <div className={styles.logo}>LOGO</div>
-        <div className={styles.itIsA}>
+      <div className={styles.left}>
+        <a className={styles.logo}>LOGO</a>
+        <div className={styles.text}>
           It is a long established fact that a reader will be distracted by the
           readable content of a page when looking at its layout. The point of
           using Lorem Ipsum is that it has a more-or-less normal distribution of
           letters, as opposed to using 'Content here, content here', making it
-          look like readable English. 
+          look like readable English.
         </div>
-        <div className={styles.aboutUs} onClick={onAboutUsTextClick}>
-          About us
-        </div>
+        <a className={styles.aboutUs} onClick={onAboutUsTextClick}>About us</a>
       </div>
-      <div className={styles.companyInfo}>
-        <div className={styles.buy} onClick={onBuyTextClick}>
-          Buy
-        </div>
-        <div className={styles.rentParent}>
-          <div className={styles.rent} onClick={onRentTextClick}>
-            Rent
-          </div>
-          <div className={styles.rentSell}>
-            <div className={styles.sell} onClick={onSellTextClick}>
-              Sell
-            </div>
-            <div className={styles.login} onClick={onLoginTextClick}>
-              Login
-            </div>
-          </div>
-        </div>
+
+      <div className={styles.right}>        
+        <a className={`${styles.footitem} ${styles.buy}`} onClick={onBuyTextClick}>Buy</a>
+        <a className={`${styles.footitem} ${styles.rent}`} onClick={onRentTextClick}>Rent</a>
+        <a className={`${styles.footitem} ${styles.sell}`} onClick={onSellTextClick}>Sell</a>
+        <a className={`${styles.footitem} ${styles.admin}`} onClick={onAdminTextClick}>Admin</a>
       </div>
     </section>
   );

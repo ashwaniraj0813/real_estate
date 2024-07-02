@@ -1,6 +1,6 @@
 import { FunctionComponent, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
-import Nav from "../components/Nav6";
+import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar1";
 import styles from "./UserPastSearches.module.css";
 
@@ -21,7 +21,7 @@ const UserPastSearches: FunctionComponent = () => {
 
   return (
     <div className={styles.userPastSearches0}>
-      <Nav />
+      <Navbar/>
       <section className={styles.homeNavigation}>
         <div className={styles.sidebar}>
           <Sidebar

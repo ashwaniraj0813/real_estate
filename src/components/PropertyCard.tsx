@@ -1,4 +1,4 @@
-import { FunctionComponent, useCallback } from "react";
+import { FunctionComponent } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./PropertyCard.module.css";
 
@@ -21,21 +21,8 @@ const PropertyCard: FunctionComponent<PropertyCardType> = ({
   className = "",
   onPropertyCardContainerClick,
 }) => {
-  const navigate = useNavigate();
-
-  const onCardClick = useCallback(() => {
-    if (onPropertyCardContainerClick) {
-      onPropertyCardContainerClick();
-    } else {
-      navigate("/property-details-page");
-    }
-  }, [onPropertyCardContainerClick, navigate]);
-
   return (
-    <div
-      className={[styles.propertyCard, className].join(" ")}
-      onClick={onCardClick}
-    >
+    <div className={[styles.propertyCard, className].join(" ")}>
       <img className={styles.image} alt={title} src={imageUrl} />
       <div className={styles.information}>
         <div className={styles.title}>{title}</div>
