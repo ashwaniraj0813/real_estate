@@ -68,8 +68,8 @@ const PropertyDetails: FunctionComponent<PropertyDetailsType> = ({ property }) =
       <section className={styles.Description}>
           <div className={styles.heading}>Description</div>
           <div className={styles.describe}>
-              {/* {property.description} <br/> */}
-              Welcome to our luxurious two-bedroom apartment, ideally situated in downtown's vibrant core. Boasting modern amenities, breathtaking city views facing east, and proximity to key landmarks such as Central Park and renowned dining spots. Perfect for discerning urbanites, offering convenience, culture, and a coveted lifestyle at your doorstep.
+              {property.description} <br/>
+              {/* Welcome to our luxurious two-bedroom apartment, ideally situated in downtown's vibrant core. Boasting modern amenities, breathtaking city views facing east, and proximity to key landmarks such as Central Park and renowned dining spots. Perfect for discerning urbanites, offering convenience, culture, and a coveted lifestyle at your doorstep. */}
           </div>
       </section>
 
