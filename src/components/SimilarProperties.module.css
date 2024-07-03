@@ -1,3 +1,5 @@
+/* * { border: 1px solid green; } */
+
 .SimilarProperties * {
     font-family: var(--font-montserrat);
 }
@@ -22,10 +24,7 @@
 .similarlistings {
     display: flex;
     flex-wrap: wrap;
+    /* justify-content: space-between; */
     gap: 40px;
     width: 100%;
-}
-
-.similarlistings > * {
-    height: fit-content;
 }

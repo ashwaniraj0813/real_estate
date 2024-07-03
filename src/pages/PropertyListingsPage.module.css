@@ -2,7 +2,6 @@
 
 .propertyListingsPage {
   background-color: var(--color-white);
-  overflow: hidden;
 }
 
 .sortAndFilterParent {
@@ -12,7 +11,8 @@
 }
 
 .listings {
-  padding: 20px;
+  margin-top: 50px;
+  z-index: 10;
   display: flex;
   flex-wrap: wrap;
   gap: 40px;
