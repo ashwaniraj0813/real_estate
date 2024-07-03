@@ -26,6 +26,7 @@ const UserPreviouslySaved: FunctionComponent = () => {
           profileSettingsFontWeight="unset"
           myPropertiesColor="#784dc6"
           myPropertiesFontWeight="bold"
+          
         />
         <FrameComponent />
       </main>

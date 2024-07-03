@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
 import styles from "./UserProperties.module.css";
 import Navbar from "../components/Navbar";
+import LottieAnimation from "../components/LottieAnimation";
 
 const UserProperties: FunctionComponent = () => {
   const navigate = useNavigate();
@@ -31,12 +32,7 @@ const UserProperties: FunctionComponent = () => {
         <div className={styles.emptyStateIllustration}>
           <div className={styles.emptyState}>
             <div className={styles.illustrationContainer}>
-              <img
-                className={styles.httpslottiefilescomanimatIcon}
-                loading="lazy"
-                alt=""
-                src="/httpslottiefilescomanimationshouse7c0f7yoykz@2x.png"
-              />
+              <LottieAnimation animationLink="https://lottie.host/fc9fb0d0-1766-4e25-8483-ba9f9fa545f6/rNwcjg5a6Q.json" style={{ width: 500, height: 400 }} />
             </div>
             <div className={styles.emptyStateMessage}>
               <div className={styles.youHaventBought}>
@@ -46,22 +42,6 @@ const UserProperties: FunctionComponent = () => {
             <div className={styles.allTheProperties}>
               All the properties and projects that you have bought or sold will
               start appearing here. Search or explore cities now.
-            </div>
-            <div className={styles.homeAction}>
-              <div className={styles.home1} onClick={onLogOutTextClick}>
-                <div className={styles.homeButton}>
-                  <div className={styles.homeButtonChild} />
-                  <img
-                    className={styles.tablerhomeIcon}
-                    loading="lazy"
-                    alt=""
-                    src="/tablerhome.svg"
-                  />
-                  <div className={styles.homeLabelContainer}>
-                    <div className={styles.home2}>Home</div>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>

@@ -7,7 +7,7 @@
   padding: 0 var(--padding-xl) 0 0;
   box-sizing: border-box;
   max-width: 100%;
-  gap: var(--gap-xl);
+  gap: 50%;
 }
 .userPreviouslySaved0 {
   width: 100%;

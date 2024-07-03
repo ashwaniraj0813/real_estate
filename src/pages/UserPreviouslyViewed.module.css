@@ -9,15 +9,14 @@
   width: 630px;
   flex-direction: column;
   justify-content: flex-start;
-  padding: var(--padding-96xl) 0 0;
+  padding: 20vh 0 0;
   min-width: 630px;
 }
 .sidebarParent {
-  width: 1160px;
+  width: auto;
   flex-direction: row;
   justify-content: space-between;
-  padding: 0 var(--padding-xl) 0 0;
-  gap: var(--gap-xl);
+  gap: 50%;
 }
 .userPreviouslyViewed0 {
   width: 100%;

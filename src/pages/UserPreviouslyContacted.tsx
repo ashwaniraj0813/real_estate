@@ -49,22 +49,6 @@ const UserPreviouslyContacted: FunctionComponent = () => {
               You will see the list of properties / projects here, where you
               have contacted the advertiser
             </div>
-            <div className={styles.homeWrapper}>
-              <div className={styles.home} onClick={onHomeContainerClick}>
-                <div className={styles.homeButton}>
-                  <div className={styles.homeButtonChild} />
-                  <img
-                    className={styles.tablerhomeIcon}
-                    loading="lazy"
-                    alt=""
-                    src="/tablerhome.svg"
-                  />
-                  <div className={styles.homeContainer}>
-                    <div className={styles.home1}>Home</div>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </main>

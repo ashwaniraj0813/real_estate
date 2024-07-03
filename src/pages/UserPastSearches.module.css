@@ -96,21 +96,21 @@
 .emptySearch,
 .sidebar {
   display: flex;
-  align-items: flex-start;
+  justify-items: center;
   max-width: 100%;
 }
 .emptySearch {
   width: 357px;
   flex-direction: column;
   justify-content: flex-start;
-  padding: 139px 0 0;
+  padding: 25vh 0 0;
   box-sizing: border-box;
 }
 .sidebar {
   flex: 1;
   flex-direction: row;
   justify-content: space-between;
-  gap: var(--gap-xl);
+  gap: 55%;
 }
 .homeNavigation,
 .userPastSearches0 {

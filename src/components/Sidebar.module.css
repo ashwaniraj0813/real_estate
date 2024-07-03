@@ -95,11 +95,7 @@
 }
 .notifications {
   height: 24px;
-  height: 24px;
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -147,6 +143,7 @@
   color: var(--color-white);
   font-family: var(--font-montserrat);
   white-space: nowrap;
+  margin-top: 5vh;
 }
 @media screen and (max-width: 1425px) {
   .sidebar {

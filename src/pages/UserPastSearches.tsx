@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
 import styles from "./UserPastSearches.module.css";
+import LottieAnimation from "../components/LottieAnimation";
 
 const UserPastSearches: FunctionComponent = () => {
   const navigate = useNavigate();
@@ -34,32 +35,11 @@ const UserPastSearches: FunctionComponent = () => {
           <div className={styles.emptySearch}>
             <div className={styles.emptySearchContent}>
               <div className={styles.emptySearchIcon}>
-                <img
-                  className={styles.httpslottiefilescomanimatIcon}
-                  loading="lazy"
-                  alt=""
-                  src="/httpslottiefilescomanimationssearchw6fho68iw1@2x.png"
-                />
+              <LottieAnimation animationLink="https://lottie.host/a5254c19-e1f1-409d-95bd-c175ec072f09/lfnd0ChTqd.json" style={{ width: 500, height: 300 }} />
               </div>
               <div className={styles.emptySearchMessage}>
                 <div className={styles.youHaventSearched}>
                   You haven’t searched anything yet
-                </div>
-                <div className={styles.homeButton}>
-                  <button
-                    className={styles.homeButton1}
-                    onClick={onHomeButtonClick}
-                  >
-                    <div className={styles.homeButtonChild} />
-                    <img
-                      className={styles.tablerhomeIcon}
-                      alt=""
-                      src="/tablerhome.svg"
-                    />
-                    <div className={styles.homeButtonLabel}>
-                      <div className={styles.home}>Home</div>
-                    </div>
-                  </button>
                 </div>
               </div>
             </div>
