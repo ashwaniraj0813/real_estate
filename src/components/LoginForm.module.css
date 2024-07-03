@@ -11,7 +11,10 @@
   max-width: 100%;
 }
 .logInsignIn {
+<<<<<<< HEAD
   height: 20px;
+=======
+>>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
   flex: 1;
   position: relative;
   font-size: var(--font-size-base);
@@ -19,7 +22,10 @@
   font-family: var(--font-montserrat);
   color: var(--color-black);
   text-align: center;
+<<<<<<< HEAD
   display: inline-block;
+=======
+>>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
   z-index: 1;
 }
 .registration {
@@ -28,7 +34,11 @@
   flex-direction: row;
   align-items: flex-start;
   justify-content: flex-end;
+<<<<<<< HEAD
   padding: 0 var(--padding-34xl) var(--padding-6xs) var(--padding-36xl);
+=======
+  padding: 0 var(--padding-34xl) var(--padding-smi) var(--padding-36xl);
+>>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
 }
 .phoneNumberMail {
   width: 136px;
@@ -165,10 +175,19 @@
   color: var(--color-cornflowerblue-200);
 }
 .registerNow {
+<<<<<<< HEAD
+=======
+  width: 84px;
+>>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
   position: relative;
   font-size: var(--font-size-xs);
   font-family: var(--font-montserrat);
   text-align: center;
+<<<<<<< HEAD
+=======
+  display: inline-block;
+  min-width: 84px;
+>>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
   cursor: pointer;
   z-index: 1;
 }
@@ -189,14 +208,20 @@
   display: none;
 }
 .logIn {
+<<<<<<< HEAD
   height: 19px;
+=======
+>>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
   flex: 1;
   position: relative;
   font-size: var(--font-size-xs);
   font-family: var(--font-montserrat);
   color: var(--color-white);
   text-align: center;
+<<<<<<< HEAD
   display: inline-block;
+=======
+>>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
   z-index: 1;
 }
 .passwordField,

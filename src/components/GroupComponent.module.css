@@ -11,12 +11,16 @@
   position: relative;
   font-weight: 600;
   display: inline-block;
+<<<<<<< HEAD
   flex-shrink: 0;
+=======
+>>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
   text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   z-index: 1;
 }
 .logo {
   width: 88px;
+<<<<<<< HEAD
   height: 28px;
 }
 .itIsA {
@@ -24,6 +28,14 @@
   align-self: stretch;
   height: 36px;
   font-size: var(--font-size-mini);
+=======
+}
+.itIsA {
+  align-self: stretch;
+  height: 36px;
+  font-size: var(--font-size-mini);
+  flex-shrink: 0;
+>>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
 }
 .footerInfo {
   width: 360px;
@@ -31,6 +43,7 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
+<<<<<<< HEAD
   gap: var(--gap-xl);
   max-width: 100%;
 }
@@ -42,12 +55,34 @@
   cursor: pointer;
 }
 .buy,
+=======
+  gap: var(--gap-9xl);
+  max-width: 100%;
+}
+.buy,
+.rent {
+  flex-shrink: 0;
+}
+.buy {
+  align-self: stretch;
+  position: relative;
+  font-weight: 600;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  z-index: 1;
+}
+.rent {
+  display: inline-block;
+  min-width: 67px;
+}
+>>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
 .login,
 .rent,
 .sell {
   position: relative;
   font-weight: 600;
   text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+<<<<<<< HEAD
   z-index: 1;
 }
 .rent,
@@ -88,14 +123,54 @@
   flex-direction: column;
   justify-content: flex-start;
   padding: 0 0 var(--padding-58xl);
+=======
+  cursor: pointer;
+  z-index: 1;
+}
+.sell {
+  align-self: stretch;
+}
+.login {
+  display: inline-block;
+  min-width: 67px;
+}
+.buyParent,
+.rectangleParent,
+.rentLink {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.rentLink {
+  align-self: stretch;
+  flex-direction: column;
+  gap: var(--gap-7xl);
+  flex-shrink: 0;
+}
+.buyParent,
+.rectangleParent {
+  box-sizing: border-box;
+}
+.buyParent {
+  height: 113px;
+  width: 67px;
+  flex-direction: column;
+  padding: 0 0 var(--padding-10xl);
+  gap: var(--gap-10xl-5);
+>>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
 }
 .rectangleParent {
   align-self: stretch;
   background-color: var(--color-black);
   flex-direction: row;
+<<<<<<< HEAD
   justify-content: space-between;
   padding: var(--padding-70xl) var(--padding-165xl) var(--padding-179xl)
     var(--padding-101xl);
+=======
+  padding: var(--padding-70xl) var(--padding-101xl) var(--padding-179xl);
+  gap: var(--gap-619xl);
+>>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
   max-width: 100%;
   flex-shrink: 0;
   z-index: 1;
@@ -104,16 +179,33 @@
   color: var(--color-white);
   font-family: var(--font-montserrat);
 }
+<<<<<<< HEAD
 @media screen and (max-width: 1050px) {
   .rectangleParent {
     flex-wrap: wrap;
     justify-content: center;
+=======
+@media screen and (max-width: 1250px) {
+  .rectangleParent {
+    flex-wrap: wrap;
+    gap: var(--gap-300xl);
+    justify-content: center;
+    padding-left: var(--padding-41xl);
+    padding-right: var(--padding-41xl);
+    box-sizing: border-box;
+>>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
   }
 }
 @media screen and (max-width: 750px) {
   .rectangleParent {
+<<<<<<< HEAD
     padding-left: var(--padding-41xl);
     padding-right: var(--padding-73xl);
+=======
+    gap: var(--gap-140xl);
+    padding-left: var(--padding-11xl);
+    padding-right: var(--padding-11xl);
+>>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
     box-sizing: border-box;
   }
 }
@@ -126,7 +218,13 @@
     font-size: var(--font-size-lg);
   }
   .rectangleParent {
+<<<<<<< HEAD
     padding: var(--padding-82xl) var(--padding-xl) var(--padding-110xl);
+=======
+    gap: var(--gap-61xl);
+    padding-top: var(--padding-82xl);
+    padding-bottom: var(--padding-110xl);
+>>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
     box-sizing: border-box;
   }
 }

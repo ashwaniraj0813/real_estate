@@ -1,11 +1,17 @@
 import { FunctionComponent, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
+<<<<<<< HEAD
 import Nav from "../components/Nav2";
+=======
+import Navbar from "../components/Navbar";
+import Sidebar from "../components/Sidebar1";
+>>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
 import styles from "./UserPastSearches.module.css";
 
 const UserPastSearches: FunctionComponent = () => {
   const navigate = useNavigate();
 
+<<<<<<< HEAD
   const onLOGOTextClick = useCallback(() => {
     navigate("/");
   }, [navigate]);
@@ -26,6 +32,8 @@ const UserPastSearches: FunctionComponent = () => {
     navigate("/user-previously-viewed0");
   }, [navigate]);
 
+=======
+>>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
   const onSavedTextClick = useCallback(() => {
     navigate("/user-previously-saved0");
   }, [navigate]);
@@ -34,6 +42,7 @@ const UserPastSearches: FunctionComponent = () => {
     navigate("/user-previously-contacted0");
   }, [navigate]);
 
+<<<<<<< HEAD
   return (
     <div className={styles.userPastSearches0}>
       <Nav
@@ -86,6 +95,33 @@ const UserPastSearches: FunctionComponent = () => {
           <div className={styles.frameWrapper}>
             <div className={styles.frameParent}>
               <div className={styles.httpslottiefilescomanimatWrapper}>
+=======
+  const onHomeButtonClick = useCallback(() => {
+    navigate("/");
+  }, [navigate]);
+
+  return (
+    <div className={styles.userPastSearches0}>
+      <Navbar/>
+      <section className={styles.homeNavigation}>
+        <div className={styles.sidebar}>
+          <Sidebar
+            propColor="#000"
+            propFontWeight="unset"
+            propColor1="#000"
+            propFontWeight1="unset"
+            sidebarMinWidth="unset"
+            sidebarLinksAlignSelf="unset"
+            pastSearchesFlex="unset"
+            pastSearchesColor="#784dc6"
+            pastSearchesFontWeight="bold"
+            onSavedTextClick={onSavedTextClick}
+            onContactedTextClick={onContactedTextClick}
+          />
+          <div className={styles.emptySearch}>
+            <div className={styles.emptySearchContent}>
+              <div className={styles.emptySearchIcon}>
+>>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
                 <img
                   className={styles.httpslottiefilescomanimatIcon}
                   loading="lazy"
@@ -93,6 +129,7 @@ const UserPastSearches: FunctionComponent = () => {
                   src="/httpslottiefilescomanimationssearchw6fho68iw1@2x.png"
                 />
               </div>
+<<<<<<< HEAD
               <div className={styles.youHaventSearchedAnythingParent}>
                 <div className={styles.youHaventSearched}>
                   You haven’t searched anything yet
@@ -101,6 +138,16 @@ const UserPastSearches: FunctionComponent = () => {
                   <button
                     className={styles.homeButton}
                     onClick={onLOGOTextClick}
+=======
+              <div className={styles.emptySearchMessage}>
+                <div className={styles.youHaventSearched}>
+                  You haven’t searched anything yet
+                </div>
+                <div className={styles.homeButton}>
+                  <button
+                    className={styles.homeButton1}
+                    onClick={onHomeButtonClick}
+>>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
                   >
                     <div className={styles.homeButtonChild} />
                     <img
@@ -108,8 +155,13 @@ const UserPastSearches: FunctionComponent = () => {
                       alt=""
                       src="/tablerhome.svg"
                     />
+<<<<<<< HEAD
                     <div className={styles.homeWrapper}>
                       <b className={styles.home}>Home</b>
+=======
+                    <div className={styles.homeButtonLabel}>
+                      <div className={styles.home}>Home</div>
+>>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
                     </div>
                   </button>
                 </div>

@@ -13,6 +13,7 @@ const Nav: FunctionComponent<NavType> = ({ className = "" }) => {
     navigate("/");
   }, [navigate]);
 
+<<<<<<< HEAD
   const onBuyTextClick = useCallback(() => {
     navigate("/property-listings-page");
   }, [navigate]);
@@ -64,6 +65,28 @@ const Nav: FunctionComponent<NavType> = ({ className = "" }) => {
             alt=""
             src="/vector1.svg"
           />
+=======
+  return (
+    <header className={[styles.nav2, className].join(" ")}>
+      <div className={styles.nav2Child} />
+      <a className={styles.logo} onClick={onLOGOTextClick}>
+        LOGO
+      </a>
+      <div className={styles.homeLinks}>
+        <div className={styles.homeLink} onClick={onLOGOTextClick}>
+          <div className={styles.tablerhomeParent}>
+            <div className={styles.tablerhome} />
+            <img
+              className={styles.groupIcon}
+              loading="lazy"
+              alt=""
+              src="/group.svg"
+            />
+          </div>
+          <div className={styles.homeContent}>
+            <a className={styles.home}>Home</a>
+          </div>
+>>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
         </div>
       </div>
     </header>

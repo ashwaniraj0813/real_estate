@@ -5,8 +5,16 @@ export type MailPasswordType = {
   className?: string;
   mail?: string;
   mailPlaceholder?: string;
+<<<<<<< HEAD
 
   /** Style props */
+=======
+  mailValue?: string;
+  mailName?: string;
+  onMailChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+
+  
+>>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
   propPadding?: CSSProperties["padding"];
   propBorderRadius?: CSSProperties["borderRadius"];
   propPadding1?: CSSProperties["padding"];
@@ -17,6 +25,12 @@ const MailPassword: FunctionComponent<MailPasswordType> = ({
   className = "",
   mail,
   mailPlaceholder,
+<<<<<<< HEAD
+=======
+  mailValue,
+  mailName,
+  onMailChange,
+>>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
   propPadding,
   propBorderRadius,
   propPadding1,
@@ -59,10 +73,20 @@ const MailPassword: FunctionComponent<MailPasswordType> = ({
           className={styles.mail1}
           placeholder={mailPlaceholder}
           type="text"
+<<<<<<< HEAD
+=======
+          value={mailValue}
+          name={mailName}
+          onChange={onMailChange}
+>>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
         />
       </div>
     </div>
   );
 };
 
+<<<<<<< HEAD
 export default MailPassword;
+=======
+export default MailPassword;
+>>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc

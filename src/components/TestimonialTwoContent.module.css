@@ -70,6 +70,15 @@
   color: var(--color-black);
   font-family: var(--font-montserrat);
 }
+<<<<<<< HEAD
+=======
+
+.cardList {
+  display: flex;
+  gap: var(--gap-6xl);
+}
+
+>>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
 @media screen and (max-width: 450px) {
   .wonderfulService {
     font-size: var(--font-size-xl);

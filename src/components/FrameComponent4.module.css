@@ -14,13 +14,21 @@
 }
 .youHaventSaved {
   height: 66px;
+<<<<<<< HEAD
+=======
+  flex: 1;
+>>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
   position: relative;
   font-weight: 600;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+<<<<<<< HEAD
 .youHaventSavedAnyPropertyWrapper {
+=======
+.emptyMessage {
+>>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
   align-self: stretch;
   display: flex;
   flex-direction: row;
@@ -29,6 +37,7 @@
   padding: 0 var(--padding-40xl) 0 var(--padding-43xl);
 }
 .allTheProperties {
+<<<<<<< HEAD
   margin: 0;
   align-self: stretch;
   height: 72px;
@@ -36,6 +45,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+=======
+  align-self: stretch;
+  position: relative;
+>>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
 }
 .homeButtonChild {
   height: 40px;
@@ -59,9 +72,17 @@
 }
 .home1 {
   font-weight: 600;
+<<<<<<< HEAD
 }
 .homeButton,
 .homeContainer {
+=======
+  display: inline-block;
+  min-width: 38px;
+}
+.homeButton,
+.homeWrapper {
+>>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -80,7 +101,11 @@
   gap: var(--gap-2xs);
 }
 .home,
+<<<<<<< HEAD
 .homeWrapper {
+=======
+.homeNavigation {
+>>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -90,25 +115,42 @@
   justify-content: flex-start;
   cursor: pointer;
 }
+<<<<<<< HEAD
 .homeWrapper {
+=======
+.homeNavigation {
+>>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
   align-self: stretch;
   justify-content: center;
   padding: 0 var(--padding-xl);
   font-size: var(--font-size-xs);
   color: var(--color-snow);
 }
+<<<<<<< HEAD
 .frameParent,
 .frameWrapper {
+=======
+.emptyState,
+.emptyStateWrapper {
+>>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 }
+<<<<<<< HEAD
 .frameParent {
+=======
+.emptyState {
+>>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
   align-self: stretch;
   align-items: flex-end;
   gap: var(--gap-sm);
 }
+<<<<<<< HEAD
 .frameWrapper {
+=======
+.emptyStateWrapper {
+>>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
   width: 521px;
   align-items: flex-start;
   padding: var(--padding-216xl) 0 0;
@@ -121,17 +163,29 @@
   font-family: var(--font-montserrat);
 }
 @media screen and (max-width: 925px) {
+<<<<<<< HEAD
   .frameWrapper {
+=======
+  .emptyStateWrapper {
+>>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
     flex: 1;
   }
 }
 @media screen and (max-width: 700px) {
+<<<<<<< HEAD
   .youHaventSavedAnyPropertyWrapper {
+=======
+  .emptyMessage {
+>>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
     padding-left: var(--padding-12xl);
     padding-right: var(--padding-10xl);
     box-sizing: border-box;
   }
+<<<<<<< HEAD
   .frameWrapper {
+=======
+  .emptyStateWrapper {
+>>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
     padding-top: var(--padding-134xl);
     box-sizing: border-box;
     min-width: 100%;

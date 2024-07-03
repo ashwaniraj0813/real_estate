@@ -1,12 +1,19 @@
 import { FunctionComponent, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
+<<<<<<< HEAD
 import Nav from "../components/Nav2";
 import FrameComponent from "../components/FrameComponent4";
 import styles from "./UserProperties.module.css";
+=======
+import Sidebar from "../components/Sidebar";
+import styles from "./UserProperties.module.css";
+import Navbar from "../components/Navbar";
+>>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
 
 const UserProperties: FunctionComponent = () => {
   const navigate = useNavigate();
 
+<<<<<<< HEAD
   const onLOGOTextClick = useCallback(() => {
     navigate("/");
   }, [navigate]);
@@ -33,10 +40,19 @@ const UserProperties: FunctionComponent = () => {
 
   const onContactedTextClick = useCallback(() => {
     navigate("/user-previously-contacted0");
+=======
+  const onProfileSettingsTextClick = useCallback(() => {
+    navigate("/user-profile");
+  }, [navigate]);
+
+  const onLogOutTextClick = useCallback(() => {
+    navigate("/");
+>>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
   }, [navigate]);
 
   return (
     <div className={styles.userProperties0}>
+<<<<<<< HEAD
       <Nav
         onLOGOTextClick={onLOGOTextClick}
         onHomeText1Click={onLOGOTextClick}
@@ -99,6 +115,56 @@ const UserProperties: FunctionComponent = () => {
           propDisplay="unset"
           onHomeContainerClick={onLOGOTextClick}
         />
+=======
+      <Navbar/>
+      <main className={styles.sidebarContainer}>
+        <Sidebar
+          sidebarMarginLeft="unset"
+          profileSettingsColor="#000"
+          profileSettingsFontWeight="unset"
+          myPropertiesColor="#784dc6"
+          myPropertiesFontWeight="bold"
+          onHomeIconClick={onProfileSettingsTextClick}
+          onLOGOTextClick={onLogOutTextClick}
+        />
+        <div className={styles.emptyStateIllustration}>
+          <div className={styles.emptyState}>
+            <div className={styles.illustrationContainer}>
+              <img
+                className={styles.httpslottiefilescomanimatIcon}
+                loading="lazy"
+                alt=""
+                src="/httpslottiefilescomanimationshouse7c0f7yoykz@2x.png"
+              />
+            </div>
+            <div className={styles.emptyStateMessage}>
+              <div className={styles.youHaventBought}>
+                You haven’t bought or sold any property yet!
+              </div>
+            </div>
+            <div className={styles.allTheProperties}>
+              All the properties and projects that you have bought or sold will
+              start appearing here. Search or explore cities now.
+            </div>
+            <div className={styles.homeAction}>
+              <div className={styles.home1} onClick={onLogOutTextClick}>
+                <div className={styles.homeButton}>
+                  <div className={styles.homeButtonChild} />
+                  <img
+                    className={styles.tablerhomeIcon}
+                    loading="lazy"
+                    alt=""
+                    src="/tablerhome.svg"
+                  />
+                  <div className={styles.homeLabelContainer}>
+                    <div className={styles.home2}>Home</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+>>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
       </main>
     </div>
   );

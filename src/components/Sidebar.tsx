@@ -1,15 +1,75 @@
+<<<<<<< HEAD
 import { FunctionComponent, useCallback } from "react";
+=======
+import {
+  FunctionComponent,
+  useMemo,
+  type CSSProperties,
+  useCallback,
+} from "react";
+>>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
 import { useNavigate } from "react-router-dom";
 import styles from "./Sidebar.module.css";
 
 export type SidebarType = {
   className?: string;
+<<<<<<< HEAD
 };
 
 const Sidebar: FunctionComponent<SidebarType> = ({ className = "" }) => {
   const navigate = useNavigate();
 
   const onMyPropertiesTextClick = useCallback(() => {
+=======
+
+  /** Style props */
+  sidebarMarginLeft?: CSSProperties["marginLeft"];
+  profileSettingsColor?: CSSProperties["color"];
+  profileSettingsFontWeight?: CSSProperties["fontWeight"];
+  myPropertiesColor?: CSSProperties["color"];
+  myPropertiesFontWeight?: CSSProperties["fontWeight"];
+
+  /** Action props */
+  onHomeIconClick?: () => void;
+  onMyPropertiesTextClick?: () => void;
+  onLOGOTextClick?: () => void;
+};
+
+const Sidebar: FunctionComponent<SidebarType> = ({
+  className = "",
+  sidebarMarginLeft,
+  profileSettingsColor,
+  profileSettingsFontWeight,
+  myPropertiesColor,
+  myPropertiesFontWeight,
+  onHomeIconClick,
+  onMyPropertiesTextClick,
+  onLOGOTextClick,
+}) => {
+  const sidebar1Style: CSSProperties = useMemo(() => {
+    return {
+      marginLeft: sidebarMarginLeft,
+    };
+  }, [sidebarMarginLeft]);
+
+  const profileSettingsStyle: CSSProperties = useMemo(() => {
+    return {
+      color: profileSettingsColor,
+      fontWeight: profileSettingsFontWeight,
+    };
+  }, [profileSettingsColor, profileSettingsFontWeight]);
+
+  const myPropertiesStyle: CSSProperties = useMemo(() => {
+    return {
+      color: myPropertiesColor,
+      fontWeight: myPropertiesFontWeight,
+    };
+  }, [myPropertiesColor, myPropertiesFontWeight]);
+
+  const navigate = useNavigate();
+
+  const onMyPropertiesTextClick1 = useCallback(() => {
+>>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
     navigate("/user-properties0");
   }, [navigate]);
 
@@ -30,12 +90,34 @@ const Sidebar: FunctionComponent<SidebarType> = ({ className = "" }) => {
   }, [navigate]);
 
   return (
+<<<<<<< HEAD
     <div className={[styles.sidebar, className].join(" ")}>
       <div className={styles.sidebarChild} />
       <div className={styles.sidebarItems}>
         <b className={styles.profileSettings}>Profile settings</b>
       </div>
       <div className={styles.myProperties} onClick={onMyPropertiesTextClick}>
+=======
+    <div
+      className={[styles.sidebar, className].join(" ")}
+      style={sidebar1Style}
+    >
+      <div className={styles.sidebarChild} />
+      <div className={styles.sidebarItems}>
+        <b
+          className={styles.profileSettings}
+          style={profileSettingsStyle}
+          onClick={onHomeIconClick}
+        >
+          Profile settings
+        </b>
+      </div>
+      <div
+        className={styles.myProperties}
+        onClick={onMyPropertiesTextClick}
+        style={myPropertiesStyle}
+      >
+>>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
         My properties
       </div>
       <div className={styles.sidebarItems1}>
@@ -62,8 +144,15 @@ const Sidebar: FunctionComponent<SidebarType> = ({ className = "" }) => {
       <div className={styles.sidebarItems4}>
         <div className={styles.notifications}>Notifications</div>
       </div>
+<<<<<<< HEAD
       <div className={styles.sidebarItems5}>
         <div className={styles.logOut}>Log out</div>
+=======
+      <div className={styles.logoutButton}>
+        <div className={styles.logOut} onClick={onLOGOTextClick}>
+          Log out
+        </div>
+>>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
       </div>
     </div>
   );

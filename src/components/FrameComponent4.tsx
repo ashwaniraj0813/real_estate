@@ -1,14 +1,19 @@
+<<<<<<< HEAD
 import {
   FunctionComponent,
   useMemo,
   type CSSProperties,
   useCallback,
 } from "react";
+=======
+import { FunctionComponent, useCallback } from "react";
+>>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
 import { useNavigate } from "react-router-dom";
 import styles from "./FrameComponent4.module.css";
 
 export type FrameComponentType = {
   className?: string;
+<<<<<<< HEAD
   httpslottiefilescomanimat?: string;
   youHaventSavedAnyProperty?: string;
   allThePropertiesAndProjec?: string;
@@ -25,10 +30,13 @@ export type FrameComponentType = {
 
   /** Action props */
   onHomeContainerClick?: () => void;
+=======
+>>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
 };
 
 const FrameComponent: FunctionComponent<FrameComponentType> = ({
   className = "",
+<<<<<<< HEAD
   httpslottiefilescomanimat,
   youHaventSavedAnyProperty,
   allThePropertiesAndProjec,
@@ -78,10 +86,17 @@ const FrameComponent: FunctionComponent<FrameComponentType> = ({
   const navigate = useNavigate();
 
   const onHomeContainerClick1 = useCallback(() => {
+=======
+}) => {
+  const navigate = useNavigate();
+
+  const onHomeContainerClick = useCallback(() => {
+>>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
     navigate("/");
   }, [navigate]);
 
   return (
+<<<<<<< HEAD
     <div
       className={[styles.frameWrapper, className].join(" ")}
       style={frameDiv2Style}
@@ -91,10 +106,16 @@ const FrameComponent: FunctionComponent<FrameComponentType> = ({
           className={styles.httpslottiefilescomanimatWrapper}
           style={frameDiv4Style}
         >
+=======
+    <div className={[styles.emptyStateWrapper, className].join(" ")}>
+      <div className={styles.emptyState}>
+        <div className={styles.httpslottiefilescomanimatWrapper}>
+>>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
           <img
             className={styles.httpslottiefilescomanimatIcon}
             loading="lazy"
             alt=""
+<<<<<<< HEAD
             src={httpslottiefilescomanimat}
             style={httpslottiefilescomanimatIconStyle}
           />
@@ -106,6 +127,21 @@ const FrameComponent: FunctionComponent<FrameComponentType> = ({
         </div>
         <p className={styles.allTheProperties}>{allThePropertiesAndProjec}</p>
         <div className={styles.homeWrapper}>
+=======
+            src="/httpslottiefilescomanimationshousebyxzsxrupb@2x.png"
+          />
+        </div>
+        <div className={styles.emptyMessage}>
+          <div className={styles.youHaventSaved}>
+            You haven’t saved any property lately!
+          </div>
+        </div>
+        <div className={styles.allTheProperties}>
+          All the properties and projects that you have saved will start
+          appearing here. Search or explore cities now.
+        </div>
+        <div className={styles.homeNavigation}>
+>>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
           <div className={styles.home} onClick={onHomeContainerClick}>
             <div className={styles.homeButton}>
               <div className={styles.homeButtonChild} />
@@ -115,8 +151,13 @@ const FrameComponent: FunctionComponent<FrameComponentType> = ({
                 alt=""
                 src="/tablerhome.svg"
               />
+<<<<<<< HEAD
               <div className={styles.homeContainer}>
                 <b className={styles.home1}>Home</b>
+=======
+              <div className={styles.homeWrapper}>
+                <div className={styles.home1}>Home</div>
+>>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
               </div>
             </div>
           </div>

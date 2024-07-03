@@ -14,7 +14,11 @@ const MemberBlocks: FunctionComponent<MemberBlocksType> = ({
   propPadding,
   propAlignSelf,
 }) => {
+<<<<<<< HEAD
   const memberInfoStyle: CSSProperties = useMemo(() => {
+=======
+  const memberImagesStyle: CSSProperties = useMemo(() => {
+>>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
     return {
       padding: propPadding,
       alignSelf: propAlignSelf,
@@ -23,7 +27,11 @@ const MemberBlocks: FunctionComponent<MemberBlocksType> = ({
 
   return (
     <div className={[styles.memberBlocks, className].join(" ")}>
+<<<<<<< HEAD
       <div className={styles.memberInfo} style={memberInfoStyle}>
+=======
+      <div className={styles.memberImages}>
+>>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
         <img
           className={styles.istockphoto1476170969170667aIcon}
           loading="lazy"

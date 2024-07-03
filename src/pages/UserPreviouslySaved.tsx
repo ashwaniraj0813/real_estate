@@ -1,12 +1,18 @@
 import { FunctionComponent, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
+<<<<<<< HEAD
 import Nav from "../components/Nav2";
+=======
+import Navbar from "../components/Navbar";
+import Sidebar from "../components/Sidebar1";
+>>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
 import FrameComponent from "../components/FrameComponent4";
 import styles from "./UserPreviouslySaved.module.css";
 
 const UserPreviouslySaved: FunctionComponent = () => {
   const navigate = useNavigate();
 
+<<<<<<< HEAD
   const onLOGOTextClick = useCallback(() => {
     navigate("/");
   }, [navigate]);
@@ -21,12 +27,17 @@ const UserPreviouslySaved: FunctionComponent = () => {
 
   const onMyPropertiesTextClick = useCallback(() => {
     navigate("/user-properties0");
+=======
+  const onContactedTextClick = useCallback(() => {
+    navigate("/user-previously-contacted0");
+>>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
   }, [navigate]);
 
   const onPastSearchesTextClick = useCallback(() => {
     navigate("/user-past-searches0");
   }, [navigate]);
 
+<<<<<<< HEAD
   const onPreviouslyViewedTextClick = useCallback(() => {
     navigate("/user-previously-viewed0");
   }, [navigate]);
@@ -92,6 +103,26 @@ const UserPreviouslySaved: FunctionComponent = () => {
           allThePropertiesAndProjec="All the properties and projects that you have saved will start appearing here. Search or explore cities now."
           onHomeContainerClick={onLOGOTextClick}
         />
+=======
+  return (
+    <div className={styles.userPreviouslySaved0}>
+      <Navbar/>
+      <main className={styles.sidebarParent}>
+        <Sidebar
+          propColor="#784dc6"
+          propFontWeight="bold"
+          propColor1="#000"
+          propFontWeight1="unset"
+          sidebarMinWidth="289px"
+          sidebarLinksAlignSelf="stretch"
+          pastSearchesFlex="1"
+          pastSearchesColor="#000"
+          pastSearchesFontWeight="unset"
+          onContactedTextClick={onContactedTextClick}
+          onPastSearchesTextClick={onPastSearchesTextClick}
+        />
+        <FrameComponent />
+>>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
       </main>
     </div>
   );

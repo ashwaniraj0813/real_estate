@@ -5,16 +5,23 @@
 }
 .mostPopular {
   margin: 0;
+<<<<<<< HEAD
   width: 313px;
   height: 54.6px;
+=======
+>>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
   font-size: inherit;
   font-weight: 400;
   font-family: inherit;
   white-space: pre-wrap;
+<<<<<<< HEAD
   display: flex;
   align-items: center;
   text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   debug_commit: 69da668;
+=======
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+>>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
 }
 .web11Icon {
   align-self: stretch;
@@ -44,7 +51,10 @@
   gap: var(--gap-6xl);
   min-width: 162px;
   flex-shrink: 0;
+<<<<<<< HEAD
   debug_commit: 69da668;
+=======
+>>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
   cursor: pointer;
 }
 .web21Icon {
@@ -77,7 +87,10 @@
   justify-content: flex-start;
   gap: var(--gap-6xl-5);
   flex-shrink: 0;
+<<<<<<< HEAD
   debug_commit: 69da668;
+=======
+>>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
   cursor: pointer;
 }
 .mostPopularPropertyCardWrapper {
@@ -87,7 +100,11 @@
   box-sizing: border-box;
   min-width: 162px;
 }
+<<<<<<< HEAD
 .mostPopularParent,
+=======
+.cardList,
+>>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
 .mostPopularPropertyCardParent,
 .mostPopularPropertyCardWrapper {
   display: flex;
@@ -99,10 +116,16 @@
   flex-direction: row;
   gap: var(--gap-44xl);
   flex-shrink: 0;
+<<<<<<< HEAD
   debug_commit: 69da668;
   font-size: var(--font-size-xl);
 }
 .mostPopularParent {
+=======
+  font-size: var(--font-size-xl);
+}
+.cardList {
+>>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
   width: 563.2px;
   flex-direction: column;
   gap: var(--gap-15xl-4);
@@ -164,7 +187,13 @@
   font-family: var(--font-montserrat);
   color: var(--color-white);
   text-align: left;
+<<<<<<< HEAD
   text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+=======
+  display: inline-block;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  min-width: 106px;
+>>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
   z-index: 1;
 }
 .viewMoreBtn {
@@ -179,7 +208,10 @@
   align-items: flex-start;
   justify-content: flex-start;
   flex-shrink: 0;
+<<<<<<< HEAD
   debug_commit: 69da668;
+=======
+>>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
   white-space: nowrap;
 }
 .web41Icon {
@@ -218,7 +250,10 @@
   justify-content: flex-start;
   gap: var(--gap-5xl-8);
   flex-shrink: 0;
+<<<<<<< HEAD
   debug_commit: 69da668;
+=======
+>>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
   cursor: pointer;
 }
 .mostPopularPropertyCardFrame {
@@ -235,18 +270,31 @@
   justify-content: flex-start;
   gap: var(--gap-18xl-2);
 }
+<<<<<<< HEAD
 .frameParent,
 .frameWrapper {
+=======
+.popularCards,
+.popularProperties {
+>>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   max-width: 100%;
 }
+<<<<<<< HEAD
 .frameParent {
   align-items: flex-end;
   gap: var(--gap-47xl-8);
 }
 .frameWrapper {
+=======
+.popularCards {
+  align-items: flex-end;
+  gap: var(--gap-47xl-8);
+}
+.popularProperties {
+>>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
   align-items: flex-start;
   padding: 0 0 0 var(--padding-5xs);
   box-sizing: border-box;
@@ -256,7 +304,11 @@
   font-family: var(--font-montserrat);
 }
 @media screen and (max-width: 1200px) {
+<<<<<<< HEAD
   .frameParent {
+=======
+  .popularCards {
+>>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
     flex-wrap: wrap;
     gap: var(--gap-14xl);
   }
@@ -271,8 +323,13 @@
     flex-wrap: wrap;
     gap: var(--gap-12xl);
   }
+<<<<<<< HEAD
   .frameParent,
   .mostPopularParent {
+=======
+  .cardList,
+  .popularCards {
+>>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
     gap: var(--gap-mid);
   }
 }

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .propertyCardChild {
   width: 295px;
   height: 288px;
@@ -485,4 +486,30 @@
   .sortAndFilterParent {
     gap: var(--gap-base);
   }
+=======
+/* * {border: 1px solid green;}  */
+
+.propertyListingsPage {
+  background-color: var(--color-white);
+}
+
+.sortAndFilterParent {
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+}
+
+.listings {
+  margin-top: 50px;
+  z-index: 10;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 40px;
+  width: 100%;
+}
+
+.listings > * {
+  height: fit-content;
+>>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
 }

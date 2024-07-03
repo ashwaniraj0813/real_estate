@@ -1,5 +1,5 @@
 import React, { FunctionComponent, useState, ChangeEvent } from "react";
-import Nav from "../components/Nav";
+import Nav from "../components/Nav2";
 import Sidebar from "../components/Sidebar";
 import styles from "./UserProfile.module.css";
 import EditableInput from "./EditableInput";

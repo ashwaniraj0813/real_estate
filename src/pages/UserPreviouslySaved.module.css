@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .sidebarChild {
   width: 289px;
   height: 922px;
@@ -138,16 +139,27 @@
 }
 .sidebarParent {
   width: 1104px;
+=======
+.sidebarParent {
+  width: 1104px;
+  display: flex;
+>>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
   flex-direction: row;
   align-items: flex-start;
   justify-content: space-between;
   padding: 0 var(--padding-xl) 0 0;
+<<<<<<< HEAD
   max-width: 100%;
   gap: var(--gap-xl);
   text-align: center;
   font-size: var(--font-size-xl);
   color: var(--color-black);
   font-family: var(--font-montserrat);
+=======
+  box-sizing: border-box;
+  max-width: 100%;
+  gap: var(--gap-xl);
+>>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
 }
 .userPreviouslySaved0 {
   width: 100%;
@@ -162,16 +174,20 @@
   letter-spacing: normal;
 }
 @media screen and (max-width: 925px) {
+<<<<<<< HEAD
   .sidebar {
     flex: 1;
     padding-top: var(--padding-17xl);
     padding-bottom: var(--padding-17xl);
     box-sizing: border-box;
   }
+=======
+>>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
   .sidebarParent {
     flex-wrap: wrap;
   }
 }
+<<<<<<< HEAD
 @media screen and (max-width: 450px) {
   .contacted,
   .logOut,
@@ -189,3 +205,5 @@
     box-sizing: border-box;
   }
 }
+=======
+>>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc

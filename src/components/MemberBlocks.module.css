@@ -5,7 +5,11 @@
   border-radius: var(--br-71xl);
   object-fit: cover;
 }
+<<<<<<< HEAD
 .memberInfo {
+=======
+.memberImages {
+>>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -19,11 +23,16 @@
 }
 .johnWellingtonPhoneContainer {
   align-self: stretch;
+<<<<<<< HEAD
   height: 60px;
   position: relative;
   font-weight: 500;
   display: inline-block;
   flex-shrink: 0;
+=======
+  position: relative;
+  font-weight: 500;
+>>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
 }
 .memberBlocks {
   flex: 1;
@@ -40,7 +49,11 @@
   font-family: var(--font-montserrat);
 }
 @media screen and (max-width: 450px) {
+<<<<<<< HEAD
   .memberInfo {
+=======
+  .memberImages {
+>>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
     padding-left: var(--padding-xl);
     padding-right: var(--padding-xl);
     box-sizing: border-box;

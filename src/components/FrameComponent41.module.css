@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .gallery {
   height: 49px;
   position: relative;
@@ -32,11 +33,45 @@
 }
 .web162Icon,
 .web211Icon {
+=======
+.location {
+  position: relative;
+}
+.image13Icon {
+  height: 60.5px;
+  width: 57.1px;
+  object-fit: cover;
+}
+.image13Icon,
+.portalWNorth {
+  position: relative;
+}
+.locationAddress,
+.locationImage {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  max-width: 100%;
+}
+.locationAddress {
+  flex-direction: column;
+  padding: var(--padding-2xs) 0 0;
+  box-sizing: border-box;
+}
+.locationImage {
+  flex-direction: row;
+  gap: var(--gap-14xl-1);
+  font-size: var(--font-size-11xl);
+}
+.locationOnMap {
+  align-self: stretch;
+>>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
   position: relative;
   max-width: 100%;
   overflow: hidden;
   max-height: 100%;
   object-fit: cover;
+<<<<<<< HEAD
   min-height: 300px;
 }
 .frameParent {
@@ -110,11 +145,33 @@
   padding: 0 var(--padding-xl) var(--padding-156xl);
   box-sizing: border-box;
   max-width: 100%;
+=======
+}
+.locationDetails,
+.locationDetailsWrapper {
+  display: flex;
+  align-items: flex-start;
+  max-width: 100%;
+}
+.locationDetails {
+  width: 1200px;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: var(--gap-xl-8);
+}
+.locationDetailsWrapper {
+  align-self: stretch;
+  flex-direction: row;
+  justify-content: center;
+  padding: 0 var(--padding-xl) var(--padding-111xl) var(--padding-5xl);
+  box-sizing: border-box;
+>>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
   text-align: left;
   font-size: var(--font-size-21xl);
   color: var(--color-gray-300);
   font-family: var(--font-montserrat);
 }
+<<<<<<< HEAD
 @media screen and (max-width: 1200px) {
   .galleryImages {
     flex-wrap: wrap;
@@ -153,10 +210,25 @@
   }
   .propertyDetailsPageInner {
     padding-bottom: var(--padding-55xl);
+=======
+@media screen and (max-width: 1050px) {
+  .location {
+    font-size: var(--font-size-13xl);
+  }
+  .portalWNorth {
+    font-size: var(--font-size-5xl);
+  }
+  .locationImage {
+    flex-wrap: wrap;
+  }
+  .locationDetailsWrapper {
+    padding-bottom: var(--padding-65xl);
+>>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
     box-sizing: border-box;
   }
 }
 @media screen and (max-width: 450px) {
+<<<<<<< HEAD
   .gallery {
     font-size: var(--font-size-5xl);
   }
@@ -168,5 +240,19 @@
   }
   .contactContainerParent {
     gap: var(--gap-2xl);
+=======
+  .location {
+    font-size: var(--font-size-5xl);
+  }
+  .portalWNorth {
+    font-size: var(--font-size-lg);
+  }
+  .locationImage {
+    gap: var(--gap-mid);
+  }
+  .locationDetailsWrapper {
+    padding-bottom: var(--padding-36xl);
+    box-sizing: border-box;
+>>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
   }
 }

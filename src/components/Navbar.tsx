@@ -1,5 +1,9 @@
 import { FunctionComponent, useCallback } from "react";
+<<<<<<< HEAD
 import { useNavigate } from "react-router-dom";
+=======
+import { useNavigate, useLocation } from "react-router-dom";
+>>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
 import styles from "./Navbar.module.css";
 
 export type NavbarType = {
@@ -17,6 +21,7 @@ const Navbar: FunctionComponent<NavbarType> = ({ className = "" }) => {
     navigate("/property-listings-page");
   }, [navigate]);
 
+<<<<<<< HEAD
   const onVectorIconClick = useCallback(() => {
     navigate("/user-profile");
   }, [navigate]);
@@ -69,6 +74,39 @@ const Navbar: FunctionComponent<NavbarType> = ({ className = "" }) => {
           onClick={onVectorIconClick}
         />
       </div>
+=======
+  const onRentTextClick = useCallback(() => {
+    navigate("/rent");
+  }, [navigate]);
+
+  const onSellTextClick = useCallback(() => {
+    navigate("/sell");
+  }, [navigate]);
+  
+  const onHomeIconClick = useCallback(() => {
+    navigate("/user-profile");
+  }, [navigate]);
+
+  const onSearchContainerClick = useCallback(() => {
+    navigate("/property-explore-page");
+  }, [navigate]);
+  
+  let match = (useLocation().pathname == '/');
+
+  return (
+    <header className={`${match ? `${styles.navtransparent} ${styles.navbar}` : `${styles.navbar}`}`}>
+      <a className={`${styles.navitem} ${styles.logo}`} onClick={onLOGOTextClick}>LOGO</a>
+      <div className={`${styles.navitem} ${styles.searchBar}`}>
+          <img className={styles.searchicon} src="/icbaselinesearch1.svg" />
+          <input className={styles.searchinput} placeholder="Luxurious Penthouses ..." type="text"/>
+      </div>
+      <a className={`${styles.navitem} ${styles.buy}`} onClick={onBuyTextClick}>Buy</a>
+      <a className={`${styles.navitem} ${styles.rent}`} onClick={onRentTextClick}>Rent</a>
+      <a className={`${styles.navitem} ${styles.sell}`} onClick={onSellTextClick}>Sell</a>
+      <a className={`${styles.navitem} ${styles.profile}`} onClick={onHomeIconClick}>
+        <img className={styles.homeIcon} src="/vector1.svg"/>
+      </a>
+>>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
     </header>
   );
 };

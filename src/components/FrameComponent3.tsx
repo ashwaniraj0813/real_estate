@@ -16,9 +16,15 @@ const FrameComponent3: FunctionComponent<FrameComponent3Type> = ({
   }, [navigate]);
 
   return (
+<<<<<<< HEAD
     <div className={[styles.frameWrapper, className].join(" ")}>
       <div className={styles.frameParent}>
         <div className={styles.mostPopularParent}>
+=======
+    <div className={[styles.popularProperties, className].join(" ")}>
+      <div className={styles.popularCards}>
+        <div className={styles.cardList}>
+>>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
           <h2 className={styles.mostPopular}>Most Popular</h2>
           <div className={styles.mostPopularPropertyCardParent}>
             <div

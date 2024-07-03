@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .web31Icon {
   position: absolute;
   top: 0;
@@ -147,4 +148,35 @@
   .similarProperties1 {
     font-size: var(--font-size-5xl);
   }
+=======
+/* * { border: 1px solid green; } */
+
+.SimilarProperties * {
+    font-family: var(--font-montserrat);
+}
+
+.SimilarProperties {
+    width: 100%;
+    padding: 4vw 8vw;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.heading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.similarlistings {
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: space-between; */
+    gap: 40px;
+    width: 100%;
+>>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
 }
