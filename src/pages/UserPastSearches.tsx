@@ -1,7 +1,7 @@
 import { FunctionComponent, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
-import Sidebar from "../components/Sidebar1";
+import Sidebar from "../components/Sidebar";
 import styles from "./UserPastSearches.module.css";
 
 const UserPastSearches: FunctionComponent = () => {
@@ -24,18 +24,12 @@ const UserPastSearches: FunctionComponent = () => {
       <Navbar/>
       <section className={styles.homeNavigation}>
         <div className={styles.sidebar}>
-          <Sidebar
-            propColor="#000"
-            propFontWeight="unset"
-            propColor1="#000"
-            propFontWeight1="unset"
-            sidebarMinWidth="unset"
-            sidebarLinksAlignSelf="unset"
-            pastSearchesFlex="unset"
-            pastSearchesColor="#784dc6"
-            pastSearchesFontWeight="bold"
-            onSavedTextClick={onSavedTextClick}
-            onContactedTextClick={onContactedTextClick}
+          <Sidebar currentPage="user-past-searches0"
+            sidebarMarginLeft="unset"
+            profileSettingsColor="#000"
+            profileSettingsFontWeight="unset"
+            myPropertiesColor="#784dc6"
+            myPropertiesFontWeight="bold"
           />
           <div className={styles.emptySearch}>
             <div className={styles.emptySearchContent}>

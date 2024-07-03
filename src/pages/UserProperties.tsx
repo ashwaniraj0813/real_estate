@@ -19,7 +19,7 @@ const UserProperties: FunctionComponent = () => {
     <div className={styles.userProperties0}>
       <Navbar/>
       <main className={styles.sidebarContainer}>
-        <Sidebar
+        <Sidebar currentPage="user-properties0"
           sidebarMarginLeft="unset"
           profileSettingsColor="#000"
           profileSettingsFontWeight="unset"
