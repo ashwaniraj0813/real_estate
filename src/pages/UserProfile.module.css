@@ -82,9 +82,17 @@
   width: 85px;
   flex-direction: column;
   justify-content: flex-start;
-  padding: var(--padding-43xl) 0 0;
+  padding: var(--padding-55xl) 0 0;
   box-sizing: border-box;
 }
+/* .profileFields{
+  display: flex;
+  flex-direction: row;
+  gap: 2vw;
+  text-align: left;
+  white-space: nowrap;
+  align-Items: 'center'
+} */
 .profileDetails {
   width: 366px;
   flex-direction: row;
