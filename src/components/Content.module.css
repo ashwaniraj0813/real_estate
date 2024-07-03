@@ -26,12 +26,12 @@
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: var(--br-6xl);
   background-color: var(--color-white);
-  border: 1px solid var(--color-black);
+  border: 2px solid var(--color-cornflowerblue-200);
   box-sizing: border-box;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  /* align-items: flex-start; */
   justify-content: flex-start;
   padding: var(--padding-5xl) var(--padding-xl) var(--padding-2xl)
     var(--padding-31xl);
@@ -56,15 +56,15 @@
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: var(--br-6xl);
   background-color: var(--color-white);
-  border: 1px solid var(--color-black);
+  border: 2px solid var(--color-cornflowerblue-200);
   box-sizing: border-box;
   overflow: hidden;
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  /* flex-direction: column; */
+  align-items: center;
   justify-content: flex-start;
-  padding: var(--padding-xl) var(--padding-xl) var(--padding-55xl)
-    var(--padding-13xl);
+  padding: var(--padding-9xl) var(--padding-9xl) var(--padding-9xl)
+    var(--padding-9xl);
   gap: var(--gap-base);
   min-width: 383px;
   max-width: 100%;
@@ -77,7 +77,7 @@
   flex: 1;
   font-weight: 300;
   display: inline-block;
-  max-width: 100%;
+  width: 516px;
 }
 .ourMissionIsToRevolutionizWrapper {
   align-self: stretch;
@@ -99,19 +99,22 @@
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: var(--br-6xl);
   background-color: var(--color-white);
-  border: 1px solid var(--color-black);
+  border: 2px solid var(--color-cornflowerblue-200);
   box-sizing: border-box;
   overflow: hidden;
-  flex-direction: column;
+  /* flex-direction: column; */
+  align-self: flex-end;
+  align-items: center;
   padding: var(--padding-xl) var(--padding-7xl) var(--padding-base);
   gap: var(--gap-base);
-  min-width: 383px;
+  /* min-width: 383px; */
+  
 }
 .visionMissionContent {
   align-self: stretch;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
-  gap: var(--gap-48xl);
+  gap: var(--gap-24xl);
 }
 .ourOffices {
   margin: 0;
@@ -156,7 +159,7 @@
 }
 .officeColumns {
   width: 317px;
-  background-color: var(--color-whitesmoke-100);
+  background-color: var(--color-white);
   border: 1px solid var(--color-black);
   box-sizing: border-box;
   flex-shrink: 0;
@@ -200,7 +203,7 @@
 }
 .officeColumns1 {
   width: 317px;
-  background-color: var(--color-whitesmoke-100);
+  background-color: var(--color-white);
   border: 1px solid var(--color-black);
   box-sizing: border-box;
   flex-shrink: 0;
@@ -240,7 +243,7 @@
   align-self: stretch;
   width: 317px;
   border-radius: var(--br-6xl);
-  background-color: var(--color-whitesmoke-100);
+  background-color: var(--color-whiteS);
   border: 1px solid var(--color-black);
   box-sizing: border-box;
   overflow: hidden;
@@ -281,10 +284,12 @@
 .offices {
   height: 560px;
   border-radius: var(--br-6xl);
-  background-color: var(--color-white);
+  background-color: var( --color-whitesmoke-100);
+  border: 2px solid #2697E0;
   overflow: hidden;
   flex-shrink: 0;
   flex-direction: column;
+  align-items: center;
   padding: var(--padding-51xl) var(--padding-31xl);
   gap: var(--gap-24xl);
 }
@@ -322,7 +327,7 @@
 }
 .teamContent {
   border-radius: var(--br-6xl);
-  background-color: var(--color-white);
+  background-color: var(--color-cornflowerblue-100);
   border: 1px solid var(--color-black);
   box-sizing: border-box;
   overflow: hidden;
@@ -336,6 +341,7 @@
   align-self: stretch;
   flex-direction: column;
   justify-content: flex-start;
+  align-items: center;
 }
 .officesParent {
   display: flex;
@@ -359,16 +365,16 @@
   width: 1247px;
   flex-direction: column;
   justify-content: flex-start;
-  gap: var(--gap-74xl);
+  gap: var(--gap-24xl);
 }
 .content {
-  width: 1413px;
+  width: 100vw;
   flex-direction: row;
   justify-content: center;
   padding: 0 var(--padding-xl);
   box-sizing: border-box;
   flex-shrink: 0;
-  text-align: left;
+  text-align: center;
   font-size: var(--font-size-21xl);
   color: var(--color-gray-300);
   font-family: var(--font-montserrat);
