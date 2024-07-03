@@ -1,6 +1,9 @@
+/* Navbar.module.css */
+
 .navbar {
   z-index: 10;
-  position: absolute;
+  position: fixed;
+  top: 0;
   width: 100%;
   padding: 0.75vw 8vw;
   display: flex;
@@ -8,14 +11,16 @@
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-  color: var(--color-white);
+  color: var(--color-black);
+  background-color: var(--color-white);
   background-image: linear-gradient(90deg, #2895DF, #764EC6);
   font-weight: 600;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.navtransparent {
-  background-color: transparent !important;
-  background-image: none;
+.navbar.scrolled {
+  background-color: #00008b; /* deep blue background color */
+  color: var(--color-white);
 }
 
 .navitem {
@@ -42,7 +47,17 @@
   outline: none;
 }
 
+.searchinput::placeholder {
+  color: var(--color-black); /* default placeholder color */
+  transition: color 0.3s ease;
+}
+
+.navsolid .searchinput::placeholder {
+  color: var(--color-white); /* placeholder color when scrolled */
+}
+
 .homeIcon {
   height: 30px;
   width: 30px;
 }
+
