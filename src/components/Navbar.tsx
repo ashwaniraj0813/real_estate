@@ -33,25 +33,11 @@ const Navbar: FunctionComponent<NavbarType> = ({ className = "" }) => {
   const onSearchContainerClick = useCallback(() => {
     navigate("/property-explore-page");
   }, [navigate]);
-
-  const handleScroll = useCallback(() => {
-    const navbarHeight = document.querySelector(`.${styles.navbar}`)?.clientHeight || 0;
-    if (window.scrollY > navbarHeight) {
-      setScrolled(true);
-    } else {
-      setScrolled(false);
-    }
-  }, []);
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [handleScroll]);
+  
+  let match = (useLocation().pathname == '/' || useLocation().pathname == '/aboutus');
 
   return (
-    <header className={`${styles.navbar} ${scrolled ? styles.scrolled : ""}`}>
+    <header className={`${styles.navbar} ${match ? styles.navtransparent : ""}`}>
       <a className={`${styles.navitem} ${styles.logo}`} onClick={onLOGOTextClick}>LOGO</a>
       <div className={`${styles.navitem} ${styles.searchBar}`}>
         <img className={styles.searchicon} src="/icbaselinesearch1.svg" />

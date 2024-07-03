@@ -1,12 +1,12 @@
 import { FunctionComponent } from "react";
-import Navbar from "../components/Navbar";
+import Nav from "../components/Nav";
 import ListingForm from "../components/ListingForm";
 import styles from "./Rent.module.css";
 
 const Rent: FunctionComponent = () => {
   return (
     <div className={styles.rent}>
-      <Navbar />
+      <Nav/>
       <main className={styles.content}>
         <form className={styles.listingFormParent}>
           <ListingForm />
