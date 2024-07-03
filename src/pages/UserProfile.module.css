@@ -1,200 +1,4 @@
-.nav3Child {
-  height: 102px;
-  width: 1440px;
-  position: relative;
-  background: linear-gradient(90deg, #2697e0, #784dc6);
-  display: none;
-  max-width: 100%;
-}
 .logo {
-  text-decoration: none;
-  position: relative;
-  font-weight: 700;
-  color: inherit;
-  display: inline-block;
-  min-width: 62px;
-  white-space: nowrap;
-  cursor: pointer;
-  z-index: 1;
-}
-.logoWrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-end;
-  padding: 0 0 var(--padding-5xs);
-}
-.searchBarChild {
-  height: 40px;
-  width: 400px;
-  position: relative;
-  border-radius: var(--br-3xl);
-  background-color: var(--color-white);
-  display: none;
-  max-width: 100%;
-}
-.icbaselineSearchIcon {
-  height: 24px;
-  width: 24px;
-  position: relative;
-  overflow: hidden;
-  flex-shrink: 0;
-  min-height: 24px;
-  z-index: 1;
-}
-.searchBar,
-.searchBarWrapper,
-.searchInput {
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  box-sizing: border-box;
-}
-.searchInput {
-  width: 110px;
-  border: 0;
-  outline: 0;
-  background-color: transparent;
-  height: 24px;
-  flex-direction: column;
-  padding: var(--padding-9xs) 0 0;
-  font-family: var(--font-montserrat);
-  font-weight: 300;
-  font-size: var(--font-size-xs);
-  color: var(--color-black);
-}
-.searchBar,
-.searchBarWrapper {
-  max-width: 100%;
-}
-.searchBar {
-  align-self: stretch;
-  border-radius: var(--br-3xl);
-  background-color: var(--color-white);
-  flex-direction: row;
-  padding: var(--padding-5xs) var(--padding-2xs);
-  gap: var(--gap-9xs);
-  z-index: 1;
-}
-.searchBarWrapper {
-  width: 407px;
-  flex-direction: column;
-  padding: 0 var(--padding-6xs) 0 0;
-}
-.home {
-  text-decoration: none;
-  position: relative;
-  font-weight: 600;
-  color: inherit;
-  display: inline-block;
-  min-width: 51px;
-  cursor: pointer;
-  z-index: 1;
-}
-.homeButton {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  padding: var(--padding-7xs) 0 0;
-}
-.buy {
-  text-decoration: none;
-  position: relative;
-  font-weight: 600;
-  color: inherit;
-  display: inline-block;
-  min-width: 33px;
-  cursor: pointer;
-  z-index: 1;
-}
-.actionButtons {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  padding: var(--padding-6xs) var(--padding-5xs) 0 0;
-}
-.rent {
-  text-decoration: none;
-  position: relative;
-  font-weight: 600;
-  color: inherit;
-  display: inline-block;
-  min-width: 40px;
-  cursor: pointer;
-  z-index: 1;
-}
-.actionButtons1 {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  padding: var(--padding-6xs) var(--padding-10xs) 0 0;
-}
-.sell {
-  text-decoration: none;
-  position: relative;
-  font-weight: 600;
-  color: inherit;
-  display: inline-block;
-  min-width: 30px;
-  cursor: pointer;
-  z-index: 1;
-}
-.actionButtons2 {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  padding: var(--padding-6xs) var(--padding-5xs) 0 0;
-}
-.icon {
-  height: 33.3px;
-  width: 33.3px;
-  position: relative;
-  z-index: 1;
-}
-.actions {
-  align-self: stretch;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: var(--gap-xl);
-}
-.actionsWrapper,
-.nav3 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-}
-.actionsWrapper {
-  width: 458.3px;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-end;
-  padding: 0 0 var(--padding-10xs-7);
-  font-size: var(--font-size-base);
-}
-.nav3 {
-  align-self: stretch;
-  background: linear-gradient(90deg, #2697e0, #784dc6);
-  flex-direction: row;
-  align-items: flex-end;
-  justify-content: space-between;
-  padding: var(--padding-12xl) var(--padding-110xl) var(--padding-12xl)
-    var(--padding-93xl);
-  top: 0;
-  z-index: 99;
-  position: sticky;
-  gap: var(--gap-xl);
-  text-align: center;
-  font-size: var(--font-size-xl);
-  color: var(--color-white);
-  font-family: var(--font-montserrat);
-}
-.logo1 {
   position: absolute;
   top: 0;
   left: 0;
@@ -212,12 +16,12 @@
   overflow: hidden;
   z-index: 1;
 }
-.avatar {
+.profileImage {
   height: 190px;
   flex: 1;
   position: relative;
 }
-.avatarWrapper {
+.header {
   width: 190px;
   display: flex;
   flex-direction: row;
@@ -242,8 +46,6 @@
   font-family: var(--font-montserrat);
   color: var(--color-black);
   text-align: center;
-  display: inline-block;
-  min-width: 33px;
   z-index: 1;
 }
 .materialSymbolseditIcon {
@@ -271,19 +73,27 @@
   box-sizing: border-box;
 }
 .editButton,
-.editButtonWrapper,
-.profileHeader {
+.editProfile,
+.profileDetails {
   display: flex;
   align-items: flex-start;
 }
-.editButtonWrapper {
+.editProfile {
   width: 85px;
   flex-direction: column;
   justify-content: flex-start;
-  padding: var(--padding-43xl) 0 0;
+  padding: var(--padding-55xl) 0 0;
   box-sizing: border-box;
 }
-.profileHeader {
+/* .profileFields{
+  display: flex;
+  flex-direction: row;
+  gap: 2vw;
+  text-align: left;
+  white-space: nowrap;
+  align-Items: 'center'
+} */
+.profileDetails {
   width: 366px;
   flex-direction: row;
   justify-content: space-between;
@@ -292,8 +102,6 @@
 }
 .firstName {
   position: relative;
-  display: inline-block;
-  min-width: 111px;
 }
 .profilePictureChild {
   height: 53px;
@@ -340,27 +148,25 @@
   display: inline-block;
   padding: 0;
 }
-.firstNameWrapper,
-.profilePictureParent {
+.firstNameField,
+.phoneNumberInput {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
 }
-.profilePictureParent {
+.phoneNumberInput {
   align-self: stretch;
   gap: var(--gap-3xl);
   color: var(--color-gray-200);
 }
-.firstNameWrapper {
+.firstNameField {
   flex: 1;
   gap: var(--gap-4xs);
   min-width: 157px;
 }
 .lastName {
   position: relative;
-  display: inline-block;
-  min-width: 109px;
 }
 .phoneNumberRowChild {
   height: 54px;
@@ -400,19 +206,19 @@
   justify-content: flex-start;
   padding: var(--padding-4xs) var(--padding-3xs) var(--padding-mid);
 }
-.lastNameInput {
+.lastNameContainer {
   align-self: stretch;
   flex-direction: row;
   padding: 0 0 0 var(--padding-10xs);
 }
 .firstNameInput,
-.lastNameInput,
-.lastNameParent {
+.firstNameInput1,
+.lastNameContainer {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
 }
-.lastNameParent {
+.firstNameInput1 {
   flex: 1;
   flex-direction: column;
   gap: var(--gap-4xs);
@@ -423,7 +229,7 @@
   flex-direction: row;
   gap: var(--gap-6xl);
 }
-.frameChild {
+.contactNumberChild {
   height: 53px;
   width: 380px;
   position: relative;
@@ -450,14 +256,14 @@
   padding: 0;
   z-index: 1;
 }
-.firstNameInputParent,
-.rectangleParent {
+.contactNumber,
+.nameDetails {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
   max-width: 100%;
 }
-.rectangleParent {
+.contactNumber {
   width: 380px;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: var(--br-11xs);
@@ -467,20 +273,18 @@
   flex-direction: row;
   padding: var(--padding-4xs) var(--padding-2xs) var(--padding-base);
 }
-.firstNameInputParent {
+.nameDetails {
   align-self: stretch;
   flex-direction: column;
   gap: var(--gap-7xs);
 }
+.emailInputChild,
 .mail {
   position: relative;
-  display: inline-block;
-  min-width: 42px;
 }
 .emailInputChild {
   height: 53px;
   width: 380px;
-  position: relative;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: var(--br-11xs);
   background-color: var(--color-white);
@@ -504,10 +308,6 @@
   padding: 0;
   z-index: 1;
 }
-.emailInput,
-.mailParent {
-  justify-content: flex-start;
-}
 .emailInput {
   align-self: stretch;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
@@ -518,33 +318,35 @@
   display: flex;
   flex-direction: row;
   align-items: flex-start;
+  justify-content: flex-start;
   padding: var(--padding-smi) var(--padding-2xs) var(--padding-xs);
   max-width: 100%;
 }
-.mailParent {
+.firstNameRow {
   width: 380px;
   flex-direction: column;
+  justify-content: flex-start;
   gap: var(--gap-9xs);
 }
-.frameParent,
-.mailParent,
-.profileInfo {
+.firstNameRow,
+.firstNameValue,
+.firstNameValueWrapper {
   display: flex;
   align-items: flex-start;
   max-width: 100%;
 }
-.frameParent {
+.firstNameValue {
   width: 515px;
   flex-direction: column;
   justify-content: flex-start;
   gap: var(--gap-3xl);
 }
-.profileInfo {
+.firstNameValueWrapper {
   align-self: stretch;
   flex-direction: row;
   justify-content: flex-end;
 }
-.profilePanel,
+.lastNameRow,
 .userContainer {
   flex-direction: column;
   max-width: 100%;
@@ -555,22 +357,22 @@
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
-  gap: 73px;
+  gap: var(--gap-54xl);
 }
-.profilePanel {
+.lastNameRow {
   width: 559px;
-  padding: var(--padding-44xl) 0 0;
+  padding: 63px 0 0;
   box-sizing: border-box;
   min-width: 559px;
 }
-.profilePanel,
-.userPanel,
+.lastNameRow,
+.sidebarParent,
 .userProfile {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
 }
-.userPanel {
+.sidebarParent {
   width: 1389px;
   flex-direction: row;
   padding: 0 415px;
@@ -592,11 +394,11 @@
   letter-spacing: normal;
 }
 @media screen and (max-width: 1425px) {
-  .profilePanel {
+  .lastNameRow {
     flex: 1;
     min-width: 100%;
   }
-  .userPanel {
+  .sidebarParent {
     flex-wrap: wrap;
     gap: var(--gap-44xl);
     padding-left: var(--padding-188xl);
@@ -605,34 +407,23 @@
   }
 }
 @media screen and (max-width: 1200px) {
-  .actions {
-    display: none;
-  }
-  .actionsWrapper {
-    width: 0;
-  }
-  .profilePanel {
+  .lastNameRow {
     min-width: 100%;
   }
 }
 @media screen and (max-width: 825px) {
-  .nav3 {
-    padding-left: var(--padding-37xl);
-    padding-right: var(--padding-45xl);
-    box-sizing: border-box;
-  }
   .firstNameInput {
     flex-wrap: wrap;
   }
   .userContainer {
     gap: var(--gap-17xl);
   }
-  .profilePanel {
+  .lastNameRow {
     padding-top: var(--padding-22xl);
     box-sizing: border-box;
     min-width: 100%;
   }
-  .userPanel {
+  .sidebarParent {
     gap: var(--gap-13xl);
     padding-left: var(--padding-84xl);
     padding-right: var(--padding-84xl);
@@ -640,15 +431,10 @@
   }
 }
 @media screen and (max-width: 450px) {
-  .nav3 {
-    padding-left: var(--padding-xl);
-    padding-right: var(--padding-xl);
-    box-sizing: border-box;
-  }
-  .avatarWrapper {
+  .header {
     flex: 1;
   }
-  .profileHeader {
+  .profileDetails {
     flex-wrap: wrap;
   }
   .firstName,
@@ -663,10 +449,10 @@
   .userContainer {
     gap: var(--gap-lg);
   }
-  .profilePanel {
+  .lastNameRow {
     min-width: 100%;
   }
-  .userPanel {
+  .sidebarParent {
     gap: var(--gap-base);
     padding-left: var(--padding-xl);
     padding-right: var(--padding-xl);
