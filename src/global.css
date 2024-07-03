@@ -4,6 +4,11 @@ body {
   margin: 0;
   line-height: normal;
 }
+
+::-webkit-scrollbar {
+  display: none;
+}
+
 :root {
   /* fonts */
   --font-montserrat: Montserrat;

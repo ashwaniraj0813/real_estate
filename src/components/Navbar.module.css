@@ -1,6 +1,6 @@
 .navbar {
   z-index: 10;
-  position: fixed;
+  position: absolute;
   width: 100%;
   padding: 0.75vw 8vw;
   display: flex;
@@ -8,12 +8,20 @@
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-  background-image: linear-gradient(90deg, #2895DF, #764EC6);
   color: var(--color-white);
+  background-image: linear-gradient(90deg, #2895DF, #764EC6);
+  font-weight: 600;
+}
+
+.navtransparent {
+  background-color: transparent !important;
+  background-image: none;
 }
 
 .navitem {
   cursor: pointer;
+  font-family: var(--font-montserrat);
+  font-size: 16px;
 }
 
 .searchBar {
@@ -31,10 +39,10 @@
   width: 100%;
   border: none;
   font-weight: 500;
+  outline: none;
 }
 
-.logo {
-  font-family: var(--font-montserrat);
-  font-size: 16px;
-  font-weight: 600;
+.homeIcon {
+  height: 30px;
+  width: 30px;
 }

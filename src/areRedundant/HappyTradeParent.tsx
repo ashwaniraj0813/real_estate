@@ -1,5 +1,5 @@
 import { FunctionComponent } from "react";
-import TestimonialTwoContent from "./TestimonialTwoContent";
+import TestimonialTwoContent from "../components/TestimonialTwoContent";
 import styles from "./HappyTradeParent.module.css";
 
 export type HappyTradeParentType = {

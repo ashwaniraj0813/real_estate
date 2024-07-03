@@ -1,5 +1,5 @@
 import { FunctionComponent, useCallback } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import styles from "./Navbar.module.css";
 
 export type NavbarType = {
@@ -32,9 +32,11 @@ const Navbar: FunctionComponent<NavbarType> = ({ className = "" }) => {
   const onSearchContainerClick = useCallback(() => {
     navigate("/property-explore-page");
   }, [navigate]);
+  
+  let match = (useLocation().pathname == '/');
 
   return (
-    <header className={[styles.navbar, className].join(" ")}>
+    <header className={`${match ? `${styles.navtransparent} ${styles.navbar}` : `${styles.navbar}`}`}>
       <a className={`${styles.navitem} ${styles.logo}`} onClick={onLOGOTextClick}>LOGO</a>
       <div className={`${styles.navitem} ${styles.searchBar}`}>
           <img className={styles.searchicon} src="/icbaselinesearch1.svg" />
