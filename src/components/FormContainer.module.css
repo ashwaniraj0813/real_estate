@@ -238,10 +238,7 @@
 }
 .alreadyHaveAn,
 .loginNow {
-<<<<<<< HEAD
-=======
   margin-top: 20px;
->>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
   position: relative;
   z-index: 1;
 }

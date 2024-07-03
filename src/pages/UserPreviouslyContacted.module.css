@@ -1,140 +1,3 @@
-<<<<<<< HEAD
-.sidebarChild {
-  width: 289px;
-  height: 922px;
-  position: relative;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  background-color: var(--color-white);
-  border: 1px solid var(--color-gray-400);
-  box-sizing: border-box;
-  display: none;
-}
-.profileSettings {
-  height: 24px;
-  flex: 1;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  z-index: 1;
-}
-.profileSettingsWrapper {
-  align-self: stretch;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: flex-end;
-  padding: 0 var(--padding-4xs) 0 var(--padding-2xs);
-}
-.myProperties {
-  width: 186px;
-  flex-shrink: 0;
-}
-.myProperties,
-.pastSearches {
-  text-decoration: none;
-  height: 24px;
-  position: relative;
-  color: inherit;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  z-index: 1;
-}
-.pastSearchesWrapper {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: flex-end;
-  padding: 0 var(--padding-2xl) 0 var(--padding-4xl);
-}
-.previouslyViewed {
-  align-self: stretch;
-  flex-shrink: 0;
-}
-.previouslyViewed,
-.saved {
-  height: 24px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  z-index: 1;
-}
-.savedWrapper {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: flex-end;
-  padding: 0 var(--padding-39xl) 0 var(--padding-47xl);
-}
-.contacted {
-  height: 24px;
-  position: relative;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1;
-}
-.sidebarItems {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: flex-end;
-  padding: 0 var(--padding-16xl) 0 var(--padding-24xl);
-  color: var(--color-slateblue);
-}
-.notifications {
-  height: 24px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1;
-}
-.sidebarItems1 {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: flex-end;
-  padding: 0 var(--padding-lg);
-}
-.logOut {
-  height: 31px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1;
-}
-.sidebar,
-.sidebarItems2 {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: flex-end;
-  padding: 0 var(--padding-30xl) 0 var(--padding-38xl);
-}
-.sidebar {
-  height: 922px;
-  width: 289px;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  background-color: var(--color-white);
-  border: 1px solid var(--color-gray-400);
-  box-sizing: border-box;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: flex-start;
-  padding: var(--padding-37xl) var(--padding-30xl);
-  gap: var(--gap-52xl);
-  min-width: 289px;
-}
-=======
->>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
 .image6Icon {
   height: 448px;
   flex: 1;
@@ -143,11 +6,7 @@
   overflow: hidden;
   object-fit: cover;
 }
-<<<<<<< HEAD
-.image6Wrapper {
-=======
 .emptyState {
->>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
   width: 484px;
   display: flex;
   flex-direction: row;
@@ -161,11 +20,7 @@
   position: relative;
   font-weight: 600;
 }
-<<<<<<< HEAD
-.youHaventContactedAnyoneLWrapper {
-=======
 .noContactsMessage {
->>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
   align-self: stretch;
   display: flex;
   flex-direction: row;
@@ -174,18 +29,8 @@
   padding: 0 var(--padding-50xl);
 }
 .youWillSee {
-<<<<<<< HEAD
-  margin: 0;
-  align-self: stretch;
-  height: 48px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-=======
   align-self: stretch;
   position: relative;
->>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
 }
 .homeButtonChild {
   height: 40px;
@@ -209,11 +54,8 @@
 }
 .home1 {
   font-weight: 600;
-<<<<<<< HEAD
-=======
   display: inline-block;
   min-width: 38px;
->>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
 }
 .homeButton,
 .homeContainer {
@@ -253,21 +95,13 @@
   color: var(--color-snow);
 }
 .contactImage,
-<<<<<<< HEAD
-.frameParent,
-=======
 .content,
->>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
 .sidebarParent {
   display: flex;
   align-items: flex-start;
   max-width: 100%;
 }
-<<<<<<< HEAD
-.frameParent {
-=======
 .content {
->>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
   align-self: stretch;
   flex-direction: column;
   justify-content: flex-start;
@@ -308,44 +142,22 @@
   letter-spacing: normal;
 }
 @media screen and (max-width: 925px) {
-<<<<<<< HEAD
-  .contactImage,
-  .sidebar {
-    flex: 1;
-    box-sizing: border-box;
-  }
-  .sidebar {
-    padding-top: var(--padding-17xl);
-    padding-bottom: var(--padding-17xl);
-  }
-  .contactImage {
-    padding-top: var(--padding-39xl);
-=======
   .contactImage {
     flex: 1;
     padding-top: var(--padding-39xl);
     box-sizing: border-box;
->>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
   }
   .sidebarParent {
     flex-wrap: wrap;
   }
 }
 @media screen and (max-width: 700px) {
-<<<<<<< HEAD
-  .youHaventContactedAnyoneLWrapper {
-=======
   .noContactsMessage {
->>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
     padding-left: var(--padding-15xl);
     padding-right: var(--padding-15xl);
     box-sizing: border-box;
   }
-<<<<<<< HEAD
-  .frameParent {
-=======
   .content {
->>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
     gap: var(--gap-6xl);
   }
   .contactImage {
@@ -353,24 +165,6 @@
   }
 }
 @media screen and (max-width: 450px) {
-<<<<<<< HEAD
-  .contacted,
-  .logOut,
-  .myProperties,
-  .notifications,
-  .pastSearches,
-  .previouslyViewed,
-  .profileSettings,
-  .saved {
-    font-size: var(--font-size-base);
-  }
-  .sidebar {
-    gap: var(--gap-16xl);
-    padding: var(--padding-4xl) var(--padding-xl);
-    box-sizing: border-box;
-  }
-=======
->>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
   .youHaventContacted,
   .youWillSee {
     font-size: var(--font-size-base);

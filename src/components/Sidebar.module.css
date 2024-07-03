@@ -115,20 +115,19 @@
 }
 .sidebar {
   margin-left: -416px;
-  height: 101vh;
+  height: 89.7vh;
   width: 289px;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   background-color: #444444;
   border: 1px solid var(--color-gray-400);
   box-sizing: border-box;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
   justify-content: flex-start;
   padding: var(--padding-37xl) var(--padding-30xl);
-  gap: var(--gap-52xl);
+  gap: 8vh;
   min-width: 289px;
   flex-shrink: 0;
-  text-align: center;
   font-size: var(--font-size-xl);
   color: var(--color-white);
   font-family: var(--font-montserrat);

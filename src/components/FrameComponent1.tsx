@@ -3,44 +3,22 @@ import styles from "./FrameComponent1.module.css";
 
 export type FrameComponent1Type = {
   className?: string;
-<<<<<<< HEAD
-  withItsOwnPool?: string;
-  image3?: string;
-=======
   image3?: string;
   withItsOwnPool?: string;
->>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
   mumbai?: string;
 
   /** Style props */
   propPadding?: CSSProperties["padding"];
-<<<<<<< HEAD
-  propWidth?: CSSProperties["width"];
-  propAlignSelf?: CSSProperties["alignSelf"];
-  propLeft?: CSSProperties["left"];
-  propPadding1?: CSSProperties["padding"];
-=======
   featuredPropertyTwoDetailWidth?: CSSProperties["width"];
   featuredPropertyTwoDetailPadding?: CSSProperties["padding"];
   frameDivWidth?: CSSProperties["width"];
   frameDivPadding?: CSSProperties["padding"];
   frameDivAlignSelf?: CSSProperties["alignSelf"];
   frameDivPadding1?: CSSProperties["padding"];
->>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
 };
 
 const FrameComponent1: FunctionComponent<FrameComponent1Type> = ({
   className = "",
-<<<<<<< HEAD
-  withItsOwnPool,
-  image3,
-  mumbai,
-  propPadding,
-  propWidth,
-  propAlignSelf,
-  propLeft,
-  propPadding1,
-=======
   image3,
   withItsOwnPool,
   mumbai,
@@ -51,7 +29,6 @@ const FrameComponent1: FunctionComponent<FrameComponent1Type> = ({
   frameDivPadding,
   frameDivAlignSelf,
   frameDivPadding1,
->>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
 }) => {
   const frameDivStyle: CSSProperties = useMemo(() => {
     return {
@@ -59,47 +36,6 @@ const FrameComponent1: FunctionComponent<FrameComponent1Type> = ({
     };
   }, [propPadding]);
 
-<<<<<<< HEAD
-  const withItsOwnStyle: CSSProperties = useMemo(() => {
-    return {
-      width: propWidth,
-      alignSelf: propAlignSelf,
-    };
-  }, [propWidth, propAlignSelf]);
-
-  const mapPinIconStyle: CSSProperties = useMemo(() => {
-    return {
-      left: propLeft,
-    };
-  }, [propLeft]);
-
-  const frameDiv1Style: CSSProperties = useMemo(() => {
-    return {
-      padding: propPadding1,
-    };
-  }, [propPadding1]);
-
-  return (
-    <div
-      className={[styles.withItsOwnPoolParent, className].join(" ")}
-      style={frameDivStyle}
-    >
-      <div className={styles.withItsOwn} style={withItsOwnStyle}>
-        {withItsOwnPool}
-      </div>
-      <div className={styles.image3Parent}>
-        <img className={styles.image3Icon} loading="lazy" alt="" src={image3} />
-        <div className={styles.frameChild} />
-        <img
-          className={styles.mapPinIcon}
-          alt=""
-          src="/map-pin2@2x.png"
-          style={mapPinIconStyle}
-        />
-      </div>
-      <div className={styles.mumbaiWrapper} style={frameDiv1Style}>
-        <div className={styles.mumbai}>{mumbai}</div>
-=======
   const featuredPropertyTwoDetailsStyle: CSSProperties = useMemo(() => {
     return {
       width: featuredPropertyTwoDetailWidth,
@@ -143,7 +79,6 @@ const FrameComponent1: FunctionComponent<FrameComponent1Type> = ({
             </div>
           </div>
         </div>
->>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
       </div>
     </div>
   );

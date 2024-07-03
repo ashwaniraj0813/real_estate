@@ -1,27 +1,15 @@
-<<<<<<< HEAD
-.emptyStateIllustration,
-=======
 .frameWrapper,
->>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
 .sidebarParent {
   display: flex;
   align-items: flex-start;
   box-sizing: border-box;
   max-width: 100%;
 }
-<<<<<<< HEAD
-.emptyStateIllustration {
-  width: 630px;
-  flex-direction: column;
-  justify-content: flex-start;
-  padding: 115px 0 0;
-=======
 .frameWrapper {
   width: 630px;
   flex-direction: column;
   justify-content: flex-start;
   padding: var(--padding-96xl) 0 0;
->>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
   min-width: 630px;
 }
 .sidebarParent {
@@ -44,11 +32,7 @@
   letter-spacing: normal;
 }
 @media screen and (max-width: 975px) {
-<<<<<<< HEAD
-  .emptyStateIllustration {
-=======
   .frameWrapper {
->>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
     flex: 1;
   }
   .sidebarParent {
@@ -56,11 +40,7 @@
   }
 }
 @media screen and (max-width: 700px) {
-<<<<<<< HEAD
-  .emptyStateIllustration {
-=======
   .frameWrapper {
->>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
     padding-top: 75px;
     box-sizing: border-box;
     min-width: 100%;

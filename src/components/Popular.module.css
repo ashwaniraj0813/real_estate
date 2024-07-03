@@ -1,19 +1,10 @@
 .exploreByProperty {
   margin: 0;
-<<<<<<< HEAD
-  width: 561px;
-=======
->>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
   position: relative;
   font-size: inherit;
   font-weight: 400;
   font-family: inherit;
-<<<<<<< HEAD
-  display: flex;
-  align-items: center;
-=======
   display: inline-block;
->>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
   text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   max-width: 100%;
 }
@@ -31,13 +22,9 @@
   font-family: var(--font-montserrat);
   color: var(--color-white);
   text-align: left;
-<<<<<<< HEAD
-  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-=======
   display: inline-block;
   text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   min-width: 106px;
->>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
   z-index: 1;
 }
 .viewMoreBtn {
@@ -59,13 +46,8 @@
   flex-direction: row;
   align-items: flex-end;
   justify-content: space-between;
-<<<<<<< HEAD
-  max-width: 100%;
-  gap: var(--gap-xl);
-=======
   gap: var(--gap-xl);
   max-width: 100%;
->>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
 }
 .web11Icon {
   align-self: stretch;

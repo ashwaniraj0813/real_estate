@@ -163,7 +163,7 @@ const UserProfile: FunctionComponent = () => {
                 </div>
               </div>
             </div>
-            <div style={{display: 'flex', flexDirection: 'column', gap: '2vh'}}>
+            <div style={{display: 'flex', flexDirection: 'column', gap: '2vh', marginTop: '3vh'}}>
               <div style={{display: 'flex', flexDirection: 'column', gap: '1vw'}}>
                 Subscribe for updates from Real Estate.
                 <div style={{display: 'flex', flexDirection: 'row', gap: '1vw', marginLeft: '2vw'}}>

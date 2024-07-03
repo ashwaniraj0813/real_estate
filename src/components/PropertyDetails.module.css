@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+/* <<<<<<< HEAD */
 .starsIcon {
   position: absolute;
   top: 0;
@@ -207,7 +207,7 @@
     font-size: var(--font-size-14xl);
   }
 }
-=======
+/* ======= */
 /* * { border: 1px solid green; } */
 
 .PropertyDetails *,
@@ -233,8 +233,8 @@
 .breadcrumb {
     font-family: var(--font-montserrat);
     width: 100%; 
-    font-size: 16px;
-    font-weight: 600;
+    font-size: 20px;
+    font-weight: 700;
 }
 
 .heading {
@@ -242,8 +242,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    font-size: 30px;
-    font-weight: 600;
+    font-size: 40px;
+    font-weight: 700;
 }
 
 .header {
@@ -258,16 +258,16 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    gap: 10px;
+    gap: 20px;
 }
 
 .name {
     font-size: 40px;
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .location {
-    font-size: 25px;
+    font-size: 30px;
 }
 
 .ratings {
@@ -278,7 +278,7 @@
 }
 
 .reviews {
-    font-size: 20px;
+    font-size: 25px;
 }
 
 .details {
@@ -310,6 +310,7 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
+    gap: 20px;
 }
 
 .basis {
@@ -325,11 +326,11 @@
     flex-direction: column;
     justify-content: center;
     width: 440px;
-    font-weight: 600;
+    font-weight: 700;
     padding: 10px;
 }
 
-/* .images {
+.images {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -341,49 +342,15 @@
 .image {
     height: 300px;
     width: 350px;
-} */
-
-.Gallery {
-    max-width: 86vw; 
-    margin: 0 auto;
-    padding: 20px;
 }
-
-.images {
-    display: flex;
-    flex-wrap: nowrap; 
-    overflow-x: auto; 
-    gap: 30px;
-}
-
-.image {
-    flex: 0 0 350px; 
-    height: 300px; 
-    object-fit: cover; 
-    scroll-snap-align: start;
-}
-
-.images::-webkit-scrollbar {
-    display: block;
-    height: 8px;
-}
-
-.images::-webkit-scrollbar-thumb {
-    background-color: #b8b8b8;
-    border-radius: 4px;
-}
-
-.images::-webkit-scrollbar-track {
-    background-color: transparent;
-} 
 
 .describe {
-    font-size: 18px;
+    font-size: 20px;
     line-height: 30px;
 }
 
 .list {
-    font-size: 18px;
+    font-size: 20px;
     line-height: 30px;
     display: flex;
     flex-wrap: wrap;
@@ -406,7 +373,7 @@
 .address {
     display: flex;
     align-items: center;
-    font-size: 18px;
+    font-size: 20px;
     gap: 20px;
 }
 
@@ -419,11 +386,8 @@
     height: 500px;
     width: 100%;
     border: none;
+/* <<<<<<< HEAD */
     /* opacity: 0.5; */
     /* transition: opacity ease-in 200ms ; */
 }
-/* 
-.map:hover {
-    opacity: 1;
-} */
->>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
+

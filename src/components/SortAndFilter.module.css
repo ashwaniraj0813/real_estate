@@ -1,53 +1,3 @@
-<<<<<<< HEAD
-.sortAndFilterChild {
-  width: 289px;
-  height: 922px;
-  position: relative;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  background-color: var(--color-white);
-  border: 1px solid var(--color-gray-400);
-  box-sizing: border-box;
-  display: none;
-}
-.location,
-.sortBy {
-  position: relative;
-  text-align: left;
-  z-index: 1;
-}
-.area,
-.location,
-.sortBy {
-  text-decoration: none;
-  color: inherit;
-}
-.amenities,
-.area,
-.facilities,
-.numberOfBedrooms,
-.priceRange,
-.propertyType {
-  position: relative;
-  z-index: 1;
-}
-.sortAndFilter {
-  height: 922px;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  background-color: var(--color-white);
-  border: 1px solid var(--color-gray-400);
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  padding: var(--padding-37xl) var(--padding-15xl);
-  gap: var(--gap-59xl);
-  text-align: center;
-  font-size: var(--font-size-xl);
-  color: var(--color-gray-300);
-  font-family: var(--font-montserrat);
-}
-=======
 /* Styles for .sortAndFilter */
 .sortAndFilter {
   min-height: 90vh;
@@ -67,7 +17,6 @@
 }
 
 /* Responsive Design */
->>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
 @media screen and (max-width: 975px) {
   .sortAndFilter {
     display: none;
@@ -76,10 +25,6 @@
     box-sizing: border-box;
   }
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
 @media screen and (max-width: 450px) {
   .amenities,
   .area,
@@ -91,18 +36,10 @@
   .sortBy {
     font-size: var(--font-size-base);
   }
-<<<<<<< HEAD
-=======
-
->>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
   .sortAndFilter {
     gap: var(--gap-20xl);
     padding-top: var(--padding-4xl);
     padding-bottom: var(--padding-4xl);
     box-sizing: border-box;
   }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc

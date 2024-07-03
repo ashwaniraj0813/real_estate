@@ -19,25 +19,6 @@
   position: relative;
   font-weight: 600;
 }
-<<<<<<< HEAD
-.allTheProperties,
-.youHaventViewedAnythingYeWrapper {
-  align-self: stretch;
-  display: flex;
-  justify-content: center;
-}
-.youHaventViewedAnythingYeWrapper {
-  flex-direction: row;
-  align-items: flex-start;
-  padding: 0 var(--padding-xl);
-}
-.allTheProperties {
-  margin: 0;
-  height: 48px;
-  position: relative;
-  align-items: center;
-  flex-shrink: 0;
-=======
 .youHaventViewedAnythingYeWrapper {
   align-self: stretch;
   display: flex;
@@ -58,7 +39,6 @@
   justify-content: flex-start;
   gap: var(--gap-6xl);
   max-width: 100%;
->>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
 }
 .homeButtonChild {
   height: 40px;
@@ -86,11 +66,8 @@
   font-family: var(--font-montserrat);
   color: var(--color-snow);
   text-align: center;
-<<<<<<< HEAD
-=======
   display: inline-block;
   min-width: 38px;
->>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
 }
 .homeButton,
 .homeWrapper {
@@ -115,23 +92,6 @@
   box-sizing: border-box;
   gap: var(--gap-2xs);
 }
-<<<<<<< HEAD
-.frameParent,
-.homeButtonWrapper {
-  align-self: stretch;
-  display: flex;
-  align-items: flex-start;
-}
-.homeButtonWrapper {
-  flex-direction: row;
-  justify-content: center;
-  padding: 0 var(--padding-2xl) 0 var(--padding-xl);
-}
-.frameParent {
-  flex-direction: column;
-  justify-content: flex-start;
-  gap: var(--gap-6xl);
-=======
 .homeButtonWrapper {
   align-self: stretch;
   display: flex;
@@ -147,21 +107,17 @@
   align-items: flex-start;
   justify-content: flex-start;
   gap: var(--gap-24xl);
->>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
   max-width: 100%;
   text-align: center;
   font-size: var(--font-size-xl);
   color: var(--color-black);
   font-family: var(--font-montserrat);
 }
-<<<<<<< HEAD
-=======
 @media screen and (max-width: 700px) {
   .emptyStateIllustrationConteParent {
     gap: var(--gap-2xl);
   }
 }
->>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
 @media screen and (max-width: 450px) {
   .allTheProperties,
   .youHaventViewed {

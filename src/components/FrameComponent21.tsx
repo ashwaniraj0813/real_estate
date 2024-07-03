@@ -11,11 +11,7 @@ const FrameComponent2: FunctionComponent<FrameComponent2Type> = ({
   return (
     <div className={[styles.citiesParent, className].join(" ")}>
       <div className={styles.cities}>
-<<<<<<< HEAD
-        <div className={styles.frameParent}>
-=======
         <div className={styles.cityOptions}>
->>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
           <div className={styles.exploreByCityWrapper}>
             <h2 className={styles.exploreByCity}>Explore by City</h2>
           </div>
@@ -57,22 +53,14 @@ const FrameComponent2: FunctionComponent<FrameComponent2Type> = ({
           <div className={styles.web124} />
           <div className={styles.tokyo}>TOKYO</div>
         </div>
-<<<<<<< HEAD
-        <div className={styles.cityCardFrame}>
-=======
         <div className={styles.cityCardAix}>
->>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
           <div className={styles.cityCard5}>
             <img className={styles.web111Icon} alt="" src="/web11-1@2x.png" />
             <div className={styles.web125} />
             <div className={styles.aix}>AIX</div>
           </div>
         </div>
-<<<<<<< HEAD
-        <div className={styles.frameDiv}>
-=======
         <div className={styles.cityCardFrame}>
->>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
           <div className={styles.cityCard6}>
             <img className={styles.web121Icon} alt="" src="/web12-1@2x.png" />
             <div className={styles.web126} />
@@ -82,11 +70,7 @@ const FrameComponent2: FunctionComponent<FrameComponent2Type> = ({
         <div className={styles.cityCard7}>
           <img className={styles.web91Icon} alt="" src="/web9-1@2x.png" />
           <div className={styles.web127} />
-<<<<<<< HEAD
-          <b className={styles.dubai}>DUBAI</b>
-=======
           <div className={styles.dubai}>DUBAI</div>
->>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
         </div>
       </div>
     </div>

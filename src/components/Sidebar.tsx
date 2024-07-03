@@ -1,26 +1,14 @@
-<<<<<<< HEAD
-import { FunctionComponent, useCallback } from "react";
-=======
 import {
   FunctionComponent,
   useMemo,
   type CSSProperties,
   useCallback,
 } from "react";
->>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
 import { useNavigate } from "react-router-dom";
 import styles from "./Sidebar.module.css";
 
 export type SidebarType = {
   className?: string;
-<<<<<<< HEAD
-};
-
-const Sidebar: FunctionComponent<SidebarType> = ({ className = "" }) => {
-  const navigate = useNavigate();
-
-  const onMyPropertiesTextClick = useCallback(() => {
-=======
 
   /** Style props */
   sidebarMarginLeft?: CSSProperties["marginLeft"];
@@ -69,7 +57,6 @@ const Sidebar: FunctionComponent<SidebarType> = ({
   const navigate = useNavigate();
 
   const onMyPropertiesTextClick1 = useCallback(() => {
->>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
     navigate("/user-properties0");
   }, [navigate]);
 
@@ -90,14 +77,6 @@ const Sidebar: FunctionComponent<SidebarType> = ({
   }, [navigate]);
 
   return (
-<<<<<<< HEAD
-    <div className={[styles.sidebar, className].join(" ")}>
-      <div className={styles.sidebarChild} />
-      <div className={styles.sidebarItems}>
-        <b className={styles.profileSettings}>Profile settings</b>
-      </div>
-      <div className={styles.myProperties} onClick={onMyPropertiesTextClick}>
-=======
     <div
       className={[styles.sidebar, className].join(" ")}
       style={sidebar1Style}
@@ -117,7 +96,6 @@ const Sidebar: FunctionComponent<SidebarType> = ({
         onClick={onMyPropertiesTextClick}
         style={myPropertiesStyle}
       >
->>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
         My properties
       </div>
       <div className={styles.sidebarItems1}>
@@ -144,15 +122,10 @@ const Sidebar: FunctionComponent<SidebarType> = ({
       <div className={styles.sidebarItems4}>
         <div className={styles.notifications}>Notifications</div>
       </div>
-<<<<<<< HEAD
-      <div className={styles.sidebarItems5}>
-        <div className={styles.logOut}>Log out</div>
-=======
       <div className={styles.logoutButton}>
         <div className={styles.logOut} onClick={onLOGOTextClick}>
           Log out
         </div>
->>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
       </div>
     </div>
   );

@@ -1,9 +1,5 @@
 .exploreByCity {
   margin: 0;
-<<<<<<< HEAD
-  align-self: stretch;
-=======
->>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
   position: relative;
   font-size: inherit;
   font-weight: 400;
@@ -11,10 +7,6 @@
   text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 .exploreByCityWrapper {
-<<<<<<< HEAD
-  width: 334px;
-=======
->>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -37,19 +29,12 @@
   font-family: var(--font-montserrat);
   color: var(--color-white);
   text-align: left;
-<<<<<<< HEAD
-  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  z-index: 1;
-}
-.frameParent,
-=======
   display: inline-block;
   text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   min-width: 106px;
   z-index: 1;
 }
 .cityOptions,
->>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
 .viewMoreBtn {
   display: flex;
   flex-direction: row;
@@ -65,11 +50,7 @@
   justify-content: flex-start;
   white-space: nowrap;
 }
-<<<<<<< HEAD
-.frameParent {
-=======
 .cityOptions {
->>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
   align-self: stretch;
   align-items: flex-end;
   justify-content: space-between;
@@ -359,11 +340,7 @@
   z-index: 2;
 }
 .cityCard5,
-<<<<<<< HEAD
-.cityCardFrame {
-=======
 .cityCardAix {
->>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
@@ -378,11 +355,7 @@
   background-repeat: no-repeat;
   background-position: top;
 }
-<<<<<<< HEAD
-.cityCardFrame {
-=======
 .cityCardAix {
->>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
   flex-direction: column;
   padding: 0 var(--padding-6xs) 0 0;
 }
@@ -417,11 +390,7 @@
   z-index: 2;
 }
 .cityCard6,
-<<<<<<< HEAD
-.frameDiv {
-=======
 .cityCardFrame {
->>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
@@ -436,11 +405,7 @@
   background-repeat: no-repeat;
   background-position: top;
 }
-<<<<<<< HEAD
-.frameDiv {
-=======
 .cityCardFrame {
->>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
   flex-direction: column;
   padding: 0 var(--padding-6xs) 0 0;
 }
@@ -531,11 +496,7 @@
   }
 }
 @media screen and (max-width: 750px) {
-<<<<<<< HEAD
-  .frameParent {
-=======
   .cityOptions {
->>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
     flex-wrap: wrap;
   }
   .cityCardParent {
