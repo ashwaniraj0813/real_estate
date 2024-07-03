@@ -1,6 +1,6 @@
 import { FunctionComponent, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
-import Navbar from "../components/Navbar";
+import Nav from "../components/Nav";
 import Sidebar from "../components/Sidebar";
 import FrameComponent from "../components/FrameComponent4";
 import styles from "./UserPreviouslySaved.module.css";
@@ -18,7 +18,7 @@ const UserPreviouslySaved: FunctionComponent = () => {
 
   return (
     <div className={styles.userPreviouslySaved0}>
-      <Navbar/>
+      <Nav/>
       <main className={styles.sidebarParent}>
         <Sidebar currentPage="user-previously-saved0"
           sidebarMarginLeft="unset"
