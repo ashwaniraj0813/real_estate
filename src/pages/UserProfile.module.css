@@ -358,7 +358,6 @@
   align-items: flex-start;
   justify-content: flex-start;
   gap: var(--gap-54xl);
-  debug_commit: 69da668;
 }
 .lastNameRow {
   width: 559px;
