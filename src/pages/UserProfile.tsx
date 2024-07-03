@@ -1,5 +1,5 @@
 import React, { FunctionComponent, useState, ChangeEvent } from "react";
-import Navbar from "../components/Navbar";
+import Nav from "../components/Nav";
 import Sidebar from "../components/Sidebar";
 import styles from "./UserProfile.module.css";
 import EditableInput from "./EditableInput";
@@ -35,7 +35,7 @@ const UserProfile: FunctionComponent = () => {
 
   return (
     <div className={styles.userProfile}>
-      <Navbar />
+      <Nav />
       <section className={styles.sidebarParent}>
         <Sidebar currentPage="profile-settings"/>
         <div className={styles.lastNameRow} style={{marginTop: '4vh'}}>

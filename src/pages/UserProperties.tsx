@@ -2,7 +2,7 @@ import { FunctionComponent, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
 import styles from "./UserProperties.module.css";
-import Navbar from "../components/Navbar";
+import Nav from "../components/Nav";
 import LottieAnimation from "../components/LottieAnimation";
 
 const UserProperties: FunctionComponent = () => {
@@ -18,7 +18,7 @@ const UserProperties: FunctionComponent = () => {
 
   return (
     <div className={styles.userProperties0}>
-      <Navbar/>
+      <Nav/>
       <main className={styles.sidebarContainer}>
         <Sidebar currentPage="user-properties0"
           sidebarMarginLeft="unset"

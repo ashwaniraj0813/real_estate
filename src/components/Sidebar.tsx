@@ -28,10 +28,6 @@ export type SidebarType = {
 const Sidebar: FunctionComponent<SidebarType> = ({
   className = "",
   sidebarMarginLeft,
-  profileSettingsColor,
-  profileSettingsFontWeight,
-  myPropertiesColor,
-  myPropertiesFontWeight,
   onHomeIconClick,
   onLOGOTextClick,
   currentPage,
@@ -48,19 +44,9 @@ const Sidebar: FunctionComponent<SidebarType> = ({
     return currentPage === page ? styles.currPage : styles.notCurrPage;
   };
 
-  const profileSettingsStyle: CSSProperties = useMemo(() => {
-    return {
-      color: profileSettingsColor,
-      fontWeight: profileSettingsFontWeight,
-    };
-  }, [profileSettingsColor, profileSettingsFontWeight]);
-
-  const myPropertiesStyle: CSSProperties = useMemo(() => {
-    return {
-      color: myPropertiesColor,
-      fontWeight: myPropertiesFontWeight,
-    };
-  }, [myPropertiesColor, myPropertiesFontWeight]);
+  const onProfileSettingTextClick = useCallback(() => {
+    navigate("/user-profile");
+  }, [navigate]);
 
   const onMyPropertiesTextClick = useCallback(() => {
     navigate("/user-properties0");
@@ -94,7 +80,7 @@ const Sidebar: FunctionComponent<SidebarType> = ({
       <div className={styles.sidebarChild} />
       <div
         className={getCurrentPageClass("profile-settings")}
-        onClick={onHomeIconClick}
+        onClick={onProfileSettingTextClick}
       >
         Profile settings
       </div>
