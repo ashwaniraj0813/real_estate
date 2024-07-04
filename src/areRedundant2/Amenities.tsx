@@ -1,25 +1,19 @@
 import { FunctionComponent } from "react";
-import PropertyCardOne from "../components/PropertyCardOne";
-import styles from "./FrameComponent.module.css";
+import EmailPhoneParent from "../components/EmailPhoneParent";
+import styles from "./Amenities.module.css";
 
-export type FrameComponentType = {
+export type AmenitiesType = {
   className?: string;
 };
 
-const FrameComponent: FunctionComponent<FrameComponentType> = ({
-  className = "",
-}) => {
+const Amenities: FunctionComponent<AmenitiesType> = ({ className = "" }) => {
   return (
-    <section
-      className={[styles.similarPropertiesContainerWrapper, className].join(
-        " "
-      )}
-    >
-      <div className={styles.similarPropertiesContainer}>
+    <section className={[styles.amenities, className].join(" ")}>
+      <div className={styles.similarPropertiesParent}>
         <b className={styles.similarProperties}>Similar Properties</b>
-        <div className={styles.similarPropertiesList}>
-          <div className={styles.similarPropertyCards}>
-            <div className={styles.propertyCardDetails}>
+        <div className={styles.submitParent}>
+          <div className={styles.amenitiesContainer}>
+            <div className={styles.web11Parent}>
               <img
                 className={styles.web11Icon}
                 loading="lazy"
@@ -34,12 +28,12 @@ const FrameComponent: FunctionComponent<FrameComponentType> = ({
                 <p className={styles.from3723month}>From £3,723/month</p>
               </div>
             </div>
-            <PropertyCardOne
+            <EmailPhoneParent
               web21="/web2-1@2x.png"
               oVOArenaBuildingLondon="OVO Arena Building, London"
               from2195month="From £2,195/month"
             />
-            <div className={styles.propertyCardDetails1}>
+            <div className={styles.web31Parent}>
               <img
                 className={styles.web31Icon}
                 loading="lazy"
@@ -54,7 +48,7 @@ const FrameComponent: FunctionComponent<FrameComponentType> = ({
                 <p className={styles.from390week}>From £390/week</p>
               </div>
             </div>
-            <PropertyCardOne
+            <EmailPhoneParent
               web21="/web4-1@2x.png"
               oVOArenaBuildingLondon="The Lyra, London"
               from2195month="From £390/week"
@@ -69,4 +63,4 @@ const FrameComponent: FunctionComponent<FrameComponentType> = ({
   );
 };
 
-export default FrameComponent;
+export default Amenities;

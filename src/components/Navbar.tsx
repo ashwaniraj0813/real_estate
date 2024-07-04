@@ -63,10 +63,10 @@ const Navbar: FunctionComponent<NavbarProps> = ({ className = "click" }) => {
     setOtpPopupOpen(false);
   };
 
-  const isHomePage = useLocation().pathname === '/';
+  const match = (useLocation().pathname === '/' || useLocation().pathname == '/aboutus');
 
   return (
-    <header className={`${styles.navbar} ${isHomePage ? styles.navtransparent : ""}`}>
+    <header className={`${styles.navbar} ${match ? styles.navtransparent : ""}`}>
       <div className={`${styles.navitem} ${styles.logo}`} onClick={onLOGOTextClick}>LOGO</div>
       <div className={`${styles.navitem} ${styles.searchBar}`}>
         <img className={styles.searchicon} src="/icbaselinesearch1.svg" alt="search icon" />

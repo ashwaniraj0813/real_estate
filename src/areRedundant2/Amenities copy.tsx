@@ -1,5 +1,5 @@
 import { FunctionComponent } from "react";
-import EmailPhoneParent from "./EmailPhoneParent";
+import EmailPhoneParent from "../components/EmailPhoneParent";
 import styles from "./Amenities.module.css";
 
 export type AmenitiesType = {

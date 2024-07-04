@@ -1,6 +1,6 @@
 import { FunctionComponent } from "react";
 import Nav from "../components/Nav";
-import FormContainer from "../components/FormContainer";
+import FormContainer from "../areRedundant2/FormContainer";
 import styles from "./Register.module.css";
 
 const Register: FunctionComponent = () => {

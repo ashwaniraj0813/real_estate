@@ -1,5 +1,5 @@
 import { FunctionComponent } from "react";
-import FrameComponent1 from "../components/FrameComponent1";
+import FrameComponent1 from "../areRedundant2/FrameComponent1";
 import styles from "./Desktop.module.css";
 
 export type DesktopType = {

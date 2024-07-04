@@ -1,6 +1,6 @@
 import { FunctionComponent } from "react";
 import ImageInput from "./ImageInput";
-import FrameComponent from "./FrameComponent2";
+import FrameComponent from "../areRedundant2/FrameComponent2";
 import styles from "./ListingForm.module.css";
 
 export type ListingFormType = {

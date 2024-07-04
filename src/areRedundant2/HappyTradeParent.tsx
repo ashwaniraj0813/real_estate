@@ -30,7 +30,9 @@ const HappyTradeParent: FunctionComponent<HappyTradeParentType> = ({
               src="/vector-2.svg"
             />
           </div>
+          <TestimonialTwoContent />
         </div>
+        <TestimonialTwoContent />
         <TestimonialTwoContent />
       </div>
       <img className={styles.vectorIcon1} alt="" src="/vector-3.svg" />

@@ -32,8 +32,9 @@ pids
 
 # OS-specific
 Thumbs.db
-  
-<<<<<<< HEAD
-=======
+
+#Backend Repository
 /real-estate-platform-main
->>>>>>> efc6cd41fbfbb22488a4e52a2f908ee350cbbbbc
+
+# Others
+gitdiff.txt

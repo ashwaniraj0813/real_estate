@@ -1,7 +1,7 @@
 import { FunctionComponent, useCallback, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import MailPassword from "./MailPassword";
+import MailPassword from "../components/MailPassword";
 import styles from "./FormContainer.module.css";
 
 export type FormContainerType = {

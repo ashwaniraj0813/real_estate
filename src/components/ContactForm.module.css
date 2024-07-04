@@ -8,6 +8,8 @@
     display: flex;
     flex-direction: column;
     gap: 40px;
+    font-size: 18px;
+    line-height: 20px;
 }
 
 .heading {
@@ -15,8 +17,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    font-size: 40px;
-    font-weight: 700;
+    font-size: 30px;
+    font-weight: 600;
 }
 
 .contact {
@@ -24,8 +26,6 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
-    font-size: 20px;
-    line-height: 30px;
 }
 
 .contact > * {
@@ -37,17 +37,18 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    gap: 25px;
+    gap: 15px;
 }
 
 .form > * {
     width: 100%;
-    font-size: 20px;
-    line-height: 30px;
+    font-size: 18px;
+    line-height: 20px;
     padding: 10px 20px;
     border: none;
     border-radius: 20px;
     background-color: var(--color-whitesmoke-100);
+    outline: none;
 }
 
 .form > textarea {
