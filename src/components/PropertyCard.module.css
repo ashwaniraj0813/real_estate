@@ -6,8 +6,6 @@
 }
 
 .propertyCard {
-  width: 260px;
-  height: 320px;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -16,7 +14,7 @@
   font-family: var(--font-montserrat);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
   border-radius: 25px;
-  font-size: 18px; 
+  font-size: 20px; 
 }
 
 .propertyCard > * {
@@ -34,10 +32,9 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: space-between;
+  justify-content: flex-start;
   cursor: pointer;
   margin-top: 20px;
-  height: 100%;
 }
 
 .title {
@@ -49,8 +46,40 @@
   flex-direction: row;
   align-items: flex-end;
   justify-content: space-between;
-  width: 100%;
-  font-size: 14px;
+  flex-shrink: 0;
+  gap: var(--gap-xl);
+}
+.propertyCard,
+.villaWithSpaciousAndLargeParent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.villaWithSpaciousAndLargeParent {
+  align-self: stretch;
+  gap: var(--gap-8xs-8);
+}
+.propertyCard {
+  height: 288px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: var(--br-3xs);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-500);
+  box-sizing: border-box;
+  padding: var(--padding-5xs) 0 var(--padding-8xs-3) var(--padding-4xs);
+  gap: var(--gap-sm);
+  cursor: pointer;
+  text-align: left;
+  font-size: var(--font-size-xl);
+  color: var(--color-gray-300);
+  font-family: var(--font-montserrat);
+}
+@media screen and (max-width: 450px) {
+  .pune,
+  .villaWithSpacious {
+    font-size: var(--font-size-base);
+  }
 }
 
 .location {

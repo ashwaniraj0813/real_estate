@@ -27,7 +27,7 @@
 }
 
 .aptform * {
-  font-size: 18px;
+  font-size: 22px;
 }
 
 .aptform {
@@ -76,6 +76,7 @@ input {
 }
 
 .bookappointment {
+  font-size: 20px;
   border: none;
   color: var(--color-white);
   border-radius: 30px;

@@ -15,7 +15,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    font-size: 30px;
+    font-size: 40px;
     font-weight: 700;
 }
 
@@ -25,7 +25,7 @@
     justify-content: space-between;
     align-items: flex-start;
     font-size: 20px;
-    line-height: 25px;
+    line-height: 30px;
 }
 
 .contact > * {
@@ -37,13 +37,13 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    gap: 20px;
+    gap: 25px;
 }
 
 .form > * {
     width: 100%;
-    font-size: 18px;
-    line-height: 20px;
+    font-size: 20px;
+    line-height: 30px;
     padding: 10px 20px;
     border: none;
     border-radius: 20px;
@@ -55,7 +55,6 @@
     min-width: 550px;
     max-height: 200px;
     min-height: 200px;
-    outline: none;
 }
 
 .btn {
@@ -79,6 +78,7 @@
 .datarow {
     display: flex;
     flex-direction: row;
+    gap: 20px;
 }
 
 .basis {
