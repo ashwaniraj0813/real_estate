@@ -6,22 +6,22 @@ import {
   useLocation,
 } from "react-router-dom";
 import HomePage from "./pages/HomePage";
-import AdminLogin from "./pages/AdminLogin";
-import AdminDashboard from "./pages/AdminDashboard";
-import LogIn from "./pages/LogIn";
-import UserProfile from "./pages/UserProfile";
-import UserPastSearches from "./pages/UserPastSearches";
+import AboutUs from "./pages/AboutUs";
+import PropertyExplorePage from "./pages/PropertyExplorePage";
 import PropertyListingsPage from "./pages/PropertyListingsPage";
+import PropertyDetailsPage from "./pages/PropertyDetailsPage";
 import Rent from "./pages/Rent";
 import Sell from "./pages/Sell";
-import PropertyDetailsPage from "./pages/PropertyDetailsPage";
+import AdminLogin from "./pages/AdminLogin";
+import AdminDashboard from "./pages/AdminDashboard";
+import UserProfile from "./pages/UserProfile";
+import UserProperties from "./pages/UserProperties";
+import UserPastSearches from "./pages/UserPastSearches";
 import UserPreviouslyViewed from "./pages/UserPreviouslyViewed";
 import UserPreviouslySaved from "./pages/UserPreviouslySaved";
 import UserPreviouslyContacted from "./pages/UserPreviouslyContacted";
-import UserProperties from "./pages/UserProperties";
 import Register from "./pages/Register";
-import PropertyExplorePage from "./pages/PropertyExplorePage";
-import AboutUs from "./pages/AboutUs";
+import LogIn from "./pages/LogIn";
 
 function App() {
   const action = useNavigationType();
@@ -43,27 +43,19 @@ function App() {
         title = "";
         metaDescription = "";
         break;
-      case "/admin-login":
+      case "/aboutus":
         title = "";
         metaDescription = "";
         break;
-      case "/admin-dashboard":
-        title = "";
-        metaDescription = "";
-        break;
-      case "/log-in":
-        title = "";
-        metaDescription = "";
-        break;
-      case "/user-profile":
-        title = "";
-        metaDescription = "";
-        break;
-      case "/user-past-searches0":
+      case "/property-explore-page":
         title = "";
         metaDescription = "";
         break;
       case "/property-listings-page":
+        title = "";
+        metaDescription = "";
+        break;
+      case "/property-details-page":
         title = "";
         metaDescription = "";
         break;
@@ -75,19 +67,15 @@ function App() {
         title = "";
         metaDescription = "";
         break;
-      case "/property-details-page":
+      case "/admin-login":
         title = "";
         metaDescription = "";
         break;
-      case "/user-previously-viewed0":
+      case "/admin-dashboard":
         title = "";
         metaDescription = "";
         break;
-      case "/user-previously-saved0":
-        title = "";
-        metaDescription = "";
-        break;
-      case "/user-previously-contacted0":
+      case "/user-profile":
         title = "";
         metaDescription = "";
         break;
@@ -95,15 +83,27 @@ function App() {
         title = "";
         metaDescription = "";
         break;
+      case "/user-past-searches0":
+        title = "";
+        metaDescription = "";
+        break;
+      case "/user-previously-viewed":
+        title = "";
+        metaDescription = "";
+        break;
+      case "/user-previously-saved":
+        title = "";
+        metaDescription = "";
+        break;
+      case "/user-previously-contacted":
+        title = "";
+        metaDescription = "";
+        break;
       case "/register":
         title = "";
         metaDescription = "";
         break;
-      case "/property-explore-page":
-        title = "";
-        metaDescription = "";
-        break;
-      case "/aboutus":
+      case "/log-in":
         title = "";
         metaDescription = "";
         break;
@@ -126,32 +126,24 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
-      <Route path="/admin-login" element={<AdminLogin />} />
-      <Route path="/admin-dashboard" element={<AdminDashboard />} />
-      <Route path="/log-in" element={<LogIn />} />
-      <Route path="/user-profile" element={<UserProfile />} />
-      <Route path="/user-past-searches0" element={<UserPastSearches />} />
-      <Route
-        path="/property-listings-page"
-        element={<PropertyListingsPage />}
-      />
+      <Route path="/aboutus" element={<AboutUs />} />
+      <Route path="/property-explore-page" element={<PropertyExplorePage />} />
+      <Route path="/property-listings-page" element={<PropertyListingsPage />} />
+      <Route path="/property-details-page/:property_id" element={<PropertyDetailsPage />} />
       <Route path="/rent" element={<Rent />} />
       <Route path="/sell" element={<Sell />} />
-      <Route path="/property-details-page/:property_id" element={<PropertyDetailsPage />} />
-      <Route
-        path="/user-previously-viewed0"
-        element={<UserPreviouslyViewed />}
-      />
-      <Route path="/user-previously-saved0" element={<UserPreviouslySaved />} />
-      <Route
-        path="/user-previously-contacted0"
-        element={<UserPreviouslyContacted />}
-      />
+      <Route path="/user-profile" element={<UserProfile />} />
       <Route path="/user-properties0" element={<UserProperties />} />
+      <Route path="/user-past-searches0" element={<UserPastSearches />} />
+      <Route path="/user-previously-viewed" element={<UserPreviouslyViewed />} />
+      <Route path="/user-previously-saved" element={<UserPreviouslySaved />} />
+      <Route path="/user-previously-contacted" element={<UserPreviouslyContacted />} />
+      <Route path="/admin-login" element={<AdminLogin />} />
+      <Route path="/admin-dashboard" element={<AdminDashboard />} />
       <Route path="/register" element={<Register />} />
-      <Route path="/property-explore-page" element={<PropertyExplorePage />} />
-      <Route path="/aboutus" element={<AboutUs />} />
+      <Route path="/log-in" element={<LogIn />} />
     </Routes>
   );
 }
+
 export default App;
