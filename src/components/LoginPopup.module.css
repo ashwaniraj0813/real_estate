@@ -11,34 +11,61 @@
    }
    
    .popupContent {
-     background: white;
+     background: rgb(254, 253, 255);
      padding: 20px;
-     border-radius: 5px;
+     color:rgb(0, 0, 12);
+     border-radius: 10%;
      position: relative;
+     text-align: center;
+     
    }
    
    .closeButton {
      position: absolute;
      top: 10px;
      right: 10px;
-     background: none;
      border: none;
      font-size: 24px;
      cursor: pointer;
+     background: none;
+     
    }
    
    .blur {
      filter: blur(5px);
    }
 
-   .section{
-     margin: 10px;
+   .submit button{
+     text-align: center;
+     background: linear-gradient(90deg, #2895DF, #764EC6);
+     color: white;
+     border-radius: 10%;
+     font-size: medium;
    }
 
-   .section label {
-     font-weight: bold;
-     color: #333; 
-     ;
+   .section label{
+     text-align: left;
+     display: block;
    }
 
+   .section input{
+     margin: 4px;
+     text-align: left;
+     display: block;
+   }
+   
+.paragraph{
+     margin: 0%;
+   }
+
+.login{
+     color: green;
+   }
+
+.req{
+     text-align: left;
+     color: gray;
+     margin: 0%;
+
+}
    

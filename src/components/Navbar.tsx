@@ -1,14 +1,21 @@
-import { FunctionComponent, useCallback, useEffect, useState } from "react";
+// Navbar.tsx
+import React, { FunctionComponent, useCallback, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import styles from "./Navbar.module.css";
+import LoginPopup from "./LoginPopup";
+import RegisterPopup from "./RegisterPopup";
+import OtpPopup from "./OtpPopup";
 
-export type NavbarType = {
+export type NavbarProps = {
   className?: string;
 };
 
-const Navbar: FunctionComponent<NavbarType> = ({ className = "" }) => {
+const Navbar: FunctionComponent<NavbarProps> = ({ className = "click" }) => {
   const navigate = useNavigate();
-  const [scrolled, setScrolled] = useState(false);
+  const [isLoginPopupOpen, setLoginPopupOpen] = useState(false);
+  const [isRegisterPopupOpen, setRegisterPopupOpen] = useState(false);
+  const [isOtpPopupOpen, setOtpPopupOpen] = useState(false);
+  const [emailForOtp, setEmailForOtp] = useState("");
 
   const onLOGOTextClick = useCallback(() => {
     navigate("/");
@@ -26,32 +33,57 @@ const Navbar: FunctionComponent<NavbarType> = ({ className = "" }) => {
     navigate("/sell");
   }, [navigate]);
 
-  const onHomeIconClick = useCallback(() => {
-    navigate("/user-profile");
-  }, [navigate]);
+  const handleLoginClick = () => {
+    setRegisterPopupOpen(false);
+    setOtpPopupOpen(false);
+    setLoginPopupOpen(true);
+  };
 
-  const onSearchContainerClick = useCallback(() => {
-    navigate("/property-explore-page");
-  }, [navigate]);
-  
-  let match = (useLocation().pathname == '/' || useLocation().pathname == '/aboutus');
+  const handleRegisterClick = () => {
+    setLoginPopupOpen(false);
+    setOtpPopupOpen(false);
+    setRegisterPopupOpen(true);
+  };
+
+  const handleSwitchToLogin = () => {
+    setRegisterPopupOpen(false);
+    setOtpPopupOpen(false);
+    setLoginPopupOpen(true);
+  };
+
+  const handleRegister = (email: string) => {
+    setRegisterPopupOpen(false);
+    setEmailForOtp(email);
+    setOtpPopupOpen(true);
+  };
+
+  const closePopups = () => {
+    setLoginPopupOpen(false);
+    setRegisterPopupOpen(false);
+    setOtpPopupOpen(false);
+  };
+
+  const isHomePage = useLocation().pathname === '/';
 
   return (
-    <header className={`${styles.navbar} ${match ? styles.navtransparent : ""}`}>
-      <a className={`${styles.navitem} ${styles.logo}`} onClick={onLOGOTextClick}>LOGO</a>
+    <header className={`${styles.navbar} ${isHomePage ? styles.navtransparent : ""}`}>
+      <div className={`${styles.navitem} ${styles.logo}`} onClick={onLOGOTextClick}>LOGO</div>
       <div className={`${styles.navitem} ${styles.searchBar}`}>
-        <img className={styles.searchicon} src="/icbaselinesearch1.svg" />
+        <img className={styles.searchicon} src="/icbaselinesearch1.svg" alt="search icon" />
         <input className={styles.searchinput} placeholder="Luxurious Penthouses ..." type="text" />
       </div>
-      <a className={`${styles.navitem} ${styles.buy}`} onClick={onBuyTextClick}>Buy</a>
-      <a className={`${styles.navitem} ${styles.rent}`} onClick={onRentTextClick}>Rent</a>
-      <a className={`${styles.navitem} ${styles.sell}`} onClick={onSellTextClick}>Sell</a>
-      <a className={`${styles.navitem} ${styles.profile}`} onClick={onHomeIconClick}>
-        <img className={styles.homeIcon} src="/vector1.svg" />
-      </a>
+      <div className={`${styles.navitem} ${styles.buy}`} onClick={onBuyTextClick}>Buy</div>
+      <div className={`${styles.navitem} ${styles.rent}`} onClick={onRentTextClick}>Rent</div>
+      <div className={`${styles.navitem} ${styles.sell}`} onClick={onSellTextClick}>Sell</div>
+      <div className={`${styles.navitem} ${styles.profile}`} onClick={handleLoginClick}>
+        <img className={styles.homeIcon} src="/vector1.svg" alt="profile icon" />
+      </div>
+
+      {isLoginPopupOpen && <LoginPopup onClose={closePopups} onSwitchToRegister={handleRegisterClick} />}
+      {isRegisterPopupOpen && <RegisterPopup onClose={closePopups} onSwitchToLogin={handleSwitchToLogin} onRegister={handleRegister} />}
+      {isOtpPopupOpen && <OtpPopup onClose={closePopups} email={emailForOtp} />}
     </header>
   );
 };
 
 export default Navbar;
-

@@ -1,11 +1,17 @@
+// LoginPopup.tsx
 import React, { FunctionComponent } from "react";
 import styles from "./LoginPopup.module.css";
 
 type LoginPopupProps = {
   onClose: () => void;
+  onSwitchToRegister: () => void; // Add this prop
 };
 
-const LoginPopup: FunctionComponent<LoginPopupProps> = ({ onClose }) => {
+const LoginPopup: FunctionComponent<LoginPopupProps> = ({ onClose, onSwitchToRegister }) => {
+  const handleSwitchToRegister = () => {
+    onSwitchToRegister(); // Call the handler to switch to register popup
+  };
+
   return (
     <div className={styles.popupBackground}>
       <div className={styles.popupContent}>
@@ -23,8 +29,8 @@ const LoginPopup: FunctionComponent<LoginPopupProps> = ({ onClose }) => {
             <input type="password" id="password" name="password" required />
           </div>
           <div>
-               <p>Do not have an account?</p>
-               <div className="Register">Register Now</div>
+            <p>Do not have an account?</p>
+            <div className="Register" onClick={handleSwitchToRegister}>Register Now</div>
           </div>
           <button type="submit">Login</button>
         </form>

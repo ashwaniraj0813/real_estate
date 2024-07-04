@@ -17,6 +17,7 @@
      border-radius: 10%;
      position: relative;
      text-align: center;
+     
    }
    
    .closeButton {
@@ -44,12 +45,13 @@
 
    .section label{
      text-align: left;
+     display: block;
    }
 
    .section input{
      margin: 4px;
      text-align: left;
-     
+     display: block;
    }
    
 .paragraph{
