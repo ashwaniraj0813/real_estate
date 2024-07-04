@@ -16,7 +16,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 6vw;
+  gap: 4vw;
   font-size: 20px;
 }
 
@@ -53,7 +53,7 @@
 
 .vision, 
 .mission {
-  width: 600px;
+  width: 40vw;
 }
 
 .offices {
