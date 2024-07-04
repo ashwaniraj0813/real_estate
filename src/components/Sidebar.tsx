@@ -19,45 +19,41 @@ export type SidebarType = {
 
   /** Action props */
   onHomeIconClick?: () => void;
-  onMyPropertiesTextClick?: () => void;
   onLOGOTextClick?: () => void;
+
+  /** Current page prop */
+  currentPage: string;
 };
 
 const Sidebar: FunctionComponent<SidebarType> = ({
   className = "",
   sidebarMarginLeft,
-  profileSettingsColor,
-  profileSettingsFontWeight,
-  myPropertiesColor,
-  myPropertiesFontWeight,
   onHomeIconClick,
-  onMyPropertiesTextClick,
   onLOGOTextClick,
+  currentPage,
 }) => {
+  const navigate = useNavigate();
+
   const sidebar1Style: CSSProperties = useMemo(() => {
     return {
       marginLeft: sidebarMarginLeft,
     };
   }, [sidebarMarginLeft]);
 
-  const profileSettingsStyle: CSSProperties = useMemo(() => {
-    return {
-      color: profileSettingsColor,
-      fontWeight: profileSettingsFontWeight,
-    };
-  }, [profileSettingsColor, profileSettingsFontWeight]);
+  const getCurrentPageClass = (page: string) => {
+    return currentPage === page ? styles.currPage : styles.notCurrPage;
+  };
 
-  const myPropertiesStyle: CSSProperties = useMemo(() => {
-    return {
-      color: myPropertiesColor,
-      fontWeight: myPropertiesFontWeight,
-    };
-  }, [myPropertiesColor, myPropertiesFontWeight]);
+  const onProfileSettingTextClick = useCallback(() => {
+    navigate("/user-profile");
+  }, [navigate]);
 
-  const navigate = useNavigate();
-
-  const onMyPropertiesTextClick1 = useCallback(() => {
+  const onMyPropertiesTextClick = useCallback(() => {
     navigate("/user-properties0");
+  }, [navigate]);
+
+  const onAppointmentsTextClick0 = useCallback(() => {
+    navigate("/user-appointments0");
   }, [navigate]);
 
   const onPastSearchesTextClick = useCallback(() => {
@@ -82,48 +78,50 @@ const Sidebar: FunctionComponent<SidebarType> = ({
       style={sidebar1Style}
     >
       <div className={styles.sidebarChild} />
-      <div className={styles.sidebarItems}>
-        <b
-          className={styles.profileSettings}
-          style={profileSettingsStyle}
-          onClick={onHomeIconClick}
-        >
-          Profile settings
-        </b>
+      <div
+        className={getCurrentPageClass("profile-settings")}
+        onClick={onProfileSettingTextClick}
+      >
+        Profile settings
       </div>
       <div
-        className={styles.myProperties}
+        className={getCurrentPageClass("user-appointments0")}
+        onClick={onAppointmentsTextClick0}
+      >
+        Appointments
+      </div>
+      <div
+        className={getCurrentPageClass("user-properties0")}
         onClick={onMyPropertiesTextClick}
-        style={myPropertiesStyle}
       >
         My properties
       </div>
       <div className={styles.sidebarItems1}>
-        <div className={styles.pastSearches} onClick={onPastSearchesTextClick}>
+        <div className={getCurrentPageClass("user-past-searches0")} onClick={onPastSearchesTextClick}>
           Past searches
         </div>
       </div>
       <div
-        className={styles.previouslyViewed}
+        className={getCurrentPageClass("user-previously-viewed0")}
         onClick={onPreviouslyViewedTextClick}
       >
         Previously viewed
       </div>
       <div className={styles.sidebarItems2}>
-        <div className={styles.saved} onClick={onSavedTextClick}>
+        <div className={getCurrentPageClass("user-previously-saved0")} onClick={onSavedTextClick}>
           Saved
         </div>
       </div>
       <div className={styles.sidebarItems3}>
-        <div className={styles.contacted} onClick={onContactedTextClick}>
+        <div className={getCurrentPageClass("user-previously-contacted0")} onClick={onContactedTextClick}>
           Contacted
         </div>
       </div>
       <div className={styles.sidebarItems4}>
-        <div className={styles.notifications}>Notifications</div>
+        <div className={getCurrentPageClass("notifications")}>Notifications</div>
       </div>
       <div className={styles.logoutButton}>
-        <div className={styles.logOut} onClick={onLOGOTextClick}>
+        <div className={styles.notCurrPage} onClick={onLOGOTextClick}>
           Log out
         </div>
       </div>

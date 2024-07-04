@@ -1,4 +1,4 @@
-import { FunctionComponent, useCallback } from "react";
+import { FunctionComponent, useCallback, useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import styles from "./Navbar.module.css";
 
@@ -8,6 +8,7 @@ export type NavbarType = {
 
 const Navbar: FunctionComponent<NavbarType> = ({ className = "" }) => {
   const navigate = useNavigate();
+  const [scrolled, setScrolled] = useState(false);
 
   const onLOGOTextClick = useCallback(() => {
     navigate("/");
@@ -24,7 +25,7 @@ const Navbar: FunctionComponent<NavbarType> = ({ className = "" }) => {
   const onSellTextClick = useCallback(() => {
     navigate("/sell");
   }, [navigate]);
-  
+
   const onHomeIconClick = useCallback(() => {
     navigate("/user-profile");
   }, [navigate]);
@@ -33,23 +34,24 @@ const Navbar: FunctionComponent<NavbarType> = ({ className = "" }) => {
     navigate("/property-explore-page");
   }, [navigate]);
   
-  let match = (useLocation().pathname == '/');
+  let match = (useLocation().pathname == '/' || useLocation().pathname == '/aboutus');
 
   return (
-    <header className={`${match ? `${styles.navtransparent} ${styles.navbar}` : `${styles.navbar}`}`}>
+    <header className={`${styles.navbar} ${match ? styles.navtransparent : ""}`}>
       <a className={`${styles.navitem} ${styles.logo}`} onClick={onLOGOTextClick}>LOGO</a>
       <div className={`${styles.navitem} ${styles.searchBar}`}>
-          <img className={styles.searchicon} src="/icbaselinesearch1.svg" />
-          <input className={styles.searchinput} placeholder="Luxurious Penthouses ..." type="text"/>
+        <img className={styles.searchicon} src="/icbaselinesearch1.svg" />
+        <input className={styles.searchinput} placeholder="Luxurious Penthouses ..." type="text" />
       </div>
       <a className={`${styles.navitem} ${styles.buy}`} onClick={onBuyTextClick}>Buy</a>
       <a className={`${styles.navitem} ${styles.rent}`} onClick={onRentTextClick}>Rent</a>
       <a className={`${styles.navitem} ${styles.sell}`} onClick={onSellTextClick}>Sell</a>
       <a className={`${styles.navitem} ${styles.profile}`} onClick={onHomeIconClick}>
-        <img className={styles.homeIcon} src="/vector1.svg"/>
+        <img className={styles.homeIcon} src="/vector1.svg" />
       </a>
     </header>
   );
 };
 
 export default Navbar;
+

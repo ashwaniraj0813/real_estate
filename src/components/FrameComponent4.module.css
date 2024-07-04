@@ -103,13 +103,13 @@
 }
 .emptyState {
   align-self: stretch;
-  align-items: flex-end;
+  align-items: center;
   gap: var(--gap-sm);
 }
 .emptyStateWrapper {
   width: 521px;
-  align-items: flex-start;
-  padding: var(--padding-216xl) 0 0;
+  align-items: center;
+  padding: 25vh 0 0;
   box-sizing: border-box;
   min-width: 521px;
   max-width: 100%;

@@ -1,7 +1,7 @@
 import { FunctionComponent, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
-import Navbar from "../components/Navbar";
-import Sidebar from "../components/Sidebar1";
+import Nav from "../components/Nav";
+import Sidebar from "../components/Sidebar";
 import styles from "./UserPreviouslyContacted.module.css";
 
 const UserPreviouslyContacted: FunctionComponent = () => {
@@ -21,12 +21,15 @@ const UserPreviouslyContacted: FunctionComponent = () => {
 
   return (
     <div className={styles.userPreviouslyContacted0}>
-      <Navbar />
+      <Nav/>
       <main className={styles.sidebarParent}>
-        <Sidebar
-          onSavedTextClick={onSavedTextClick}
-          onPastSearchesTextClick={onPastSearchesTextClick}
-        />
+        <Sidebar currentPage="user-previously-contacted0"
+            sidebarMarginLeft="unset"
+            profileSettingsColor="#000"
+            profileSettingsFontWeight="unset"
+            myPropertiesColor="#784dc6"
+            myPropertiesFontWeight="bold"
+          />
         <div className={styles.contactImage}>
           <div className={styles.content}>
             <div className={styles.emptyState}>
@@ -45,22 +48,6 @@ const UserPreviouslyContacted: FunctionComponent = () => {
             <div className={styles.youWillSee}>
               You will see the list of properties / projects here, where you
               have contacted the advertiser
-            </div>
-            <div className={styles.homeWrapper}>
-              <div className={styles.home} onClick={onHomeContainerClick}>
-                <div className={styles.homeButton}>
-                  <div className={styles.homeButtonChild} />
-                  <img
-                    className={styles.tablerhomeIcon}
-                    loading="lazy"
-                    alt=""
-                    src="/tablerhome.svg"
-                  />
-                  <div className={styles.homeContainer}>
-                    <div className={styles.home1}>Home</div>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>

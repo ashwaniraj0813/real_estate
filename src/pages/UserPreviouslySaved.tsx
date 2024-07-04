@@ -1,7 +1,7 @@
 import { FunctionComponent, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
-import Navbar from "../components/Navbar";
-import Sidebar from "../components/Sidebar1";
+import Nav from "../components/Nav";
+import Sidebar from "../components/Sidebar";
 import FrameComponent from "../components/FrameComponent4";
 import styles from "./UserPreviouslySaved.module.css";
 
@@ -18,20 +18,15 @@ const UserPreviouslySaved: FunctionComponent = () => {
 
   return (
     <div className={styles.userPreviouslySaved0}>
-      <Navbar/>
+      <Nav/>
       <main className={styles.sidebarParent}>
-        <Sidebar
-          propColor="#784dc6"
-          propFontWeight="bold"
-          propColor1="#000"
-          propFontWeight1="unset"
-          sidebarMinWidth="289px"
-          sidebarLinksAlignSelf="stretch"
-          pastSearchesFlex="1"
-          pastSearchesColor="#000"
-          pastSearchesFontWeight="unset"
-          onContactedTextClick={onContactedTextClick}
-          onPastSearchesTextClick={onPastSearchesTextClick}
+        <Sidebar currentPage="user-previously-saved0"
+          sidebarMarginLeft="unset"
+          profileSettingsColor="#000"
+          profileSettingsFontWeight="unset"
+          myPropertiesColor="#784dc6"
+          myPropertiesFontWeight="bold"
+          
         />
         <FrameComponent />
       </main>
