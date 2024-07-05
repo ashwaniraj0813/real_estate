@@ -63,6 +63,7 @@
   max-width: 100%;
 }
 .profileImage {
+  margin-top: 100px;
   align-self: stretch;
   display: flex;
   flex-direction: row;
