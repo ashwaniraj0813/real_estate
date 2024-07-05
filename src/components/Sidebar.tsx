@@ -53,7 +53,7 @@ const Sidebar: FunctionComponent<SidebarType> = ({
   }, [navigate]);
 
   const onAppointmentsTextClick0 = useCallback(() => {
-    navigate("/user-appointments0");
+    navigate("/user-appointments");
   }, [navigate]);
 
   const onPastSearchesTextClick = useCallback(() => {
@@ -61,15 +61,15 @@ const Sidebar: FunctionComponent<SidebarType> = ({
   }, [navigate]);
 
   const onPreviouslyViewedTextClick = useCallback(() => {
-    navigate("/user-previously-viewed0");
+    navigate("/user-previously-viewed");
   }, [navigate]);
 
   const onSavedTextClick = useCallback(() => {
-    navigate("/user-previously-saved0");
+    navigate("/user-previously-saved");
   }, [navigate]);
 
   const onContactedTextClick = useCallback(() => {
-    navigate("/user-previously-contacted0");
+    navigate("/user-previously-contacted");
   }, [navigate]);
 
   return (
