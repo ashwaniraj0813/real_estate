@@ -1,4 +1,4 @@
-.currPage {
+.currPage, .notCurrPage{
   height: 24px;
   position: relative;
   display: flex;
@@ -6,23 +6,16 @@
   justify-content: center;
   cursor: pointer;
   z-index: 1;
+}
+.currPage{
   font-weight: bold;
   color: #2697E0;
-}
-
-.notCurrPage{
-  height: 24px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  z-index: 1;
 }
 .sidebar {
   display: flex;
   margin-left: -416px;
-  height: 95vh;
+  max-height: 95vh;
+  height: 100%;
   width: 289px;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   background-color: #444444;

@@ -1,14 +1,13 @@
 import { FunctionComponent, useCallback } from "react";
-import { useNavigate } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
 import styles from "./UserProperties.module.css";
-import Nav from "../components/Nav";
 import LottieAnimation from "../components/LottieAnimation";
+import Navbar from "../components/Navbar";
 
 const UserProperties: FunctionComponent = () => {
   return (
     <div className={styles.userProperties0}>
-      <Nav/>
+      <Navbar/>
       <main className={styles.sidebarContainer}>
         <Sidebar currentPage="user-properties0"
           sidebarMarginLeft="unset"

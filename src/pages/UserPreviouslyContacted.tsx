@@ -1,13 +1,12 @@
 import { FunctionComponent, useCallback } from "react";
-import { useNavigate } from "react-router-dom";
-import Nav from "../components/Nav";
 import Sidebar from "../components/Sidebar";
 import styles from "./UserPreviouslyContacted.module.css";
+import Navbar from "../components/Navbar";
 
 const UserPreviouslyContacted: FunctionComponent = () => {
   return (
     <div className={styles.userPreviouslyContacted0}>
-      <Nav/>
+      <Navbar/>
       <main className={styles.sidebarParent}>
         <Sidebar currentPage="user-previously-contacted0"
             sidebarMarginLeft="unset"

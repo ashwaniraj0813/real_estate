@@ -1,14 +1,13 @@
 import { FunctionComponent, useCallback } from "react";
-import { useNavigate } from "react-router-dom";
-import Nav from "../components/Nav";
 import Sidebar from "../components/Sidebar";
 import styles from "./UserPastSearches.module.css";
 import LottieAnimation from "../components/LottieAnimation";
+import Navbar from "../components/Navbar";
 
 const UserPastSearches: FunctionComponent = () => {
   return (
     <div className={styles.userPastSearches0}>
-      <Nav/>
+      <Navbar/>
       <section className={styles.homeNavigation}>
         <div className={styles.sidebar}>
           <Sidebar currentPage="user-past-searches0"

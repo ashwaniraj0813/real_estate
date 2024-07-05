@@ -70,6 +70,9 @@ const Sidebar: FunctionComponent<SidebarType> = ({
   const onContactedTextClick = useCallback(() => {
     navigate("/user-previously-contacted0");
   }, [navigate]);
+  const onLogOutClick = useCallback(() => {
+    navigate("/");
+  }, [navigate]);
 
   return (
     <div
@@ -119,7 +122,7 @@ const Sidebar: FunctionComponent<SidebarType> = ({
         <div className={getCurrentPageClass("notifications")}>Notifications</div>
       </div>
       <div>
-        <div className={styles.notCurrPage} onClick={onLOGOTextClick}>
+        <div className={styles.notCurrPage} onClick={onLogOutClick}>
           Log out
         </div>
       </div>
