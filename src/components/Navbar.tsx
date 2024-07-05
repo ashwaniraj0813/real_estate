@@ -1,10 +1,10 @@
-// Navbar.tsx
 import React, { FunctionComponent, useCallback, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import styles from "./Navbar.module.css";
 import LoginPopup from "./LoginPopup";
 import RegisterPopup from "./RegisterPopup";
 import OtpPopup from "./OtpPopup";
+import CollectEmailPopup from "./CollectEmailPopup";
 
 export type NavbarProps = {
   className?: string;
@@ -15,7 +15,9 @@ const Navbar: FunctionComponent<NavbarProps> = ({ className = "click" }) => {
   const [isLoginPopupOpen, setLoginPopupOpen] = useState(false);
   const [isRegisterPopupOpen, setRegisterPopupOpen] = useState(false);
   const [isOtpPopupOpen, setOtpPopupOpen] = useState(false);
+  const [isCollectEmailPopupOpen, setCollectEmailPopupOpen] = useState(false);
   const [emailForOtp, setEmailForOtp] = useState("");
+  const [verifiedEmail, setVerifiedEmail] = useState("");
 
   const onLOGOTextClick = useCallback(() => {
     navigate("/");
@@ -34,21 +36,30 @@ const Navbar: FunctionComponent<NavbarProps> = ({ className = "click" }) => {
   }, [navigate]);
 
   const handleLoginClick = () => {
-    setRegisterPopupOpen(false);
-    setOtpPopupOpen(false);
+    closePopups();
     setLoginPopupOpen(true);
   };
 
   const handleRegisterClick = () => {
-    setLoginPopupOpen(false);
-    setOtpPopupOpen(false);
-    setRegisterPopupOpen(true);
+    closePopups();
+    setCollectEmailPopupOpen(true);
   };
 
   const handleSwitchToLogin = () => {
-    setRegisterPopupOpen(false);
-    setOtpPopupOpen(false);
+    closePopups();
     setLoginPopupOpen(true);
+  };
+
+  const handleSendOtp = (email: string) => {
+    setCollectEmailPopupOpen(false);
+    setEmailForOtp(email);
+    setOtpPopupOpen(true);
+  };
+
+  const handleVerifyOtp = () => {
+    setOtpPopupOpen(false);
+    setVerifiedEmail(emailForOtp);
+    setRegisterPopupOpen(true);
   };
 
   const handleRegister = (email: string) => {
@@ -61,6 +72,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({ className = "click" }) => {
     setLoginPopupOpen(false);
     setRegisterPopupOpen(false);
     setOtpPopupOpen(false);
+    setCollectEmailPopupOpen(false);
   };
 
   const match = (useLocation().pathname === '/' || useLocation().pathname == '/aboutus');
@@ -80,8 +92,9 @@ const Navbar: FunctionComponent<NavbarProps> = ({ className = "click" }) => {
       </div>
 
       {isLoginPopupOpen && <LoginPopup onClose={closePopups} onSwitchToRegister={handleRegisterClick} />}
-      {isRegisterPopupOpen && <RegisterPopup onClose={closePopups} onSwitchToLogin={handleSwitchToLogin} onRegister={handleRegister} />}
-      {isOtpPopupOpen && <OtpPopup onClose={closePopups} email={emailForOtp} />}
+      {isRegisterPopupOpen && <RegisterPopup onClose={closePopups} onSwitchToLogin={handleSwitchToLogin} onRegister={handleRegister} prefilledEmail={verifiedEmail} />}
+      {isOtpPopupOpen && <OtpPopup onClose={closePopups} email={emailForOtp} onVerifyOtp={handleVerifyOtp} />}
+      {isCollectEmailPopupOpen && <CollectEmailPopup onClose={closePopups} onSendOtp={handleSendOtp} />}
     </header>
   );
 };

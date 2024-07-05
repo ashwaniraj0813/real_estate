@@ -52,7 +52,7 @@ const Sidebar: FunctionComponent<SidebarType> = ({
   }, [navigate]);
 
   const onAppointmentsTextClick0 = useCallback(() => {
-    navigate("/user-appointments0");
+    navigate("/user-appointments");
   }, [navigate]);
 
   const onPastSearchesTextClick = useCallback(() => {
