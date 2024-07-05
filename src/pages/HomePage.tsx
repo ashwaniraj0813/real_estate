@@ -4,12 +4,14 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import DisplayCard from "../components/DisplayCard";
 import CustomerReviewCard from "../components/CustomerReviewCard";
+import LoginPopup from "../components/LoginPopup";  // Import the LoginPopup component
 
 const HomePage: FunctionComponent = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const [isLoginPopupVisible, setIsLoginPopupVisible] = useState(false); // State for login popup
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
@@ -48,8 +50,8 @@ const HomePage: FunctionComponent = () => {
   };
 
   return (
-    <div className={styles.homePage}>
-      <Navbar />
+    <div className={isLoginPopupVisible ? `${styles.homePage} ${styles.blur}` : styles.homePage}>
+      <Navbar onLoginClick={() => setIsLoginPopupVisible(true)} />
 
       <div className={styles.hero}>
         <div className={styles.introtext}>Your dream home awaits...</div>
@@ -154,6 +156,10 @@ const HomePage: FunctionComponent = () => {
       </div>
 
       <Footer />
+
+      {isLoginPopupVisible && (
+        <LoginPopup onClose={() => setIsLoginPopupVisible(false)} />
+      )}
     </div>
   );
 };

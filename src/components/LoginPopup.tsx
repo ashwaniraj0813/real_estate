@@ -28,11 +28,13 @@ const LoginPopup: FunctionComponent<LoginPopupProps> = ({ onClose, onSwitchToReg
             <label htmlFor="password">Password</label>
             <input type="password" id="password" name="password" required />
           </div>
-          <div>
-            <p>Do not have an account?</p>
-            <div className="Register" onClick={handleSwitchToRegister}>Register Now</div>
+          <div className={styles.info}>
+            <p className={styles.paragraph}>Do not have an account?</p>
+            <div className={styles.register} onClick={handleSwitchToRegister}>Register Now</div>
           </div>
+          <div className={styles.submit}>
           <button type="submit">Login</button>
+          </div>
         </form>
       </div>
     </div>

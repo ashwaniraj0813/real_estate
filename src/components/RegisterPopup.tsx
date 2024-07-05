@@ -1,4 +1,3 @@
-// RegisterPopup.tsx
 import { FunctionComponent, useState } from "react";
 import styles from "./RegisterPopup.module.css";
 
@@ -6,10 +5,11 @@ type RegisterPopupProps = {
   onClose: () => void;
   onSwitchToLogin: () => void;
   onRegister: (email: string) => void;
+  prefilledEmail: string;
 };
 
-const RegisterPopup: FunctionComponent<RegisterPopupProps> = ({ onClose, onSwitchToLogin, onRegister }) => {
-  const [email, setEmail] = useState("");
+const RegisterPopup: FunctionComponent<RegisterPopupProps> = ({ onClose, onSwitchToLogin, onRegister, prefilledEmail }) => {
+  const [email, setEmail] = useState(prefilledEmail);
 
   const handleRegister = (e: React.FormEvent) => {
     e.preventDefault();
@@ -45,6 +45,7 @@ const RegisterPopup: FunctionComponent<RegisterPopupProps> = ({ onClose, onSwitc
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              readOnly
             />
           </div>
           <div className={styles.section}>
