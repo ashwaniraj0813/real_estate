@@ -6,20 +6,6 @@ import styles from "./UserPastSearches.module.css";
 import LottieAnimation from "../components/LottieAnimation";
 
 const UserPastSearches: FunctionComponent = () => {
-  const navigate = useNavigate();
-
-  const onSavedTextClick = useCallback(() => {
-    navigate("/user-previously-saved0");
-  }, [navigate]);
-
-  const onContactedTextClick = useCallback(() => {
-    navigate("/user-previously-contacted0");
-  }, [navigate]);
-
-  const onHomeButtonClick = useCallback(() => {
-    navigate("/");
-  }, [navigate]);
-
   return (
     <div className={styles.userPastSearches0}>
       <Nav/>

@@ -28,7 +28,6 @@ export type SidebarType = {
 const Sidebar: FunctionComponent<SidebarType> = ({
   className = "",
   sidebarMarginLeft,
-  onHomeIconClick,
   onLOGOTextClick,
   currentPage,
 }) => {
@@ -77,7 +76,6 @@ const Sidebar: FunctionComponent<SidebarType> = ({
       className={[styles.sidebar, className].join(" ")}
       style={sidebar1Style}
     >
-      <div className={styles.sidebarChild} />
       <div
         className={getCurrentPageClass("profile-settings")}
         onClick={onProfileSettingTextClick}
@@ -96,7 +94,7 @@ const Sidebar: FunctionComponent<SidebarType> = ({
       >
         My properties
       </div>
-      <div className={styles.sidebarItems1}>
+      <div>
         <div className={getCurrentPageClass("user-past-searches0")} onClick={onPastSearchesTextClick}>
           Past searches
         </div>
@@ -107,20 +105,20 @@ const Sidebar: FunctionComponent<SidebarType> = ({
       >
         Previously viewed
       </div>
-      <div className={styles.sidebarItems2}>
+      <div>
         <div className={getCurrentPageClass("user-previously-saved0")} onClick={onSavedTextClick}>
           Saved
         </div>
       </div>
-      <div className={styles.sidebarItems3}>
+      <div>
         <div className={getCurrentPageClass("user-previously-contacted0")} onClick={onContactedTextClick}>
           Contacted
         </div>
       </div>
-      <div className={styles.sidebarItems4}>
+      <div>
         <div className={getCurrentPageClass("notifications")}>Notifications</div>
       </div>
-      <div className={styles.logoutButton}>
+      <div>
         <div className={styles.notCurrPage} onClick={onLOGOTextClick}>
           Log out
         </div>

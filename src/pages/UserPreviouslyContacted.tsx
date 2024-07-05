@@ -5,20 +5,6 @@ import Sidebar from "../components/Sidebar";
 import styles from "./UserPreviouslyContacted.module.css";
 
 const UserPreviouslyContacted: FunctionComponent = () => {
-  const navigate = useNavigate();
-
-  const onSavedTextClick = useCallback(() => {
-    navigate("/user-previously-saved0");
-  }, [navigate]);
-
-  const onPastSearchesTextClick = useCallback(() => {
-    navigate("/user-past-searches0");
-  }, [navigate]);
-
-  const onHomeContainerClick = useCallback(() => {
-    navigate("/");
-  }, [navigate]);
-
   return (
     <div className={styles.userPreviouslyContacted0}>
       <Nav/>

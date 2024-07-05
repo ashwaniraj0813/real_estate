@@ -6,16 +6,6 @@ import Nav from "../components/Nav";
 import LottieAnimation from "../components/LottieAnimation";
 
 const UserProperties: FunctionComponent = () => {
-  const navigate = useNavigate();
-
-  const onProfileSettingsTextClick = useCallback(() => {
-    navigate("/user-profile");
-  }, [navigate]);
-
-  const onLogOutTextClick = useCallback(() => {
-    navigate("/");
-  }, [navigate]);
-
   return (
     <div className={styles.userProperties0}>
       <Nav/>
@@ -26,8 +16,6 @@ const UserProperties: FunctionComponent = () => {
           profileSettingsFontWeight="unset"
           myPropertiesColor="#784dc6"
           myPropertiesFontWeight="bold"
-          onHomeIconClick={onProfileSettingsTextClick}
-          onLOGOTextClick={onLogOutTextClick}
         />
         <div className={styles.emptyStateIllustration}>
           <div className={styles.emptyState}>

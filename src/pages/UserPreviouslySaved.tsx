@@ -6,16 +6,6 @@ import FrameComponent from "../components/FrameComponent4";
 import styles from "./UserPreviouslySaved.module.css";
 
 const UserPreviouslySaved: FunctionComponent = () => {
-  const navigate = useNavigate();
-
-  const onContactedTextClick = useCallback(() => {
-    navigate("/user-previously-contacted0");
-  }, [navigate]);
-
-  const onPastSearchesTextClick = useCallback(() => {
-    navigate("/user-past-searches0");
-  }, [navigate]);
-
   return (
     <div className={styles.userPreviouslySaved0}>
       <Nav/>

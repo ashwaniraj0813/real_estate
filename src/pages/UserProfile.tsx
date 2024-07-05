@@ -77,8 +77,8 @@ const UserProfile: FunctionComponent = () => {
                 </div>
               </div>
             </div>
-            <div style={{border: '1px solid black', borderRadius: '20px', margin: '20px', marginLeft: '1px'}}>
-              <div style={{display: 'flex', flexDirection: 'row', gap: '10vw', margin: '5vh'}}>
+            <div style={{border: '1px solid black', borderRadius: '20px', marginTop: '2vh'}}>
+              <div style={{display: 'flex', flexDirection: 'row', gap: '10vw', margin: '3vh'}}>
                 <div style={{display: 'flex', flexDirection: 'column',  gap: '2vw', width: '30vw'}}>
                   <div style={{display: 'grid', gridTemplateColumns: '1fr 2fr', gap: '2vw', textAlign: 'left', whiteSpace: 'nowrap', alignItems: 'center'}}>
                     You are
@@ -164,11 +164,11 @@ const UserProfile: FunctionComponent = () => {
                   </div>
                 </div>
               </div>
-              <div style={{display: 'flex', flexDirection: 'column', gap: '2vh', margin: '3vh', marginTop: '7vh'}}>
-                <div style={{display: 'flex', flexDirection: 'column', gap: '1vw'}}>
+              <div style={{display: 'flex', flexDirection: 'column', gap: '2vh', margin: '2vh', marginLeft:'3vh'}}>
+                <div style={{display: 'flex', flexDirection: 'column', gap: '1vw', fontSize: '18px'}}>
                   Subscribe for updates from Real Estate.
                   <div style={{display: 'flex', flexDirection: 'row', gap: '1vw', marginLeft: '2vw'}}>
-                    <input type="checkbox" id="subscribe" style={{width: '18px', height: '18px', transition: '0.3s', cursor: 'pointer'}} />
+                    <input type="checkbox" id="subscribe" style={{width: '16px', transition: '0.3s', cursor: 'pointer'}} />
                     Other Promotional Mailers
                   </div>
                 </div>
@@ -176,7 +176,7 @@ const UserProfile: FunctionComponent = () => {
                   By clicking below you agree to the <span style={{color: '#2697E0', textDecoration: 'underline'}}>Terms and Conditions</span>
                 </div>
                 <button style={{width: '9vw', height: '2.5vw',display: 'block', marginLeft: '30vw', borderRadius: '2vw', border: '1px transparent', backgroundImage: `linear-gradient(125.33deg, #2697e0, #784dc6)`, color: "white", fontFamily: "var(--font-montserrat)", fontSize: '16px'}}>Save Profile</button>
-                <div style={{display: 'flex', flexDirection: 'row', gap: '0.4vw', marginBottom: '3vh'}}>
+                <div style={{display: 'flex', flexDirection: 'row', gap: '0.4vw', marginBottom: '0.5vh'}}>
                   To delete your account <span style={{color: '#2697E0', textDecoration: 'underline'}}>click here</span>
                 </div>
               </div>
