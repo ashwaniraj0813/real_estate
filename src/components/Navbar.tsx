@@ -1,10 +1,9 @@
-import React, { FunctionComponent, useCallback, useState } from "react";
+import React, { FunctionComponent, useCallback, useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import styles from "./Navbar.module.css";
 import LoginPopup from "./LoginPopup";
 import RegisterPopup from "./RegisterPopup";
 import OtpPopup from "./OtpPopup";
-import CollectEmailPopup from "./CollectEmailPopup";
 
 export type NavbarProps = {
   className?: string;
@@ -15,9 +14,8 @@ const Navbar: FunctionComponent<NavbarProps> = ({ className = "click" }) => {
   const [isLoginPopupOpen, setLoginPopupOpen] = useState(false);
   const [isRegisterPopupOpen, setRegisterPopupOpen] = useState(false);
   const [isOtpPopupOpen, setOtpPopupOpen] = useState(false);
-  const [isCollectEmailPopupOpen, setCollectEmailPopupOpen] = useState(false);
   const [emailForOtp, setEmailForOtp] = useState("");
-  const [verifiedEmail, setVerifiedEmail] = useState("");
+  const [scrolled, setScrolled] = useState(false);
 
   const onLOGOTextClick = useCallback(() => {
     navigate("/");
@@ -36,30 +34,21 @@ const Navbar: FunctionComponent<NavbarProps> = ({ className = "click" }) => {
   }, [navigate]);
 
   const handleLoginClick = () => {
-    closePopups();
+    setRegisterPopupOpen(false);
+    setOtpPopupOpen(false);
     setLoginPopupOpen(true);
   };
 
   const handleRegisterClick = () => {
-    closePopups();
-    setCollectEmailPopupOpen(true);
+    setLoginPopupOpen(false);
+    setOtpPopupOpen(false);
+    setRegisterPopupOpen(true);
   };
 
   const handleSwitchToLogin = () => {
-    closePopups();
-    setLoginPopupOpen(true);
-  };
-
-  const handleSendOtp = (email: string) => {
-    setCollectEmailPopupOpen(false);
-    setEmailForOtp(email);
-    setOtpPopupOpen(true);
-  };
-
-  const handleVerifyOtp = () => {
+    setRegisterPopupOpen(false);
     setOtpPopupOpen(false);
-    setVerifiedEmail(emailForOtp);
-    setRegisterPopupOpen(true);
+    setLoginPopupOpen(true);
   };
 
   const handleRegister = (email: string) => {
@@ -72,13 +61,23 @@ const Navbar: FunctionComponent<NavbarProps> = ({ className = "click" }) => {
     setLoginPopupOpen(false);
     setRegisterPopupOpen(false);
     setOtpPopupOpen(false);
-    setCollectEmailPopupOpen(false);
   };
 
-  const match = (useLocation().pathname === '/' || useLocation().pathname == '/aboutus');
+  const match = (useLocation().pathname === '/' || useLocation().pathname === '/aboutus');
+
+  const handleScroll = useCallback(() => {
+    setScrolled(window.scrollY > 560);
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [handleScroll]);
 
   return (
-    <header className={`${styles.navbar} ${match ? styles.navtransparent : ""}`}>
+    <header className={`${styles.navbar} ${match && !scrolled ? styles.navtransparent : styles.navcolored}`}>
       <div className={`${styles.navitem} ${styles.logo}`} onClick={onLOGOTextClick}>LOGO</div>
       <div className={`${styles.navitem} ${styles.searchBar}`}>
         <img className={styles.searchicon} src="/icbaselinesearch1.svg" alt="search icon" />
@@ -92,11 +91,11 @@ const Navbar: FunctionComponent<NavbarProps> = ({ className = "click" }) => {
       </div>
 
       {isLoginPopupOpen && <LoginPopup onClose={closePopups} onSwitchToRegister={handleRegisterClick} />}
-      {isRegisterPopupOpen && <RegisterPopup onClose={closePopups} onSwitchToLogin={handleSwitchToLogin} onRegister={handleRegister} prefilledEmail={verifiedEmail} />}
-      {isOtpPopupOpen && <OtpPopup onClose={closePopups} email={emailForOtp} onVerifyOtp={handleVerifyOtp} />}
-      {isCollectEmailPopupOpen && <CollectEmailPopup onClose={closePopups} onSendOtp={handleSendOtp} />}
+      {isRegisterPopupOpen && <RegisterPopup onClose={closePopups} onSwitchToLogin={handleSwitchToLogin} onRegister={handleRegister} />}
+      {isOtpPopupOpen && <OtpPopup onClose={closePopups} email={emailForOtp} />}
     </header>
   );
 };
 
 export default Navbar;
+
