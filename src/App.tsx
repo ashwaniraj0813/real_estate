@@ -87,15 +87,15 @@ function App() {
         title = "";
         metaDescription = "";
         break;
-      case "/user-previously-viewed":
+      case "/user-previously-viewed0":
         title = "";
         metaDescription = "";
         break;
-      case "/user-previously-saved":
+      case "/user-previously-saved0":
         title = "";
         metaDescription = "";
         break;
-      case "/user-previously-contacted":
+      case "/user-previously-contacted0":
         title = "";
         metaDescription = "";
         break;
@@ -135,9 +135,9 @@ function App() {
       <Route path="/user-profile" element={<UserProfile />} />
       <Route path="/user-properties0" element={<UserProperties />} />
       <Route path="/user-past-searches0" element={<UserPastSearches />} />
-      <Route path="/user-previously-viewed" element={<UserPreviouslyViewed />} />
-      <Route path="/user-previously-saved" element={<UserPreviouslySaved />} />
-      <Route path="/user-previously-contacted" element={<UserPreviouslyContacted />} />
+      <Route path="/user-previously-viewed0" element={<UserPreviouslyViewed />} />
+      <Route path="/user-previously-saved0" element={<UserPreviouslySaved />} />
+      <Route path="/user-previously-contacted0" element={<UserPreviouslyContacted />} />
       <Route path="/admin-login" element={<AdminLogin />} />
       <Route path="/admin-dashboard" element={<AdminDashboard />} />
       <Route path="/register" element={<Register />} />
