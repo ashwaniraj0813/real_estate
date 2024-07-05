@@ -61,15 +61,15 @@ const Sidebar: FunctionComponent<SidebarType> = ({
   }, [navigate]);
 
   const onPreviouslyViewedTextClick = useCallback(() => {
-    navigate("/user-previously-viewed");
+    navigate("/user-previously-viewed0");
   }, [navigate]);
 
   const onSavedTextClick = useCallback(() => {
-    navigate("/user-previously-saved");
+    navigate("/user-previously-saved0");
   }, [navigate]);
 
   const onContactedTextClick = useCallback(() => {
-    navigate("/user-previously-contacted");
+    navigate("/user-previously-contacted0");
   }, [navigate]);
 
   return (
