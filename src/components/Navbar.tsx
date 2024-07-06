@@ -1,13 +1,3 @@
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-import React, { FunctionComponent, useCallback, useState, useEffect } from "react";
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
 // Navbar.tsx
 import React, { FunctionComponent, useCallback, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
@@ -26,20 +16,6 @@ const Navbar: FunctionComponent<NavbarProps> = ({ className = "click" }) => {
   const [isRegisterPopupOpen, setRegisterPopupOpen] = useState(false);
   const [isOtpPopupOpen, setOtpPopupOpen] = useState(false);
   const [emailForOtp, setEmailForOtp] = useState("");
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-  const [scrolled, setScrolled] = useState(false);
-  const [isLoginPopupOpen, setLoginPopupOpen] = useState(false);
-  const [isRegisterPopupOpen, setRegisterPopupOpen] = useState(false);
-  const [isOtpPopupOpen, setOtpPopupOpen] = useState(false);
-  const [emailForOtp, setEmailForOtp] = useState("");
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
 
   const onLOGOTextClick = useCallback(() => {
     navigate("/");
@@ -87,71 +63,9 @@ const Navbar: FunctionComponent<NavbarProps> = ({ className = "click" }) => {
     setOtpPopupOpen(false);
   };
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-  const match = (useLocation().pathname === '/' || useLocation().pathname === '/aboutus');
-
-  const handleScroll = useCallback(() => {
-    setScrolled(window.scrollY > 560);
-  }, []);
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [handleScroll]);
-  const handleLoginClick = () => {
-    setRegisterPopupOpen(false);
-    setOtpPopupOpen(false);
-    setLoginPopupOpen(true);
-  };
-
-  const handleRegisterClick = () => {
-    setLoginPopupOpen(false);
-    setOtpPopupOpen(false);
-    setRegisterPopupOpen(true);
-  };
-
-  const handleSwitchToLogin = () => {
-    setRegisterPopupOpen(false);
-    setOtpPopupOpen(false);
-    setLoginPopupOpen(true);
-  };
-
-  const handleRegister = (email: string) => {
-    setRegisterPopupOpen(false);
-    setEmailForOtp(email);
-    setOtpPopupOpen(true);
-  };
-
-  const closePopups = () => {
-    setLoginPopupOpen(false);
-    setRegisterPopupOpen(false);
-    setOtpPopupOpen(false);
-  };
-
   const isHomePage = useLocation().pathname === '/';
 
   return (
-    <header className={`${styles.navbar} ${match && !scrolled ? styles.navtransparent : styles.navcolored}`}>
-      <div className={`${styles.navitem} ${styles.logo}`} onClick={onLOGOTextClick}>LOGO</div>
-=======
-  const isHomePage = useLocation().pathname === '/';
-
-  return (
->>>>>>> Stashed changes
-=======
-  const isHomePage = useLocation().pathname === '/';
-
-  return (
->>>>>>> Stashed changes
-=======
-  const isHomePage = useLocation().pathname === '/';
-
-  return (
->>>>>>> Stashed changes
     <header className={`${styles.navbar} ${isHomePage ? styles.navtransparent : ""}`}>
       <div className={`${styles.navitem} ${styles.logo}`} onClick={onLOGOTextClick}>LOGO</div>
       <div className={`${styles.navitem} ${styles.searchBar}`}>

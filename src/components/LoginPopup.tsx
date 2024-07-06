@@ -1,31 +1,14 @@
-// LoginPopup.tsx
 import React, { FunctionComponent } from "react";
 import styles from "./LoginPopup.module.css";
 
 type LoginPopupProps = {
   onClose: () => void;
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-  onSwitchToRegister: () => void; 
-=======
-  onSwitchToRegister: () => void; // Add this prop
->>>>>>> Stashed changes
-=======
-  onSwitchToRegister: () => void; // Add this prop
->>>>>>> Stashed changes
+  onSwitchToRegister: () => void;
 };
 
 const LoginPopup: FunctionComponent<LoginPopupProps> = ({ onClose, onSwitchToRegister }) => {
   const handleSwitchToRegister = () => {
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
     onSwitchToRegister(); 
-=======
-    onSwitchToRegister(); // Call the handler to switch to register popup
->>>>>>> Stashed changes
-=======
-    onSwitchToRegister(); // Call the handler to switch to register popup
->>>>>>> Stashed changes
   };
 
   return (
@@ -49,7 +32,7 @@ const LoginPopup: FunctionComponent<LoginPopupProps> = ({ onClose, onSwitchToReg
             <div className={styles.register} onClick={handleSwitchToRegister}>Register Now</div>
           </div>
           <div className={styles.submit}>
-          <button type="submit">Login</button>
+            <button type="submit">Login</button>
           </div>
         </form>
       </div>
