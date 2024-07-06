@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useState, ChangeEvent, useRef } from "react";
+import React, { FunctionComponent, useState, useEffect, ChangeEvent, useRef } from "react";
 import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
 import styles from "./UserProfile.module.css";
@@ -7,7 +7,7 @@ import EditableInput from "./EditableInput";
 const UserProfile: FunctionComponent = () => {
   const [isEditable, setIsEditable] = useState(false);
   const [inputValues, setInputValues] = useState({
-    role: "Role",
+    role: "Buyer", // Default value set to "Buyer"
     name: "Full Name",
     phoneNumber1: "Phone Number 1",
     phoneNumber2: "Phone Number 2",
@@ -19,12 +19,41 @@ const UserProfile: FunctionComponent = () => {
     landlineNumber: "Landline Number",
   });
 
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    const savedInputValues = localStorage.getItem("userProfile");
+    if (savedInputValues) {
+      setInputValues(JSON.parse(savedInputValues));
+    }
+
+    const savedImage = localStorage.getItem("profileImage");
+    if (savedImage) {
+      setSelectedImage(savedImage);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("userProfile", JSON.stringify(inputValues));
+  }, [inputValues]);
+
+  useEffect(() => {
+    if (selectedImage) {
+      localStorage.setItem("profileImage", selectedImage);
+    }
+  }, [selectedImage]);
+
   const handleEditClick = () => {
-    setIsEditable(!isEditable);
+    setIsEditable(true);
+  };
+
+  const handleSaveClick = () => {
+    setIsEditable(false);
   };
 
   const handleInputChange = (
-    e: ChangeEvent<HTMLInputElement>,
+    e: ChangeEvent<HTMLInputElement | HTMLSelectElement>,
     field: string
   ) => {
     setInputValues({
@@ -32,9 +61,6 @@ const UserProfile: FunctionComponent = () => {
       [field]: e.target.value,
     });
   };
-
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
-  const fileInputRef = useRef<HTMLInputElement>(null);
 
   const handleButtonClick = () => {
     if (fileInputRef.current) {
@@ -89,29 +115,32 @@ const UserProfile: FunctionComponent = () => {
                 </div>
               </div>
               <div className={styles.editProfile}>
-                <button className={styles.editButton} onClick={handleEditClick}>
-                  <div className={styles.editButtonChild} />
-                  <a className={styles.edit}>{isEditable ? "Save" : "Edit"}</a>
-                  <img
-                    className={styles.materialSymbolseditIcon}
-                    alt=""
-                    src="/materialsymbolsedit.svg"
-                  />
-                </button>
+                {!isEditable && (
+                  <button className={styles.editButton} onClick={handleEditClick}>
+                    <div className={styles.editButtonChild} />
+                    <a className={styles.edit}>Edit</a>
+                    <img
+                      className={styles.materialSymbolseditIcon}
+                      alt=""
+                      src="/materialsymbolsedit.svg"
+                    />
+                  </button>
+                )}
               </div>
             </div>
             <div className={styles.detailContainer}>
               <div className={styles.editableContainer}>
                 <div className={styles.detailColumn}>
-                  <div className={styles.indDetail} >
+                  <div className={styles.indDetail}>
                     You are
                     <EditableInput
                       isEditable={isEditable}
                       value={inputValues.role}
                       onChange={(e) => handleInputChange(e, "role")}
+                      type="select" // Specify the input type as select for the role field
                     />
                   </div>
-                  <div className={styles.indDetail} >
+                  <div className={styles.indDetail}>
                     Name
                     <EditableInput
                       isEditable={isEditable}
@@ -119,7 +148,7 @@ const UserProfile: FunctionComponent = () => {
                       onChange={(e) => handleInputChange(e, "name")}
                     />
                   </div>
-                  <div className={styles.indDetail} >
+                  <div className={styles.indDetail}>
                     Phone Number 1
                     <EditableInput
                       isEditable={isEditable}
@@ -127,7 +156,7 @@ const UserProfile: FunctionComponent = () => {
                       onChange={(e) => handleInputChange(e, "phoneNumber1")}
                     />
                   </div>
-                  <div className={styles.indDetail} >
+                  <div className={styles.indDetail}>
                     Phone Number 2
                     <EditableInput
                       isEditable={isEditable}
@@ -135,7 +164,7 @@ const UserProfile: FunctionComponent = () => {
                       onChange={(e) => handleInputChange(e, "phoneNumber2")}
                     />
                   </div>
-                  <div className={styles.indDetail} >
+                  <div className={styles.indDetail}>
                     Phone Number 3
                     <EditableInput
                       isEditable={isEditable}
@@ -145,7 +174,7 @@ const UserProfile: FunctionComponent = () => {
                   </div>
                 </div>
                 <div className={styles.detailColumn}>
-                  <div className={styles.indDetail} >
+                  <div className={styles.indDetail}>
                     Mail
                     <EditableInput
                       isEditable={isEditable}
@@ -153,7 +182,7 @@ const UserProfile: FunctionComponent = () => {
                       onChange={(e) => handleInputChange(e, "mail")}
                     />
                   </div>
-                  <div className={styles.indDetail} >
+                  <div className={styles.indDetail}>
                     State
                     <EditableInput
                       isEditable={isEditable}
@@ -161,7 +190,7 @@ const UserProfile: FunctionComponent = () => {
                       onChange={(e) => handleInputChange(e, "state")}
                     />
                   </div>
-                  <div className={styles.indDetail} >
+                  <div className={styles.indDetail}>
                     City
                     <EditableInput
                       isEditable={isEditable}
@@ -169,7 +198,7 @@ const UserProfile: FunctionComponent = () => {
                       onChange={(e) => handleInputChange(e, "city")}
                     />
                   </div>
-                  <div className={styles.indDetail} >
+                  <div className={styles.indDetail}>
                     Address
                     <EditableInput
                       isEditable={isEditable}
@@ -177,7 +206,7 @@ const UserProfile: FunctionComponent = () => {
                       onChange={(e) => handleInputChange(e, "address")}
                     />
                   </div>
-                  <div className={styles.indDetail} >
+                  <div className={styles.indDetail}>
                     Landline Number
                     <EditableInput
                       isEditable={isEditable}
@@ -187,87 +216,34 @@ const UserProfile: FunctionComponent = () => {
                   </div>
                 </div>
               </div>
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "2vh",
-                  margin: "2vh",
-                  marginLeft: "3vh",
-                }}
-              >
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: "1vw",
-                    fontSize: "18px",
-                  }}
-                >
+              <div className={styles.other}>
+                <div className={styles.subscribeContainer}>
                   Subscribe for updates from Real Estate.
-                  <div
-                    style={{
-                      display: "flex",
-                      flexDirection: "row",
-                      gap: "1vw",
-                      marginLeft: "2vw",
-                    }}
-                  >
+                  <div className={styles.checkContainer}>
                     <input
                       type="checkbox"
                       id="subscribe"
-                      style={{
-                        width: "16px",
-                        transition: "0.3s",
-                        cursor: "pointer",
-                      }}
+                      className={styles.checkbox}
                     />
                     Other Promotional Mailers
                   </div>
                 </div>
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "row",
-                    whiteSpace: "nowrap",
-                    gap: "0.4vw",
-                  }}
-                >
+                <div className={styles.TC}>
                   By clicking below you agree to the{" "}
-                  <span
-                    style={{ color: "#2697E0", textDecoration: "underline" }}
-                  >
+                  <span className={styles.TCtext}>
                     Terms and Conditions
                   </span>
                 </div>
                 <button
-                  style={{
-                    width: "9vw",
-                    height: "2.5vw",
-                    display: "block",
-                    marginLeft: "30vw",
-                    borderRadius: "2vw",
-                    border: "1px transparent",
-                    backgroundImage: `linear-gradient(125.33deg, #2697e0, #784dc6)`,
-                    color: "white",
-                    fontFamily: "var(--font-montserrat)",
-                    fontSize: "16px",
-                  }}
+                  className={`${styles.saveProfile} ${isEditable ? 'active' : ''}`}
+                  disabled={!isEditable}
+                  onClick={handleSaveClick}
                 >
                   Save Profile
                 </button>
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "row",
-                    gap: "0.4vw",
-                    marginBottom: "0.5vh",
-                  }}
-                >
+                <div className={styles.deleteContainer}>
                   To delete your account{" "}
-                  <span
-                    style={{ color: "#2697E0", textDecoration: "underline" }}
-                  >
+                  <span className={styles.TCtext}>
                     click here
                   </span>
                 </div>

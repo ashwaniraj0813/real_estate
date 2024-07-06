@@ -165,6 +165,65 @@
   gap: 2vw;
   width: 30vw;
 }
+.other{
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+  margin: 2vh;
+  margin-left: 3vh;
+}
+.subscribeContainer{
+  display: flex;
+  flex-direction: column;
+  gap: 1vw;
+  font-size: 18px;
+}
+.checkContainer{
+  display: flex;
+  flex-direction: row;
+  gap: 1vw;
+  margin-left: 2vw;
+}
+.checkbox{
+  width: 16px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.TC{
+  display: flex;
+  flex-direction: row;
+  white-space: nowrap;
+  gap: 0.4vw;
+}
+.TCtext{
+  color: #2697e0;
+  text-decoration: underline;
+}
+.saveProfile{
+  width: 9vw;
+  height: 2.5vw;
+  display: block;
+  margin-left: 30vw;
+  border-radius: 2vw;
+  border: 1px transparent;
+  background-image: linear-gradient(125.33deg, #2697e0, #784dc6);
+  color: white;
+  font-family: var(--font-montserrat);
+  font-size: 16px;
+}
+.saveProfile:disabled{
+  opacity: 0.9;
+  cursor: not-allowed;
+}
+.saveProfile:enabled{
+  cursor: pointer;
+}
+.deleteContainer{
+  display: flex;
+  flex-direction: row;
+  gap: 0.4vw;
+  margin-bottom: 0.5vh;
+}
 @media screen and (max-width: 1425px) {
   .lastNameRow {
     flex: 1;

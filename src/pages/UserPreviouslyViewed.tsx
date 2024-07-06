@@ -1,5 +1,5 @@
 import { FunctionComponent } from "react";
-import Nav from "../components/Nav";
+import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
 import FrameComponent1 from "../components/FrameComponent11";
 import styles from "./UserPreviouslyViewed.module.css";
@@ -7,7 +7,7 @@ import styles from "./UserPreviouslyViewed.module.css";
 const UserPreviouslyViewed: FunctionComponent = () => {
   return (
     <div className={styles.userPreviouslyViewed0}>
-      <Nav/>
+      <Navbar />
       <main className={styles.sidebarParent}>
         <Sidebar currentPage="user-previously-viewed0"
         sidebarMarginLeft="unset"
