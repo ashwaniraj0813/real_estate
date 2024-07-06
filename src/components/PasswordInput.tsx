@@ -11,6 +11,8 @@ export type PasswordInputType = {
   propWidth?: CSSProperties["width"];
   propBorderRadius?: CSSProperties["borderRadius"];
   propBorderRadius1?: CSSProperties["borderRadius"];
+
+  handleChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
 const PasswordInput: FunctionComponent<PasswordInputType> = ({
@@ -21,6 +23,7 @@ const PasswordInput: FunctionComponent<PasswordInputType> = ({
   propWidth,
   propBorderRadius,
   propBorderRadius1,
+  handleChange,
 }) => {
   const passwordInputStyle: CSSProperties = useMemo(() => {
     return {
@@ -52,14 +55,17 @@ const PasswordInput: FunctionComponent<PasswordInputType> = ({
       style={passwordInputStyle}
     >
       <div className={styles.password} style={passwordStyle}>
-        {password}
+        Password
       </div>
       <div className={styles.passwordField} style={passwordFieldStyle}>
         <div className={styles.passwordFieldChild} style={rectangleDivStyle} />
         <input
           className={styles.password1}
           placeholder={passwordPlaceholder}
-          type="text"
+          type="password"
+          name="password"
+          value={password}
+          onChange={handleChange}
         />
       </div>
     </div>
