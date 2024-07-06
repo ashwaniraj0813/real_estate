@@ -4,34 +4,29 @@ import styles from './EditableInput.module.css';
 interface EditableInputProps {
   isEditable: boolean;
   value: string;
-  onChange: (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => void;
-  type?: string; // Optional prop to determine the type of input
+  onChange: (e: ChangeEvent<HTMLInputElement>, field: string) => void;
+  errorMessage?: string; // Optional error message prop
 }
 
-const EditableInput: FC<EditableInputProps> = ({ isEditable, value, onChange, type }) => {
+const EditableInput: FC<EditableInputProps> = ({ isEditable, value, onChange, errorMessage }) => {
   return (
-    <>
-      {type === 'select' ? (
-        <select
-          className={`${styles.inputField} ${!isEditable ? styles.readOnly : ''}`}
-          value={value}
-          onChange={onChange}
-          disabled={!isEditable}
-        >
-          <option value="Buyer">Buyer</option>
-          <option value="Seller">Seller</option>
-          <option value="Dealer">Dealer</option>
-        </select>
-      ) : (
-        <input
-          className={`${styles.inputField} ${!isEditable ? styles.readOnly : ''}`}
-          type="text"
-          value={value}
-          onChange={onChange}
-          readOnly={!isEditable}
-        />
+    <div className={styles.inputContainer}>
+      <input
+        className={`${styles.inputField} ${!isEditable ? styles.readOnly : ''}`}
+        type="text"
+        value={value}
+        onChange={(e) => onChange(e, value)}
+        readOnly={!isEditable}
+      />
+      {errorMessage && (
+        <div className={styles.errorContainer}>
+          <img src="error.svg" className={styles.error} />
+          <div className={styles.errorMessage}>
+            {errorMessage}
+          </div>
+        </div>
       )}
-    </>
+    </div>
   );
 };
 

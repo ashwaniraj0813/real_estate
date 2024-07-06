@@ -1,13 +1,13 @@
-import React, { FunctionComponent, useState, useEffect, ChangeEvent, useRef } from "react";
+import React, { useState, useEffect, ChangeEvent, useRef } from "react";
 import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
 import styles from "./UserProfile.module.css";
 import EditableInput from "./EditableInput";
 
-const UserProfile: FunctionComponent = () => {
+const UserProfile: React.FC = () => {
   const [isEditable, setIsEditable] = useState(false);
   const [inputValues, setInputValues] = useState({
-    role: "Buyer", // Default value set to "Buyer"
+    role: "Role",
     name: "Full Name",
     phoneNumber1: "Phone Number 1",
     phoneNumber2: "Phone Number 2",
@@ -22,6 +22,37 @@ const UserProfile: FunctionComponent = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
+  const [isRequiredFilled, setIsRequiredFilled] = useState(false); // State to track if mandatory fields are filled
+  const [validationErrors, setValidationErrors] = useState<Record<string, string>>({}); // State to track validation errors
+
+  useEffect(() => {
+    // Check if mandatory fields are filled whenever inputValues change
+    const { name, phoneNumber1, mail, city, state, address } = inputValues;
+    const errors: Record<string, string> = {};
+    if (name === "") {
+      errors["name"] = "This is a required field";
+    }
+    if (phoneNumber1 === "") {
+      errors["phoneNumber1"] = "This is a required field";
+    }
+    if (mail === "") {
+      errors["mail"] = "This is a required field";
+    }
+    if (city === "") {
+      errors["city"] = "This is a required field";
+    }
+    if (state === "") {
+      errors["state"] = "This is a required field";
+    }
+    if (address === "") {
+      errors["address"] = "This is a required field";
+    }
+
+    setValidationErrors(errors);
+    setIsRequiredFilled(Object.keys(errors).length === 0);
+  }, [inputValues]);
+
+  // Load saved input values and image from local storage
   useEffect(() => {
     const savedInputValues = localStorage.getItem("userProfile");
     if (savedInputValues) {
@@ -34,10 +65,12 @@ const UserProfile: FunctionComponent = () => {
     }
   }, []);
 
+  // Save input values to local storage
   useEffect(() => {
     localStorage.setItem("userProfile", JSON.stringify(inputValues));
   }, [inputValues]);
 
+  // Save selected image to local storage
   useEffect(() => {
     if (selectedImage) {
       localStorage.setItem("profileImage", selectedImage);
@@ -50,10 +83,18 @@ const UserProfile: FunctionComponent = () => {
 
   const handleSaveClick = () => {
     setIsEditable(false);
+    // Perform save logic only if mandatory fields are filled
+    if (isRequiredFilled) {
+      // Save logic here
+      console.log("Saving profile...");
+    } else {
+      // Handle case where mandatory fields are not filled
+      alert("Please fill in all mandatory fields.");
+    }
   };
 
   const handleInputChange = (
-    e: ChangeEvent<HTMLInputElement | HTMLSelectElement>,
+    e: ChangeEvent<HTMLInputElement>,
     field: string
   ) => {
     setInputValues({
@@ -137,23 +178,24 @@ const UserProfile: FunctionComponent = () => {
                       isEditable={isEditable}
                       value={inputValues.role}
                       onChange={(e) => handleInputChange(e, "role")}
-                      type="select" // Specify the input type as select for the role field
                     />
                   </div>
                   <div className={styles.indDetail}>
-                    Name
+                    Name*
                     <EditableInput
                       isEditable={isEditable}
                       value={inputValues.name}
                       onChange={(e) => handleInputChange(e, "name")}
+                      errorMessage={validationErrors["name"]} // Pass error message for validation
                     />
                   </div>
                   <div className={styles.indDetail}>
-                    Phone Number 1
+                    Phone Number 1*
                     <EditableInput
                       isEditable={isEditable}
                       value={inputValues.phoneNumber1}
                       onChange={(e) => handleInputChange(e, "phoneNumber1")}
+                      errorMessage={validationErrors["phoneNumber1"]} // Pass error message for validation
                     />
                   </div>
                   <div className={styles.indDetail}>
@@ -175,35 +217,39 @@ const UserProfile: FunctionComponent = () => {
                 </div>
                 <div className={styles.detailColumn}>
                   <div className={styles.indDetail}>
-                    Mail
+                    Mail*
                     <EditableInput
                       isEditable={isEditable}
                       value={inputValues.mail}
                       onChange={(e) => handleInputChange(e, "mail")}
+                      errorMessage={validationErrors["mail"]} // Pass error message for validation
                     />
                   </div>
                   <div className={styles.indDetail}>
-                    State
+                    State*
                     <EditableInput
                       isEditable={isEditable}
                       value={inputValues.state}
                       onChange={(e) => handleInputChange(e, "state")}
+                      errorMessage={validationErrors["state"]} // Pass error message for validation
                     />
                   </div>
                   <div className={styles.indDetail}>
-                    City
+                    City*
                     <EditableInput
                       isEditable={isEditable}
                       value={inputValues.city}
                       onChange={(e) => handleInputChange(e, "city")}
+                      errorMessage={validationErrors["city"]} // Pass error message for validation
                     />
                   </div>
                   <div className={styles.indDetail}>
-                    Address
+                    Address*
                     <EditableInput
                       isEditable={isEditable}
                       value={inputValues.address}
                       onChange={(e) => handleInputChange(e, "address")}
+                      errorMessage={validationErrors["address"]} // Pass error message for validation
                     />
                   </div>
                   <div className={styles.indDetail}>
@@ -235,9 +281,9 @@ const UserProfile: FunctionComponent = () => {
                   </span>
                 </div>
                 <button
-                  className={`${styles.saveProfile} ${isEditable ? 'active' : ''}`}
-                  disabled={!isEditable}
+                  className={`${styles.saveProfile} ${isEditable ? styles.active : ""}`}
                   onClick={handleSaveClick}
+                  disabled={!isEditable || !isRequiredFilled}
                 >
                   Save Profile
                 </button>
