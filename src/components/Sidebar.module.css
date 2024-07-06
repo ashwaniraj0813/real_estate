@@ -34,11 +34,12 @@
   font-family: var(--font-montserrat);
   white-space: nowrap;
   margin-top: 5vh;
+  z-index: 100;
 }
 .logoutPopup {
   position: fixed;
   top: 50%;
-  left: 50%;
+  left: 55%;
   transform: translate(-50%, -50%);
   background-color: white;
   padding: 30px;
