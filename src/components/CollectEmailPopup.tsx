@@ -9,9 +9,33 @@ type CollectEmailPopupProps = {
 const CollectEmailPopup: FunctionComponent<CollectEmailPopupProps> = ({ onClose, onSendOtp }) => {
   const [email, setEmail] = useState("");
 
-  const handleSendOtp = (e: React.FormEvent) => {
+  const handleSendOtp = async (e: React.FormEvent) => {
     e.preventDefault();
-    onSendOtp(email);
+
+    console.log("Attempting to send OTP to:", email);
+
+    try {
+      const response = await fetch('/api/generate-otp', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      console.log("Response received with status:", response.status);
+
+      if (response.status !== 200) {
+        console.error("Error response received:", await response.text());
+        throw new Error('Failed to generate OTP');
+      }
+
+      console.log('OTP sent successfully:', await response.text());
+      onSendOtp(email);
+        // Close the popup after successful OTP sending
+    } catch (error) {
+      console.error('Error sending OTP:', error);
+    }
   };
 
   return (
