@@ -4,12 +4,12 @@ import styles from "./LoginPopup.module.css";
 
 type LoginPopupProps = {
   onClose: () => void;
-  onSwitchToRegister: () => void; // Add this prop
+  onSwitchToRegister: () => void; 
 };
 
 const LoginPopup: FunctionComponent<LoginPopupProps> = ({ onClose, onSwitchToRegister }) => {
   const handleSwitchToRegister = () => {
-    onSwitchToRegister(); // Call the handler to switch to register popup
+    onSwitchToRegister(); 
   };
 
   return (

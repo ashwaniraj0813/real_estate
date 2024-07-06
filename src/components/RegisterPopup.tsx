@@ -10,6 +10,7 @@ type RegisterPopupProps = {
 
 const RegisterPopup: FunctionComponent<RegisterPopupProps> = ({ onClose, onSwitchToLogin, onRegister, prefilledEmail }) => {
   const [email, setEmail] = useState(prefilledEmail);
+  const [role, setRole] = useState("");
 
   const handleRegister = (e: React.FormEvent) => {
     e.preventDefault();
@@ -52,11 +53,36 @@ const RegisterPopup: FunctionComponent<RegisterPopupProps> = ({ onClose, onSwitc
             <label htmlFor="password">Password*</label>
             <input type="password" id="password" name="password" required />
           </div>
+          <div className={styles.section}>
+            <label>Are you a real estate agent or a builder?*</label>
+            <div className={styles.radioGroup}>
+              <input
+                type="radio"
+                id="agent"
+                name="role"
+                value="agent"
+                checked={role === "agent"}
+                onChange={(e) => setRole(e.target.value)}
+                required
+              />
+              <label htmlFor="agent">Yes</label>
+              <input
+                type="radio"
+                id="builder"
+                name="role"
+                value="builder"
+                checked={role === "builder"}
+                onChange={(e) => setRole(e.target.value)}
+                required
+              />
+              <label htmlFor="builder">No</label>
+            </div>
+          </div>
           <div className={styles.req}>
             <p>*required</p>
           </div>
           <div>
-            <p>
+            <p className="text">
               Already have an account?{" "}
               <div className={styles.login} onClick={onSwitchToLogin}>
                 Login
