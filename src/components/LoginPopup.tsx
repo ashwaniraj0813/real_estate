@@ -1,3 +1,4 @@
+// LoginPopup.tsx
 import React, { FunctionComponent } from "react";
 import styles from "./LoginPopup.module.css";
 
@@ -27,6 +28,9 @@ const LoginPopup: FunctionComponent<LoginPopupProps> = ({ onClose, onSwitchToReg
             <label htmlFor="password">Password</label>
             <input type="password" id="password" name="password" required />
           </div>
+          <div className={styles.info}>
+            <p className={styles.paragraph}>Do not have an account?</p>
+            <div className={styles.register} onClick={handleSwitchToRegister}>Register Now</div>
           <div className={styles.info}>
             <p className={styles.paragraph}>Do not have an account?</p>
             <div className={styles.register} onClick={handleSwitchToRegister}>Register Now</div>
