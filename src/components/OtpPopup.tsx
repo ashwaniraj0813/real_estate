@@ -23,7 +23,7 @@ const OtpPopup: FunctionComponent<OtpPopupProps> = ({ email, onClose, onVerifyOt
           &times;
         </button>
         <h2>Enter OTP</h2>
-        <p>A 4-digit OTP has been sent to <strong>{email}</strong>. </p>
+        <p>A 6-digit OTP has been sent to <strong>{email}</strong>. </p>
         <p>Please enter it below to complete your registration.</p>
         <form onSubmit={handleVerifyOtp}>
           <div className={styles.section}>
@@ -33,7 +33,7 @@ const OtpPopup: FunctionComponent<OtpPopupProps> = ({ email, onClose, onVerifyOt
               id="otp"
               name="otp"
               required
-              maxLength={4}
+              maxLength={6}
               value={otp}
               onChange={(e) => setOtp(e.target.value)}
             />
