@@ -5,16 +5,18 @@ import styles from "./Navbar.module.css";
 import LoginPopup from "./LoginPopup";
 import RegisterPopup from "./RegisterPopup";
 import OtpPopup from "./OtpPopup";
+import CollectEmailPopup from "./CollectEmailPopup";
 
 export type NavbarProps = {
   className?: string;
 };
 
-const Navbar: FunctionComponent<NavbarProps> = ({ className = "click" }) => {
+const Navbar: FunctionComponent<NavbarProps> = ({ className = "" }) => {
   const navigate = useNavigate();
   const [isLoginPopupOpen, setLoginPopupOpen] = useState(false);
   const [isRegisterPopupOpen, setRegisterPopupOpen] = useState(false);
   const [isOtpPopupOpen, setOtpPopupOpen] = useState(false);
+  const [isCollectEmailPopupOpen, setCollectEmailPopupOpen] = useState(false);
   const [emailForOtp, setEmailForOtp] = useState("");
 
   const onLOGOTextClick = useCallback(() => {
@@ -34,33 +36,36 @@ const Navbar: FunctionComponent<NavbarProps> = ({ className = "click" }) => {
   }, [navigate]);
 
   const handleLoginClick = () => {
-    setRegisterPopupOpen(false);
-    setOtpPopupOpen(false);
+    closePopups();
     setLoginPopupOpen(true);
   };
 
-  const handleRegisterClick = () => {
-    setLoginPopupOpen(false);
-    setOtpPopupOpen(false);
+  const handleSwitchToCollectEmail = () => {
+    closePopups();
+    setCollectEmailPopupOpen(true);
+  };
+
+  const handleCollectEmail = (email: string) => {
+    closePopups();
+    setEmailForOtp(email);
+    setOtpPopupOpen(true);
+  };
+
+  const handleOtpVerification = () => {
+    closePopups();
     setRegisterPopupOpen(true);
   };
 
   const handleSwitchToLogin = () => {
-    setRegisterPopupOpen(false);
-    setOtpPopupOpen(false);
+    closePopups();
     setLoginPopupOpen(true);
-  };
-
-  const handleRegister = (email: string) => {
-    setRegisterPopupOpen(false);
-    setEmailForOtp(email);
-    setOtpPopupOpen(true);
   };
 
   const closePopups = () => {
     setLoginPopupOpen(false);
     setRegisterPopupOpen(false);
     setOtpPopupOpen(false);
+    setCollectEmailPopupOpen(false);
   };
 
   const isHomePage = useLocation().pathname === '/';
@@ -79,9 +84,10 @@ const Navbar: FunctionComponent<NavbarProps> = ({ className = "click" }) => {
         <img className={styles.homeIcon} src="/vector1.svg" alt="profile icon" />
       </div>
 
-      {isLoginPopupOpen && <LoginPopup onClose={closePopups} onSwitchToRegister={handleRegisterClick} />}
-      {isRegisterPopupOpen && <RegisterPopup onClose={closePopups} onSwitchToLogin={handleSwitchToLogin} onRegister={handleRegister} />}
-      {isOtpPopupOpen && <OtpPopup onClose={closePopups} email={emailForOtp} />}
+      {isLoginPopupOpen && <LoginPopup onClose={closePopups} onSwitchToRegister={handleSwitchToCollectEmail} />}
+      {isCollectEmailPopupOpen && <CollectEmailPopup onClose={closePopups} onSendOtp={handleCollectEmail} />}
+      {isOtpPopupOpen && <OtpPopup onClose={closePopups} email={emailForOtp} onVerifyOtp={handleOtpVerification} />}
+      {isRegisterPopupOpen && <RegisterPopup onClose={closePopups} onSwitchToLogin={handleSwitchToLogin} />}
     </header>
   );
 };

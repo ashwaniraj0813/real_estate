@@ -4,12 +4,12 @@ import styles from "./LoginPopup.module.css";
 
 type LoginPopupProps = {
   onClose: () => void;
-  onSwitchToRegister: () => void;
+  onSwitchToRegister: () => void; // Add this prop
 };
 
 const LoginPopup: FunctionComponent<LoginPopupProps> = ({ onClose, onSwitchToRegister }) => {
   const handleSwitchToRegister = () => {
-    onSwitchToRegister(); 
+    onSwitchToRegister(); // Call the handler to switch to register popup
   };
 
   return (
@@ -31,12 +31,9 @@ const LoginPopup: FunctionComponent<LoginPopupProps> = ({ onClose, onSwitchToReg
           <div className={styles.info}>
             <p className={styles.paragraph}>Do not have an account?</p>
             <div className={styles.register} onClick={handleSwitchToRegister}>Register Now</div>
-          <div className={styles.info}>
-            <p className={styles.paragraph}>Do not have an account?</p>
-            <div className={styles.register} onClick={handleSwitchToRegister}>Register Now</div>
           </div>
           <div className={styles.submit}>
-            <button type="submit">Login</button>
+          <button type="submit">Login</button>
           </div>
         </form>
       </div>
