@@ -117,7 +117,7 @@
   font-size: var(--font-size-xl);
   color: var(--color-black);
   font-family: var(--font-montserrat);
-  margin-left: 40vw;
+  margin-left: 43vw;
 }
 @media screen and (max-width: 925px) {
   .emptyStateWrapper {

@@ -1,27 +1,16 @@
-import {
-  FunctionComponent,
-  useMemo,
-  type CSSProperties,
-  useCallback,
-} from "react";
+import React, { FunctionComponent, useMemo, CSSProperties, useCallback, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./Sidebar.module.css";
 
 export type SidebarType = {
   className?: string;
-
-  /** Style props */
   sidebarMarginLeft?: CSSProperties["marginLeft"];
   profileSettingsColor?: CSSProperties["color"];
   profileSettingsFontWeight?: CSSProperties["fontWeight"];
   myPropertiesColor?: CSSProperties["color"];
   myPropertiesFontWeight?: CSSProperties["fontWeight"];
-
-  /** Action props */
   onHomeIconClick?: () => void;
   onLOGOTextClick?: () => void;
-
-  /** Current page prop */
   currentPage: string;
 };
 
@@ -32,6 +21,7 @@ const Sidebar: FunctionComponent<SidebarType> = ({
   currentPage,
 }) => {
   const navigate = useNavigate();
+  const [showLogoutConfirmation, setShowLogoutConfirmation] = useState(false);
 
   const sidebar1Style: CSSProperties = useMemo(() => {
     return {
@@ -70,62 +60,58 @@ const Sidebar: FunctionComponent<SidebarType> = ({
   const onContactedTextClick = useCallback(() => {
     navigate("/user-previously-contacted0");
   }, [navigate]);
+
   const onLogOutClick = useCallback(() => {
+    setShowLogoutConfirmation(true);
+  }, []);
+
+  const handleLogoutConfirm = useCallback(() => {
     navigate("/");
+    // Perform additional logout actions if needed
   }, [navigate]);
 
+  const handleLogoutCancel = useCallback(() => {
+    setShowLogoutConfirmation(false);
+  }, []);
+
   return (
-    <div
-      className={[styles.sidebar, className].join(" ")}
-      style={sidebar1Style}
-    >
-      <div
-        className={getCurrentPageClass("profile-settings")}
-        onClick={onProfileSettingTextClick}
-      >
+    <div className={[styles.sidebar, className].join(" ")} style={sidebar1Style}>
+      <div className={getCurrentPageClass("profile-settings")} onClick={onProfileSettingTextClick}>
         Profile settings
       </div>
-      <div
-        className={getCurrentPageClass("user-appointments0")}
-        onClick={onAppointmentsTextClick0}
-      >
+      <div className={getCurrentPageClass("user-appointments0")} onClick={onAppointmentsTextClick0}>
         Appointments
       </div>
-      <div
-        className={getCurrentPageClass("user-properties0")}
-        onClick={onMyPropertiesTextClick}
-      >
+      <div className={getCurrentPageClass("user-properties0")} onClick={onMyPropertiesTextClick}>
         My properties
       </div>
-      <div>
-        <div className={getCurrentPageClass("user-past-searches0")} onClick={onPastSearchesTextClick}>
-          Past searches
-        </div>
+      <div className={getCurrentPageClass("user-past-searches0")} onClick={onPastSearchesTextClick}>
+        Past searches
       </div>
-      <div
-        className={getCurrentPageClass("user-previously-viewed0")}
-        onClick={onPreviouslyViewedTextClick}
-      >
+      <div className={getCurrentPageClass("user-previously-viewed0")} onClick={onPreviouslyViewedTextClick}>
         Previously viewed
       </div>
-      <div>
-        <div className={getCurrentPageClass("user-previously-saved0")} onClick={onSavedTextClick}>
-          Saved
+      <div className={getCurrentPageClass("user-previously-saved0")} onClick={onSavedTextClick}>
+        Saved
+      </div>
+      <div className={getCurrentPageClass("user-previously-contacted0")} onClick={onContactedTextClick}>
+        Contacted
+      </div>
+      <div className={getCurrentPageClass("notifications")}>Notifications</div>
+      <div className={styles.notCurrPage} onClick={onLogOutClick}>
+        Log out
+      </div>
+
+      {/* Logout confirmation popup */}
+      {showLogoutConfirmation && (
+        <div className={styles.logoutPopup}>
+          <div className={styles.logoutMessage}>Are you sure you want to log out?</div>
+          <div className={styles.logoutButtons}>
+            <button className={styles.logoutButton} onClick={handleLogoutConfirm}>Yes</button>
+            <button className={styles.cancelButton} onClick={handleLogoutCancel}>No</button>
+          </div>
         </div>
-      </div>
-      <div>
-        <div className={getCurrentPageClass("user-previously-contacted0")} onClick={onContactedTextClick}>
-          Contacted
-        </div>
-      </div>
-      <div>
-        <div className={getCurrentPageClass("notifications")}>Notifications</div>
-      </div>
-      <div>
-        <div className={styles.notCurrPage} onClick={onLogOutClick}>
-          Log out
-        </div>
-      </div>
+      )}
     </div>
   );
 };

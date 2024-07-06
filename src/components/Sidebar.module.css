@@ -35,6 +35,48 @@
   white-space: nowrap;
   margin-top: 5vh;
 }
+.logoutPopup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 101;
+  border-radius: 4px;
+}
+
+.logoutMessage {
+  font-size: 18px;
+  margin-bottom: 25px;
+  color: black;
+}
+
+.logoutButtons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.logoutButton,
+.cancelButton {
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+.logoutButton {
+  background-color: #ffffff;
+  color: black;
+  border: 1px solid #2697E0;
+}
+
+.cancelButton {
+  background-color: #2697E0;
+  color: white;
+}
 @media screen and (max-width: 1425px) {
   .sidebar {
     flex: 1;
