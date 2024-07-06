@@ -1,4 +1,9 @@
+<<<<<<< Updated upstream
 import React, { FunctionComponent, useCallback, useState, useEffect } from "react";
+=======
+>>>>>>> Stashed changes
+// Navbar.tsx
+import React, { FunctionComponent, useCallback, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import styles from "./Navbar.module.css";
 import LoginPopup from "./LoginPopup";
@@ -15,7 +20,14 @@ const Navbar: FunctionComponent<NavbarProps> = ({ className = "click" }) => {
   const [isRegisterPopupOpen, setRegisterPopupOpen] = useState(false);
   const [isOtpPopupOpen, setOtpPopupOpen] = useState(false);
   const [emailForOtp, setEmailForOtp] = useState("");
+<<<<<<< Updated upstream
   const [scrolled, setScrolled] = useState(false);
+  const [isLoginPopupOpen, setLoginPopupOpen] = useState(false);
+  const [isRegisterPopupOpen, setRegisterPopupOpen] = useState(false);
+  const [isOtpPopupOpen, setOtpPopupOpen] = useState(false);
+  const [emailForOtp, setEmailForOtp] = useState("");
+=======
+>>>>>>> Stashed changes
 
   const onLOGOTextClick = useCallback(() => {
     navigate("/");
@@ -63,6 +75,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({ className = "click" }) => {
     setOtpPopupOpen(false);
   };
 
+<<<<<<< Updated upstream
   const match = (useLocation().pathname === '/' || useLocation().pathname === '/aboutus');
 
   const handleScroll = useCallback(() => {
@@ -75,9 +88,47 @@ const Navbar: FunctionComponent<NavbarProps> = ({ className = "click" }) => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [handleScroll]);
+  const handleLoginClick = () => {
+    setRegisterPopupOpen(false);
+    setOtpPopupOpen(false);
+    setLoginPopupOpen(true);
+  };
+
+  const handleRegisterClick = () => {
+    setLoginPopupOpen(false);
+    setOtpPopupOpen(false);
+    setRegisterPopupOpen(true);
+  };
+
+  const handleSwitchToLogin = () => {
+    setRegisterPopupOpen(false);
+    setOtpPopupOpen(false);
+    setLoginPopupOpen(true);
+  };
+
+  const handleRegister = (email: string) => {
+    setRegisterPopupOpen(false);
+    setEmailForOtp(email);
+    setOtpPopupOpen(true);
+  };
+
+  const closePopups = () => {
+    setLoginPopupOpen(false);
+    setRegisterPopupOpen(false);
+    setOtpPopupOpen(false);
+  };
+
+  const isHomePage = useLocation().pathname === '/';
 
   return (
     <header className={`${styles.navbar} ${match && !scrolled ? styles.navtransparent : styles.navcolored}`}>
+      <div className={`${styles.navitem} ${styles.logo}`} onClick={onLOGOTextClick}>LOGO</div>
+=======
+  const isHomePage = useLocation().pathname === '/';
+
+  return (
+>>>>>>> Stashed changes
+    <header className={`${styles.navbar} ${isHomePage ? styles.navtransparent : ""}`}>
       <div className={`${styles.navitem} ${styles.logo}`} onClick={onLOGOTextClick}>LOGO</div>
       <div className={`${styles.navitem} ${styles.searchBar}`}>
         <img className={styles.searchicon} src="/icbaselinesearch1.svg" alt="search icon" />
@@ -98,4 +149,3 @@ const Navbar: FunctionComponent<NavbarProps> = ({ className = "click" }) => {
 };
 
 export default Navbar;
-
