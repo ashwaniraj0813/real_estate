@@ -1,12 +1,12 @@
 import { FunctionComponent } from "react";
-import Nav from "../components/Nav";
+import Navbar from "../components/Navbar";
 import ListingHeader from "../components/ListingHeader";
 import styles from "./Sell.module.css";
 
 const Sell: FunctionComponent = () => {
   return (
     <div className={styles.sell}>
-      <Nav/>
+      <Navbar />
       <main className={styles.listingContentWrapper}>
         <form className={styles.listingContent}>
           <ListingHeader />

@@ -71,7 +71,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({ className = "" }) => {
   const isHomePage = useLocation().pathname === '/';
 
   return (
-    <header className={`${styles.navbar} ${isHomePage ? styles.navtransparent : ""}`}>
+    <header className={`${styles.navbar} ${isHomePage ? styles.navtransparent : styles.navcolored}`}>
       <div className={`${styles.navitem} ${styles.logo}`} onClick={onLOGOTextClick}>LOGO</div>
       <div className={`${styles.navitem} ${styles.searchBar}`}>
         <img className={styles.searchicon} src="/icbaselinesearch1.svg" alt="search icon" />

@@ -10,7 +10,7 @@
   justify-content: space-between;
   gap: 20px;
   color: var(--color-white);
-  background-image: transparent;
+  background-image: transperant;
   font-weight: 600;
   
 }
