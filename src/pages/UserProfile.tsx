@@ -22,21 +22,31 @@ const UserProfile: React.FC = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
-  const [isRequiredFilled, setIsRequiredFilled] = useState(false); // State to track if mandatory fields are filled
-  const [validationErrors, setValidationErrors] = useState<Record<string, string>>({}); // State to track validation errors
+  const [isRequiredFilled, setIsRequiredFilled] = useState(false);
+  const [validationErrors, setValidationErrors] = useState<Record<string, string>>({});
+  const [isProfilePicMenuOpen, setIsProfilePicMenuOpen] = useState(false); // State to track if profile pic menu is open
 
   useEffect(() => {
-    // Check if mandatory fields are filled whenever inputValues change
-    const { name, phoneNumber1, mail, city, state, address } = inputValues;
+    const { name, phoneNumber1,phoneNumber2,phoneNumber3, mail, city, state, address, landlineNumber } = inputValues;
     const errors: Record<string, string> = {};
     if (name === "") {
       errors["name"] = "This is a required field";
     }
     if (phoneNumber1 === "") {
       errors["phoneNumber1"] = "This is a required field";
+    } else if (!/^\d+$/.test(phoneNumber1)) {
+      errors["phoneNumber1"] = "Phone number must be numeric";
+    }
+    if (!/^\d+$/.test(phoneNumber2)&& phoneNumber2!='') {
+      errors["phoneNumber2"] = "Phone number must be numeric";
+    }
+    if (!/^\d+$/.test(phoneNumber3) && phoneNumber3!='') {
+      errors["phoneNumber3"] = "Phone number must be numeric";
     }
     if (mail === "") {
       errors["mail"] = "This is a required field";
+    } else if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(mail)) {
+      errors["mail"] = "Invalid email format";
     }
     if (city === "") {
       errors["city"] = "This is a required field";
@@ -47,12 +57,14 @@ const UserProfile: React.FC = () => {
     if (address === "") {
       errors["address"] = "This is a required field";
     }
-
+    if (!/^\d+$/.test(landlineNumber) && landlineNumber!='') {
+      errors["landlineNumber"] = "Landline number must be numeric";
+    }
     setValidationErrors(errors);
     setIsRequiredFilled(Object.keys(errors).length === 0);
   }, [inputValues]);
 
-  // Load saved input values and image from local storage
+
   useEffect(() => {
     const savedInputValues = localStorage.getItem("userProfile");
     if (savedInputValues) {
@@ -65,12 +77,10 @@ const UserProfile: React.FC = () => {
     }
   }, []);
 
-  // Save input values to local storage
   useEffect(() => {
     localStorage.setItem("userProfile", JSON.stringify(inputValues));
   }, [inputValues]);
 
-  // Save selected image to local storage
   useEffect(() => {
     if (selectedImage) {
       localStorage.setItem("profileImage", selectedImage);
@@ -83,12 +93,9 @@ const UserProfile: React.FC = () => {
 
   const handleSaveClick = () => {
     setIsEditable(false);
-    // Perform save logic only if mandatory fields are filled
     if (isRequiredFilled) {
-      // Save logic here
       console.log("Saving profile...");
     } else {
-      // Handle case where mandatory fields are not filled
       alert("Please fill in all mandatory fields.");
     }
   };
@@ -104,7 +111,9 @@ const UserProfile: React.FC = () => {
   };
 
   const handleButtonClick = () => {
-    if (fileInputRef.current) {
+    if (selectedImage) {
+      setIsProfilePicMenuOpen(!isProfilePicMenuOpen);
+    } else if (fileInputRef.current) {
       fileInputRef.current.click();
     }
   };
@@ -115,9 +124,16 @@ const UserProfile: React.FC = () => {
       const reader = new FileReader();
       reader.onloadend = () => {
         setSelectedImage(reader.result as string);
+        setIsProfilePicMenuOpen(false);
       };
       reader.readAsDataURL(file);
     }
+  };
+
+  const handleRemoveProfilePic = () => {
+    setSelectedImage(null);
+    setIsProfilePicMenuOpen(false);
+    localStorage.removeItem("profileImage");
   };
 
   return (
@@ -143,9 +159,15 @@ const UserProfile: React.FC = () => {
                     <img
                       loading="lazy"
                       alt=""
-                      src="/camera.svg"
+                      src={selectedImage ? "/materialsymbolsedit.svg" : "/camera.svg"}
                     />
                   </button>
+                  {isProfilePicMenuOpen && (
+                    <div className={styles.profilePicMenu}>
+                      <button onClick={handleRemoveProfilePic}>Remove Profile Picture</button>
+                      <button onClick={() => fileInputRef.current?.click()}>Change Profile Picture</button>
+                    </div>
+                  )}
                   <input
                     type="file"
                     ref={fileInputRef}
@@ -173,7 +195,7 @@ const UserProfile: React.FC = () => {
               <div className={styles.editableContainer}>
                 <div className={styles.detailColumn}>
                   <div className={styles.indDetail}>
-                    You are
+                    You are*
                     <EditableInput
                       isEditable={isEditable}
                       value={inputValues.role}
@@ -186,7 +208,7 @@ const UserProfile: React.FC = () => {
                       isEditable={isEditable}
                       value={inputValues.name}
                       onChange={(e) => handleInputChange(e, "name")}
-                      errorMessage={validationErrors["name"]} // Pass error message for validation
+                      errorMessage={validationErrors["name"]}
                     />
                   </div>
                   <div className={styles.indDetail}>
@@ -195,7 +217,7 @@ const UserProfile: React.FC = () => {
                       isEditable={isEditable}
                       value={inputValues.phoneNumber1}
                       onChange={(e) => handleInputChange(e, "phoneNumber1")}
-                      errorMessage={validationErrors["phoneNumber1"]} // Pass error message for validation
+                      errorMessage={validationErrors["phoneNumber1"]}
                     />
                   </div>
                   <div className={styles.indDetail}>
@@ -204,6 +226,7 @@ const UserProfile: React.FC = () => {
                       isEditable={isEditable}
                       value={inputValues.phoneNumber2}
                       onChange={(e) => handleInputChange(e, "phoneNumber2")}
+                      errorMessage={validationErrors["phoneNumber2"]}
                     />
                   </div>
                   <div className={styles.indDetail}>
@@ -212,6 +235,7 @@ const UserProfile: React.FC = () => {
                       isEditable={isEditable}
                       value={inputValues.phoneNumber3}
                       onChange={(e) => handleInputChange(e, "phoneNumber3")}
+                      errorMessage={validationErrors["phoneNumber3"]}
                     />
                   </div>
                 </div>
@@ -222,7 +246,7 @@ const UserProfile: React.FC = () => {
                       isEditable={isEditable}
                       value={inputValues.mail}
                       onChange={(e) => handleInputChange(e, "mail")}
-                      errorMessage={validationErrors["mail"]} // Pass error message for validation
+                      errorMessage={validationErrors["mail"]}
                     />
                   </div>
                   <div className={styles.indDetail}>
@@ -231,7 +255,7 @@ const UserProfile: React.FC = () => {
                       isEditable={isEditable}
                       value={inputValues.state}
                       onChange={(e) => handleInputChange(e, "state")}
-                      errorMessage={validationErrors["state"]} // Pass error message for validation
+                      errorMessage={validationErrors["state"]}
                     />
                   </div>
                   <div className={styles.indDetail}>
@@ -240,7 +264,7 @@ const UserProfile: React.FC = () => {
                       isEditable={isEditable}
                       value={inputValues.city}
                       onChange={(e) => handleInputChange(e, "city")}
-                      errorMessage={validationErrors["city"]} // Pass error message for validation
+                      errorMessage={validationErrors["city"]}
                     />
                   </div>
                   <div className={styles.indDetail}>
@@ -249,7 +273,7 @@ const UserProfile: React.FC = () => {
                       isEditable={isEditable}
                       value={inputValues.address}
                       onChange={(e) => handleInputChange(e, "address")}
-                      errorMessage={validationErrors["address"]} // Pass error message for validation
+                      errorMessage={validationErrors["address"]}
                     />
                   </div>
                   <div className={styles.indDetail}>
@@ -258,6 +282,7 @@ const UserProfile: React.FC = () => {
                       isEditable={isEditable}
                       value={inputValues.landlineNumber}
                       onChange={(e) => handleInputChange(e, "landlineNumber")}
+                      errorMessage={validationErrors["landlineNumber"]}
                     />
                   </div>
                 </div>

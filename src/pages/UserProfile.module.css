@@ -90,10 +90,10 @@
   background: white;
   cursor: pointer;
   position: absolute;
-  bottom: 8px;
+  bottom: 14px;
   right: 8px;
   border-radius: 50%;
-  padding: 4px;
+  padding: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 .userContainer {
@@ -105,6 +105,7 @@
   align-items: flex-start;
   justify-content: flex-start;
   gap: var(--gap-54xl);
+  margin-bottom: 2vh;
 }
 .lastNameRow {
   width: 559px;
@@ -224,6 +225,32 @@
   gap: 0.4vw;
   margin-bottom: 0.5vh;
 }
+.profilePicMenu {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+
+.profilePicMenu button {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  font: var(--font-montserrat);
+  font-size: 14px;
+}
+
+.profilePicMenu button:hover {
+  background-color: #f0f0f0;
+}
 @media screen and (max-width: 1425px) {
   .lastNameRow {
     flex: 1;
@@ -261,6 +288,7 @@
     box-sizing: border-box;
   }
 }
+
 @media screen and (max-width: 450px) {
   .header {
     flex: 1;

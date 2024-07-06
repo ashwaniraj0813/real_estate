@@ -12,6 +12,7 @@
   color: #2697E0;
 }
 .sidebar {
+  position: fixed;
   display: flex;
   margin-left: -416px;
   max-height: 95vh;
