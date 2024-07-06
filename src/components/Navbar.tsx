@@ -1,5 +1,11 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
 import React, { FunctionComponent, useCallback, useState, useEffect } from "react";
+=======
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 // Navbar.tsx
@@ -21,11 +27,17 @@ const Navbar: FunctionComponent<NavbarProps> = ({ className = "click" }) => {
   const [isOtpPopupOpen, setOtpPopupOpen] = useState(false);
   const [emailForOtp, setEmailForOtp] = useState("");
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
   const [scrolled, setScrolled] = useState(false);
   const [isLoginPopupOpen, setLoginPopupOpen] = useState(false);
   const [isRegisterPopupOpen, setRegisterPopupOpen] = useState(false);
   const [isOtpPopupOpen, setOtpPopupOpen] = useState(false);
   const [emailForOtp, setEmailForOtp] = useState("");
+=======
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 
@@ -76,6 +88,8 @@ const Navbar: FunctionComponent<NavbarProps> = ({ className = "click" }) => {
   };
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
   const match = (useLocation().pathname === '/' || useLocation().pathname === '/aboutus');
 
   const handleScroll = useCallback(() => {
@@ -123,6 +137,16 @@ const Navbar: FunctionComponent<NavbarProps> = ({ className = "click" }) => {
   return (
     <header className={`${styles.navbar} ${match && !scrolled ? styles.navtransparent : styles.navcolored}`}>
       <div className={`${styles.navitem} ${styles.logo}`} onClick={onLOGOTextClick}>LOGO</div>
+=======
+  const isHomePage = useLocation().pathname === '/';
+
+  return (
+>>>>>>> Stashed changes
+=======
+  const isHomePage = useLocation().pathname === '/';
+
+  return (
+>>>>>>> Stashed changes
 =======
   const isHomePage = useLocation().pathname === '/';
 
