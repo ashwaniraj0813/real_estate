@@ -226,9 +226,9 @@
   margin-bottom: 0.5vh;
 }
 .profilePicMenu {
-  position: absolute;
-  top: 50px;
-  left: 0;
+  position: relative;
+  top: 60%;
+  left: 100%;
   background-color: white;
   border: 1px solid #ccc;
   border-radius: 6px;
@@ -249,7 +249,8 @@
 }
 
 .profilePicMenu button:hover {
-  background-color: #f0f0f0;
+  background-color: #2697e0;
+  color: white;
 }
 @media screen and (max-width: 1425px) {
   .lastNameRow {

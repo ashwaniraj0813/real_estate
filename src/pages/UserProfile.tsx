@@ -2,7 +2,7 @@ import React, { useState, useEffect, ChangeEvent, useRef } from "react";
 import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
 import styles from "./UserProfile.module.css";
-import EditableInput from "./EditableInput";
+import EditableInput from "../components/EditableInput";
 
 const UserProfile: React.FC = () => {
   const [isEditable, setIsEditable] = useState(false);
