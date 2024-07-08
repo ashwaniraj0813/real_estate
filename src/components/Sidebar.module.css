@@ -26,7 +26,7 @@
   align-items: center;
   justify-content: flex-start;
   padding: var(--padding-37xl) var(--padding-30xl);
-  gap: 8vh;
+  gap: 6.5vh;
   min-width: 289px;
   flex-shrink: 0;
   font-size: var(--font-size-xl);
