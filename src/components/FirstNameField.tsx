@@ -1,12 +1,10 @@
-import { FunctionComponent, useMemo, type CSSProperties } from "react";
+import { FunctionComponent, useMemo, CSSProperties } from "react";
 import styles from "./FirstNameField.module.css";
 
 export type FirstNameFieldType = {
   className?: string;
   firstName?: string;
   firstNamePlaceholder?: string;
-
-  /** Style props */
   propMinWidth?: CSSProperties["minWidth"];
 };
 
@@ -33,6 +31,7 @@ const FirstNameField: FunctionComponent<FirstNameFieldType> = ({
           className={styles.firstName1}
           placeholder={firstNamePlaceholder}
           type="text"
+          value={firstNamePlaceholder} 
         />
       </div>
     </div>
