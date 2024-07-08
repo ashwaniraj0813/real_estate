@@ -33,7 +33,7 @@ const Content: FunctionComponent<ContentType> = ({ className = "" }) => {
       localStorage.setItem("authToken", token);
 
       console.log(response.data);
-      navigate("/user-profile"); // add your logic after successful login
+      navigate("/admin-dashboard"); 
     } catch (error) {
       console.error("Login failed", error);
       throw new Error("Login failed");
