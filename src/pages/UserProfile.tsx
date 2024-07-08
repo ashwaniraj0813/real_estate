@@ -197,7 +197,7 @@ const UserProfile: React.FC = () => {
                   <div className={styles.indDetail}>
                     You are*
                     <EditableInput
-                      isEditable={isEditable}
+                      isEditable={false}
                       value={inputValues.role}
                       onChange={(e) => handleInputChange(e, "role")}
                     />

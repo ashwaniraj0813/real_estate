@@ -23,10 +23,6 @@
 }
 .header {
   width: 190px;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: flex-start;
   min-width: 190px;
 }
 .editButtonChild {
@@ -64,7 +60,7 @@
   align-self: stretch;
   border-radius: var(--br-10xs);
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: space-between;
   gap: var(--gap-4xs);
 }
 .editButton:hover {
@@ -81,7 +77,7 @@
 .editProfile {
   width: 85px;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content:  space-between;
   padding: var(--padding-55xl) 0 0;
   box-sizing: border-box;
 }
@@ -103,7 +99,7 @@
   align-self: stretch;
   display: flex;
   align-items: flex-start;
-  justify-content: flex-start;
+  justify-content: space-around;
   gap: var(--gap-54xl);
   margin-bottom: 2vh;
 }
@@ -118,14 +114,12 @@
 .userProfile {
   display: flex;
   align-items: flex-start;
-  justify-content: flex-start;
+  justify-content: space-between;
 }
 .sidebarParent {
-  width: 1389px;
   flex-direction: row;
   padding: 0 415px;
   box-sizing: border-box;
-  gap: 127px;
   max-width: 100%;
   text-align: left;
   font-size: var(--font-size-xl);
