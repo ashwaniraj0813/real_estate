@@ -1,20 +1,21 @@
+// RegisterPopup.tsx
 import { FunctionComponent, useState } from "react";
 import styles from "./RegisterPopup.module.css";
 
 type RegisterPopupProps = {
   onClose: () => void;
   onSwitchToLogin: () => void;
-  onRegister: (email: string) => void;
   prefilledEmail: string;
 };
 
-const RegisterPopup: FunctionComponent<RegisterPopupProps> = ({ onClose, onSwitchToLogin, onRegister, prefilledEmail }) => {
+const RegisterPopup: FunctionComponent<RegisterPopupProps> = ({ onClose, onSwitchToLogin, prefilledEmail }) => {
   const [email, setEmail] = useState(prefilledEmail);
   const [role, setRole] = useState("");
 
   const handleRegister = (e: React.FormEvent) => {
     e.preventDefault();
-    onRegister(email);
+    // Replace this with your actual register logic
+    console.log("Registering with email:", email);
   };
 
   return (
@@ -39,15 +40,7 @@ const RegisterPopup: FunctionComponent<RegisterPopupProps> = ({ onClose, onSwitc
           </div>
           <div className={styles.section}>
             <label htmlFor="email">Email*</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              required
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              readOnly
-            />
+            <input type="email" id="email" name="email" value={email} readOnly />
           </div>
           <div className={styles.section}>
             <label htmlFor="password">Password*</label>

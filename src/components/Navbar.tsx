@@ -87,7 +87,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({ className = "" }) => {
       {isLoginPopupOpen && <LoginPopup onClose={closePopups} onSwitchToRegister={handleSwitchToCollectEmail} />}
       {isCollectEmailPopupOpen && <CollectEmailPopup onClose={closePopups} onSendOtp={handleCollectEmail} />}
       {isOtpPopupOpen && <OtpPopup onClose={closePopups} email={emailForOtp} onVerifyOtp={handleOtpVerification} />}
-      {isRegisterPopupOpen && <RegisterPopup onClose={closePopups} onSwitchToLogin={handleSwitchToLogin} />}
+      {isRegisterPopupOpen && <RegisterPopup onClose={closePopups} onSwitchToLogin={handleSwitchToLogin} prefilledEmail={emailForOtp} />}
     </header>
   );
 };
