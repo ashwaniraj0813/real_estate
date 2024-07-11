@@ -1,3 +1,70 @@
+/* Rent.module.css */
+.faqSection {
+  width: 100%;
+  padding: 20px 30px;
+  background-color: var(--color-light-grey);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: var(--gap-55xl);
+}
+
+.faqSection h2 {
+  font-size: 2rem;
+  color: var(--color-dark-grey);
+  margin-bottom: 20px;
+  text-align: left;
+  border-bottom: 2px solid var(--color-grey);
+  padding-bottom: 10px;
+  font-weight: bold;
+}
+
+.faqItem {
+  margin-bottom: 20px;
+}
+
+.faqItem .question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.faqItem h3 {
+  font-size: 1.25rem;
+  color: var(--color-dark-grey);
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+/* Rent.module.css */
+.faqItem .arrow {
+  font-size: 1.2rem; /* Adjust the font size as per your preference */
+  color: var(--color-dark-grey); /* Adjust the color if needed */
+  transition: transform 0.3s ease;
+  font-weight: normal; /* Adjust the font weight to make it less bold */
+}
+
+
+.faqItem .arrow.open {
+  transform: rotate(180deg);
+}
+
+.faqItem .answer {
+  font-size: 1rem;
+  color: var(--color-dark-grey);
+  margin-bottom: 10px;
+  display: none; /* Hide answer by default */
+}
+
+.faqItem .visible {
+  display: block; /* Show answer when item is open */
+}
+
+.faqItem .hidden {
+  display: none; /* Hide answer when item is closed */
+}
+
+
 .submitButtonChild {
   height: 44px;
   width: 190px;
