@@ -4,16 +4,38 @@ import styles from "./OtpPopup.module.css";
 type OtpPopupProps = {
   email: string;
   onClose: () => void;
-  onVerifyOtp: () => void;
+  onVerifyOtp: (token: string) => void; // Updated to accept token
 };
 
 const OtpPopup: FunctionComponent<OtpPopupProps> = ({ email, onClose, onVerifyOtp }) => {
   const [otp, setOtp] = useState("");
+  const [error, setError] = useState("");
 
-  const handleVerifyOtp = (e: React.FormEvent) => {
+  const handleVerifyOtp = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Assume OTP verification is successful
-    onVerifyOtp();
+    setError("");
+
+    try {
+      const response = await fetch("http://localhost:5000/api/emailLogin", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, OTP: otp }),
+      });
+
+      if (!response.ok) {
+        const message = await response.text();
+        setError(message);
+        return;
+      }
+
+      const data = await response.json();
+      console.log("Token received:", data.token);
+      onVerifyOtp(data.token); // Pass the token to the parent component
+    } catch (err) {
+      setError("Server error. Please try again later.");
+    }
   };
 
   return (
@@ -38,6 +60,7 @@ const OtpPopup: FunctionComponent<OtpPopupProps> = ({ email, onClose, onVerifyOt
               onChange={(e) => setOtp(e.target.value)}
             />
           </div>
+          {error && <p className={styles.error}>{error}</p>}
           <div className={styles.submit}>
             <button type="submit">Verify</button>
           </div>
