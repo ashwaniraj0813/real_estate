@@ -1,4 +1,3 @@
-// RegisterPopup.tsx
 import { FunctionComponent, useState } from "react";
 import styles from "./RegisterPopup.module.css";
 
@@ -10,12 +9,49 @@ type RegisterPopupProps = {
 
 const RegisterPopup: FunctionComponent<RegisterPopupProps> = ({ onClose, onSwitchToLogin, prefilledEmail }) => {
   const [email, setEmail] = useState(prefilledEmail);
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [password, setPassword] = useState("");
   const [role, setRole] = useState("");
+  const [error, setError] = useState("");
 
-  const handleRegister = (e: React.FormEvent) => {
+  const handleRegister = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Replace this with your actual register logic
-    console.log("Registering with email:", email);
+    setError("");
+
+    const registrationData = {
+      firstName,
+      lastName,
+      phone,
+      email,
+      password,
+      role,
+    };
+
+    try {
+      const response = await fetch("http://localhost:5000/api/users/newuser", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(registrationData),
+      });
+
+      if (!response.ok) {
+        const message = await response.text();
+        setError(message);
+        return;
+      }
+
+      const data = await response.json();
+      console.log("Registration successful:", data);
+      onSwitchToLogin();
+
+      // Optionally, handle successful registration (e.g., show a success message, redirect to login, etc.)
+    } catch (err) {
+      setError("Server error. Please try again later.");
+    }
   };
 
   return (
@@ -28,23 +64,57 @@ const RegisterPopup: FunctionComponent<RegisterPopupProps> = ({ onClose, onSwitc
         <form onSubmit={handleRegister}>
           <div className={styles.section}>
             <label htmlFor="firstName">First Name*</label>
-            <input type="text" id="firstName" name="firstName" required />
+            <input
+              type="text"
+              id="firstName"
+              name="firstName"
+              required
+              value={firstName}
+              onChange={(e) => setFirstName(e.target.value)}
+            />
           </div>
           <div className={styles.section}>
             <label htmlFor="lastName">Last Name*</label>
-            <input type="text" id="lastName" name="lastName" required />
+            <input
+              type="text"
+              id="lastName"
+              name="lastName"
+              required
+              value={lastName}
+              onChange={(e) => setLastName(e.target.value)}
+            />
           </div>
           <div className={styles.section}>
             <label htmlFor="phone">Phone Number*</label>
-            <input type="tel" id="phone" name="phone" required />
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              required
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+            />
           </div>
           <div className={styles.section}>
             <label htmlFor="email">Email*</label>
-            <input type="email" id="email" name="email" value={email} readOnly />
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={email}
+              readOnly
+            />
           </div>
           <div className={styles.section}>
             <label htmlFor="password">Password*</label>
-            <input type="password" id="password" name="password" required />
+            <input
+              type="password"
+              id="password"
+              name="password"
+              required
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
           </div>
           <div className={styles.section}>
             <label>Are you a real estate agent or a builder?*</label>
@@ -71,6 +141,7 @@ const RegisterPopup: FunctionComponent<RegisterPopupProps> = ({ onClose, onSwitc
               <label htmlFor="builder">No</label>
             </div>
           </div>
+          {error && <p className={styles.error}>{error}</p>}
           <div className={styles.req}>
             <p>*required</p>
           </div>
