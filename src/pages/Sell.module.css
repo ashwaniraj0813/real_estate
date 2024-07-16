@@ -1,67 +1,4 @@
-.submitButtonChild {
-  height: 44px;
-  width: 190px;
-  position: relative;
-  border-radius: var(--br-24xl);
-  background: linear-gradient(90deg, #2697e0, #784dc6);
-  display: none;
-}
-.publish {
-  flex: 1;
-  position: relative;
-  font-size: var(--font-size-xs);
-  font-family: var(--font-montserrat);
-  color: var(--color-white);
-  text-align: center;
-  z-index: 1;
-}
-.submitButton,
-.submitButtonWrapper {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  box-sizing: border-box;
-}
-.submitButton {
-  cursor: pointer;
-  border: 0;
-  padding: var(--padding-sm) var(--padding-12xl) var(--padding-2xs);
-  background-color: transparent;
-  width: 190px;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: var(--br-24xl);
-  background: linear-gradient(90deg, #2697e0, #784dc6);
-  justify-content: flex-start;
-}
-.submitButtonWrapper {
-  width: 900px;
-  justify-content: center;
-  padding: 0 var(--padding-xl);
-  max-width: 100%;
-}
-.listingContent {
-  margin: 0;
-  width: 1055px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: flex-start;
-  gap: var(--gap-55xl);
-  max-width: 100%;
-}
-.listingContentWrapper,
-.sell {
-  display: flex;
-  align-items: flex-start;
-  box-sizing: border-box;
-}
-.listingContentWrapper {
-  width: 1285px;
-  flex-direction: row;
-  justify-content: center;
-  padding: 0 var(--padding-xl);
-  max-width: 100%;
-}
+/* Sell.module.css */
 .sell {
   width: 100%;
   position: relative;
@@ -74,11 +11,133 @@
   line-height: normal;
   letter-spacing: normal;
 }
+
+.faqSection {
+  width: 100%;
+  padding: 20px 30px;
+  background-color: var(--color-light-grey);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: var(--gap-55xl);
+}
+
+.faqSection h2 {
+  font-size: 2rem;
+  color: var(--color-dark-grey);
+  margin-bottom: 20px;
+  text-align: left;
+  border-bottom: 2px solid var(--color-grey);
+  padding-bottom: 10px;
+  font-weight: bold;
+}
+
+.faqItem {
+  margin-bottom: 20px;
+}
+
+.faqItem .question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.faqItem h3 {
+  font-size: 1.25rem;
+  color: var(--color-dark-grey);
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.faqItem .arrow {
+  font-size: 1.2rem; /* Adjust size as needed */
+  color: var(--color-dark-grey); /* Adjust color as needed */
+  transition: transform 0.3s ease;
+  font-weight: normal; /* Adjust font weight as needed */
+}
+
+.faqItem .arrow.open {
+  transform: rotate(180deg);
+}
+
+.faqItem .answer {
+  font-size: 1rem;
+  color: var(--color-dark-grey);
+  margin-bottom: 10px;
+  display: none; /* Hide answer by default */
+}
+
+.faqItem .visible {
+  display: block; /* Show answer when item is open */
+}
+
+.faqItem .hidden {
+  display: none; /* Hide answer when item is closed */
+}
+
+/* Sell.module.css */
+
+/* Sell.module.css */
+
+.submitButtonWrapper {
+  display: flex;
+  justify-content: center; /* Center the button horizontally */
+  width: 100%; /* Ensure full width of the container */
+  padding: 0;
+  max-width: 100%;
+}
+
+.submitButton {
+  cursor: pointer;
+  border: 0;
+  padding: var(--padding-sm) var(--padding-12xl) var(--padding-2xs);
+  background-color: transparent;
+  width: 190px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: var(--br-24xl);
+  background: linear-gradient(90deg, #2697e0, #784dc6);
+  display: flex;
+  justify-content: center; /* Center the content horizontally */
+}
+
+
+
+
+.publish {
+  flex: 1;
+  position: relative;
+  font-size: var(--font-size-xs);
+  font-family: var(--font-montserrat);
+  color: var(--color-white);
+  text-align: center;
+  z-index: 1;
+}
+
+.listingContent {
+  margin: 0;
+  width: 1055px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: var(--gap-55xl);
+  max-width: 100%;
+}
+
+.listingContentWrapper {
+  width: 1285px;
+  flex-direction: row;
+  justify-content: center;
+  padding: 0 var(--padding-xl);
+  max-width: 100%;
+}
+
 @media screen and (max-width: 1050px) {
   .listingContent {
     gap: var(--gap-18xl);
   }
 }
+
 @media screen and (max-width: 725px) {
   .listingContent {
     gap: var(--gap-lg);
@@ -87,3 +146,4 @@
     gap: var(--gap-mini);
   }
 }
+
