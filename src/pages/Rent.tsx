@@ -2,6 +2,7 @@ import { FunctionComponent, useState } from "react";
 import Navbar from "../components/Navbar";
 import ListingForm from "../components/ListingForm";
 import styles from "./Rent.module.css";
+import Footer from "../components/Footer";
 
 const Rent: FunctionComponent = () => {
   // State to manage which FAQ item is expanded
@@ -22,6 +23,13 @@ const Rent: FunctionComponent = () => {
       <main className={styles.content}>
         <form className={styles.listingFormParent}>
           <ListingForm />
+
+          <div className={styles.submission}>
+            <button className={styles.submitButton}>
+              <div className={styles.submitButtonChild} />
+              <div className={styles.publish}>PUBLISH</div>
+            </button>
+          </div>
           
           {/* FAQ Section */}
           <div className={styles.faqSection}>
@@ -39,14 +47,10 @@ const Rent: FunctionComponent = () => {
             ))}
           </div>
 
-          <div className={styles.submission}>
-            <button className={styles.submitButton}>
-              <div className={styles.submitButtonChild} />
-              <div className={styles.publish}>PUBLISH</div>
-            </button>
-          </div>
+          
         </form>
       </main>
+      <Footer />
     </div>
   );
 };

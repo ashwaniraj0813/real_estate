@@ -2,6 +2,7 @@ import { FunctionComponent, useState } from "react";
 import Navbar from "../components/Navbar";
 import ListingHeader from "../components/ListingHeader";
 import styles from "./Sell.module.css";
+import Footer from "../components/Footer";
 
 const Sell: FunctionComponent = () => {
   // State to manage which FAQ item is expanded
@@ -22,6 +23,13 @@ const Sell: FunctionComponent = () => {
       <main className={styles.listingContentWrapper}>
         <form className={styles.listingContent}>
           <ListingHeader />
+
+          <div className={styles.submitButtonWrapper}>
+            <button className={styles.submitButton}>
+              <div className={styles.submitButtonChild} />
+              <div className={styles.publish}>PUBLISH</div>
+            </button>
+          </div>
           
           {/* FAQ Section */}
           <div className={styles.faqSection}>
@@ -39,14 +47,10 @@ const Sell: FunctionComponent = () => {
             ))}
           </div>
 
-          <div className={styles.submitButtonWrapper}>
-            <button className={styles.submitButton}>
-              <div className={styles.submitButtonChild} />
-              <div className={styles.publish}>PUBLISH</div>
-            </button>
-          </div>
+          
         </form>
       </main>
+      <Footer />
     </div>
   );
 };

@@ -1,17 +1,58 @@
 /* Sell.module.css */
 .sell {
-  width: 100%;
-  position: relative;
-  background-color: var(--color-white);
-  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  box-sizing: border-box;
   flex-direction: column;
   justify-content: flex-start;
+  width: 100%;
+  position: relative;
+  background-color: rgb(250, 249, 249);
+  overflow: hidden;
   padding: 0 0 var(--padding-44xl);
   gap: var(--gap-12xl);
   line-height: normal;
   letter-spacing: normal;
 }
 
+.listingContentWrapper {
+  display: flex;
+  align-items: flex-start;
+  box-sizing: border-box;
+  width: 1285px;
+  flex-direction: row;
+  justify-content: center;
+  padding: 0 var(--padding-xl);
+  max-width: 100%;
+}
+
+.listingContent {
+  margin: 0;
+  width: 1055px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: var(--gap-55xl);
+  max-width: 100%;
+}
+
+@media screen and (max-width: 1050px) {
+  .listingContent {
+    gap: var(--gap-18xl);
+  }
+}
+
+@media screen and (max-width: 725px) {
+  .listingContent {
+    gap: var(--gap-lg);
+  }
+  .sell {
+    gap: var(--gap-mini);
+  }
+}
+
+/* Additional Styles */
 .faqSection {
   width: 100%;
   padding: 20px 30px;
@@ -50,10 +91,10 @@
 }
 
 .faqItem .arrow {
-  font-size: 1.2rem; /* Adjust size as needed */
-  color: var(--color-dark-grey); /* Adjust color as needed */
+  font-size: 1.2rem;
+  color: var(--color-dark-grey);
   transition: transform 0.3s ease;
-  font-weight: normal; /* Adjust font weight as needed */
+  font-weight: normal;
 }
 
 .faqItem .arrow.open {
@@ -64,25 +105,21 @@
   font-size: 1rem;
   color: var(--color-dark-grey);
   margin-bottom: 10px;
-  display: none; /* Hide answer by default */
+  display: none;
 }
 
 .faqItem .visible {
-  display: block; /* Show answer when item is open */
+  display: block;
 }
 
 .faqItem .hidden {
-  display: none; /* Hide answer when item is closed */
+  display: none;
 }
-
-/* Sell.module.css */
-
-/* Sell.module.css */
 
 .submitButtonWrapper {
   display: flex;
-  justify-content: center; /* Center the button horizontally */
-  width: 100%; /* Ensure full width of the container */
+  justify-content: center;
+  width: 100%;
   padding: 0;
   max-width: 100%;
 }
@@ -97,11 +134,8 @@
   border-radius: var(--br-24xl);
   background: linear-gradient(90deg, #2697e0, #784dc6);
   display: flex;
-  justify-content: center; /* Center the content horizontally */
+  justify-content: center;
 }
-
-
-
 
 .publish {
   flex: 1;
@@ -112,38 +146,3 @@
   text-align: center;
   z-index: 1;
 }
-
-.listingContent {
-  margin: 0;
-  width: 1055px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: flex-start;
-  gap: var(--gap-55xl);
-  max-width: 100%;
-}
-
-.listingContentWrapper {
-  width: 1285px;
-  flex-direction: row;
-  justify-content: center;
-  padding: 0 var(--padding-xl);
-  max-width: 100%;
-}
-
-@media screen and (max-width: 1050px) {
-  .listingContent {
-    gap: var(--gap-18xl);
-  }
-}
-
-@media screen and (max-width: 725px) {
-  .listingContent {
-    gap: var(--gap-lg);
-  }
-  .sell {
-    gap: var(--gap-mini);
-  }
-}
-

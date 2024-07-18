@@ -117,7 +117,6 @@ const TypeStatusOptions: FunctionComponent<TypeStatusOptionsType> = ({
                   <div className={styles.frameInner} />
                   <select className={styles.bhk1}>
                     <option value="rent">Rent</option>
-                    <option value="sell">Sell</option>
                     <option value="pg/coliving">PG/Coliving</option>
                   </select>
                 </div>
