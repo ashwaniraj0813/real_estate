@@ -1,25 +1,15 @@
-import { FunctionComponent, useState } from "react";
+import { FunctionComponent } from "react";
 import styles from "./ImageInput.module.css";
 
 export type ImageInputProps = {
-  className?: string;
+  handleImageChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  handleRemoveImage: (index: number) => void;
+  selectedImages: File[];
 };
 
-const ImageInput: FunctionComponent<ImageInputProps> = ({ className = "" }) => {
-  const [selectedImages, setSelectedImages] = useState<File[]>([]);
-
-  const handleImageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    if (event.target.files) {
-      setSelectedImages([...selectedImages, ...Array.from(event.target.files)]);
-    }
-  };
-
-  const handleRemoveImage = (index: number) => {
-    setSelectedImages(selectedImages.filter((_, i) => i !== index));
-  };
-
+const ImageInput: FunctionComponent<ImageInputProps> = ({ handleImageChange, handleRemoveImage, selectedImages }) => {
   return (
-    <div className={[styles.imageInput, className].join(" ")}>
+    <div className={styles.imageInput}>
       <div className={styles.imageInputChild} />
       <div className={styles.materialSymbolsimagesmodeOuWrapper}>
         <label htmlFor="imageInput">

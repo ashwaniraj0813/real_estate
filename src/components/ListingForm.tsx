@@ -1,36 +1,38 @@
-import { FunctionComponent, useState } from "react";
-import FrameComponent from "../areRedundant2/FrameComponent2";
+import { FunctionComponent } from "react";
 import styles from "./ListingForm.module.css";
 import ImageInput from "./ImageInput";
-import TypeStatusOptions from "./RentStatusOptions";
+import TypeStatusOptions from "./TypeStatusOptions";
 
-export type ListingFormType = {
-  className?: string;
+export type ListingFormProps = {
+  formData: any;
+  handleInputChange: (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => void;
+  handleImageChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  handleRemoveImage: (index: number) => void;
+  selectedImages: File[];
 };
 
-const ListingForm: FunctionComponent<ListingFormType> = ({
-  className = "",
+const ListingForm: FunctionComponent<ListingFormProps> = ({
+  formData,
+  handleInputChange,
+  handleImageChange,
+  handleRemoveImage,
+  selectedImages
 }) => {
-  const [selectedImages, setSelectedImages] = useState<File[]>([]);
-
-  const handleImageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    if (event.target.files) {
-      setSelectedImages([...selectedImages, ...Array.from(event.target.files)]);
-    }
-  };
-
-  const handleRemoveImage = (index: number) => {
-    setSelectedImages(selectedImages.filter((_, i) => i !== index));
-  };
-
   return (
-    <div className={[styles.listingHeader, className].join(" ")}>
+    <div className={styles.listingHeader}>
       <div className={styles.listYourPropertyWrapper}>
         <h1 className={styles.listYourProperty}>Rent your property</h1>
       </div>
       <div className={styles.imageInputParent}>
-        <ImageInput />
-        <TypeStatusOptions />
+        <ImageInput
+          handleImageChange={handleImageChange}
+          handleRemoveImage={handleRemoveImage}
+          selectedImages={selectedImages}
+        />
+        <TypeStatusOptions
+          formData={formData}
+          handleInputChange={handleInputChange}
+        />
       </div>
     </div>
   );
