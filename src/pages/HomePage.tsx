@@ -1,10 +1,11 @@
-import { FunctionComponent, useState } from "react";
+import { FunctionComponent, useState, useEffect } from "react";
+import { useNavigate, Link } from "react-router-dom";
 import styles from "./HomePage.module.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import DisplayCard from "../components/DisplayCard";
 import CustomerReviewCard from "../components/CustomerReviewCard";
-import LoginPopup from "../components/LoginPopup";  // Import the LoginPopup component
+import LoginPopup from "../components/LoginPopup";
+import PropertyCard from "../components/PropertyCard";
 
 const HomePage: FunctionComponent = () => {
   const [firstName, setFirstName] = useState("");
@@ -12,6 +13,9 @@ const HomePage: FunctionComponent = () => {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [isLoginPopupVisible, setIsLoginPopupVisible] = useState(false); // State for login popup
+  const [properties, setProperties] = useState([]);
+
+  const navigate = useNavigate();
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
@@ -48,6 +52,30 @@ const HomePage: FunctionComponent = () => {
       alert("Failed to book appointment. Please try again.");
     }
   };
+
+  useEffect(() => {
+    const fetchProperties = async () => {
+      try {
+        const response = await fetch("http://localhost:5000/api/property", {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+
+        if (!response.ok) {
+          throw new Error("Failed to fetch properties");
+        }
+
+        const result = await response.json();
+        setProperties(result);
+      } catch (error) {
+        console.log("Error fetching property cards:", error);
+      }
+    };
+
+    fetchProperties();
+  }, []);
 
   return (
     <div className={isLoginPopupVisible ? `${styles.homePage} ${styles.blur}` : styles.homePage}>
@@ -122,20 +150,24 @@ const HomePage: FunctionComponent = () => {
             <p>Ideal for Family</p>
           </div>
         </div>
-        
-        <div className={styles.featuredlocations}>
-          <div className={styles.featuredloc}>
-          <DisplayCard title="Spacious and Large Garden" city="Pune" imageUrl="/image-2@2x.png" />
-          </div>
-          <div className={styles.featuredloc}>
-          <DisplayCard title="With its Own Pool" city="Mumbai" imageUrl="/image-3@2x.png" />
-          </div>
-          <div className={styles.featuredloc}>
-          <DisplayCard title="In Forest - Fresh & Clean air" city="Nainital" imageUrl="/image-4@2x.png" />
-          </div>
-        </div>
-      </div>
 
+        <section className={styles.listings}>
+          {properties.slice(0, 3).map((property) => (
+            <Link
+              key={property._id}
+              to={`/property-details-page/${property._id}`}
+              className={styles.linkWrapper}
+            >
+              <PropertyCard
+                title={property.title}
+                city={property.city}
+                price={property.price.toString()}
+                area={property.area.toString()}
+              />
+            </Link>
+          ))}
+        </section>
+      </div>
 
       <div className={styles.articles}>
         <div className={styles.heading}>REAL ESTATE AROUND THE GLOBE</div>

@@ -17,7 +17,7 @@ const PropertyCard: FunctionComponent<PropertyCardType> = ({
   city,
   price,
   area,
-  imageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Deras-TreeHouse.JPG/242px-Deras-TreeHouse.JPG",
+  imageUrl = "/image-4@2x.png", // Default image URL
   className = "",
   onPropertyCardContainerClick,
 }) => {
@@ -33,7 +33,7 @@ const PropertyCard: FunctionComponent<PropertyCardType> = ({
           </div>
           <div className={styles.details}>
             <div className={styles.area}>{area} acres</div>
-            <div className={styles.price}> Rs. {price}</div>
+            <div className={styles.price}>Rs. {price}</div>
           </div>
         </div>
       </div>

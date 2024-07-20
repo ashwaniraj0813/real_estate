@@ -208,6 +208,21 @@ input {
   gap: 12px;
 }
 
+.listings {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around; /* Adjust as needed */
+  align-items: flex-start; /* Align items at the start of the container */
+  gap: 40px; /* Adjust spacing between items as needed */
+  padding: 20px; /* Adjust padding as needed */
+}
+
+.linkWrapper {
+  flex: 1; /* Adjust the flex-grow property as needed */
+  min-width: 200px; /* Adjust minimum width as needed */
+}
+
+
 @media (max-width: 1200px) {
   .hero {
     flex-direction: column;
