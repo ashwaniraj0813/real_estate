@@ -9,17 +9,24 @@ export type ImageInputProps = {
 
 const ImageInput: FunctionComponent<ImageInputProps> = ({ handleImageChange, handleRemoveImage, selectedImages }) => {
   return (
+<<<<<<< HEAD
     <div className={styles.imageInput}>
       <div className={styles.imageInputChild} />
       <div className={styles.materialSymbolsimagesmodeOuWrapper}>
         <label htmlFor="imageInput">
+=======
+    <div className={[styles.imageInput, className].join(" ")}>
+      <label htmlFor="imageInput" className={styles.uploadLabel}>
+        <div className={styles.materialSymbolsimagesmodeOuWrapper}>
+>>>>>>> 319ac7b (style changes)
           <img
             className={styles.materialSymbolsimagesmodeOuIcon}
             loading="lazy"
             alt="Upload images"
             src="/materialsymbolsimagesmodeoutline.svg"
           />
-        </label>
+          <h2 className={styles.addImages}>Add images</h2>
+        </div>
         <input
           id="imageInput"
           className={styles.imageInputField}
@@ -29,8 +36,8 @@ const ImageInput: FunctionComponent<ImageInputProps> = ({ handleImageChange, han
           onChange={handleImageChange}
           style={{ display: "none" }}
         />
-      </div>
-      <h2 className={styles.addImages}>Add images</h2>
+      </label>
+      
       <div className={styles.fileList}>
         {selectedImages.map((image, index) => (
           <div key={index} className={styles.fileItem}>

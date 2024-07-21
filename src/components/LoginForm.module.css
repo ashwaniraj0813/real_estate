@@ -204,7 +204,7 @@
   flex-direction: row;
   align-items: flex-start;
 }
-.submitButton {
+/* .submitButton {
   cursor: pointer;
   border: 0;
   padding: var(--padding-sm) var(--padding-12xl) var(--padding-2xs);
@@ -216,7 +216,7 @@
   justify-content: flex-start;
   white-space: nowrap;
   z-index: 1;
-}
+} */
 .passwordField {
   align-self: stretch;
   justify-content: flex-end;
