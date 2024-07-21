@@ -9,16 +9,9 @@ export type ImageInputProps = {
 
 const ImageInput: FunctionComponent<ImageInputProps> = ({ handleImageChange, handleRemoveImage, selectedImages }) => {
   return (
-<<<<<<< HEAD
-    <div className={styles.imageInput}>
-      <div className={styles.imageInputChild} />
-      <div className={styles.materialSymbolsimagesmodeOuWrapper}>
-        <label htmlFor="imageInput">
-=======
     <div className={[styles.imageInput, className].join(" ")}>
       <label htmlFor="imageInput" className={styles.uploadLabel}>
         <div className={styles.materialSymbolsimagesmodeOuWrapper}>
->>>>>>> 319ac7b (style changes)
           <img
             className={styles.materialSymbolsimagesmodeOuIcon}
             loading="lazy"
