@@ -4,20 +4,32 @@ import TypeStatusOptions from "./TypeStatusOptions";
 import styles from "./ListingHeader.module.css";
 
 export type ListingHeaderType = {
-  className?: string;
+  formData: any;
+  handleInputChange: (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => void;
+  handleImageChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  handleRemoveImage: (index: number) => void;
+  selectedImages: File[];
 };
 
 const ListingHeader: FunctionComponent<ListingHeaderType> = ({
-  className = "",
+  formData,
+  handleInputChange,
+  handleImageChange,
+  handleRemoveImage,
+  selectedImages
 }) => {
   return (
-    <div className={[styles.listingHeader, className].join(" ")}>
+    <div className={styles.listingHeader}>
       <div className={styles.listYourPropertyWrapper}>
         <h1 className={styles.listYourProperty}>List your property</h1>
       </div>
       <div className={styles.imageInputParent}>
-        <ImageInput />
-        <TypeStatusOptions />
+        <ImageInput
+          handleImageChange={handleImageChange}
+          handleRemoveImage={handleRemoveImage}
+          selectedImages={selectedImages}
+        />
+        <TypeStatusOptions formData={formData} handleInputChange={handleInputChange} />
       </div>
     </div>
   );

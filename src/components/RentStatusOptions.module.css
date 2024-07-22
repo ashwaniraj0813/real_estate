@@ -47,7 +47,6 @@
   padding: var(--padding-2xs) var(--padding-sm);
   width: 100%; /* Make the containers take up the full width */
   max-width: 285px; /* Set a max width to control the size */
-  margin-bottom: 10px;
 }
 
 .propertyOptionsContent, .primaryOptionButtons, .primaryOptionButtons1, .primaryOptionButtons2 {

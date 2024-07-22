@@ -1,10 +1,11 @@
-import { FunctionComponent, useState } from "react";
+import { FunctionComponent, useState, useEffect } from "react";
+import { useNavigate, Link } from "react-router-dom";
 import styles from "./HomePage.module.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import DisplayCard from "../components/DisplayCard";
 import CustomerReviewCard from "../components/CustomerReviewCard";
-import LoginPopup from "../components/LoginPopup";  // Import the LoginPopup component
+import LoginPopup from "../components/LoginPopup";
+import PropertyCard from "../components/PropertyCard";
 
 const HomePage: FunctionComponent = () => {
   const [firstName, setFirstName] = useState("");
@@ -12,6 +13,9 @@ const HomePage: FunctionComponent = () => {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [isLoginPopupVisible, setIsLoginPopupVisible] = useState(false); // State for login popup
+  const [properties, setProperties] = useState([]);
+
+  const navigate = useNavigate();
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
@@ -48,6 +52,30 @@ const HomePage: FunctionComponent = () => {
       alert("Failed to book appointment. Please try again.");
     }
   };
+
+  useEffect(() => {
+    const fetchProperties = async () => {
+      try {
+        const response = await fetch("http://localhost:5000/api/property", {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+
+        if (!response.ok) {
+          throw new Error("Failed to fetch properties");
+        }
+
+        const result = await response.json();
+        setProperties(result);
+      } catch (error) {
+        console.log("Error fetching property cards:", error);
+      }
+    };
+
+    fetchProperties();
+  }, []);
 
   return (
     <div className={isLoginPopupVisible ? `${styles.homePage} ${styles.blur}` : styles.homePage}>
@@ -122,14 +150,24 @@ const HomePage: FunctionComponent = () => {
             <p>Ideal for Family</p>
           </div>
         </div>
-        
-        <div className={styles.featuredlocations}>
-          <DisplayCard title="Spacious and Large Garden" city="Pune" imageUrl="/image-2@2x.png" />
-          <DisplayCard title="With its Own Pool" city="Mumbai" imageUrl="/image-3@2x.png" />
-          <DisplayCard title="In Forest - Fresh & Clean air" city="Nainital" imageUrl="/image-4@2x.png" />
-        </div>
-      </div>
 
+        <section className={styles.listings}>
+          {properties.slice(0, 3).map((property) => (
+            <Link
+              key={property._id}
+              to={`/property-details-page/${property._id}`}
+              className={styles.linkWrapper}
+            >
+              <PropertyCard
+                title={property.title}
+                city={property.city}
+                price={property.price.toString()}
+                area={property.area.toString()}
+              />
+            </Link>
+          ))}
+        </section>
+      </div>
 
       <div className={styles.articles}>
         <div className={styles.heading}>REAL ESTATE AROUND THE GLOBE</div>
@@ -138,7 +176,7 @@ const HomePage: FunctionComponent = () => {
           <div className={styles.content}>
             <div className={styles.title}>THE FUTURE OF SELLING AND BUYING</div>
             <div className={styles.info}>
-              Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular...
+              Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old....
             </div>
             <div className={styles.readmore}>READ MORE ...</div>
           </div>

@@ -1,5 +1,4 @@
-// Navbar.tsx
-import React, { FunctionComponent, useCallback, useState } from "react";
+import React, { FunctionComponent, useCallback, useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import styles from "./Navbar.module.css";
 import LoginPopup from "./LoginPopup";
@@ -13,11 +12,13 @@ export type NavbarProps = {
 
 const Navbar: FunctionComponent<NavbarProps> = ({ className = "" }) => {
   const navigate = useNavigate();
+  const location = useLocation();
   const [isLoginPopupOpen, setLoginPopupOpen] = useState(false);
   const [isRegisterPopupOpen, setRegisterPopupOpen] = useState(false);
   const [isOtpPopupOpen, setOtpPopupOpen] = useState(false);
   const [isCollectEmailPopupOpen, setCollectEmailPopupOpen] = useState(false);
   const [emailForOtp, setEmailForOtp] = useState("");
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const onLOGOTextClick = useCallback(() => {
     navigate("/");
@@ -68,10 +69,21 @@ const Navbar: FunctionComponent<NavbarProps> = ({ className = "" }) => {
     setCollectEmailPopupOpen(false);
   };
 
-  const isHomePage = useLocation().pathname === '/';
+  const handleScroll = () => {
+    setIsScrolled(window.scrollY > 0);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const isHomePage = location.pathname === '/';
 
   return (
-    <header className={`${styles.navbar} ${isHomePage ? styles.navtransparent : styles.navcolored}`}>
+    <header className={`${styles.navbar} ${isHomePage && !isScrolled ? styles.navtransparent : styles.navcolored}`}>
       <div className={`${styles.navitem} ${styles.logo}`} onClick={onLOGOTextClick}>LOGO</div>
       <div className={`${styles.navitem} ${styles.searchBar}`}>
         <img className={styles.searchicon} src="/icbaselinesearch1.svg" alt="search icon" />

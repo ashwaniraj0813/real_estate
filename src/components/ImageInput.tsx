@@ -1,35 +1,31 @@
-import { FunctionComponent, useState } from "react";
+import React, { FunctionComponent } from "react";
 import styles from "./ImageInput.module.css";
 
 export type ImageInputProps = {
-  className?: string;
+  handleImageChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  handleRemoveImage: (index: number) => void;
+  selectedImages: File[];
+  className?: string; // Add className prop if you intend to use it
 };
 
-const ImageInput: FunctionComponent<ImageInputProps> = ({ className = "" }) => {
-  const [selectedImages, setSelectedImages] = useState<File[]>([]);
-
-  const handleImageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    if (event.target.files) {
-      setSelectedImages([...selectedImages, ...Array.from(event.target.files)]);
-    }
-  };
-
-  const handleRemoveImage = (index: number) => {
-    setSelectedImages(selectedImages.filter((_, i) => i !== index));
-  };
-
+const ImageInput: FunctionComponent<ImageInputProps> = ({
+  handleImageChange,
+  handleRemoveImage,
+  selectedImages,
+  className = "", // Default value for className
+}) => {
   return (
     <div className={[styles.imageInput, className].join(" ")}>
-      <div className={styles.imageInputChild} />
-      <div className={styles.materialSymbolsimagesmodeOuWrapper}>
-        <label htmlFor="imageInput">
+      <label htmlFor="imageInput" className={styles.uploadLabel}>
+        <div className={styles.materialSymbolsimagesmodeOuWrapper}>
           <img
             className={styles.materialSymbolsimagesmodeOuIcon}
             loading="lazy"
             alt="Upload images"
             src="/materialsymbolsimagesmodeoutline.svg"
           />
-        </label>
+          <h2 className={styles.addImages}>Add images</h2>
+        </div>
         <input
           id="imageInput"
           className={styles.imageInputField}
@@ -39,8 +35,8 @@ const ImageInput: FunctionComponent<ImageInputProps> = ({ className = "" }) => {
           onChange={handleImageChange}
           style={{ display: "none" }}
         />
-      </div>
-      <h2 className={styles.addImages}>Add images</h2>
+      </label>
+
       <div className={styles.fileList}>
         {selectedImages.map((image, index) => (
           <div key={index} className={styles.fileItem}>
@@ -50,7 +46,7 @@ const ImageInput: FunctionComponent<ImageInputProps> = ({ className = "" }) => {
               className={styles.removeButton}
               onClick={() => handleRemoveImage(index)}
             >
-              X
+              x
             </button>
           </div>
         ))}

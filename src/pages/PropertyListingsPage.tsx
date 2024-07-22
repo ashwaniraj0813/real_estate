@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar";
 import SortAndFilter from "../components/SortAndFilter";
 import PropertyCard from "../components/PropertyCard";
 import styles from "./PropertyListingsPage.module.css";
+import Footer from "../components/Footer";
 
 const PropertyListingsPage: FunctionComponent = () => {
   const [properties, setProperties] = useState([]);
@@ -64,6 +65,7 @@ const PropertyListingsPage: FunctionComponent = () => {
           ))}
         </section>
       </main>
+      <Footer />
     </div>
   );
 };

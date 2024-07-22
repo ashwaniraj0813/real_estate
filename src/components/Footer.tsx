@@ -34,11 +34,8 @@ const Footer: FunctionComponent<FooterType> = ({ className = "" }) => {
       <div className={styles.left}>
         <a className={styles.logo}>LOGO</a>
         <div className={styles.text}>
-          It is a long established fact that a reader will be distracted by the
-          readable content of a page when looking at its layout. The point of
-          using Lorem Ipsum is that it has a more-or-less normal distribution of
-          letters, as opposed to using 'Content here, content here', making it
-          look like readable English.
+        Welcome to LOGO, your trusted partner in the real estate market. 
+        Whether you're buying, selling, or renting, we offer personalized services to meet your unique needs. Discover your dream property with LOGO today.
         </div>
         <a className={styles.aboutUs} onClick={onAboutUsTextClick}>About us</a>
       </div>

@@ -1,14 +1,21 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent, useState } from "react";
 import styles from "./TypeStatusOptions.module.css";
 
 export type TypeStatusOptionsType = {
-  formData: any;
-  handleInputChange: (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => void;
+  className?: string;
 };
 
-const TypeStatusOptions: FunctionComponent<TypeStatusOptionsType> = ({ formData, handleInputChange }) => {
+const TypeStatusOptions: FunctionComponent<TypeStatusOptionsType> = ({
+  className = "",
+}) => {
+  const [propertyType, setPropertyType] = useState("residential");
+
+  const handleTypeChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    setPropertyType(event.target.value);
+  };
+
   return (
-    <div className={styles.typeStatusOptions}>
+    <div className={[styles.typeStatusOptions, className].join(" ")}>
       <div className={styles.propertyDetailsContent}>
         <div className={styles.propertyNameWrapper}>
           <div className={styles.propertyName}>Property Title*</div>
@@ -21,9 +28,6 @@ const TypeStatusOptions: FunctionComponent<TypeStatusOptionsType> = ({ formData,
               className={[styles.bhk1, styles.commonInput].join(" ")}
               placeholder="Property Title"
               type="text"
-              name="title"
-              value={formData.title}
-              onChange={handleInputChange}
             />
           </div>
         </div>
@@ -37,9 +41,6 @@ const TypeStatusOptions: FunctionComponent<TypeStatusOptionsType> = ({ formData,
               className={[styles.bhk1, styles.commonInput, styles.largeInput].join(" ")}
               placeholder="Description"
               type="text"
-              name="description"
-              value={formData.description}
-              onChange={handleInputChange}
             />
           </div>
         </div>
@@ -53,9 +54,6 @@ const TypeStatusOptions: FunctionComponent<TypeStatusOptionsType> = ({ formData,
               className={[styles.bhk1, styles.commonInput, styles.largeInput].join(" ")}
               placeholder="Address"
               type="text"
-              name="address"
-              value={formData.address}
-              onChange={handleInputChange}
             />
           </div>
         </div>
@@ -75,9 +73,6 @@ const TypeStatusOptions: FunctionComponent<TypeStatusOptionsType> = ({ formData,
                 className={[styles.bhk1, styles.commonInput].join(" ")}
                 placeholder="City"
                 type="text"
-                name="city"
-                value={formData.city}
-                onChange={handleInputChange}
               />
             </div>
           </div>
@@ -93,9 +88,8 @@ const TypeStatusOptions: FunctionComponent<TypeStatusOptionsType> = ({ formData,
                   <div className={styles.frameChild} />
                   <select
                     className={styles.type1}
-                    name="type"
-                    value={formData.type}
-                    onChange={handleInputChange}
+                    value={propertyType}
+                    onChange={handleTypeChange}
                   >
                     <option value="residential">Residential</option>
                     <option value="commercial">Commercial</option>
@@ -108,12 +102,7 @@ const TypeStatusOptions: FunctionComponent<TypeStatusOptionsType> = ({ formData,
                 </div>
                 <div className={styles.rectangleGroup}>
                   <div className={styles.frameItem} />
-                  <select
-                    className={styles.status1}
-                    name="status"
-                    value={formData.status}
-                    onChange={handleInputChange}
-                  >
+                  <select className={styles.status1}>
                     <option value="available">Available</option>
                     <option value="sold">Sold</option>
                     <option value="rented">Rented</option>
@@ -126,19 +115,13 @@ const TypeStatusOptions: FunctionComponent<TypeStatusOptionsType> = ({ formData,
                 </div>
                 <div className={styles.rectangleContainer}>
                   <div className={styles.frameInner} />
-                  <select
-                    className={styles.bhk1}
-                    name="purpose"
-                    value={formData.purpose}
-                    onChange={handleInputChange}
-                  >
+                  <select className={styles.bhk1}>
                     <option value="rent">Rent</option>
-                    <option value="sell">Sell</option>
                     <option value="pg/coliving">PG/Coliving</option>
                   </select>
                 </div>
               </div>
-              {formData.type === "residential" && (
+              {propertyType === "residential" && (
                 <div className={styles.primaryOptionButtons2}>
                   <div className={styles.bhkWrapper}>
                     <div className={styles.bhk}>BHK*</div>
@@ -149,9 +132,6 @@ const TypeStatusOptions: FunctionComponent<TypeStatusOptionsType> = ({ formData,
                       className={[styles.bhk1, styles.commonInput].join(" ")}
                       placeholder="BHK"
                       type="text"
-                      name="bhk"
-                      value={formData.bhk}
-                      onChange={handleInputChange}
                     />
                   </div>
                 </div>
@@ -167,9 +147,6 @@ const TypeStatusOptions: FunctionComponent<TypeStatusOptionsType> = ({ formData,
                       className={[styles.bhk1, styles.commonInput].join(" ")}
                       placeholder="Area"
                       type="text"
-                      name="area"
-                      value={formData.area}
-                      onChange={handleInputChange}
                     />
                   </div>
                 </div>
@@ -189,9 +166,6 @@ const TypeStatusOptions: FunctionComponent<TypeStatusOptionsType> = ({ formData,
                     className={[styles.bhk1, styles.commonInput].join(" ")}
                     placeholder="Price"
                     type="text"
-                    name="price"
-                    value={formData.price}
-                    onChange={handleInputChange}
                   />
                 </div>
               </div>
@@ -210,9 +184,6 @@ const TypeStatusOptions: FunctionComponent<TypeStatusOptionsType> = ({ formData,
                     className={[styles.bhk1, styles.commonInput].join(" ")}
                     placeholder="Amenities"
                     type="text"
-                    name="amenities"
-                    value={formData.amenities}
-                    onChange={handleInputChange}
                   />
                 </div>
               </div>
