@@ -39,7 +39,7 @@ const LoginPopup: FunctionComponent<LoginPopupProps> = ({ onClose, onSwitchToReg
       const data = await response.json();
       console.log("Token received:", data.token);
       
-      onVerifyOtp(data.token); // Pass the token to the parent component
+       // Pass the token to the parent component
      
       onClose();
       // Optionally, handle successful login (e.g., store auth token, redirect, etc.)
