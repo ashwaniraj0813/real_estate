@@ -136,7 +136,8 @@ const PropertyDetails: FunctionComponent<PropertyDetailsType> = ({ property }) =
                   className={styles.mapicon}
                   src="/image-13@2x.png"
               />
-              1 Portal W North Acton, London, England W3 6BX
+              {/* 1 Portal W North Acton, London, England W3 6BX */}
+              <div className={styles.location}>{property.city }{property.location}</div>
           </div>
           <img className={styles.map} src="/location-on-map@2x.png"></img>
           {/* <iframe
