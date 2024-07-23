@@ -22,7 +22,7 @@ const UserAppointments: React.FC = () => {
                         <LottieAnimation animationLink="https://lottie.host/2bc9990e-d2fb-4fd7-adf1-0a31c295f944/S3gYyygOxW.json" style={{ width: 500, height: 300 }} />
                     </div>
                     <div className={styles.txt}>
-                        You haven’t scheduled any appointments yet!
+                        You haven’t booked any appointments yet!
                     </div>
                 </main>
             </section>
