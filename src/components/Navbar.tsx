@@ -1,4 +1,9 @@
-import React, { FunctionComponent, useCallback, useState, useEffect } from "react";
+import React, {
+  FunctionComponent,
+  useCallback,
+  useState,
+  useEffect,
+} from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import styles from "./Navbar.module.css";
 import LoginPopup from "./LoginPopup";
@@ -19,6 +24,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({ className = "" }) => {
   const [isCollectEmailPopupOpen, setCollectEmailPopupOpen] = useState(false);
   const [emailForOtp, setEmailForOtp] = useState("");
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false); 
 
   const onLOGOTextClick = useCallback(() => {
     navigate("/");
@@ -37,8 +43,12 @@ const Navbar: FunctionComponent<NavbarProps> = ({ className = "" }) => {
   }, [navigate]);
 
   const handleLoginClick = () => {
-    closePopups();
-    setLoginPopupOpen(true);
+    if (isLoggedIn) {
+      navigate("/user-profile");
+    } else {
+      closePopups();
+      setLoginPopupOpen(true);
+    }
   };
 
   const handleSwitchToCollectEmail = () => {
@@ -80,26 +90,93 @@ const Navbar: FunctionComponent<NavbarProps> = ({ className = "" }) => {
     };
   }, []);
 
-  const isHomePage = location.pathname === '/';
+  const handleLoginSuccess = () => {
+    setIsLoggedIn(true);
+    closePopups();
+  };
+
+  const isHomePage = location.pathname === "/";
 
   return (
-    <header className={`${styles.navbar} ${isHomePage && !isScrolled ? styles.navtransparent : styles.navcolored}`}>
-      <div className={`${styles.navitem} ${styles.logo}`} onClick={onLOGOTextClick}>LOGO</div>
-      <div className={`${styles.navitem} ${styles.searchBar}`}>
-        <img className={styles.searchicon} src="/icbaselinesearch1.svg" alt="search icon" />
-        <input className={styles.searchinput} placeholder="Luxurious Penthouses ..." type="text" />
+    <header
+      className={`${styles.navbar} ${
+        isHomePage && !isScrolled ? styles.navtransparent : styles.navcolored
+      }`}
+    >
+      <div
+        className={`${styles.navitem} ${styles.logo}`}
+        onClick={onLOGOTextClick}
+      >
+        LOGO
       </div>
-      <div className={`${styles.navitem} ${styles.buy}`} onClick={onBuyTextClick}>Buy</div>
-      <div className={`${styles.navitem} ${styles.rent}`} onClick={onRentTextClick}>Rent</div>
-      <div className={`${styles.navitem} ${styles.sell}`} onClick={onSellTextClick}>Sell</div>
-      <div className={`${styles.navitem} ${styles.profile}`} onClick={handleLoginClick}>
-        <img className={styles.homeIcon} src="/vector1.svg" alt="profile icon" />
+      <div className={`${styles.navitem} ${styles.searchBar}`}>
+        <img
+          className={styles.searchicon}
+          src="/icbaselinesearch1.svg"
+          alt="search icon"
+        />
+        <input
+          className={styles.searchinput}
+          placeholder="Luxurious Penthouses ..."
+          type="text"
+        />
+      </div>
+      <div
+        className={`${styles.navitem} ${styles.buy}`}
+        onClick={onBuyTextClick}
+      >
+        Buy
+      </div>
+      <div
+        className={`${styles.navitem} ${styles.rent}`}
+        onClick={onRentTextClick}
+      >
+        Rent
+      </div>
+      <div
+        className={`${styles.navitem} ${styles.sell}`}
+        onClick={onSellTextClick}
+      >
+        Sell
+      </div>
+      <div
+        className={`${styles.navitem} ${styles.profile}`}
+        onClick={handleLoginClick}
+      >
+        <img
+          className={styles.homeIcon}
+          src="/vector1.svg"
+          alt="profile icon"
+        />
       </div>
 
-      {isLoginPopupOpen && <LoginPopup onClose={closePopups} onSwitchToRegister={handleSwitchToCollectEmail} />}
-      {isCollectEmailPopupOpen && <CollectEmailPopup onClose={closePopups} onSendOtp={handleCollectEmail} />}
-      {isOtpPopupOpen && <OtpPopup onClose={closePopups} email={emailForOtp} onVerifyOtp={handleOtpVerification} />}
-      {isRegisterPopupOpen && <RegisterPopup onClose={closePopups} onSwitchToLogin={handleSwitchToLogin} prefilledEmail={emailForOtp} />}
+      {isLoginPopupOpen && (
+        <LoginPopup
+          onClose={closePopups}
+          onSwitchToRegister={handleSwitchToCollectEmail}
+          onLoginSuccess={handleLoginSuccess}
+        />
+      )}
+      {isCollectEmailPopupOpen && (
+        <CollectEmailPopup
+          onClose={closePopups}
+          onSendOtp={handleCollectEmail}
+        />
+      )}
+      {isOtpPopupOpen && (
+        <OtpPopup
+          onClose={closePopups}
+          email={emailForOtp}
+          onVerifyOtp={handleOtpVerification}
+        />
+      )}
+      {isRegisterPopupOpen && (
+        <RegisterPopup
+          onClose={closePopups}
+          onSwitchToLogin={handleSwitchToLogin}
+          prefilledEmail={emailForOtp}
+        />
+      )}
     </header>
   );
 };
