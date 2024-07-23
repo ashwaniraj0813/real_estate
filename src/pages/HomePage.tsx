@@ -14,7 +14,7 @@ const HomePage: FunctionComponent = () => {
   const [phone, setPhone] = useState("");
   const [isLoginPopupVisible, setIsLoginPopupVisible] = useState(false); // State for login popup
   const [properties, setProperties] = useState([]);
-
+  const [article, setArticle] = useState([]);
   const navigate = useNavigate();
 
   const handleSubmit = async (event: React.FormEvent) => {
@@ -76,7 +76,19 @@ const HomePage: FunctionComponent = () => {
 
     fetchProperties();
   }, []);
+  useEffect(() => {
+    const fetchArticles = async () => {
+      try {
+        const response = await fetch('https://newsapi.org/v2/everything?q=real%20estate&apiKey=24bcf6c46b474bec8c8e6a95e67f0cbe');
+        const data = await response.json();
+        setArticle(data.articles[7]); 
+      } catch (error) {
+        console.error("Error fetching the articles: ", error);
+      }
+    };
 
+    fetchArticles();
+  }, []);
   return (
     <div className={isLoginPopupVisible ? `${styles.homePage} ${styles.blur}` : styles.homePage}>
       <Navbar onLoginClick={() => setIsLoginPopupVisible(true)} />
@@ -170,18 +182,21 @@ const HomePage: FunctionComponent = () => {
       </div>
 
       <div className={styles.articles}>
-        <div className={styles.heading}>REAL ESTATE AROUND THE GLOBE</div>
+      <div className={styles.heading}>REAL ESTATE AROUND THE GLOBE</div>
+      {article && (
         <div className={styles.article}>
-          <img src="/rectangle-39@2x.png" alt="Article" />
+          <img src={article.urlToImage || '/placeholder-image.png'} alt="Article" />
           <div className={styles.content}>
-            <div className={styles.title}>THE FUTURE OF SELLING AND BUYING</div>
-            <div className={styles.info}>
-              Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old....
+            <div className={styles.title}>{article.title}</div>
+            <div className={styles.info}>{article.description}</div>
+            <div className={styles.readmore}>
+              <a href={article.url} target="_blank" rel="noopener noreferrer">READ MORE ...</a>
             </div>
-            <div className={styles.readmore}>READ MORE ...</div>
           </div>
         </div>
-      </div>
+      )}
+    </div>
+
 
       <div className={styles.happycustomers}>
         <div className={styles.heading}>HAPPY CUSTOMERS</div>
