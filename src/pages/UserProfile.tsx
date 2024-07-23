@@ -1,4 +1,5 @@
-import React, { useState, useEffect, ChangeEvent, useRef } from "react";
+import React, { useState, useEffect, ChangeEvent, useRef, useCallback } from "react";
+import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
 import styles from "./UserProfile.module.css";
@@ -135,6 +136,20 @@ const UserProfile: React.FC = () => {
     setIsProfilePicMenuOpen(false);
     localStorage.removeItem("profileImage");
   };
+  const navigate = useNavigate();
+  const [showDeleteConfirmation, setShowDeleteConfirmation] = useState(false);
+  const onDeleteClick = useCallback(() => {
+    setShowDeleteConfirmation(true);
+  }, []);
+
+  const handleDeleteConfirm = useCallback(() => {
+    navigate("/");
+    // Perform additional Delete actions if needed
+  }, [navigate]);
+
+  const handleDeleteCancel = useCallback(() => {
+    setShowDeleteConfirmation(false);
+  }, []);
 
   return (
     <div className={styles.userProfile}>
@@ -314,10 +329,19 @@ const UserProfile: React.FC = () => {
                 </button>
                 <div className={styles.deleteContainer}>
                   To delete your account{" "}
-                  <span className={styles.TCtext}>
+                  <a className={styles.TCtext} onClick={onDeleteClick}>
                     click here
-                  </span>
+                  </a>
                 </div>
+                {showDeleteConfirmation && (
+                    <div className={styles.DeletePopup}>
+                      <div className={styles.DeleteMessage}>Are you sure you want to delete your account?</div>
+                      <div className={styles.DeleteButtons}>
+                        <button className={styles.DeleteButton} onClick={handleDeleteConfirm}>Yes</button>
+                        <button className={styles.cancelButton} onClick={handleDeleteCancel}>No</button>
+                      </div>
+                    </div>
+                  )}
               </div>
             </div>
           </div>

@@ -15,6 +15,7 @@ import Sell from "./pages/Sell";
 import AdminLogin from "./pages/AdminLogin";
 import AdminDashboard from "./pages/AdminDashboard";
 import UserProfile from "./pages/UserProfile";
+import UserAppointments from "./pages/UserAppointments";
 import UserProperties from "./pages/UserProperties";
 import UserPastSearches from "./pages/UserPastSearches";
 import UserPreviouslyViewed from "./pages/UserPreviouslyViewed";
@@ -79,6 +80,10 @@ function App() {
         title = "";
         metaDescription = "";
         break;
+      case "/user-appointments":
+        title = "";
+        metaDescription = "";
+        break;
       case "/user-properties0":
         title = "";
         metaDescription = "";
@@ -133,6 +138,7 @@ function App() {
       <Route path="/rent" element={<Rent />} />
       <Route path="/sell" element={<Sell />} />
       <Route path="/user-profile" element={<UserProfile />} />
+      <Route path="/user-appointments" element={<UserAppointments />} />
       <Route path="/user-properties0" element={<UserProperties />} />
       <Route path="/user-past-searches0" element={<UserPastSearches />} />
       <Route path="/user-previously-viewed0" element={<UserPreviouslyViewed />} />
