@@ -15,7 +15,7 @@ const HomePage: FunctionComponent = () => {
   const [phone, setPhone] = useState("");
   const [isLoginPopupVisible, setIsLoginPopupVisible] = useState(false); // State for login popup
   const [properties, setProperties] = useState([]);
-  const [article, setArticle] = useState([]);
+  
   const navigate = useNavigate();
 
   const handleSubmit = async (event: React.FormEvent) => {
@@ -77,19 +77,7 @@ const HomePage: FunctionComponent = () => {
 
     fetchProperties();
   }, []);
-  useEffect(() => {
-    const fetchArticles = async () => {
-      try {
-        const response = await fetch('https://newsapi.org/v2/everything?q=real%20estate&apiKey=24bcf6c46b474bec8c8e6a95e67f0cbe');
-        const data = await response.json();
-        setArticle(data.articles[7]); 
-      } catch (error) {
-        console.error("Error fetching the articles: ", error);
-      }
-    };
 
-    fetchArticles();
-  }, []);
   return (
     <div className={isLoginPopupVisible ? `${styles.homePage} ${styles.blur}` : styles.homePage}>
       <Navbar onLoginClick={() => setIsLoginPopupVisible(true)} />
