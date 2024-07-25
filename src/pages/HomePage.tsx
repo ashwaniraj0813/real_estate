@@ -6,6 +6,7 @@ import Footer from "../components/Footer";
 import CustomerReviewCard from "../components/CustomerReviewCard";
 import LoginPopup from "../components/LoginPopup";
 import PropertyCard from "../components/PropertyCard";
+import Articles from "../components/Articles"; 
 
 const HomePage: FunctionComponent = () => {
   const [firstName, setFirstName] = useState("");
@@ -181,22 +182,7 @@ const HomePage: FunctionComponent = () => {
         </section>
       </div>
 
-      <div className={styles.articles}>
-      <div className={styles.heading}>REAL ESTATE AROUND THE GLOBE</div>
-      {article && (
-        <div className={styles.article}>
-          <img src={article.urlToImage || '/placeholder-image.png'} alt="Article" />
-          <div className={styles.content}>
-            <div className={styles.title}>{article.title}</div>
-            <div className={styles.info}>{article.description}</div>
-            <div className={styles.readmore}>
-              <a href={article.url} target="_blank" rel="noopener noreferrer">READ MORE ...</a>
-            </div>
-          </div>
-        </div>
-      )}
-    </div>
-
+      <Articles /> {/* Use the new Articles component here */}
 
       <div className={styles.happycustomers}>
         <div className={styles.heading}>HAPPY CUSTOMERS</div>
