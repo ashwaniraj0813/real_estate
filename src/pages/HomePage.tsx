@@ -182,7 +182,7 @@ const HomePage: FunctionComponent = () => {
         </section>
       </div>
 
-      <Articles /> {/* Use the new Articles component here */}
+      <Articles /> 
 
       <div className={styles.happycustomers}>
         <div className={styles.heading}>HAPPY CUSTOMERS</div>
