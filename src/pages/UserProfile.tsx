@@ -74,7 +74,7 @@ const UserProfile: React.FC = () => {
         const decoded = jwtDecode(token);
         console.log(decoded);
         setInputValues({
-          role: "User",
+          role: decoded.role || "User",
           name: `${decoded.firstname} ${decoded.lastname}`,
           phoneNumber1: decoded.phoneNumber,
           phoneNumber2: "Phone Number 2",
