@@ -1,5 +1,6 @@
 import React, { useState, useEffect, ChangeEvent, useRef, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
+import { jwtDecode } from "jwt-decode";
 import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
 import styles from "./UserProfile.module.css";
@@ -28,7 +29,7 @@ const UserProfile: React.FC = () => {
   const [isProfilePicMenuOpen, setIsProfilePicMenuOpen] = useState(false); // State to track if profile pic menu is open
 
   useEffect(() => {
-    const { name, phoneNumber1,phoneNumber2,phoneNumber3, mail, city, state, address, landlineNumber } = inputValues;
+    const { name, phoneNumber1, phoneNumber2, phoneNumber3, mail, city, state, address, landlineNumber } = inputValues;
     const errors: Record<string, string> = {};
     if (name === "") {
       errors["name"] = "This is a required field";
@@ -38,10 +39,10 @@ const UserProfile: React.FC = () => {
     } else if (!/^\d+$/.test(phoneNumber1)) {
       errors["phoneNumber1"] = "Phone number must be numeric";
     }
-    if (!/^\d+$/.test(phoneNumber2)&& phoneNumber2!='') {
+    if (!/^\d+$/.test(phoneNumber2) && phoneNumber2 !== "") {
       errors["phoneNumber2"] = "Phone number must be numeric";
     }
-    if (!/^\d+$/.test(phoneNumber3) && phoneNumber3!='') {
+    if (!/^\d+$/.test(phoneNumber3) && phoneNumber3 !== "") {
       errors["phoneNumber3"] = "Phone number must be numeric";
     }
     if (mail === "") {
@@ -58,18 +59,35 @@ const UserProfile: React.FC = () => {
     if (address === "") {
       errors["address"] = "This is a required field";
     }
-    if (!/^\d+$/.test(landlineNumber) && landlineNumber!='') {
+    if (!/^\d+$/.test(landlineNumber) && landlineNumber !== "") {
       errors["landlineNumber"] = "Landline number must be numeric";
     }
     setValidationErrors(errors);
     setIsRequiredFilled(Object.keys(errors).length === 0);
   }, [inputValues]);
 
-
   useEffect(() => {
-    const savedInputValues = localStorage.getItem("userProfile");
-    if (savedInputValues) {
-      setInputValues(JSON.parse(savedInputValues));
+    const token = localStorage.getItem("authToken");
+    console.log(token);
+    if (token) {
+      try {
+        const decoded = jwtDecode(token);
+        console.log(decoded);
+        setInputValues({
+          role: "User",
+          name: `${decoded.firstname} ${decoded.lastname}`,
+          phoneNumber1: decoded.phoneNumber,
+          phoneNumber2: "Phone Number 2",
+          phoneNumber3: "Phone Number 3",
+          mail: decoded.email,
+          state: decoded.state || "State",
+          city: decoded.city || "City",
+          address: decoded.address || "Address",
+          landlineNumber: decoded.landlineNumber || "Landline Number",
+        });
+      } catch (error) {
+        console.error("Invalid token:", error);
+      }
     }
 
     const savedImage = localStorage.getItem("profileImage");
@@ -101,10 +119,7 @@ const UserProfile: React.FC = () => {
     }
   };
 
-  const handleInputChange = (
-    e: ChangeEvent<HTMLInputElement>,
-    field: string
-  ) => {
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement>, field: string) => {
     setInputValues({
       ...inputValues,
       [field]: e.target.value,
@@ -136,6 +151,7 @@ const UserProfile: React.FC = () => {
     setIsProfilePicMenuOpen(false);
     localStorage.removeItem("profileImage");
   };
+
   const navigate = useNavigate();
   const [showDeleteConfirmation, setShowDeleteConfirmation] = useState(false);
   const onDeleteClick = useCallback(() => {

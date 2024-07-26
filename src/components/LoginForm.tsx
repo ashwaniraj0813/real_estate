@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import styles from "./LoginForm.module.css";
 
+import { jwtDecode } from "jwt-decode";
+
 export type LoginFormType = {
   className?: string;
 };
@@ -30,7 +32,12 @@ const LoginForm: FunctionComponent<LoginFormType> = ({ className = "" }) => {
 
     try {
       const response = await axios.post(baseUrl, loginCredentials);
+
       const token = response.data.token;
+
+      const decoded = jwtDecode(token);
+      console.log(token);
+
       axios.defaults.headers.common["Authorization"] = `bearer ${token}`;
 
       localStorage.setItem('authToken', token);

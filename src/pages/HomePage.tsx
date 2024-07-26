@@ -13,7 +13,7 @@ const HomePage: FunctionComponent = () => {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-  const [isLoginPopupVisible, setIsLoginPopupVisible] = useState(false); // State for login popup
+  const [isLoginPopupVisible, setIsVisible] = useState(false); // State for login popup
   const [properties, setProperties] = useState([]);
   
   const navigate = useNavigate();

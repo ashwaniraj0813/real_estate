@@ -1,5 +1,6 @@
 import React, { FunctionComponent, useState } from "react";
 import styles from "./LoginPopup.module.css";
+import { jwtDecode } from "jwt-decode";
 
 type LoginPopupProps = {
   onClose: () => void;
@@ -36,7 +37,14 @@ const LoginPopup: FunctionComponent<LoginPopupProps> = ({
       }
 
       const data = await response.json();
+  
       console.log("Token received:", data.token);
+
+      console.log(data.token);
+      localStorage.setItem('authToken', data.token);
+
+      const decoded = jwtDecode(data.token);
+      console.log(decoded);
 
       onLoginSuccess();
     } catch (err) {
