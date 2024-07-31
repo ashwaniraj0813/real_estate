@@ -96,11 +96,12 @@ const Navbar: FunctionComponent<NavbarProps> = ({ className = "" }) => {
   };
 
   const isHomePage = location.pathname === "/";
+  const isAboutPage = location.pathname === "/aboutus";
 
   return (
     <header
       className={`${styles.navbar} ${
-        isHomePage && !isScrolled ? styles.navtransparent : styles.navcolored
+        (isHomePage||isAboutPage) && !isScrolled ? styles.navtransparent : styles.navcolored
       }`}
     >
       <div

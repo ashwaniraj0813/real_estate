@@ -152,8 +152,10 @@ const HomePage: FunctionComponent = () => {
           </div>
         </div>
 
-        <section className={styles.listings}>
-          {properties.slice(0, 3).map((property) => (
+        <section className={styles.popularProperties}>
+          <div className={styles.heading}>POPULAR PROPERTIES</div>
+          <div className={styles.listings}>
+          {properties.slice(0, 4).map((property) => (
             <Link
               key={property._id}
               to={`/property-details-page/${property._id}`}
@@ -167,6 +169,7 @@ const HomePage: FunctionComponent = () => {
               />
             </Link>
           ))}
+          </div>
         </section>
       </div>
 

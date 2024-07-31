@@ -1,3 +1,7 @@
+* {
+  border: 1px solid green;
+}
+
 .homePage * {
   font-family: var(--font-montserrat);
 }
@@ -23,12 +27,8 @@
   font-weight: 700;
 }
 
-.aptform * {
-  font-size: 18px;
-}
-
 .aptform {
-  width: 500px;  
+  width: 500px;
   padding: 50px;
   background-color: var(--color-gainsboro-100);
   border-radius: 50px;
@@ -37,6 +37,10 @@
   justify-content: center;
   align-items: center;
   gap: 25px;
+}
+
+.aptform * {
+  font-size: 18px;
 }
 
 .book {
@@ -61,7 +65,7 @@ input {
   border: none;
   border-radius: 10px;
   padding: 5px 10px;
-} 
+}
 
 .email,
 .phno {
@@ -90,11 +94,11 @@ input {
   gap: 10px;
 }
 
-.heading { 
+.heading {
   font-size: 50px;
 }
 
-.subheading { 
+.subheading {
   font-size: 25px;
   color: #2457C5;
 }
@@ -134,57 +138,27 @@ input {
   align-items: center;
 }
 
-.articles {
+.popularProperties {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 3vw 8vw 4vw 8vw;
-  gap: 40px;
-  background-color: #764EC6;
-  color: var(--color-white);
+  padding: 6vw 0vw;
+  gap: 20px;
 }
 
-.article {
+.listings {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
-  width: 100%;
-  gap: 50px;
+  gap: 40px;
 }
 
-.article > img {
-  height: 400px;
-  width: 400px;
-}
-
-.articles > .heading { 
-  font-weight: 500;
-}
-
-.content {
-  height: 400px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.title {
-  font-size: 35px;
-  font-weight: 400;
-}
-
-.info {
-  font-size: 20px;
-  font-style: italic;
-  line-height: 25px;
-}
-
-.readmore {
-  font-size: 20px;
-  align-self: flex-end;
+.linkWrapper {
+  flex: 1;
 }
 
 .happycustomers {
@@ -204,24 +178,8 @@ input {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
   gap: 12px;
 }
-
-.listings {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around; /* Adjust as needed */
-  align-items: flex-start; /* Align items at the start of the container */
-  gap: 40px; /* Adjust spacing between items as needed */
-  padding: 20px; /* Adjust padding as needed */
-}
-
-.linkWrapper {
-  flex: 1; /* Adjust the flex-grow property as needed */
-  min-width: 200px; /* Adjust minimum width as needed */
-}
-
 
 @media (max-width: 1200px) {
   .hero {
@@ -229,7 +187,7 @@ input {
     align-items: flex-start;
     padding: 2vw 4vw;
   }
-  
+
   .introtext {
     width: 100%;
     font-size: 40px;
@@ -238,15 +196,15 @@ input {
 
   .popularfeatures .features {
     display: flex;
-    flex-wrap: wrap; 
-    gap: 40px; 
-   }
-  
-  .popularfeatures .feature {
-    flex: 1 1 calc(25% - 40px); 
-    box-sizing: border-box; 
+    flex-wrap: wrap;
+    gap: 40px;
   }
-  
+
+  .popularfeatures .feature {
+    flex: 1 1 calc(25% - 40px);
+    box-sizing: border-box;
+  }
+
   .aptform {
     width: 50%;
   }
@@ -256,25 +214,25 @@ input {
   .hero {
     padding: 2vw 4vw;
   }
-  
+
   .introtext {
     width: 100%;
     font-size: 30px;
   }
-  
+
   .aptform {
     width: 80%;
   }
 
   .popularfeatures .features {
     display: flex;
-    flex-wrap: wrap; 
-    gap: 40px; 
-   }
-  
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+
   .popularfeatures .feature {
-    flex: 1 1 calc(50% - 40px); 
-    box-sizing: border-box; 
+    flex: 1 1 calc(50% - 40px);
+    box-sizing: border-box;
   }
 
   .featuredlocations {
@@ -282,14 +240,14 @@ input {
     gap: 20px;
   }
 
-  .featuredlocations .featuredloc{
+  .featuredlocations .featuredloc {
     margin: 5px;
   }
 
   .articles .article {
     flex-direction: column;
   }
-  
+
   .article > img {
     width: 100%;
     height: auto;
@@ -298,20 +256,20 @@ input {
 
 @media (max-width: 480px) {
   .introtext {
-    font: 24px;
+    font-size: 24px;
   }
-  
+
   .popularfeatures .features {
     display: flex;
-    flex-wrap: wrap; 
-    gap: 20px; 
-   }
-  
-  .popularfeatures .feature {
-    flex: 1 1 calc(50% - 40px); 
-    box-sizing: border-box; 
+    flex-wrap: wrap;
+    gap: 20px;
   }
-  
+
+  .popularfeatures .feature {
+    flex: 1 1 calc(50% - 40px);
+    box-sizing: border-box;
+  }
+
   .feature > img {
     height: 100px;
     width: 100px;
@@ -320,7 +278,7 @@ input {
   .title {
     font-size: 28px;
   }
-  
+
   .info {
     font-size: 16px;
   }
