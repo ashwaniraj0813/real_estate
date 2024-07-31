@@ -6,6 +6,7 @@ import Footer from "../components/Footer";
 import CustomerReviewCard from "../components/CustomerReviewCard";
 import LoginPopup from "../components/LoginPopup";
 import PropertyCard from "../components/PropertyCard";
+import BuilderCard from "../components/BuilderCard";
 import Articles from "../components/Articles"; 
 
 const HomePage: FunctionComponent = () => {
@@ -166,6 +167,24 @@ const HomePage: FunctionComponent = () => {
                 city={property.city}
                 price={property.price.toString()}
                 area={property.area.toString()}
+              />
+            </Link>
+          ))}
+          </div>
+        </section>
+
+        <section className={styles.popularBuilders}>
+          <div className={styles.heading}>POPULAR BUILDERS</div>
+          <div className={styles.listings}>
+          {properties.slice(0, 3).map((builder) => (
+            <Link
+              key={builder._id}
+              // to={`/property-details-page/${property._id}`}
+              className={styles.linkWrapper}
+            >
+              <BuilderCard
+                name="MV Kiran Sooraj"
+                properties="1500+ Properties"
               />
             </Link>
           ))}

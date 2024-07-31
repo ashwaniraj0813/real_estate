@@ -28,7 +28,7 @@ const PropertyCard: FunctionComponent<PropertyCardType> = ({
         <div className={styles.title}>{title}</div>
         <div className={styles.frameParent}>
           <div className={styles.location}>
-            <img className={styles.mapPinIcon} alt="Location" src="/map-pin@2x.png" />
+            <img className={styles.mapPinIcon} alt="Location" src="/map-pin2@2x.png" />
             <div className={styles.city}>{city}</div>
           </div>
           <div className={styles.details}>

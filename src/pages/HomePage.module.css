@@ -1,6 +1,4 @@
-* {
-  border: 1px solid green;
-}
+/* * { border: 1px solid green; } */
 
 .homePage * {
   font-family: var(--font-montserrat);
@@ -152,13 +150,19 @@ input {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between;
+  align-items: flex-start;
   gap: 40px;
 }
 
-.linkWrapper {
-  flex: 1;
+.popularBuilders {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 6vw 4vw;
+  gap: 20px;
 }
 
 .happycustomers {
