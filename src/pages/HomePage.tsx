@@ -8,6 +8,7 @@ import LoginPopup from "../components/LoginPopup";
 import PropertyCard from "../components/PropertyCard";
 import BuilderCard from "../components/BuilderCard";
 import Articles from "../components/Articles"; 
+import HistoryCard from "../components/HistoryCard";
 
 const HomePage: FunctionComponent = () => {
   const [firstName, setFirstName] = useState("");
@@ -126,7 +127,7 @@ const HomePage: FunctionComponent = () => {
           </button>
         </form>
       </div>
-
+      <HistoryCard />
       <div className={styles.popularfeatures}>
         <div className={styles.heading}>PROPERTY DETAILS</div>
         <div className={styles.subheading}>ALL AWESOME POPULAR LOCATIONS</div>
