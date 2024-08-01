@@ -309,10 +309,6 @@ input {
 
   .popularfeatures .features {
     display: flex;
-<<<<<<< HEAD
-    flex-wrap: wrap;
-    gap: 20px;
-=======
     flex-wrap: wrap; 
     gap: 20px; 
   }
@@ -320,7 +316,6 @@ input {
   .popularfeatures .feature {
     flex: 1 1 calc(50% - 40px); 
     box-sizing: border-box; 
->>>>>>> 733c921 (updated post property)
   }
 
   .popularfeatures .feature {
