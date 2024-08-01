@@ -1,3 +1,4 @@
+// HomePage.tsx
 import { FunctionComponent, useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import styles from "./HomePage.module.css";
@@ -16,7 +17,7 @@ const HomePage: FunctionComponent = () => {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-  const [isLoginPopupVisible, setIsVisible] = useState(false); // State for login popup
+  const [isLoginPopupVisible, setIsLoginPopupVisible] = useState(false);
   const [properties, setProperties] = useState([]);
   
   const navigate = useNavigate();
@@ -24,7 +25,6 @@ const HomePage: FunctionComponent = () => {
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
 
-    // Replace with your backend API URL
     const apiUrl = "http://localhost:5000/api/appointments";
 
     try {
@@ -43,7 +43,6 @@ const HomePage: FunctionComponent = () => {
 
       if (response.ok) {
         alert("Appointment booked successfully!");
-        // Clear the form fields
         setFirstName("");
         setLastName("");
         setEmail("");
@@ -81,8 +80,22 @@ const HomePage: FunctionComponent = () => {
     fetchProperties();
   }, []);
 
+  useEffect(() => {
+    const fetchArticles = async () => {
+      try {
+        const response = await fetch('https://newsapi.org/v2/everything?q=real%20estate&apiKey=24bcf6c46b474bec8c8e6a95e67f0cbe');
+        const data = await response.json();
+        setArticle(data.articles[7]); 
+      } catch (error) {
+        console.error("Error fetching the articles: ", error);
+      }
+    };
+
+    fetchArticles();
+  }, []);
+
   return (
-    <div className={isLoginPopupVisible ? `${styles.homePage} ${styles.blur}` : styles.homePage}>
+    <div className={isLoginPopupVisible ? `${styles.pageContainer} ${styles.blur}` : styles.pageContainer}>
       <Navbar onLoginClick={() => setIsLoginPopupVisible(true)} />
 
       <div className={styles.hero}>

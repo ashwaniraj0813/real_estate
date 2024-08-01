@@ -1,5 +1,30 @@
-/* * { border: 1px solid green; } */
+/* HomePage.module.css */
+html, body {
+  height: 100%;
+  margin: 0;
+}
 
+.pageContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.footer {
+  width: 100%;
+  padding: 4vw 8vw;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  font-size: 20px;
+  font-weight: 500;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+/* Existing styles */
 .homePage * {
   font-family: var(--font-montserrat);
 }
@@ -185,6 +210,20 @@ input {
   gap: 12px;
 }
 
+.listings {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 20px;
+}
+
+.linkWrapper {
+  flex: 1;
+  min-width: 200px;
+}
+
 @media (max-width: 1200px) {
   .hero {
     flex-direction: column;
@@ -200,8 +239,13 @@ input {
 
   .popularfeatures .features {
     display: flex;
-    flex-wrap: wrap;
-    gap: 40px;
+    flex-wrap: wrap; 
+    gap: 40px; 
+  }
+  
+  .popularfeatures .feature {
+    flex: 1 1 calc(25% - 40px); 
+    box-sizing: border-box; 
   }
 
   .popularfeatures .feature {
@@ -230,10 +274,10 @@ input {
 
   .popularfeatures .features {
     display: flex;
-    flex-wrap: wrap;
-    gap: 40px;
+    flex-wrap: wrap; 
+    gap: 40px; 
   }
-
+  
   .popularfeatures .feature {
     flex: 1 1 calc(50% - 40px);
     box-sizing: border-box;
@@ -265,8 +309,18 @@ input {
 
   .popularfeatures .features {
     display: flex;
+<<<<<<< HEAD
     flex-wrap: wrap;
     gap: 20px;
+=======
+    flex-wrap: wrap; 
+    gap: 20px; 
+  }
+  
+  .popularfeatures .feature {
+    flex: 1 1 calc(50% - 40px); 
+    box-sizing: border-box; 
+>>>>>>> 733c921 (updated post property)
   }
 
   .popularfeatures .feature {

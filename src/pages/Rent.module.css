@@ -154,3 +154,29 @@
     gap: var(--gap-mini);
   }
 }
+
+.content{
+  padding-top: 5%;
+}
+
+.title{
+  padding-top: 5%;
+  text-align: center;
+
+}
+
+.box{
+  background-color: #764EC6; 
+  background-image: linear-gradient(90deg, #2895DF, #764EC6); 
+  height: 500px;
+  width: 300px;
+  margin-right: 2%;
+  text-align: justify;
+  color: white;
+  padding: 3%;
+}
+
+.body{
+  display: flex;
+  flex-direction: row;
+}
