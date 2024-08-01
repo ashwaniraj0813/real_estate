@@ -132,13 +132,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({ className = "" }) => {
         className={`${styles.navitem} ${styles.rent}`}
         onClick={onRentTextClick}
       >
-        Rent
-      </div>
-      <div
-        className={`${styles.navitem} ${styles.sell}`}
-        onClick={onSellTextClick}
-      >
-        Sell
+        Post Property
       </div>
       <div
         className={`${styles.navitem} ${styles.profile}`}

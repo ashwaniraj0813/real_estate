@@ -11,7 +11,6 @@ import PropertyExplorePage from "./pages/PropertyExplorePage";
 import PropertyListingsPage from "./pages/PropertyListingsPage";
 import PropertyDetailsPage from "./pages/PropertyDetailsPage";
 import Rent from "./pages/Rent";
-import Sell from "./pages/Sell";
 import AdminLogin from "./pages/AdminLogin";
 import AdminDashboard from "./pages/AdminDashboard";
 import UserProfile from "./pages/UserProfile";
@@ -61,10 +60,6 @@ function App() {
         metaDescription = "";
         break;
       case "/rent":
-        title = "";
-        metaDescription = "";
-        break;
-      case "/sell":
         title = "";
         metaDescription = "";
         break;
@@ -136,7 +131,6 @@ function App() {
       <Route path="/property-listings-page" element={<PropertyListingsPage />} />
       <Route path="/property-details-page/:property_id" element={<PropertyDetailsPage />} />
       <Route path="/rent" element={<Rent />} />
-      <Route path="/sell" element={<Sell />} />
       <Route path="/user-profile" element={<UserProfile />} />
       <Route path="/user-appointments" element={<UserAppointments />} />
       <Route path="/user-properties0" element={<UserProperties />} />
