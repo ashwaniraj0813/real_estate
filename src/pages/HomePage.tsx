@@ -9,6 +9,7 @@ import PropertyCard from "../components/PropertyCard";
 import BuilderCard from "../components/BuilderCard";
 import Articles from "../components/Articles"; 
 import HistoryCard from "../components/HistoryCard";
+import CardLayout from "../components/Insights";
 
 const HomePage: FunctionComponent = () => {
   const [firstName, setFirstName] = useState("");
@@ -194,6 +195,7 @@ const HomePage: FunctionComponent = () => {
       </div>
 
       <Articles /> 
+      <CardLayout />
 
       <div className={styles.happycustomers}>
         <div className={styles.heading}>HAPPY CUSTOMERS</div>
