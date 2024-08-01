@@ -141,7 +141,6 @@ const HomePage: FunctionComponent = () => {
           </button>
         </form>
       </div>
-      <HistoryCard />
       <div className={styles.popularfeatures}>
         <div className={styles.heading}>PROPERTY DETAILS</div>
         <div className={styles.subheading}>ALL AWESOME POPULAR LOCATIONS</div>
@@ -219,7 +218,7 @@ const HomePage: FunctionComponent = () => {
           <CustomerReviewCard imageUrl="./istockphoto1476170969170667a-1@2x.png" name="Sudhanshu Bakshi" review="Personal appointments arranged through their platform were instrumental in finding my dream home effortlessly. I highly recommend their services for reliable real estate insights and expert assistance." />
         </div>
       </div>
-
+      <HistoryCard />
       <Footer />
 
       {isLoginPopupVisible && (
