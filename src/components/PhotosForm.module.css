@@ -1,0 +1,25 @@
+   .imagePreview {
+     display: flex;
+     flex-wrap: wrap;
+     gap: 10px;
+   }
+   
+   .imageContainer {
+     position: relative;
+   }
+   
+   .thumbnail {
+     width: 100px;
+     height: 100px;
+     object-fit: cover;
+   }
+   
+   .imageContainer button {
+     position: absolute;
+     top: 5px;
+     right: 5px;
+     background: rgba(255, 255, 255, 0.7);
+     border: none;
+     cursor: pointer;
+   }
+   

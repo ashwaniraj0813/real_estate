@@ -1,12 +1,18 @@
 import { FunctionComponent, useState } from "react";
 import axios from "axios";
 import Navbar from "../components/Navbar";
-import ListingForm from "../components/ListingForm";
-import styles from "./Rent.module.css";
 import Footer from "../components/Footer";
+import BasicDetailsForm from "../components/BasicFormDetails";
+import LocationDetailsForm from "../components/LocationDetailsForm";
+import ApartmentProfileForm from "../components/ApartmentProfileForm";
+import PlotProfileForm from "../components/PlotProfileForm";
+import HouseProfileForm from "../components/HouseProfileForm";
+import PhotosForm from "../components/PhotosForm";
+import PricingForm from "../components/PricingForm";
+import styles from "./Rent.module.css";
 
 const Rent: FunctionComponent = () => {
-  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+  const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
     title: "",
     description: "",
@@ -15,20 +21,15 @@ const Rent: FunctionComponent = () => {
     price: "",
     bhk: "",
     area: "",
-    type: "residential",
+    propertyType: "Apartment",
+    purpose: "Sell",
     status: "available",
-    purpose: "rent",
     amenities: "",
   });
   const [selectedImages, setSelectedImages] = useState<File[]>([]);
 
-  const toggleItem = (index: number) => {
-    if (expandedIndex === index) {
-      setExpandedIndex(null);
-    } else {
-      setExpandedIndex(index);
-    }
-  };
+  const nextStep = () => setStep(prevStep => prevStep + 1);
+  const prevStep = () => setStep(prevStep => prevStep - 1);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -47,7 +48,7 @@ const Rent: FunctionComponent = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     try {
       const propertyResponse = await axios.post('http://localhost:5000/api/property', formData);
       const propertyId = propertyResponse.data._id;
@@ -71,59 +72,87 @@ const Rent: FunctionComponent = () => {
     }
   };
 
+  const renderPropertyProfileForm = () => {
+    switch (formData.propertyType) {
+      case "Apartment":
+        return (
+          <ApartmentProfileForm
+            formData={formData}
+            handleInputChange={handleInputChange}
+            nextStep={nextStep}
+            prevStep={prevStep}
+          />
+        );
+      case "Plot":
+        return (
+          <PlotProfileForm
+            formData={formData}
+            handleInputChange={handleInputChange}
+            nextStep={nextStep}
+            prevStep={prevStep}
+          />
+        );
+      case "House":
+        return (
+          <HouseProfileForm
+            formData={formData}
+            handleInputChange={handleInputChange}
+            nextStep={nextStep}
+            prevStep={prevStep}
+          />
+        );
+      default:
+        return null;
+    }
+  };
+
   return (
     <div className={styles.rent}>
       <Navbar />
+      <div className={styles.body}>
       <main className={styles.content}>
-        <form className={styles.listingFormParent} onSubmit={handleSubmit}>
-          <ListingForm
+      <div className={styles.box}>
+        <h3>Few more steps to get your property posted</h3>
+        <p>Providing clear details about your property finds you good buyers</p>
+      </div>
+        {step === 1 && (
+          <BasicDetailsForm
             formData={formData}
             handleInputChange={handleInputChange}
+            nextStep={nextStep}
+          />
+        )}
+        {step === 2 && (
+          <LocationDetailsForm
+            formData={formData}
+            handleInputChange={handleInputChange}
+            nextStep={nextStep}
+            prevStep={prevStep}
+          />
+        )}
+        {step === 3 && renderPropertyProfileForm()}
+        {step === 4 && (
+          <PhotosForm
             handleImageChange={handleImageChange}
             handleRemoveImage={handleRemoveImage}
             selectedImages={selectedImages}
+            nextStep={nextStep}
+            prevStep={prevStep}
           />
-
-          <div className={styles.submission}>
-            <button className={styles.submitButton} type="submit">
-              <div className={styles.submitButtonChild} />
-              <div className={styles.publish}>PUBLISH</div>
-            </button>
-          </div>
-
-          {/* FAQ Section */}
-          <div className={styles.faqSection}>
-            <h2>Frequently Asked Questions</h2>
-            {faqItems.map((item, index) => (
-              <div className={styles.faqItem} key={index}>
-                <div className={styles.question} onClick={() => toggleItem(index)}>
-                  <h3>{item.question}</h3>
-                  <span className={`${styles.arrow} ${expandedIndex === index ? styles.open : ""}`}>&#9660;</span>
-                </div>
-                <p className={`${styles.answer} ${expandedIndex === index ? styles.visible : styles.hidden}`}>{item.answer}</p>
-              </div>
-            ))}
-          </div>
-        </form>
+        )}
+        {step === 5 && (
+          <PricingForm
+            formData={formData}
+            handleInputChange={handleInputChange}
+            prevStep={prevStep}
+            handleSubmit={handleSubmit}
+          />
+        )}
       </main>
+      </div>
       <Footer />
     </div>
   );
 };
 
 export default Rent;
-
-const faqItems = [
-  {
-    question: "What type of property can I post on this platform for selling/renting?",
-    answer: "As an owner, agent, or builder, you can post all types of residential and commercial properties for rent, lease, or sale. Millions of people search for flats, houses, plots, office space, shops, showrooms, warehouses, agricultural and commercial land, among others."
-  },
-  {
-    question: "Is posting property for selling/renting on this platform free?",
-    answer: "Yes, you can post your property listing online for sale or rent for free. There are no charges involved. All buyer/tenant enquiries will be shared with you completely free of cost."
-  },
-  {
-    question: "Can I sell/rent out my property on my own without paying brokerage?",
-    answer: "Yes, as a property owner, you can sell property online as well as post property for rent on this platform. Your property will be visible to thousands of buyers and tenants visiting us daily, without involving any real estate agents."
-  }
-];
