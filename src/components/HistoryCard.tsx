@@ -16,7 +16,7 @@ const HistoryCard: React.FC = () => {
       <p className={styles.head}>Your recent activity</p>
       <button className={styles.act_btn}>
         <div className={styles.btn_txt}>
-          <div>
+          <div style={{display: "flex", justifyContent: "space-between"}}>
             1<img src="diagonal-right-up-arrow.png" alt="" className={styles.ico} />
           </div>
           <span> Viewed </span>

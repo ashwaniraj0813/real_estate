@@ -127,70 +127,72 @@ const HomePage: FunctionComponent = () => {
           </button>
         </form>
       </div>
-      <HistoryCard />
-      <div className={styles.popularfeatures}>
-        <div className={styles.heading}>PROPERTY DETAILS</div>
-        <div className={styles.subheading}>ALL AWESOME POPULAR LOCATIONS</div>
-        <div className={styles.features}>
-          <div className={styles.feature}>
-            <img src="cut-paper@2x.png" alt="3200+ Sqft." />
-            <p>3200+ Sqft.</p>
+      <div style={{display: "flex", paddingRight: "2em"}}>
+        <div className={styles.popularfeatures}>
+          <div className={styles.heading}>PROPERTY DETAILS</div>
+          <div className={styles.subheading}>ALL AWESOME POPULAR LOCATIONS</div>
+          <div className={styles.features}>
+            <div className={styles.feature}>
+              <img src="cut-paper@2x.png" alt="3200+ Sqft." />
+              <p>3200+ Sqft.</p>
+            </div>
+            <div className={styles.feature}>
+              <img src="bedroom@2x.png" alt="3BHK" />
+              <p>3BHK</p>
+            </div>
+            <div className={styles.feature}>
+              <img src="car@2x.png" alt="Garage" />
+              <p>Garage</p>
+            </div>
+            <div className={styles.feature}>
+              <img src="swimming-pool@2x.png" alt="Swimming Pool" />
+              <p>Swimming Pool</p>
+            </div>
+            <div className={styles.feature}>
+              <img src="full-family@2x.png" alt="Ideal for Family" />
+              <p>Ideal for Family</p>
+            </div>
           </div>
-          <div className={styles.feature}>
-            <img src="bedroom@2x.png" alt="3BHK" />
-            <p>3BHK</p>
-          </div>
-          <div className={styles.feature}>
-            <img src="car@2x.png" alt="Garage" />
-            <p>Garage</p>
-          </div>
-          <div className={styles.feature}>
-            <img src="swimming-pool@2x.png" alt="Swimming Pool" />
-            <p>Swimming Pool</p>
-          </div>
-          <div className={styles.feature}>
-            <img src="full-family@2x.png" alt="Ideal for Family" />
-            <p>Ideal for Family</p>
-          </div>
+
+          <section className={styles.popularProperties}>
+            <div className={styles.heading}>POPULAR PROPERTIES</div>
+            <div className={styles.listings}>
+            {properties.slice(0, 4).map((property) => (
+              <Link
+                key={property._id}
+                to={`/property-details-page/${property._id}`}
+                className={styles.linkWrapper}
+              >
+                <PropertyCard
+                  title={property.title}
+                  city={property.city}
+                  price={property.price.toString()}
+                  area={property.area.toString()}
+                />
+              </Link>
+            ))}
+            </div>
+          </section>
+
+          <section className={styles.popularBuilders}>
+            <div className={styles.heading}>POPULAR BUILDERS</div>
+            <div className={styles.listings}>
+            {properties.slice(0, 3).map((builder) => (
+              <Link
+                key={builder._id}
+                // to={`/property-details-page/${property._id}`}
+                className={styles.linkWrapper}
+              >
+                <BuilderCard
+                  name="MV Kiran Sooraj"
+                  properties="1500+ Properties"
+                />
+              </Link>
+            ))}
+            </div>
+          </section>
         </div>
-
-        <section className={styles.popularProperties}>
-          <div className={styles.heading}>POPULAR PROPERTIES</div>
-          <div className={styles.listings}>
-          {properties.slice(0, 4).map((property) => (
-            <Link
-              key={property._id}
-              to={`/property-details-page/${property._id}`}
-              className={styles.linkWrapper}
-            >
-              <PropertyCard
-                title={property.title}
-                city={property.city}
-                price={property.price.toString()}
-                area={property.area.toString()}
-              />
-            </Link>
-          ))}
-          </div>
-        </section>
-
-        <section className={styles.popularBuilders}>
-          <div className={styles.heading}>POPULAR BUILDERS</div>
-          <div className={styles.listings}>
-          {properties.slice(0, 3).map((builder) => (
-            <Link
-              key={builder._id}
-              // to={`/property-details-page/${property._id}`}
-              className={styles.linkWrapper}
-            >
-              <BuilderCard
-                name="MV Kiran Sooraj"
-                properties="1500+ Properties"
-              />
-            </Link>
-          ))}
-          </div>
-        </section>
+        <HistoryCard />
       </div>
 
       <Articles /> 
