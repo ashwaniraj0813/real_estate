@@ -221,7 +221,6 @@ const HomePage: FunctionComponent = () => {
           <CustomerReviewCard imageUrl="./istockphoto1476170969170667a-1@2x.png" name="Bob" review="I've used several real estate websites in the past, but this is by far the best! The website's advanced search features and real-time updates made it easy to find the perfect property. The agents were professional and courteous, and the entire process was seamless. I highly recommend this to everyone. Thank You" />
         </div>
       </div>
-      <HistoryCard />
       <Footer />
 
       {isLoginPopupVisible && (
