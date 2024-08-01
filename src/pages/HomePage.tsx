@@ -216,9 +216,9 @@ const HomePage: FunctionComponent = () => {
         <div className={styles.heading}>HAPPY CUSTOMERS</div>
         <div className={styles.subheading}>HAPPY TRADE</div>
         <div className={styles.reviews}>
-          <CustomerReviewCard imageUrl="./istockphoto1476170969170667a-1@2x.png" name="Sudhanshu Bakshi" review="Personal appointments arranged through their platform were instrumental in finding my dream home effortlessly. I highly recommend their services for reliable real estate insights and expert assistance." />
-          <CustomerReviewCard imageUrl="./istockphoto1476170969170667a-1@2x.png" name="Sudhanshu Bakshi" review="Personal appointments arranged through their platform were instrumental in finding my dream home effortlessly. I highly recommend their services for reliable real estate insights and expert assistance." />
-          <CustomerReviewCard imageUrl="./istockphoto1476170969170667a-1@2x.png" name="Sudhanshu Bakshi" review="Personal appointments arranged through their platform were instrumental in finding my dream home effortlessly. I highly recommend their services for reliable real estate insights and expert assistance." />
+          <CustomerReviewCard imageUrl="./istockphoto1476170969170667a-1@2x.png" name="Raghav" review="I was blown away by the exceptional service I received from your website! The website was easy to navigate, and the real estate agents were knowledgeable and responsive. I found my dream home in no time, and the entire process was stress-free. I highly recommend this to anyone looking to buy or sell a property!" />
+          <CustomerReviewCard imageUrl="./istockphoto1476170969170667a-1@2x.png" name="Kishore" review="As a first-time homebuyer, I was nervous about the process, but this made it a breeze! The website's resources and guides were incredibly helpful, and the agents were patient and understanding. I felt supported every step of the way, and I couldn't be happier with my new home. Thank you," />
+          <CustomerReviewCard imageUrl="./istockphoto1476170969170667a-1@2x.png" name="Bob" review="I've used several real estate websites in the past, but this is by far the best! The website's advanced search features and real-time updates made it easy to find the perfect property. The agents were professional and courteous, and the entire process was seamless. I highly recommend this to everyone. Thank You" />
         </div>
       </div>
       <HistoryCard />
