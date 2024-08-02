@@ -38,6 +38,29 @@ const AdminDashboard: FunctionComponent = () => {
     fetchAppointments();
   }, []);
 
+  const handleRemoveAppointment = (id) => {
+
+    const removeItem = async(id) => {
+      const response = await fetch(`http://localhost:5000/api/appointments/${id}`, {
+        method: "DELETE",
+        headers: {
+          'Content-Type': "application/json"
+        }
+      });
+
+      let result = await response.json();
+      if(!result.success || !response.ok){
+        alert("Deleting failed,please try later");
+        return;
+      }
+
+      setAppointments((prevAppointments) => prevAppointments.filter((appointment) => appointment._id !== id));
+      alert("Deleting Successfull");
+    }
+
+    removeItem(id);
+  }
+
   return (
     <div className={styles.adminDashboard}>
       <Nav />
@@ -75,7 +98,7 @@ const AdminDashboard: FunctionComponent = () => {
                           propMinWidth="106px"
                         />
                         <div >
-                      <button type="submit" className={`${styles.btn1} ${styles.accept}`}>Done</button>
+                      <button type="submit" className={`${styles.btn1} ${styles.accept}`} onClick={() => handleRemoveAppointment(appointment._id)}>Done</button>
                     </div>
                       </div>
                     </div>
