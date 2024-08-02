@@ -12,6 +12,7 @@ import Articles from "../components/Articles";
 import HistoryCard from "../components/HistoryCard";
 import CardLayout from "../components/Insights";
 import CityWiseReviews from "../components/CityWiseReviews";
+import EmergingLocalities from "../components/EmergingLocalities";
 
 const HomePage: FunctionComponent = () => {
   const [firstName, setFirstName] = useState("");
@@ -210,6 +211,7 @@ const HomePage: FunctionComponent = () => {
         <HistoryCard />
       </div>
       <CityWiseReviews />
+      <EmergingLocalities />
       <Articles /> 
       <CardLayout />
 

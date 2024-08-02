@@ -12,13 +12,13 @@ const UserProfile: React.FC = () => {
     role: "Role",
     name: "Full Name",
     phoneNumber1: "Phone Number 1",
-    phoneNumber2: "Phone Number 2",
-    phoneNumber3: "Phone Number 3",
+    phoneNumber2: "0000000000",
+    phoneNumber3: "0000000000",
     mail: "Mail",
     state: "State",
     city: "City",
     address: "Address",
-    landlineNumber: "Landline Number",
+    landlineNumber: "0000000000",
   });
 
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -77,13 +77,13 @@ const UserProfile: React.FC = () => {
           role: decoded.role || "User",
           name: `${decoded.firstname} ${decoded.lastname}`,
           phoneNumber1: decoded.phoneNumber,
-          phoneNumber2: "Phone Number 2",
-          phoneNumber3: "Phone Number 3",
+          phoneNumber2: "0000000000",
+          phoneNumber3: "0000000000",
           mail: decoded.email,
           state: decoded.state || "State",
           city: decoded.city || "City",
           address: decoded.address || "Address",
-          landlineNumber: decoded.landlineNumber || "Landline Number",
+          landlineNumber: decoded.landlineNumber || "0000000000",
         });
       } catch (error) {
         console.error("Invalid token:", error);
