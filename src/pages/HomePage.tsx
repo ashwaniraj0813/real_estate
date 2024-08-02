@@ -15,7 +15,7 @@ import Upcoming from "../components/upcoming";
 import EmergingLocalities from "../components/EmergingLocalities";
 import ReviewForm from "../components/ReviewForm";
 import PropertyTypeCarousel from '../components/PropertyTypeCarousel';
-
+import SearhBar from '../components/SearchBar';
 const HomePage: FunctionComponent = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -159,6 +159,7 @@ const HomePage: FunctionComponent = () => {
           </button>
         </form>
       </div>
+      <SearhBar />
       <div style={{ display: "flex", paddingRight: "2em" }}>
         <div className={styles.popularfeatures}>
           <div className={styles.heading}>PROPERTY DETAILS</div>
