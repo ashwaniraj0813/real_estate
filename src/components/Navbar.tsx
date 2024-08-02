@@ -10,12 +10,15 @@ import LoginPopup from "./LoginPopup";
 import RegisterPopup from "./RegisterPopup";
 import OtpPopup from "./OtpPopup";
 import CollectEmailPopup from "./CollectEmailPopup";
-
 export type NavbarProps = {
   className?: string;
+  onSearch: (query: string) => void;
 };
 
-const Navbar: FunctionComponent<NavbarProps> = ({ className = "" }) => {
+const Navbar: FunctionComponent<NavbarProps> = ({
+  className = "",
+  onSearch,
+}) => {
   const navigate = useNavigate();
   const location = useLocation();
   const [isLoginPopupOpen, setLoginPopupOpen] = useState(false);
@@ -24,7 +27,8 @@ const Navbar: FunctionComponent<NavbarProps> = ({ className = "" }) => {
   const [isCollectEmailPopupOpen, setCollectEmailPopupOpen] = useState(false);
   const [emailForOtp, setEmailForOtp] = useState("");
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false); 
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
 
   const onLOGOTextClick = useCallback(() => {
     navigate("/");
@@ -94,6 +98,16 @@ const Navbar: FunctionComponent<NavbarProps> = ({ className = "" }) => {
     setIsLoggedIn(true);
     closePopups();
   };
+  const handlesearch = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    navigate(
+      `/property-listings-page?query=${encodeURIComponent(searchQuery)}`
+    );
+    encodeURIComponent("");
+  };
+  const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchQuery(event.target.value);
+  };
 
   const isHomePage = location.pathname === "/";
   const isAboutPage = location.pathname === "/aboutus";
@@ -101,7 +115,9 @@ const Navbar: FunctionComponent<NavbarProps> = ({ className = "" }) => {
   return (
     <header
       className={`${styles.navbar} ${
-        (isHomePage||isAboutPage) && !isScrolled ? styles.navtransparent : styles.navcolored
+        (isHomePage || isAboutPage) && !isScrolled
+          ? styles.navtransparent
+          : styles.navcolored
       }`}
     >
       <div
@@ -110,7 +126,10 @@ const Navbar: FunctionComponent<NavbarProps> = ({ className = "" }) => {
       >
         LOGO
       </div>
-      <div className={`${styles.navitem} ${styles.searchBar}`}>
+      <form
+        className={`${styles.navitem} ${styles.searchBar}`}
+        onSubmit={handlesearch}
+      >
         <img
           className={styles.searchicon}
           src="/icbaselinesearch1.svg"
@@ -120,8 +139,10 @@ const Navbar: FunctionComponent<NavbarProps> = ({ className = "" }) => {
           className={styles.searchinput}
           placeholder="Luxurious Penthouses ..."
           type="text"
+          value={searchQuery}
+          onChange={handleSearchChange}
         />
-      </div>
+      </form>
       <div
         className={`${styles.navitem} ${styles.buy}`}
         onClick={onBuyTextClick}
