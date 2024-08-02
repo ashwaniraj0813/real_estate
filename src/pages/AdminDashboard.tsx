@@ -26,10 +26,10 @@ const AdminDashboard: FunctionComponent = () => {
         }
         const data = await response.json();
         setAppointments(data.appointments);
-      } 
+      }
       catch (err) {
         setError(err.message);
-      } 
+      }
       finally {
         setLoading(false);
       }
@@ -48,45 +48,78 @@ const AdminDashboard: FunctionComponent = () => {
           ) : error ? (
             <p>{error}</p>
           ) : (
-            appointments.map((appointment) => (
-              <div key={appointment._id} className={styles.profileImage}>
-                <div className={styles.profileImageChild} />
-                <div className={styles.profileImageHolderParent}>
-                  <div className={styles.profileImageHolder}>
-                    <img
-                      className={styles.istockphoto1476170969170667aIcon}
-                      loading="lazy"
-                      alt=""
-                      src="/istockphoto1476170969170667a-1@2x.png"
-                    />
+            <div className={styles.dashboardLayout}>
+              <div className={styles.appointmentsAdmin}>
+                Appointments
+                {appointments.map((appointment) => (
+
+                  <div key={appointment._id} className={styles.profileImage}>
+                    <div className={styles.profileImageChild} />
+                    <div className={styles.profileImageHolderParent}>
+                      <div className={styles.profileImageHolder}>
+                        <img
+                          className={styles.istockphoto1476170969170667aIcon}
+                          loading="lazy"
+                          alt=""
+                          src="/istockphoto1476170969170667a-1@2x.png"
+                        />
+                      </div>
+                      <div className={styles.firstName}>
+                        <FirstNameField
+                          firstName="First Name"
+                          firstNamePlaceholder={appointment.firstName}
+                        />
+                        <FirstNameField
+                          firstName="Phone No."
+                          firstNamePlaceholder={appointment.PhoneNumber.toString()}
+                          propMinWidth="106px"
+                        />
+                      </div>
+                    </div>
+                    <div className={styles.lastName}>
+                      <FirstNameField
+                        firstName="Last Name"
+                        firstNamePlaceholder={appointment.lastName}
+                        propMinWidth="110px"
+                      />
+                      <FirstNameField
+                        firstName="Mail"
+                        firstNamePlaceholder={appointment.email}
+                        propMinWidth="43px"
+                      />
+                    </div>
                   </div>
-                  <div className={styles.firstName}>
-                    <FirstNameField
-                      firstName="First Name"
-                      firstNamePlaceholder={appointment.firstName}
-                    />
-                    <FirstNameField
-                      firstName="Phone No."
-                      firstNamePlaceholder={appointment.PhoneNumber.toString()}
-                      propMinWidth="106px"
-                    />
-                  </div>
-                </div>
-                <div className={styles.lastName}>
-                  <FirstNameField
-                    firstName="Last Name"
-                    firstNamePlaceholder={appointment.lastName}
-                    propMinWidth="110px"
-                  />
-                  <FirstNameField
-                    firstName="Mail"
-                    firstNamePlaceholder={appointment.email}
-                    propMinWidth="43px"
-                  />
+
+                ))}
+              </div>
+              <div className={styles.appointmentsAdmin}>
+                <div>Verify Property</div>
+                <div className={styles.formContainer}>
+                  <form>
+                    <div className={styles.formGroup}>
+                      <label htmlFor="firstName">First Name</label>
+                      <input type="text" id="firstName" placeholder="First Name" />
+                    </div>
+                    <div className={styles.formGroup}>
+                      <label htmlFor="phoneNo">Phone No.</label>
+                      <input type="text" id="phoneNo" placeholder="Phone No." />
+                    </div>
+                    <div className={styles.formGroup}>
+                      <label htmlFor="email">Email address</label>
+                      <input type="email" id="email" placeholder="Email address" />
+                    </div>
+                    <div className={styles.formButtons}>
+                      <button type="submit" className={`${styles.btn} ${styles.accept}`}>Accept</button>
+                      <button type="button" className={`${styles.btn} ${styles.reject}`}>Reject</button>
+                    </div>
+                  </form>
                 </div>
               </div>
-            ))
-          )}
+
+            </div>
+          )
+
+          }
         </div>
       </section>
     </div>
