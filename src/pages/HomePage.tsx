@@ -13,6 +13,8 @@ import CardLayout from "../components/Insights";
 import CityWiseReviews from "../components/CityWiseReviews";
 import Upcoming from "../components/upcoming";
 import EmergingLocalities from "../components/EmergingLocalities";
+import ReviewForm from "../components/ReviewForm";
+import PropertyTypeCarousel from '../components/PropertyTypeCarousel';
 
 const HomePage: FunctionComponent = () => {
   const [firstName, setFirstName] = useState("");
@@ -223,6 +225,7 @@ const HomePage: FunctionComponent = () => {
           </section>
         </div>
         <HistoryCard />
+        <PropertyTypeCarousel />
       </div>
       <Upcoming />
       <CityWiseReviews />
@@ -251,6 +254,7 @@ const HomePage: FunctionComponent = () => {
           />
         </div>
       </div>
+      <ReviewForm />
       <Footer />
 
       {isLoginPopupVisible && (
