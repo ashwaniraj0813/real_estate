@@ -125,6 +125,10 @@ const AdminDashboard: FunctionComponent = () => {
           }
         </div>
       </section>
+       <div className={styles.formButtons2}>
+        <button type="submit" className={`${styles.btn} ${styles.accept}`}>Add Admin</button>
+        <button type="button" className={`${styles.btn} ${styles.reject}`}>Remove Admin</button>
+      </div>
     </div>
   );
 };
