@@ -19,6 +19,7 @@ const LocationDetailsForm: React.FC<LocationDetailsFormProps> = ({ formData, han
 
   return (
     <div className={styles.formSection}>
+      <button className={styles.backButton} onClick={prevStep}>← Back</button>
       <h2>Location Details</h2>
       <div className={styles.city}>
         <div className={styles.cityName}>City</div>
@@ -56,8 +57,7 @@ const LocationDetailsForm: React.FC<LocationDetailsFormProps> = ({ formData, han
           />
         </div>
       </div>
-      <button onClick={prevStep}>Back</button>
-      <button onClick={handleNextStep}>Next</button>
+      <button className={styles.nextButton} onClick={handleNextStep}>Next</button>
     </div>
   );
 };

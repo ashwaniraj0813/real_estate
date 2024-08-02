@@ -42,8 +42,7 @@ const Footer: FunctionComponent<FooterType> = ({ className = "" }) => {
 
       <div className={styles.right}>        
         <a className={`${styles.footitem} ${styles.buy}`} onClick={onBuyTextClick}>Buy</a>
-        <a className={`${styles.footitem} ${styles.rent}`} onClick={onRentTextClick}>Rent</a>
-        <a className={`${styles.footitem} ${styles.sell}`} onClick={onSellTextClick}>Sell</a>
+        <a className={`${styles.footitem} ${styles.rent}`} onClick={onRentTextClick}>Post Property</a>
         <a className={`${styles.footitem} ${styles.admin}`} onClick={onAdminTextClick}>Admin</a>
       </div>
     </section>

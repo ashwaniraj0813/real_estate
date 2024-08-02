@@ -69,6 +69,40 @@ const PricingForm: React.FC<PricingFormProps> = ({ formData, handleInputChange, 
         </div>
       </div>
 
+      <div className={styles.ProprietorDetails}>
+        <div className={styles.ProprietorDetailsName}>Proprietor Details</div>
+        <div className={styles.ProprietorName}>Propreiter name</div>
+        <div className={styles.ProprietorNameInput}>
+          <input
+            name="Propreiter name"
+            value={formData.proprietorName}
+            onChange={handleInputChange}
+            placeholder="Propreitor Name"
+            rows={3}
+          />
+          </div>
+          <div className={styles.ProprietorEmail}>Propreiter E-mail ID</div>
+        <div className={styles.ProprietorEmailInput}>
+          <input
+            name="Propreiter E-mail ID"
+            value={formData.proprietorEmail}
+            onChange={handleInputChange}
+            placeholder="Propreitor E-mail ID"
+            rows={3}
+          />
+        </div>
+        <div className={styles.ProprietorContact}>Propreiter Contact</div>
+        <div className={styles.ProprietorContactInput}>
+          <input
+            name="Propreiter Contact"
+            value={formData.proprietorPhone}
+            onChange={handleInputChange}
+            placeholder="Propreitor Contact"
+            rows={3}
+          />
+        </div>
+      </div>
+
       <div className={styles.buttons}>
         <button onClick={prevStep}>Back</button>
         <button type="submit" onClick={handleSubmit}>Submit</button>
