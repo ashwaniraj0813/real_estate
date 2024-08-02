@@ -63,7 +63,7 @@ const AdminDashboard: FunctionComponent = () => {
 
   return (
     <div className={styles.adminDashboard}>
-      <Nav />
+      
       <section className={styles.content}>
         <div className={styles.profile}>
           {loading ? (
