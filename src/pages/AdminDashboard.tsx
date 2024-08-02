@@ -50,7 +50,7 @@ const AdminDashboard: FunctionComponent = () => {
           ) : (
             <div className={styles.dashboardLayout}>
               <div className={styles.appointmentsAdmin}>
-                Appointments
+               <div className={styles.heading}><b>Appointments</b></div>
                 {appointments.map((appointment) => (
 
                   <div key={appointment._id} className={styles.profileImage}>
@@ -74,6 +74,9 @@ const AdminDashboard: FunctionComponent = () => {
                           firstNamePlaceholder={appointment.PhoneNumber.toString()}
                           propMinWidth="106px"
                         />
+                        <div >
+                      <button type="submit" className={`${styles.btn1} ${styles.accept}`}>Done</button>
+                    </div>
                       </div>
                     </div>
                     <div className={styles.lastName}>
@@ -93,7 +96,7 @@ const AdminDashboard: FunctionComponent = () => {
                 ))}
               </div>
               <div className={styles.appointmentsAdmin}>
-                <div>Verify Property</div>
+                <div className={styles.heading}><b>Verify Properties</b></div>
                 <div className={styles.formContainer}>
                   <form>
                     <div className={styles.formGroup}>
