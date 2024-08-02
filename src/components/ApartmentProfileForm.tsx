@@ -112,16 +112,7 @@ const ApartmentProfileForm: React.FC<ApartmentProfileFormProps> = ({ formData, h
             name="totalFloorDetails"
             value={formData.totalFloorDetails}
             onChange={handleInputChange}
-            placeholder='Total Floors'
-          />
-        </div>
-        <div className={styles.propertyFloorDetailsInput}>
-          <input
-            type="number"
-            name="propertyFloorDetails"
-            value={formData.propertyFloorDetails}
-            onChange={handleInputChange}
-            placeholder='Property on Floor'
+            placeholder='Total Floors'  
           />
         </div>
       </div>
