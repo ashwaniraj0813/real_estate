@@ -1,4 +1,3 @@
-// HomePage.tsx
 import { FunctionComponent, useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import styles from "./HomePage.module.css";
@@ -8,9 +7,12 @@ import CustomerReviewCard from "../components/CustomerReviewCard";
 import LoginPopup from "../components/LoginPopup";
 import PropertyCard from "../components/PropertyCard";
 import BuilderCard from "../components/BuilderCard";
-import Articles from "../components/Articles"; 
+import Articles from "../components/Articles";
 import HistoryCard from "../components/HistoryCard";
 import CardLayout from "../components/Insights";
+import CityWiseReviews from "../components/CityWiseReviews";
+import Upcoming from "../components/upcoming";
+import EmergingLocalities from "../components/EmergingLocalities";
 
 const HomePage: FunctionComponent = () => {
   const [firstName, setFirstName] = useState("");
@@ -19,7 +21,7 @@ const HomePage: FunctionComponent = () => {
   const [phone, setPhone] = useState("");
   const [isLoginPopupVisible, setIsLoginPopupVisible] = useState(false);
   const [properties, setProperties] = useState([]);
-  
+
   const navigate = useNavigate();
 
   const handleSubmit = async (event: React.FormEvent) => {
@@ -56,36 +58,41 @@ const HomePage: FunctionComponent = () => {
     }
   };
 
-  useEffect(() => {
-    const fetchProperties = async () => {
-      try {
-        const response = await fetch("http://localhost:5000/api/property", {
+  const fetchProperties = async (query: string = "") => {
+    try {
+      const response = await fetch(
+        `http://localhost:5000/api/property?query=${query}`,
+        {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
           },
-        });
-
-        if (!response.ok) {
-          throw new Error("Failed to fetch properties");
         }
+      );
 
-        const result = await response.json();
-        setProperties(result);
-      } catch (error) {
-        console.log("Error fetching property cards:", error);
+      if (!response.ok) {
+        throw new Error("Failed to fetch properties");
       }
-    };
 
+      const result = await response.json();
+      setProperties(result);
+    } catch (error) {
+      console.log("Error fetching property cards:", error);
+    }
+  };
+
+  useEffect(() => {
     fetchProperties();
   }, []);
 
   useEffect(() => {
     const fetchArticles = async () => {
       try {
-        const response = await fetch('https://newsapi.org/v2/everything?q=real%20estate&apiKey=24bcf6c46b474bec8c8e6a95e67f0cbe');
+        const response = await fetch(
+          "https://newsapi.org/v2/everything?q=real%20estate&apiKey=24bcf6c46b474bec8c8e6a95e67f0cbe"
+        );
         const data = await response.json();
-        setArticle(data.articles[7]); 
+        setArticle(data.articles[7]);
       } catch (error) {
         console.error("Error fetching the articles: ", error);
       }
@@ -95,8 +102,17 @@ const HomePage: FunctionComponent = () => {
   }, []);
 
   return (
-    <div className={isLoginPopupVisible ? `${styles.pageContainer} ${styles.blur}` : styles.pageContainer}>
-      <Navbar onLoginClick={() => setIsLoginPopupVisible(true)} />
+    <div
+      className={
+        isLoginPopupVisible
+          ? `${styles.pageContainer} ${styles.blur}`
+          : styles.pageContainer
+      }
+    >
+      <Navbar
+        onLoginClick={() => setIsLoginPopupVisible(true)}
+        onSearch={fetchProperties}
+      />
 
       <div className={styles.hero}>
         <div className={styles.introtext}>Your dream home awaits...</div>
@@ -141,85 +157,100 @@ const HomePage: FunctionComponent = () => {
           </button>
         </form>
       </div>
-      <HistoryCard />
-      <div className={styles.popularfeatures}>
-        <div className={styles.heading}>PROPERTY DETAILS</div>
-        <div className={styles.subheading}>ALL AWESOME POPULAR LOCATIONS</div>
-        <div className={styles.features}>
-          <div className={styles.feature}>
-            <img src="cut-paper@2x.png" alt="3200+ Sqft." />
-            <p>3200+ Sqft.</p>
+      <div style={{ display: "flex", paddingRight: "2em" }}>
+        <div className={styles.popularfeatures}>
+          <div className={styles.heading}>PROPERTY DETAILS</div>
+          <div className={styles.subheading}>ALL AWESOME POPULAR LOCATIONS</div>
+          <div className={styles.features}>
+            <div className={styles.feature}>
+              <img src="cut-paper@2x.png" alt="3200+ Sqft." />
+              <p>3200+ Sqft.</p>
+            </div>
+            <div className={styles.feature}>
+              <img src="bedroom@2x.png" alt="3BHK" />
+              <p>3BHK</p>
+            </div>
+            <div className={styles.feature}>
+              <img src="car@2x.png" alt="Garage" />
+              <p>Garage</p>
+            </div>
+            <div className={styles.feature}>
+              <img src="swimming-pool@2x.png" alt="Swimming Pool" />
+              <p>Swimming Pool</p>
+            </div>
+            <div className={styles.feature}>
+              <img src="full-family@2x.png" alt="Ideal for Family" />
+              <p>Ideal for Family</p>
+            </div>
           </div>
-          <div className={styles.feature}>
-            <img src="bedroom@2x.png" alt="3BHK" />
-            <p>3BHK</p>
-          </div>
-          <div className={styles.feature}>
-            <img src="car@2x.png" alt="Garage" />
-            <p>Garage</p>
-          </div>
-          <div className={styles.feature}>
-            <img src="swimming-pool@2x.png" alt="Swimming Pool" />
-            <p>Swimming Pool</p>
-          </div>
-          <div className={styles.feature}>
-            <img src="full-family@2x.png" alt="Ideal for Family" />
-            <p>Ideal for Family</p>
-          </div>
+
+          <section className={styles.popularProperties}>
+            <div className={styles.heading}>POPULAR PROPERTIES</div>
+            <div className={styles.listings}>
+              {properties.slice(0, 4).map((property) => (
+                <Link
+                  key={property._id}
+                  to={`/property-details-page/${property._id}`}
+                  className={styles.linkWrapper}
+                >
+                  <PropertyCard
+                    title={property.title}
+                    city={property.city}
+                    price={property.price.toString()}
+                    area={property.area.toString()}
+                  />
+                </Link>
+              ))}
+            </div>
+          </section>
+
+          <section className={styles.popularBuilders}>
+            <div className={styles.heading}>POPULAR BUILDERS</div>
+            <div className={styles.listings}>
+              {properties.slice(0, 3).map((builder) => (
+                <Link
+                  key={builder._id}
+                  // to={`/property-details-page/${property._id}`}
+                  className={styles.linkWrapper}
+                >
+                  <BuilderCard
+                    name="MV Kiran Sooraj"
+                    properties="1500+ Properties"
+                  />
+                </Link>
+              ))}
+            </div>
+          </section>
         </div>
-
-        <section className={styles.popularProperties}>
-          <div className={styles.heading}>POPULAR PROPERTIES</div>
-          <div className={styles.listings}>
-          {properties.slice(0, 4).map((property) => (
-            <Link
-              key={property._id}
-              to={`/property-details-page/${property._id}`}
-              className={styles.linkWrapper}
-            >
-              <PropertyCard
-                title={property.title}
-                city={property.city}
-                price={property.price.toString()}
-                area={property.area.toString()}
-              />
-            </Link>
-          ))}
-          </div>
-        </section>
-
-        <section className={styles.popularBuilders}>
-          <div className={styles.heading}>POPULAR BUILDERS</div>
-          <div className={styles.listings}>
-          {properties.slice(0, 3).map((builder) => (
-            <Link
-              key={builder._id}
-              // to={`/property-details-page/${property._id}`}
-              className={styles.linkWrapper}
-            >
-              <BuilderCard
-                name="MV Kiran Sooraj"
-                properties="1500+ Properties"
-              />
-            </Link>
-          ))}
-          </div>
-        </section>
+        <HistoryCard />
       </div>
-
-      <Articles /> 
+      <Upcoming />
+      <CityWiseReviews />
+      <EmergingLocalities />
+      <Articles />
       <CardLayout />
 
       <div className={styles.happycustomers}>
         <div className={styles.heading}>HAPPY CUSTOMERS</div>
         <div className={styles.subheading}>HAPPY TRADE</div>
         <div className={styles.reviews}>
-          <CustomerReviewCard imageUrl="./istockphoto1476170969170667a-1@2x.png" name="Sudhanshu Bakshi" review="Personal appointments arranged through their platform were instrumental in finding my dream home effortlessly. I highly recommend their services for reliable real estate insights and expert assistance." />
-          <CustomerReviewCard imageUrl="./istockphoto1476170969170667a-1@2x.png" name="Sudhanshu Bakshi" review="Personal appointments arranged through their platform were instrumental in finding my dream home effortlessly. I highly recommend their services for reliable real estate insights and expert assistance." />
-          <CustomerReviewCard imageUrl="./istockphoto1476170969170667a-1@2x.png" name="Sudhanshu Bakshi" review="Personal appointments arranged through their platform were instrumental in finding my dream home effortlessly. I highly recommend their services for reliable real estate insights and expert assistance." />
+          <CustomerReviewCard
+            imageUrl="./istockphoto1476170969170667a-1@2x.png"
+            name="Raghav"
+            review="I was blown away by the exceptional service I received from your website! The website was easy to navigate, and the real estate agents were knowledgeable and responsive. I found my dream home in no time, and the entire process was stress-free. I highly recommend this to anyone looking to buy or sell a property!"
+          />
+          <CustomerReviewCard
+            imageUrl="./istockphoto1476170969170667a-1@2x.png"
+            name="Kishore"
+            review="As a first-time homebuyer, I was nervous about the process, but this made it a breeze! The website's resources and guides were incredibly helpful, and the agents were patient and understanding. I felt supported every step of the way, and I couldn't be happier with my new home. Thank you,"
+          />
+          <CustomerReviewCard
+            imageUrl="./istockphoto1476170969170667a-1@2x.png"
+            name="Bob"
+            review="I've used several real estate websites in the past, but this is by far the best! The website's advanced search features and real-time updates made it easy to find the perfect property. The agents were professional and courteous, and the entire process was seamless. I highly recommend this to everyone. Thank You"
+          />
         </div>
       </div>
-
       <Footer />
 
       {isLoginPopupVisible && (
