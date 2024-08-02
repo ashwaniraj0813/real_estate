@@ -19,13 +19,13 @@ const localities: Locality[] = [
 const CityWiseReviews: React.FC = () => {
   return (
     <>
+        <div className = {styles.head}>
+            <h2>Top Gainers</h2>
+            <p>across Visakhapatnam with highest appreciation</p>
+        </div>
         <div className={styles.container}>
-            <div style={{display: "flex", flexDirection: "column", alignItems: "flex-start"}}>
-                <h2>Top Gainers</h2>
-                <p>across Visakhapatnam with highest appreciation</p>
-            </div>
         <div className={styles.table}>
-            <div style={{display: "flex", border: "1px grey solid", borderRadius: "0.3em", padding: "0.4em", backgroundColor: "#e1e1e1"}}>
+            <div className={styles.headerRow} >
                 <div className={styles.localityHeader}>Locality</div>
                 <div className={styles.rateHeader}>Rate on 99acres</div>
                 <div className={styles.rentalYieldHeader}>Rental Yield</div>
@@ -36,7 +36,7 @@ const CityWiseReviews: React.FC = () => {
             <div key={index} className={styles.row}>
                 <div className={styles.locality}>
                 <img src="/image.png" alt="location" className={styles.icon} />
-                <div>
+                <div className={styles.loc}>
                     <h3>{locality.name}</h3>
                     <p>Visakhapatnam</p>
                 </div>
@@ -46,8 +46,8 @@ const CityWiseReviews: React.FC = () => {
                 <div className={styles.priceTrend}>{locality.priceTrend}</div>
             </div>
             ))}
+            <button className={styles.viewAllButton}>View all most appreciated localities of Visakhapatnam</button>
         </div>
-        <button className={styles.viewAllButton}>View all most appreciated localities of Visakhapatnam</button>
     </>
   );
 };
