@@ -1,5 +1,5 @@
 import { FunctionComponent, useCallback, useState, useEffect } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate, useLocation, Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import SortAndFilter from "../components/SortAndFilter";
 import PropertyCard from "../components/PropertyCard";
@@ -8,32 +8,37 @@ import Footer from "../components/Footer";
 
 const PropertyListingsPage: FunctionComponent = () => {
   const [properties, setProperties] = useState([]);
-
   const navigate = useNavigate();
+  const location = useLocation();
 
-  useEffect(() => {
-    const fetchProperties = async () => {
-      try {
-        const response = await fetch("http://localhost:5000/api/property", {
+  const fetchProperties = async (query: string = "") => {
+    try {
+      const response = await fetch(
+        `http://localhost:5000/api/property?query=${query}`,
+        {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
           },
-        });
-
-        if (!response.ok) {
-          throw new Error("Failed to fetch properties");
         }
+      );
 
-        const result = await response.json();
-        setProperties(result);
-      } catch (error) {
-        console.log("Error fetching property cards:", error);
+      if (!response.ok) {
+        throw new Error("Failed to fetch properties");
       }
-    };
 
-    fetchProperties();
-  }, []); // Empty array to ensure it runs only once when the component mounts
+      const result = await response.json();
+      setProperties(result);
+    } catch (error) {
+      console.log("Error fetching property cards:", error);
+    }
+  };
+
+  useEffect(() => {
+    const searchParams = new URLSearchParams(location.search);
+    const query = searchParams.get("query") || "";
+    fetchProperties(query);
+  }, [location.search]);
 
   const onRentTextClick = useCallback(() => {
     navigate("/rent");
@@ -52,14 +57,14 @@ const PropertyListingsPage: FunctionComponent = () => {
           {properties.map((property) => (
             <Link
               key={property._id}
-              to={`/property-details-page/${property._id}`} // Fixed string interpolation with backticks
-              className={styles.linkWrapper} // Add any necessary styles for the Link
+              to={`/property-details-page/${property._id}`}
+              className={styles.linkWrapper}
             >
               <PropertyCard
                 title={property.title}
                 city={property.city}
-                price={property.price.toString()} // Ensure price is converted to string if necessary
-                area={property.area.toString()} // Ensure area is converted to string if necessary
+                price={property.price.toString()}
+                area={property.area.toString()}
               />
             </Link>
           ))}
