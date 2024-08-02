@@ -227,6 +227,13 @@
   border-radius: 4px;
   cursor: pointer;
 }
+.btn1 {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
 
 .accept {
   background-color: green;
@@ -305,4 +312,8 @@
   .profileImage1 {
     gap: var(--gap-31xl);
   }
+}
+.heading{
+  font-size: larger;
+  margin: 20px;
 }
