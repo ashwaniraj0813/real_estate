@@ -160,6 +160,8 @@ const HomePage: FunctionComponent = () => {
         </form>
       </div>
       <SearhBar />
+      
+        <PropertyTypeCarousel />
       <div style={{ display: "flex", paddingRight: "2em" }}>
         <div className={styles.popularfeatures}>
           <div className={styles.heading}>PROPERTY DETAILS</div>
@@ -226,7 +228,6 @@ const HomePage: FunctionComponent = () => {
           </section>
         </div>
         <HistoryCard />
-        <PropertyTypeCarousel />
       </div>
       <Upcoming />
       <CityWiseReviews />
