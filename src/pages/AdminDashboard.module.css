@@ -219,6 +219,11 @@
   display: flex;
   justify-content: space-between;
 }
+.formButtons2 {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 65px;
+}
 
 .btn {
   width: 48%;

@@ -38,9 +38,32 @@ const AdminDashboard: FunctionComponent = () => {
     fetchAppointments();
   }, []);
 
+  const handleRemoveAppointment = (id) => {
+
+    const removeItem = async(id) => {
+      const response = await fetch(`http://localhost:5000/api/appointments/${id}`, {
+        method: "DELETE",
+        headers: {
+          'Content-Type': "application/json"
+        }
+      });
+
+      let result = await response.json();
+      if(!result.success || !response.ok){
+        alert("Deleting failed,please try later");
+        return;
+      }
+
+      setAppointments((prevAppointments) => prevAppointments.filter((appointment) => appointment._id !== id));
+      alert("Deleting Successfull");
+    }
+
+    removeItem(id);
+  }
+
   return (
     <div className={styles.adminDashboard}>
-      <Nav />
+      
       <section className={styles.content}>
         <div className={styles.profile}>
           {loading ? (
@@ -75,7 +98,7 @@ const AdminDashboard: FunctionComponent = () => {
                           propMinWidth="106px"
                         />
                         <div >
-                      <button type="submit" className={`${styles.btn1} ${styles.accept}`}>Done</button>
+                      <button type="submit" className={`${styles.btn1} ${styles.accept}`} onClick={() => handleRemoveAppointment(appointment._id)}>Done</button>
                     </div>
                       </div>
                     </div>
@@ -125,6 +148,10 @@ const AdminDashboard: FunctionComponent = () => {
           }
         </div>
       </section>
+       <div className={styles.formButtons2}>
+        <button type="submit" className={`${styles.btn} ${styles.accept}`}>Add Admin</button>
+        <button type="button" className={`${styles.btn} ${styles.reject}`}>Remove Admin</button>
+      </div>
     </div>
   );
 };
