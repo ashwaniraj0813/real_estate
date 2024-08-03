@@ -159,35 +159,15 @@ const HomePage: FunctionComponent = () => {
           </button>
         </form>
       </div>
+      
+      <div style={{ display: "flex" }}>
       <SearhBar />
+      <HistoryCard />
+      </div>
       
         <PropertyTypeCarousel />
       <div style={{ display: "flex", paddingRight: "2em" }}>
         <div className={styles.popularfeatures}>
-          <div className={styles.heading}>PROPERTY DETAILS</div>
-          <div className={styles.subheading}>ALL AWESOME POPULAR LOCATIONS</div>
-          <div className={styles.features}>
-            <div className={styles.feature}>
-              <img src="cut-paper@2x.png" alt="3200+ Sqft." />
-              <p>3200+ Sqft.</p>
-            </div>
-            <div className={styles.feature}>
-              <img src="bedroom@2x.png" alt="3BHK" />
-              <p>3BHK</p>
-            </div>
-            <div className={styles.feature}>
-              <img src="car@2x.png" alt="Garage" />
-              <p>Garage</p>
-            </div>
-            <div className={styles.feature}>
-              <img src="swimming-pool@2x.png" alt="Swimming Pool" />
-              <p>Swimming Pool</p>
-            </div>
-            <div className={styles.feature}>
-              <img src="full-family@2x.png" alt="Ideal for Family" />
-              <p>Ideal for Family</p>
-            </div>
-          </div>
 
           <section className={styles.popularProperties}>
             <div className={styles.heading}>POPULAR PROPERTIES</div>
@@ -227,7 +207,7 @@ const HomePage: FunctionComponent = () => {
             </div>
           </section>
         </div>
-        <HistoryCard />
+        
       </div>
       <Upcoming />
       <CityWiseReviews />
