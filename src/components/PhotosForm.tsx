@@ -10,8 +10,17 @@ interface PhotosFormProps {
 }
 
 const PhotosForm: React.FC<PhotosFormProps> = ({ handleImageChange, handleRemoveImage, selectedImages, nextStep, prevStep }) => {
+  const handleNextStep = () => {
+    if (selectedImages.length >= 4) {
+      nextStep();
+    } else {
+      alert('Please upload at least 4 media items before proceeding.');
+    }
+  };
+
   return (
     <div className={styles.formSection}>
+      <button className={styles.backButton} onClick={prevStep}>Back</button>
       <h2>Photos and Videos</h2>
       <input type="file" accept="image/*,video/*" onChange={handleImageChange} multiple />
       <div className={styles.imagePreview}>
@@ -22,8 +31,8 @@ const PhotosForm: React.FC<PhotosFormProps> = ({ handleImageChange, handleRemove
           </div>
         ))}
       </div>
-      <button onClick={prevStep}>Back</button>
-      <button onClick={nextStep}>Next</button>
+      
+      <button className={styles.nextButton} onClick={handleNextStep}>Next</button>
     </div>
   );
 };

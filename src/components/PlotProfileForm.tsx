@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './PropertyProfileForm.module.css';
+import styles from './PlotProfileForm.module.css';
 
 interface PlotProfileFormProps {
   formData: any;
@@ -11,6 +11,7 @@ interface PlotProfileFormProps {
 const PlotProfileForm: React.FC<PlotProfileFormProps> = ({ formData, handleInputChange, nextStep, prevStep }) => {
   return (
     <div className={styles.formSection}>
+      <button className={styles.backButton} onClick={prevStep}>Back</button>
       <h2>Plot Profile</h2>
       <div className={styles.plotArea}>
         <div className={styles.plotAreaName}>Plot Area (in sq. ft)</div>
@@ -153,8 +154,7 @@ const PlotProfileForm: React.FC<PlotProfileFormProps> = ({ formData, handleInput
         </div>
       </div>
 
-      <button onClick={prevStep}>Back</button>
-      <button onClick={nextStep}>Next</button>
+      <button className={styles.nextButton} onClick={nextStep}>Next</button>
     </div>
   );
 };
