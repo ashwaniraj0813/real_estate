@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './PropertyProfileForm.module.css';
+import styles from './HouseProfileForm.module.css';
 
 interface HouseProfileFormProps {
   formData: any;
@@ -11,6 +11,7 @@ interface HouseProfileFormProps {
 const HouseProfileForm: React.FC<HouseProfileFormProps> = ({ formData, handleInputChange, nextStep, prevStep }) => {
   return (
     <div className={styles.formSection}>
+      <button className={styles.backButton} onClick={prevStep}>Back</button>
       <h2>House Profile</h2>
       <div className={styles.bedrooms}>
         <div className={styles.bedroomsName}>Number of Bedrooms</div>
@@ -62,7 +63,7 @@ const HouseProfileForm: React.FC<HouseProfileFormProps> = ({ formData, handleInp
         </div>
       </div>
 
-     <div className={styles.floorDetails}>
+      <div className={styles.floorDetails}>
         <div className={styles.floorDetailsName}>Floor details</div>
         <div className={styles.totalFloorDetailsInput}>
           <input
@@ -131,7 +132,7 @@ const HouseProfileForm: React.FC<HouseProfileFormProps> = ({ formData, handleInp
         </div>
       )}
 
-<div className={styles.ownershipType}>
+      <div className={styles.ownershipType}>
         <div className={styles.ownershipTypeName}>Ownership</div>
         <div className={styles.ownershipTypeInput}>
           <label>
@@ -181,8 +182,7 @@ const HouseProfileForm: React.FC<HouseProfileFormProps> = ({ formData, handleInp
         </div>
       </div>
       
-      <button onClick={prevStep}>Back</button>
-      <button onClick={nextStep}>Next</button>
+      <button className={styles.nextButton} onClick={nextStep}>Next</button>
     </div>
   );
 };

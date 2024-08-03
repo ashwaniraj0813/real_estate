@@ -83,7 +83,7 @@ const AdminDashboard: FunctionComponent = () => {
                           className={styles.istockphoto1476170969170667aIcon}
                           loading="lazy"
                           alt=""
-                          src="/istockphoto1476170969170667a-1@2x.png"
+                          src="/userdefault.jpg"
                         />
                       </div>
                       <div className={styles.firstName}>

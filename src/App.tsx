@@ -22,6 +22,7 @@ import UserPreviouslySaved from "./pages/UserPreviouslySaved";
 import UserPreviouslyContacted from "./pages/UserPreviouslyContacted";
 import Register from "./pages/Register";
 import LogIn from "./pages/LogIn";
+import Properties from "./pages/Properties";
 
 function App() {
   const action = useNavigationType();
@@ -142,6 +143,7 @@ function App() {
       <Route path="/admin-dashboard" element={<AdminDashboard />} />
       <Route path="/register" element={<Register />} />
       <Route path="/log-in" element={<LogIn />} />
+      <Route path="/properties" element={<Properties />} />
     </Routes>
   );
 }

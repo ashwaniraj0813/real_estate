@@ -9,8 +9,36 @@ interface PricingFormProps {
 }
 
 const PricingForm: React.FC<PricingFormProps> = ({ formData, handleInputChange, prevStep, handleSubmit }) => {
+  const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, checked } = e.target;
+    handleInputChange({
+      ...e,
+      target: {
+        ...e.target,
+        value: checked
+      }
+    });
+  };
+
+  const validateForm = () => {
+    // Check if required fields are filled
+    if (!formData.price || !formData.proprietorName || !formData.proprietorEmail || !formData.proprietorPhone) {
+      alert('Please fill in all the required fields before submitting.');
+      return false;
+    }
+    return true;
+  };
+
+  const handleFormSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (validateForm()) {
+      handleSubmit(e);
+    }
+  };
+
   return (
     <div className={styles.formSection}>
+      <button className={styles.backButton} onClick={prevStep}>Back</button>
       <h2>Pricing and Other Details</h2>
 
       <div className={styles.priceDetails}>
@@ -32,7 +60,7 @@ const PricingForm: React.FC<PricingFormProps> = ({ formData, handleInputChange, 
             type="checkbox"
             name="allInclusivePrice"
             checked={formData.allInclusivePrice}
-            onChange={handleInputChange}
+            onChange={handleCheckboxChange}
           />
           All Inclusive Price
         </label>
@@ -41,7 +69,7 @@ const PricingForm: React.FC<PricingFormProps> = ({ formData, handleInputChange, 
             type="checkbox"
             name="taxAndGovtChargesExcluded"
             checked={formData.taxAndGovtChargesExcluded}
-            onChange={handleInputChange}
+            onChange={handleCheckboxChange}
           />
           Tax and Govt. Charges Excluded
         </label>
@@ -50,7 +78,7 @@ const PricingForm: React.FC<PricingFormProps> = ({ formData, handleInputChange, 
             type="checkbox"
             name="priceNegotiable"
             checked={formData.priceNegotiable}
-            onChange={handleInputChange}
+            onChange={handleCheckboxChange}
           />
           Price Negotiable
         </label>
@@ -69,43 +97,39 @@ const PricingForm: React.FC<PricingFormProps> = ({ formData, handleInputChange, 
         </div>
       </div>
 
-      <div className={styles.ProprietorDetails}>
-        <div className={styles.ProprietorDetailsName}>Proprietor Details</div>
-        <div className={styles.ProprietorName}>Propreiter name</div>
-        <div className={styles.ProprietorNameInput}>
+      <div className={styles.proprietorDetails}>
+        <div className={styles.proprietorDetailsName}>Proprietor Details</div>
+        <div className={styles.proprietorName}>Proprietor Name</div>
+        <div className={styles.proprietorNameInput}>
           <input
-            name="Propreiter name"
+            name="proprietorName"
             value={formData.proprietorName}
             onChange={handleInputChange}
-            placeholder="Propreitor Name"
-            rows={3}
-          />
-          </div>
-          <div className={styles.ProprietorEmail}>Propreiter E-mail ID</div>
-        <div className={styles.ProprietorEmailInput}>
-          <input
-            name="Propreiter E-mail ID"
-            value={formData.proprietorEmail}
-            onChange={handleInputChange}
-            placeholder="Propreitor E-mail ID"
-            rows={3}
+            placeholder="Proprietor Name"
           />
         </div>
-        <div className={styles.ProprietorContact}>Propreiter Contact</div>
-        <div className={styles.ProprietorContactInput}>
+        <div className={styles.proprietorEmail}>Proprietor E-mail ID</div>
+        <div className={styles.proprietorEmailInput}>
           <input
-            name="Propreiter Contact"
+            name="proprietorEmail"
+            value={formData.proprietorEmail}
+            onChange={handleInputChange}
+            placeholder="Proprietor E-mail ID"
+          />
+        </div>
+        <div className={styles.proprietorContact}>Proprietor Contact</div>
+        <div className={styles.proprietorContactInput}>
+          <input
+            name="proprietorPhone"
             value={formData.proprietorPhone}
             onChange={handleInputChange}
-            placeholder="Propreitor Contact"
-            rows={3}
+            placeholder="Proprietor Contact"
           />
         </div>
       </div>
 
       <div className={styles.buttons}>
-        <button onClick={prevStep}>Back</button>
-        <button type="submit" onClick={handleSubmit}>Submit</button>
+        <button type="submit" className={styles.submitButton} onClick={handleFormSubmit}>Submit</button>
       </div>
     </div>
   );

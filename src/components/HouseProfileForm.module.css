@@ -10,19 +10,20 @@
      max-width: 600px;
    }
    
-   .city, .address, .addressLandmark {
+   .bedrooms, .bathrooms, .balconies, .areaDetails, .floorDetails, .availability, .ageOfProperty, .possession, .ownershipType {
      display: flex;
      flex-direction: column;
      gap: 10px;
    }
    
-   .cityInput input, .addressInput input, .addressLandmarkInput input {
+   .bedroomsInput input, .bathroomsInput input, .balconiesInput input, .areaDetailsInput input, 
+   .totalFloorDetailsInput input, .ageOfPropertyInput input, .possessionInput input, .ownershipTypeInput input {
      border-radius: 5px;
      padding: 10px;
      border: 1px solid #ccc;
      width: 100%;
-     height: 40px; 
-     max-width: 500px; 
+     height: 40px; /* Common height */
+     max-width: 500px; /* Adjust as needed */
    }
    
    h2 {
@@ -30,9 +31,30 @@
      margin-top: 40px; /* Added margin to create gap between back button and header */
    }
    
-   .cityName, .addressName, .addressLandmarkName {
+   .bedroomsName, .bathroomsName, .balconiesName, .areaDetailsName, .floorDetailsName, .availabilityName, 
+   .ageOfPropertyName, .possessionName, .ownershipTypeName {
      color: #34495e;
      font-weight: bold;
+   }
+   
+   .availabilityInput label, .ownershipTypeInput label {
+     display: flex;
+     align-items: center;
+     gap: 10px;
+   }
+   
+   .availabilityInput label input, .ownershipTypeInput label input {
+     margin-right: 10px;
+   }
+   
+   .ownershipTypeInput input {
+     width: 16px; /* Smaller width for radio buttons */
+     height: 16px; /* Smaller height for radio buttons */
+     margin: 0; /* Remove default margin */
+   }
+   
+   .ownershipTypeInput label {
+     font-size: 14px; /* Smaller font size for labels */
    }
    
    .backButton {
@@ -65,5 +87,11 @@
    
    .nextButton:hover {
      background-color: #1f6391;
+   }
+   
+   @media (max-width: 600px) {
+     .formSection {
+       width: 100%;
+     }
    }
    

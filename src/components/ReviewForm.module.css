@@ -1,0 +1,69 @@
+/* Styles for ReviewForm */
+.reviewFormContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 600px; /* Adjusted max-width for better form size */
+    margin: auto; /* Center form horizontally */
+  }
+  
+  .heading {
+    font-size: 28px; /* Larger heading */
+    font-weight: 700; /* Bold heading */
+    margin-bottom: 20px;
+    color: #333; /* Darker color for contrast */
+  }
+  
+  .reviewForm {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 15px; /* Space between elements */
+  }
+  
+  .input,
+  .textarea {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px; /* Rounded corners */
+    font-size: 16px;
+    width: 100%; /* Full width of the form */
+  }
+  
+  .input {
+    height: 45px; /* Slightly taller input */
+  }
+  
+  .textarea {
+    min-height: 120px; /* Taller textarea */
+    resize: vertical; /* Allows vertical resizing */
+  }
+  
+  .submitButton {
+    background-color: #6f42c1; /* Purple color */
+    color: white;
+    border: none;
+    border-radius: 25px; /* Rounded corners */
+    padding: 10px 20px; /* Padding for better button shape */
+    font-size: 16px; /* Slightly larger font size */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth color change and slight scaling */
+    align-self: flex-end; /* Aligns the button to the right */
+    text-transform: uppercase; /* Capitalizes button text */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  }
+  
+  .submitButton:hover {
+    background-color: #5a2d91; /* Darker shade of purple on hover */
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+  }
+  
+  .submitButtonWrapper {
+    display: flex;
+    justify-content: flex-end; /* Aligns button to the right */
+  }
+  
