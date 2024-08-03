@@ -103,7 +103,7 @@ function Homepage() {
                 gap={3}
             >
                 <Text w="60px" h="1px" bgColor="#ccc"></Text>
-                <Text>Are you a Property Owner? </Text>
+                <Text>"Discover Homes"</Text>
                 <Text w="60px" h="1px" bgColor="#ccc"></Text>
             </Flex>
 
