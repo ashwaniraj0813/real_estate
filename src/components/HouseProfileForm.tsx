@@ -3,49 +3,91 @@ import styles from './HouseProfileForm.module.css';
 
 interface HouseProfileFormProps {
   formData: any;
-  handleInputChange: (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => void;
+  handleInputChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   nextStep: () => void;
   prevStep: () => void;
 }
 
-const HouseProfileForm: React.FC<HouseProfileFormProps> = ({ formData, handleInputChange, nextStep, prevStep }) => {
+const HouseProfileForm: React.FC<HouseProfileFormProps> = ({
+  formData,
+  handleInputChange,
+  nextStep,
+  prevStep,
+}) => {
+  const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, checked } = e.target;
+    handleInputChange({
+      ...e,
+      target: {
+        ...e.target,
+        value: checked,
+      },
+    });
+  };
+
+  const handleSubmit = () => {
+    // Ensure all required fields are filled
+    const requiredFields = [
+      "numberOfBedrooms",
+      "numberOfBathrooms",
+      "numberOfBalconies",
+      "areaDetails",
+      "totalFloorDetails",
+      "propertyFloorDetails",
+    ];
+
+    for (const field of requiredFields) {
+      if (!formData[field]) {
+        alert("Please fill in all the required fields before proceeding.");
+        return;
+      }
+    }
+
+    nextStep();
+  };
+
   return (
     <div className={styles.formSection}>
-      <button className={styles.backButton} onClick={prevStep}>Back</button>
+      <button className={styles.backButton} onClick={prevStep}>
+        Back
+      </button>
       <h2>House Profile</h2>
+
       <div className={styles.bedrooms}>
         <div className={styles.bedroomsName}>Number of Bedrooms</div>
         <div className={styles.bedroomsInput}>
           <input
             type="number"
             name="numberOfBedrooms"
-            value={formData.numberOfBedrooms}
+            value={formData.numberOfBedrooms || ""}
             onChange={handleInputChange}
-            placeholder='0'
+            placeholder="0"
           />
         </div>
       </div>
+
       <div className={styles.bathrooms}>
         <div className={styles.bathroomsName}>Number of Bathrooms</div>
         <div className={styles.bathroomsInput}>
           <input
             type="number"
             name="numberOfBathrooms"
-            value={formData.numberOfBathrooms}
+            value={formData.numberOfBathrooms || ""}
             onChange={handleInputChange}
-            placeholder='0'
+            placeholder="0"
           />
         </div>
       </div>
+
       <div className={styles.balconies}>
         <div className={styles.balconiesName}>Number of Balconies</div>
         <div className={styles.balconiesInput}>
           <input
             type="number"
             name="numberOfBalconies"
-            value={formData.numberOfBalconies}
+            value={formData.numberOfBalconies || ""}
             onChange={handleInputChange}
-            placeholder='0'
+            placeholder="0"
           />
         </div>
       </div>
@@ -56,10 +98,52 @@ const HouseProfileForm: React.FC<HouseProfileFormProps> = ({ formData, handleInp
           <input
             type="number"
             name="areaDetails"
-            value={formData.areaDetails}
+            value={formData.areaDetails || ""}
             onChange={handleInputChange}
-            placeholder='Carpet Area in sq. ft'
+            placeholder="Carpet Area in sq. ft"
           />
+        </div>
+      </div>
+
+      <div className={styles.area}>
+        <div className={styles.areaName}>Other Rooms (optional)</div>
+        <div className={styles.areaInput}>
+          <label>
+            <input
+              type="checkbox"
+              name="studyRoom"
+              checked={formData.studyRoom || false}
+              onChange={handleCheckboxChange}
+            />
+            Study Room
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              name="poojaRoom"
+              checked={formData.poojaRoom || false}
+              onChange={handleCheckboxChange}
+            />
+            Pooja Room
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              name="servantRoom"
+              checked={formData.servantRoom || false}
+              onChange={handleCheckboxChange}
+            />
+            Servant Room
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              name="storeRoom"
+              checked={formData.storeRoom || false}
+              onChange={handleCheckboxChange}
+            />
+            Store Room
+          </label>
         </div>
       </div>
 
@@ -69,9 +153,9 @@ const HouseProfileForm: React.FC<HouseProfileFormProps> = ({ formData, handleInp
           <input
             type="number"
             name="totalFloorDetails"
-            value={formData.totalFloorDetails}
+            value={formData.totalFloorDetails || ""}
             onChange={handleInputChange}
-            placeholder='Total Floors'
+            placeholder="Total Floors"
           />
         </div>
       </div>
@@ -104,85 +188,38 @@ const HouseProfileForm: React.FC<HouseProfileFormProps> = ({ formData, handleInp
 
       {formData.availability === "Ready to move" && (
         <div className={styles.ageOfProperty}>
-          <div className={styles.ageOfPropertyName}>Age of Property (in years)</div>
+          <div className={styles.ageOfPropertyName}>Age of Property</div>
           <div className={styles.ageOfPropertyInput}>
             <input
               type="number"
               name="ageOfProperty"
-              value={formData.ageOfProperty}
+              value={formData.ageOfProperty || ""}
               onChange={handleInputChange}
-              placeholder='0'
+              placeholder="Age of property in years"
             />
           </div>
         </div>
       )}
 
-      {formData.availability === "Under construction" && (
-        <div className={styles.possession}>
-          <div className={styles.possessionName}>Possession by</div>
-          <div className={styles.possessionInput}>
+      {formData.availability === "Ready to move" && (
+        <div className={styles.possessionDate}>
+          <div className={styles.possessionDateName}>Possession Date</div>
+          <div className={styles.possessionDateInput}>
             <input
-              type="text"
-              name="possessionBy"
-              value={formData.possessionBy}
+              type="date"
+              name="possessionDate"
+              value={formData.possessionDate || ""}
               onChange={handleInputChange}
-              placeholder='Month and Year'
             />
           </div>
         </div>
       )}
 
-      <div className={styles.ownershipType}>
-        <div className={styles.ownershipTypeName}>Ownership</div>
-        <div className={styles.ownershipTypeInput}>
-          <label>
-            <input
-              type="radio"
-              name="ownership"
-              value="Freehold"
-              checked={formData.ownership === "Freehold"}
-              onChange={handleInputChange}
-              required
-            />
-            Freehold
-          </label>
-          <label>
-            <input
-              type="radio"
-              name="ownership"
-              value="Leasehold"
-              checked={formData.ownership === "Leasehold"}
-              onChange={handleInputChange}
-              required
-            />
-            Leasehold
-          </label>
-          <label>
-            <input
-              type="radio"
-              name="ownership"
-              value="Co-operative Society"
-              checked={formData.ownership === "Co-operative Society"}
-              onChange={handleInputChange}
-              required
-            />
-            Co-operative Society
-          </label>
-          <label>
-            <input
-              type="radio"
-              name="ownership"
-              value="Power of Attorney"
-              checked={formData.ownership === "Power of Attorney"}
-              onChange={handleInputChange}
-              required
-            />
-            Power of Attorney
-          </label>
-        </div>
+      <div className={styles.actions}>
+        <button className={styles.nextButton} onClick={handleSubmit}>
+          Next
+        </button>
       </div>
-      
-      <button className={styles.nextButton} onClick={nextStep}>Next</button>
     </div>
   );
 };

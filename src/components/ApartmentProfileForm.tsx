@@ -3,37 +3,41 @@ import styles from './ApartmentProfileForm.module.css';
 
 interface ApartmentProfileFormProps {
   formData: any;
-  handleInputChange: (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => void;
+  handleInputChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   nextStep: () => void;
   prevStep: () => void;
 }
 
-const ApartmentProfileForm: React.FC<ApartmentProfileFormProps> = ({ formData, handleInputChange, nextStep, prevStep }) => {
+const ApartmentProfileForm: React.FC<ApartmentProfileFormProps> = ({
+  formData,
+  handleInputChange,
+  nextStep,
+  prevStep,
+}) => {
   const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, checked } = e.target;
     handleInputChange({
       ...e,
       target: {
         ...e.target,
-        value: checked
-      }
+        value: checked,
+      },
     });
   };
 
   const handleSubmit = () => {
     // Ensure all required fields are filled
     const requiredFields = [
-      'numberOfBedrooms',
-      'numberOfBathrooms',
-      'numberOfBalconies',
-      'areaDetails',
-      'totalFloorDetails',
-      'propertyFloorDetails'
+      "numberOfBedrooms",
+      "numberOfBathrooms",
+      "numberOfBalconies",
+      "areaDetails",
+      "totalFloorDetails"
     ];
-    
+
     for (const field of requiredFields) {
       if (!formData[field]) {
-        alert('Please fill in all the required fields before proceeding.');
+        alert("Please fill in all the required fields before proceeding.");
         return;
       }
     }
@@ -43,7 +47,9 @@ const ApartmentProfileForm: React.FC<ApartmentProfileFormProps> = ({ formData, h
 
   return (
     <div className={styles.formSection}>
-      <button className={styles.backButton} onClick={prevStep}>Back</button>
+      <button className={styles.backButton} onClick={prevStep}>
+        Back
+      </button>
       <h2>Apartment Profile</h2>
 
       <div className={styles.bedrooms}>
@@ -52,9 +58,9 @@ const ApartmentProfileForm: React.FC<ApartmentProfileFormProps> = ({ formData, h
           <input
             type="number"
             name="numberOfBedrooms"
-            value={formData.numberOfBedrooms || ''}
+            value={formData.numberOfBedrooms || ""}
             onChange={handleInputChange}
-            placeholder='0'
+            placeholder="0"
           />
         </div>
       </div>
@@ -65,9 +71,9 @@ const ApartmentProfileForm: React.FC<ApartmentProfileFormProps> = ({ formData, h
           <input
             type="number"
             name="numberOfBathrooms"
-            value={formData.numberOfBathrooms || ''}
+            value={formData.numberOfBathrooms || ""}
             onChange={handleInputChange}
-            placeholder='0'
+            placeholder="0"
           />
         </div>
       </div>
@@ -78,9 +84,9 @@ const ApartmentProfileForm: React.FC<ApartmentProfileFormProps> = ({ formData, h
           <input
             type="number"
             name="numberOfBalconies"
-            value={formData.numberOfBalconies || ''}
+            value={formData.numberOfBalconies || ""}
             onChange={handleInputChange}
-            placeholder='0'
+            placeholder="0"
           />
         </div>
       </div>
@@ -91,9 +97,9 @@ const ApartmentProfileForm: React.FC<ApartmentProfileFormProps> = ({ formData, h
           <input
             type="number"
             name="areaDetails"
-            value={formData.areaDetails || ''}
+            value={formData.areaDetails || ""}
             onChange={handleInputChange}
-            placeholder='Carpet Area in sq. ft'
+            placeholder="Carpet Area in sq. ft"
           />
         </div>
       </div>
@@ -146,9 +152,9 @@ const ApartmentProfileForm: React.FC<ApartmentProfileFormProps> = ({ formData, h
           <input
             type="number"
             name="totalFloorDetails"
-            value={formData.totalFloorDetails || ''}
+            value={formData.totalFloorDetails || ""}
             onChange={handleInputChange}
-            placeholder='Total Floors'  
+            placeholder="Total Floors"
           />
         </div>
       </div>
@@ -181,35 +187,38 @@ const ApartmentProfileForm: React.FC<ApartmentProfileFormProps> = ({ formData, h
 
       {formData.availability === "Ready to move" && (
         <div className={styles.ageOfProperty}>
-          <div className={styles.ageOfPropertyName}>Age of Property (in years)</div>
+          <div className={styles.ageOfPropertyName}>Age of Property</div>
           <div className={styles.ageOfPropertyInput}>
             <input
               type="number"
               name="ageOfProperty"
-              value={formData.ageOfProperty || ''}
+              value={formData.ageOfProperty || ""}
               onChange={handleInputChange}
-              placeholder='0'
+              placeholder="Age of property in years"
             />
           </div>
         </div>
       )}
 
-      {formData.availability === "Under construction" && (
-        <div className={styles.possession}>
-          <div className={styles.possessionName}>Possession by</div>
-          <div className={styles.possessionInput}>
+      {formData.availability === "Ready to move" && (
+        <div className={styles.possessionDate}>
+          <div className={styles.possessionDateName}>Possession Date</div>
+          <div className={styles.possessionDateInput}>
             <input
-              type="text"
-              name="possessionBy"
-              value={formData.possessionBy || ''}
+              type="date"
+              name="possessionDate"
+              value={formData.possessionDate || ""}
               onChange={handleInputChange}
-              placeholder='Month and Year'
             />
           </div>
         </div>
       )}
 
-      <button className={styles.nextButton} onClick={handleSubmit}>Next</button>
+      <div className={styles.actions}>
+        <button className={styles.nextButton} onClick={handleSubmit}>
+          Next
+        </button>
+      </div>
     </div>
   );
 };

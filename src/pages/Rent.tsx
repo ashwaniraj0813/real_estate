@@ -11,7 +11,7 @@ import PhotosForm from "../components/PhotosForm";
 import PricingForm from "../components/PricingForm";
 import styles from "./Rent.module.css";
 
-const Rent: FunctionComponent = () => {
+const Rent: React.FC = () => {
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
     title: "",
@@ -19,14 +19,41 @@ const Rent: FunctionComponent = () => {
     address: "",
     city: "",
     price: "",
+    landmark: "",
     bhk: "",
+    bathrooms: "",
+    balconies: "",
+    other_rooms: "",
     area: "",
-    propertyType: "Apartment",
-    purpose: "Sell",
-    status: "available",
+    type: "Residential",
+    status: "Available",
+    floors: "",
+    availability_status: "Ready to move",
+    purpose: "sell",
+    phone: "",
+    mail: "",
     amenities: "",
+    Propreiter_name: "",
+    Propreiter_email: "",
+    Propreiter_contact: "",
+    // Apartment specific fields
+    numberOfBedrooms: "",
+    numberOfBathrooms: "",
+    numberOfBalconies: "",
+    areaDetails: "",
+    totalFloorDetails: "",
+    propertyFloorDetails: "",
+    // House specific fields
+    studyRoom: false,
+    poojaRoom: false,
+    servantRoom: false,
+    storeRoom: false,
+    ageOfProperty: "",
+    possessionDate: "",
+    availability: "Ready to move",
   });
   const [selectedImages, setSelectedImages] = useState<File[]>([]);
+
 
   const nextStep = () => setStep(prevStep => prevStep + 1);
   const prevStep = () => setStep(prevStep => prevStep - 1);

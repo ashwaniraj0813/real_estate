@@ -1,6 +1,7 @@
 import React, { FunctionComponent, useEffect, useState } from "react";
 import Nav from "../components/Nav";
 import FirstNameField from "../components/FirstNameField";
+import VerifyPropertiesForm from "../components/VerifyForm";
 import styles from "./AdminDashboard.module.css";
 
 interface Appointment {
@@ -11,9 +12,16 @@ interface Appointment {
   PhoneNumber: number;
 }
 
-const AdminDashboard: FunctionComponent = () => {
+interface Property {
+  _id: string;
+  firstName: string;
+  phoneNumber: string;
+  email: string;
+}
 
+const AdminDashboard: FunctionComponent = () => {
   const [appointments, setAppointments] = useState<Appointment[]>([]);
+  const [properties, setProperties] = useState<Property[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -26,40 +34,91 @@ const AdminDashboard: FunctionComponent = () => {
         }
         const data = await response.json();
         setAppointments(data.appointments);
-      }
-      catch (err) {
+      } catch (err) {
         setError(err.message);
+      } finally {
+        setLoading(false);
       }
-      finally {
+    };
+
+    const fetchProperties = async () => {
+      try {
+        const response = await fetch("http://localhost:5000/api/property/verification");
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        const data = await response.json();
+        setProperties(data);
+      } catch (err) {
+        setError(err.message);
+      } finally {
         setLoading(false);
       }
     };
 
     fetchAppointments();
+    fetchProperties();
   }, []);
 
-  const handleRemoveAppointment = (id) => {
-
-    const removeItem = async(id) => {
+  const handleRemoveAppointment = async (id: string) => {
+    try {
       const response = await fetch(`http://localhost:5000/api/appointments/${id}`, {
         method: "DELETE",
         headers: {
           'Content-Type': "application/json"
         }
       });
-
-      let result = await response.json();
-      if(!result.success || !response.ok){
-        alert("Deleting failed,please try later");
+      const result = await response.json();
+      if (!result.success || !response.ok) {
+        alert("Deleting failed, please try later");
         return;
       }
-
-      setAppointments((prevAppointments) => prevAppointments.filter((appointment) => appointment._id !== id));
-      alert("Deleting Successfull");
+      setAppointments(prevAppointments => prevAppointments.filter(appointment => appointment._id !== id));
+      alert("Deleting successful");
+    } catch (error) {
+      console.error("Error deleting appointment:", error);
     }
+  };
 
-    removeItem(id);
-  }
+  const handleAcceptProperty = async (id: string) => {
+    try {
+      const response = await fetch(`http://localhost:5000/api/property/${id}/accept`, {
+        method: "PUT",
+        headers: {
+          'Content-Type': "application/json"
+        }
+      });
+      const result = await response.json();
+      if (!result.success || !response.ok) {
+        alert("Accepting property failed, please try later");
+        return;
+      }
+      setProperties(prevProperties => prevProperties.filter(property => property._id !== id));
+      alert("Property accepted");
+    } catch (error) {
+      console.error("Error accepting property:", error);
+    }
+  };
+
+  const handleRejectProperty = async (id: string) => {
+    try {
+      const response = await fetch(`http://localhost:5000/api/property/${id}/reject`, {
+        method: "PUT",
+        headers: {
+          'Content-Type': "application/json"
+        }
+      });
+      const result = await response.json();
+      if (!result.success || !response.ok) {
+        alert("Rejecting property failed, please try later");
+        return;
+      }
+      setProperties(prevProperties => prevProperties.filter(property => property._id !== id));
+      alert("Property rejected");
+    } catch (error) {
+      console.error("Error rejecting property:", error);
+    }
+  };
 
   return (
     <div className={styles.adminDashboard}>
@@ -72,9 +131,8 @@ const AdminDashboard: FunctionComponent = () => {
           ) : (
             <div className={styles.dashboardLayout}>
               <div className={styles.appointmentsAdmin}>
-               <div className={styles.heading}><b>Appointments</b></div>
-                {appointments.map((appointment) => (
-
+                <div className={styles.heading}><b>Appointments</b></div>
+                {appointments.map(appointment => (
                   <div key={appointment._id} className={styles.profileImage}>
                     <div className={styles.profileImageChild} />
                     <div className={styles.profileImageHolderParent}>
@@ -96,9 +154,9 @@ const AdminDashboard: FunctionComponent = () => {
                           firstNamePlaceholder={appointment.PhoneNumber.toString()}
                           propMinWidth="106px"
                         />
-                        <div >
-                      <button type="submit" className={`${styles.btn1} ${styles.accept}`} onClick={() => handleRemoveAppointment(appointment._id)}>Done</button>
-                    </div>
+                        <div>
+                          <button type="button" className={`${styles.btn1} ${styles.accept}`} onClick={() => handleRemoveAppointment(appointment._id)}>Done</button>
+                        </div>
                       </div>
                     </div>
                     <div className={styles.lastName}>
@@ -114,40 +172,18 @@ const AdminDashboard: FunctionComponent = () => {
                       />
                     </div>
                   </div>
-
                 ))}
               </div>
-              <div className={styles.appointmentsAdmin}>
-                <div className={styles.heading}><b>Verify Properties</b></div>
-                <div className={styles.formContainer}>
-                  <form>
-                    <div className={styles.formGroup}>
-                      <label htmlFor="firstName">First Name</label>
-                      <input type="text" id="firstName" placeholder="First Name" />
-                    </div>
-                    <div className={styles.formGroup}>
-                      <label htmlFor="phoneNo">Phone No.</label>
-                      <input type="text" id="phoneNo" placeholder="Phone No." />
-                    </div>
-                    <div className={styles.formGroup}>
-                      <label htmlFor="email">Email address</label>
-                      <input type="email" id="email" placeholder="Email address" />
-                    </div>
-                    <div className={styles.formButtons}>
-                      <button type="submit" className={`${styles.btn} ${styles.accept}`}>Accept</button>
-                      <button type="button" className={`${styles.btn} ${styles.reject}`}>Reject</button>
-                    </div>
-                  </form>
-                </div>
-              </div>
-
+              <VerifyPropertiesForm
+                properties={properties}
+                onAccept={handleAcceptProperty}
+                onReject={handleRejectProperty}
+              />
             </div>
-          )
-
-          }
+          )}
         </div>
       </section>
-       <div className={styles.formButtons2}>
+      <div className={styles.formButtons2}>
         <button type="submit" className={`${styles.btn} ${styles.accept}`}>Add Admin</button>
         <button type="button" className={`${styles.btn} ${styles.reject}`}>Remove Admin</button>
       </div>
