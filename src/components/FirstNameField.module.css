@@ -1,13 +1,14 @@
 .firstName {
   position: relative;
   font-weight: 500;
-  display: inline-block;
-  min-width: 112px;
+  /* display: inline-block; */
+  /* min-width: 122px; */
   z-index: 1;
+  width: 100%;
 }
 .firstNameInputChild {
-  height: 53px;
-  width: 242px;
+  /* height: 53px;
+  width: 245px; */
   position: relative;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: var(--br-11xs);
@@ -27,10 +28,10 @@
   flex: 1;
   position: relative;
   color: var(--color-gray-200);
-  text-align: left;
-  display: inline-block;
-  min-width: 139px;
-  padding: 0;
+  /* text-align: left; */
+  /* display: inline-block; */
+  /* min-width: 144px; */
+  /* padding: 0; */
   z-index: 2;
 }
 .firstNameField,
@@ -43,10 +44,14 @@
 .firstNameInput {
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: var(--br-11xs);
-  background-color: var(--color-white);
+  /* background-color: var(--color-white); */
   border: 1px solid var(--color-gray-500);
-  flex-direction: row;
-  padding: var(--padding-xs) 0 var(--padding-smi) var(--padding-4xs);
+  /* flex-direction: row; */
+  /* padding-left: 20px; */
+  padding-right:20px  ;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  /* padding: var(--padding-xs) 0 var(--padding-smi) var(--padding-4xs); */
   z-index: 1;
 }
 .firstNameField {
