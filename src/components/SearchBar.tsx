@@ -12,6 +12,7 @@ import {
   Input,
   Circle,
 } from "@chakra-ui/react";
+<<<<<<< HEAD
 import { Link, Route, Routes } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
@@ -113,6 +114,93 @@ function Homepage() {
         <Flex className={style.filterBox}>
           <Routes>
             {/* <Route path="/buy" element={<BuyOption />} />
+=======
+import { Link, Route, Routes, useNavigate } from "react-router-dom";
+
+function Homepage() {
+    const [selectedOpt, setSelectedOpt] = React.useState("Buy");
+    const navigate = useNavigate();
+
+    const handleSearch = () => {
+        navigate("/property-listings-page");
+    };
+
+    return (
+        <Box>
+            <Box className={style.homepageContainer}>
+                <Grid className={style.buyRent}>
+                    <Box
+                        onClick={() => setSelectedOpt("Buy")}
+                        style={
+                            selectedOpt === "Buy"
+                                ? { borderBottom: "3px solid #fd3752", color: "#fd3752" }
+                                : { borderBottom: "0px solid" }
+                        }
+                    >
+                        <Link to="/buy">Buy</Link>
+                    </Box>
+                    <Box
+                        onClick={() => setSelectedOpt("Rent")}
+                        style={
+                            selectedOpt === "Rent"
+                                ? { borderBottom: "3px solid #fd3752", color: "#fd3752" }
+                                : { borderBottom: "0px solid" }
+                        }
+                    >
+                        <Link to="/rent">Rent</Link>
+                    </Box>
+                    <Box
+                        onClick={() => setSelectedOpt("Commercial")}
+                        style={
+                            selectedOpt === "Commercial"
+                                ? { borderBottom: "3px solid #fd3752", color: "#fd3752" }
+                                : { borderBottom: "0px solid" }
+                        }
+                    >
+                        <Link to="/commercial">Commercial</Link>
+                    </Box>
+                </Grid>
+                <Flex className={style.searchBox}>
+                    <Box>
+                        <Select
+                            placeholder="Select a city"
+                            size="lg"
+                            w={"180px"}
+                            focusBorderColor="red"
+                        >
+                            <option value="Mumbai">Mumbai</option>
+                            <option value="Bangalore">Bangalore</option>
+                            <option value="Pune">Pune</option>
+                            <option value="Chennai">Chennai</option>
+                            <option value="Gurgaon">Gurgaon</option>
+                            <option value="Hyderabad">Hyderabad</option>
+                            <option value="Delhi">Delhi</option>
+                            <option value="Noida">Noida</option>
+                            <option value="Greater Noida">Greater Noida</option>
+                            <option value="Ghaziabad">Ghaziabad</option>
+                            <option value="Faridabad">Faridabad</option>
+                        </Select>
+                    </Box>
+                    <Box className={style.searchInput}>
+                        <Input placeholder="Search upto 3 localities or landmarks" />
+                    </Box>
+                    <Box>
+                        <Button
+                            leftIcon={<GoSearch />}
+                            bgColor="#fd3752"
+                            variant="solid"
+                            color="white"
+                            className={style.searchButton}
+                            onClick={handleSearch}
+                        >
+                            Search
+                        </Button>
+                    </Box>
+                </Flex>
+                <Flex className={style.filterBox}>
+                    <Routes>
+                        {/* <Route path="/buy" element={<BuyOption />} />
+>>>>>>> fa349791fa9624b1940dd6d0e74addba813ac702
                         <Route path="/rent" element={<RentOption />} />
                         <Route path="/commercial" element={<CommercialOption />} /> */}
           </Routes>
