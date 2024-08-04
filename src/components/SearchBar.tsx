@@ -12,10 +12,16 @@ import {
     Input,
     Circle,
 } from "@chakra-ui/react";
-import { Link, Route, Routes } from "react-router-dom";
+import { Link, Route, Routes, useNavigate } from "react-router-dom";
 
 function Homepage() {
     const [selectedOpt, setSelectedOpt] = React.useState("Buy");
+    const navigate = useNavigate();
+
+    const handleSearch = () => {
+        navigate("/property-listings-page");
+    };
+
     return (
         <Box>
             <Box className={style.homepageContainer}>
@@ -82,6 +88,7 @@ function Homepage() {
                             variant="solid"
                             color="white"
                             className={style.searchButton}
+                            onClick={handleSearch}
                         >
                             Search
                         </Button>
