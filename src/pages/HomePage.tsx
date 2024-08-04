@@ -202,6 +202,10 @@ const HomePage: FunctionComponent = () => {
                     name="MV Kiran Sooraj"
                     properties="1500+ Properties"
                   />
+                   <BuilderCard
+                    name="Raj"
+                    properties="2000+ Properties"
+                  />
                 </Link>
               ))}
             </div>
