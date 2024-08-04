@@ -35,7 +35,7 @@ const PropertyTypeCarousel: React.FC = () => {
     { title: 'Independent House', description: '1,400+ Properties', imageSrc: '/villa.png' },
     { title: 'Independent Builder Floor', description: '210+ Properties', imageSrc: '/builder.jpg ' },
     { title: 'Plots', description: '800+ Properties', imageSrc: '/istockphoto.png' }, 
-    { title: 'Apartments', description: '300+ Properties', imageSrc: 'aparts.png' },
+    { title: 'Apartments', description: '300+ Properties', imageSrc: '/Delhi.png' },
   ];
 
   return (

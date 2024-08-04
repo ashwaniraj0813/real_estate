@@ -221,7 +221,9 @@ input {
 
 .linkWrapper {
   flex: 1;
+  display: flex;
   min-width: 200px;
+  gap: 40px;
 }
 
 @media (max-width: 1200px) {
