@@ -27,7 +27,7 @@ const Modal = (props:ModalProps) => {
       const token = localStorage.getItem('authToken');
       axios.defaults.headers.common["Authorization"] = `bearer ${token}`;
       // localStorage.setItem('authToken', token);
-      toast.success("Admin added successfully");
+      // toast.success("Admin added successfully");
       return response.data;
     } catch (error) {
       console.error("Adding Admin failed", error);
