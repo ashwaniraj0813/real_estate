@@ -2,7 +2,11 @@ import React, { FunctionComponent, useEffect, useState } from "react";
 import Nav from "../components/Nav";
 import FirstNameField from "../components/FirstNameField";
 import VerifyPropertiesForm from "../components/VerifyForm";
+import Modal from '../components/Modal';
 import styles from "./AdminDashboard.module.css";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 interface Appointment {
   _id: string;
@@ -35,7 +39,7 @@ const AdminDashboard: FunctionComponent = () => {
         const data = await response.json();
         setAppointments(data.appointments);
       } catch (err) {
-        setError(err.message);
+        setError((err as Error).message);
       } finally {
         setLoading(false);
       }
@@ -50,7 +54,7 @@ const AdminDashboard: FunctionComponent = () => {
         const data = await response.json();
         setProperties(data);
       } catch (err) {
-        setError(err.message);
+        setError((err as Error).message);
       } finally {
         setLoading(false);
       }
@@ -120,6 +124,11 @@ const AdminDashboard: FunctionComponent = () => {
     }
   };
 
+  const [showModal, setShowModal] = useState(false);
+
+  const handleShowModal = () => setShowModal(true);
+  const handleCloseModal = () => setShowModal(false);
+
   return (
     <div className={styles.adminDashboard}>
       <section className={styles.content}>
@@ -184,8 +193,10 @@ const AdminDashboard: FunctionComponent = () => {
         </div>
       </section>
       <div className={styles.formButtons2}>
-        <button type="submit" className={`${styles.btn} ${styles.accept}`}>Add Admin</button>
-        <button type="button" className={`${styles.btn} ${styles.reject}`}>Remove Admin</button>
+        <button type="submit" className={`${styles.btn} ${styles.accept}`} onClick={handleShowModal}>Add Admin</button>
+        <Modal show={showModal} handleClose={handleCloseModal} />
+        <ToastContainer />
+        {/* <button type="button" className={`${styles.btn} ${styles.reject}`}>Remove Admin</button> */}
       </div>
     </div>
   );
