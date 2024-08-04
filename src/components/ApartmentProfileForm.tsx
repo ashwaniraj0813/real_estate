@@ -30,9 +30,7 @@ const ApartmentProfileForm: React.FC<ApartmentProfileFormProps> = ({
     const requiredFields = [
       "numberOfBedrooms",
       "numberOfBathrooms",
-      "numberOfBalconies",
-      "areaDetails",
-      "totalFloorDetails"
+      "numberOfBalconies"
     ];
 
     for (const field of requiredFields) {

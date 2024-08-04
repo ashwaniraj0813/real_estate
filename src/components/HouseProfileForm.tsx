@@ -31,9 +31,6 @@ const HouseProfileForm: React.FC<HouseProfileFormProps> = ({
       "numberOfBedrooms",
       "numberOfBathrooms",
       "numberOfBalconies",
-      "areaDetails",
-      "totalFloorDetails",
-      "propertyFloorDetails",
     ];
 
     for (const field of requiredFields) {

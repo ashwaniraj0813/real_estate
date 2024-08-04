@@ -24,6 +24,7 @@ interface Property {
 }
 
 const AdminDashboard: FunctionComponent = () => {
+  
   const [appointments, setAppointments] = useState<Appointment[]>([]);
   const [properties, setProperties] = useState<Property[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
