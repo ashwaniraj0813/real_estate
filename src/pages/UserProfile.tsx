@@ -5,6 +5,7 @@ import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
 import styles from "./UserProfile.module.css";
 import EditableInput from "../components/EditableInput";
+import PropertyCard from "../components/PropertyCard";
 
 const UserProfile: React.FC = () => {
   const [isEditable, setIsEditable] = useState(false);
@@ -166,6 +167,13 @@ const UserProfile: React.FC = () => {
   const handleDeleteCancel = useCallback(() => {
     setShowDeleteConfirmation(false);
   }, []);
+
+  // useEffect(() => {
+  //   const searchParams = new URLSearchParams(location.search);
+  //   const query = searchParams.get("query") || "";
+  //   fetchProperties(query);
+  // }, [location.search]);
+
 
   return (
     <div className={styles.userProfile}>
