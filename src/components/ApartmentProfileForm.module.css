@@ -1,79 +1,85 @@
 .formSection {
-     display: flex;
-     flex-direction: column;
-     gap: 20px;
-     border: 1px solid #ccc;
-     padding: 40px 20px 20px 20px; /* Added extra padding at the top */
-     border-radius: 10px;
-     position: relative;
-     width: 400px;
-     max-width: 600px;
-   }
-   
-   .bedrooms, .bathrooms, .balconies, .areaDetails, .area, .floorDetails, .availability, .ageOfProperty, .possession {
-     display: flex;
-     flex-direction: column;
-     gap: 10px;
-   }
-   
-   .bedroomsInput input, .bathroomsInput input, .balconiesInput input, .areaDetailsInput input, 
-   .totalFloorDetailsInput input, .propertyFloorDetailsInput input, .ageOfPropertyInput input, .possessionInput input {
-     border-radius: 5px;
-     padding: 10px;
-     border: 1px solid #ccc;
-     width: 100%;
-     height: 40px; /* Common height */
-     max-width: 500px; /* Adjust as needed */
-   }
-   
-   h2 {
-     color: #2c3e50;
-     margin-top: 40px; /* Added margin to create gap between back button and header */
-   }
-   
-   .bedroomsName, .bathroomsName, .balconiesName, .areaDetailsName, .areaName, .floorDetailsName, 
-   .availabilityName, .ageOfPropertyName, .possessionName {
-     color: #34495e;
-     font-weight: bold;
-   }
-   
-   .areaInput label, .availabilityInput label {
-     display: flex;
-     align-items: center;
-     gap: 10px;
-   }
-   
-   .areaInput label input, .availabilityInput label input {
-     margin-right: 10px;
-   }
-   
-   .backButton, .nextButton {
-     background-color: #2980b9;
-     color: #fff;
-     border: none;
-     border-radius: 5px;
-     padding: 10px 20px;
-     cursor: pointer;
-     transition: background-color 0.3s;
-   }
-   
-   .backButton {
-     position: absolute;
-     top: 10px;
-     left: 10px;
-   }
-   
-   .backButton:hover, .nextButton:hover {
-     background-color: #1f6391;
-   }
-   
-   .nextButton {
-     align-self: flex-end;
-   }
-   
-   @media (max-width: 600px) {
-     .formSection {
-       width: 100%;
-     }
-   }
-   
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border: 1px solid #ccc;
+  padding: 40px 20px 20px 20px; /* Added extra padding at the top */
+  border-radius: 10px;
+  position: relative;
+  width: 400px;
+  max-width: 600px;
+}
+
+.bedrooms, .bathrooms, .balconies, .areaDetails, .area, .floorDetails, .availability, .ageOfProperty, .possessionDate {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.bedroomsInput input, .bathroomsInput input, .balconiesInput input, .areaDetailsInput input, 
+.totalFloorDetailsInput input, .propertyFloorDetailsInput input, .ageOfPropertyInput input, .possessionDateInput input {
+  border-radius: 5px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  width: 100%;
+  height: 40px; /* Common height */
+  max-width: 500px; /* Adjust as needed */
+}
+
+h2 {
+  color: #2c3e50;
+  margin-top: 40px; /* Added margin to create gap between back button and header */
+}
+
+.bedroomsName, .bathroomsName, .balconiesName, .areaDetailsName, .areaName, .floorDetailsName, 
+.availabilityName, .ageOfPropertyName, .possessionDateName {
+  color: #34495e;
+  font-weight: bold;
+}
+
+.areaInput label, .availabilityInput label, .possessionDateInput label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.areaInput label input, .availabilityInput label input, .possessionDateInput label input {
+  margin-right: 10px;
+}
+
+.backButton, .nextButton {
+  background-color: #2980b9;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.backButton {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.backButton:hover, .nextButton:hover {
+  background-color: #1f6391;
+}
+
+.nextButton {
+  align-self: flex-end;
+  margin-top: auto; /* Pushes the button to the bottom */
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: auto; /* Ensures the actions section is at the bottom */
+}
+
+@media (max-width: 600px) {
+  .formSection {
+    width: 100%;
+  }
+}
