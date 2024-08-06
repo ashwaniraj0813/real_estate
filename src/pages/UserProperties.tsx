@@ -18,7 +18,7 @@ const UserProperties: FunctionComponent = () => {
   const fetchProperties = async (query: string = "") => {
     try {
       const response = await fetch(
-        `http://localhost:5000/api/property/${email}`,
+        `http://localhost:5000/api/property-user/${email}`,
         {
           method: "GET",
           headers: {
