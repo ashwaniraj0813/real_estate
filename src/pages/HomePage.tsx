@@ -192,7 +192,7 @@ const HomePage: FunctionComponent = () => {
           <section className={styles.popularBuilders}>
             <div className={styles.heading}>POPULAR BUILDERS</div>
             <div className={styles.listings}>
-              {properties.slice(0, 3).map((builder) => (
+              {properties.slice(0, 1).map((builder) => (
                 <Link
                   key={builder._id}
                   // to={`/property-details-page/${property._id}`}

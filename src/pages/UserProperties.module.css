@@ -72,3 +72,37 @@
     font-size: var(--font-size-base);
   }
 }
+.popularfeatures {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 2vw 8vw;
+  gap: 10px;
+  margin-left: 250px;
+}
+
+.popularProperties {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items:left;
+  width: 100%;
+  padding: 6vw 0vw;
+  gap: 20px;
+}
+.listings {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items:flex-start;
+  gap: 40px;
+}
+.linkWrapper {
+  flex: 1;
+  display: flex;
+  min-width: 200px;
+  gap: 40px;
+}

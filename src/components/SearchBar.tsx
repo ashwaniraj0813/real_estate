@@ -19,17 +19,24 @@ import { useState } from "react";
 function Homepage() {
   const [selectedOpt, setSelectedOpt] = React.useState("Buy");
   const [searchQuery, setSearchQuery] = useState("");
+  const [city, selectcity] = useState("");
   const navigate = useNavigate();
 
   const handlesearch = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    navigate(
-      `/property-listings-page?query=${encodeURIComponent(searchQuery)}`
-    );
+    const query = `city=${encodeURIComponent(city)}&query=${encodeURIComponent(
+      searchQuery
+    )}`;
+    navigate(`/property-listings-page?${query}`);
     encodeURIComponent("");
   };
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(event.target.value);
+  };
+  const handleCityChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const selectedCity = event.target.value;
+    selectcity(selectedCity);
+    setSearchQuery("");
   };
 
   return (
@@ -75,6 +82,7 @@ function Homepage() {
                 size="lg"
                 w={"180px"}
                 focusBorderColor="red"
+                onChange={handleCityChange}
               >
                 <option value="Mumbai">Mumbai</option>
                 <option value="Bangalore">Bangalore</option>
@@ -91,7 +99,7 @@ function Homepage() {
             </Box>
             <Box className={style.searchInput}>
               <Input
-                placeholder="Search up to 3 localities or landmarks"
+                placeholder={`Search properties in ${city || "City"}`}
                 onChange={handleSearchChange}
                 value={searchQuery}
               />

@@ -172,7 +172,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({
         />
         <input
           className={styles.searchinput}
-          placeholder="Luxurious Penthouses ..."
+          placeholder="Enter City / Type / No of Bhk needed.."
           type="text"
           value={searchQuery}
           onChange={handleSearchChange}
