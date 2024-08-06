@@ -5,13 +5,20 @@ import LottieAnimation from "../components/LottieAnimation";
 import Navbar from "../components/Navbar";
 import PropertyCard from "../components/PropertyCard";
 import { useNavigate, Link } from "react-router-dom";
+import { jwtDecode } from "jwt-decode";
 
 const UserProperties: FunctionComponent = () => {
   const [properties, setProperties] = useState([]);
+
+  let token = localStorage.getItem("authToken");
+  const decoded = jwtDecode(token);
+
+  const email = decoded.email;
+
   const fetchProperties = async (query: string = "") => {
     try {
       const response = await fetch(
-        `http://localhost:5000/api/property?query=${query}`,
+        `http://localhost:5000/api/property/${email}`,
         {
           method: "GET",
           headers: {
@@ -25,7 +32,8 @@ const UserProperties: FunctionComponent = () => {
       }
 
       const result = await response.json();
-      setProperties(result);
+      setProperties(result.data);
+
     } catch (error) {
       console.log("Error fetching property cards:", error);
     }
@@ -48,7 +56,8 @@ const UserProperties: FunctionComponent = () => {
           myPropertiesFontWeight="bold"
         />
 
-<div style={{ display: "flex", paddingRight: "2em" }}>
+      {properties.length> 0 ? (
+        <div style={{ display: "flex", paddingRight: "2em" }}>
         <div className={styles.popularfeatures}>
 
           <section className={styles.popularProperties}>
@@ -75,7 +84,7 @@ const UserProperties: FunctionComponent = () => {
         </div>
         
       </div>
-        
+      ) : (
         <div className={styles.emptyStateIllustration}>
           <div className={styles.emptyState}>
             <div className={styles.illustrationContainer}>
@@ -92,6 +101,8 @@ const UserProperties: FunctionComponent = () => {
             </div>
           </div>
         </div>
+      ) }
+        
       </main>
     </div>
   );
