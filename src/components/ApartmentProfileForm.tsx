@@ -19,7 +19,7 @@ const ApartmentProfileForm: React.FC<ApartmentProfileFormProps> = ({
     handleInputChange({
       ...e,
       target: {
-        ...e.target,
+        name,
         value: checked,
       },
     });
@@ -198,7 +198,7 @@ const ApartmentProfileForm: React.FC<ApartmentProfileFormProps> = ({
         </div>
       )}
 
-      {formData.availability === "Ready to move" && (
+      {formData.availability === "Under construction" && (
         <div className={styles.possessionDate}>
           <div className={styles.possessionDateName}>Possession Date</div>
           <div className={styles.possessionDateInput}>

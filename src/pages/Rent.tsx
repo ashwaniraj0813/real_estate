@@ -1,4 +1,4 @@
-import { FunctionComponent, useState } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -16,6 +16,7 @@ const Rent: React.FC = () => {
   const [formData, setFormData] = useState({
     title: "",
     description: "",
+    propertyType: "",
     address: "",
     city: "",
     price: "",
@@ -54,9 +55,11 @@ const Rent: React.FC = () => {
   });
   const [selectedImages, setSelectedImages] = useState<File[]>([]);
 
-
   const nextStep = () => setStep(prevStep => prevStep + 1);
-  const prevStep = () => setStep(prevStep => prevStep - 1);
+  const prevStep = () => {
+    console.log("Current step:", step); 
+    setStep(prevStep => prevStep - 1);
+  };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -137,45 +140,45 @@ const Rent: React.FC = () => {
     <div className={styles.rent}>
       <Navbar />
       <div className={styles.body}>
-      <main className={styles.content}>
-      <div className={styles.box}>
-        <h3>Few more steps to get your property posted</h3>
-        <p>Providing clear details about your property finds you good buyers</p>
-      </div>
-        {step === 1 && (
-          <BasicDetailsForm
-            formData={formData}
-            handleInputChange={handleInputChange}
-            nextStep={nextStep}
-          />
-        )}
-        {step === 2 && (
-          <LocationDetailsForm
-            formData={formData}
-            handleInputChange={handleInputChange}
-            nextStep={nextStep}
-            prevStep={prevStep}
-          />
-        )}
-        {step === 3 && renderPropertyProfileForm()}
-        {step === 4 && (
-          <PhotosForm
-            handleImageChange={handleImageChange}
-            handleRemoveImage={handleRemoveImage}
-            selectedImages={selectedImages}
-            nextStep={nextStep}
-            prevStep={prevStep}
-          />
-        )}
-        {step === 5 && (
-          <PricingForm
-            formData={formData}
-            handleInputChange={handleInputChange}
-            prevStep={prevStep}
-            handleSubmit={handleSubmit}
-          />
-        )}
-      </main>
+        <main className={styles.content}>
+          <div className={styles.box}>
+            <h3>Few more steps to get your property posted</h3>
+            <p>Providing clear details about your property finds you good buyers</p>
+          </div>
+          {step === 1 && (
+            <BasicDetailsForm
+              formData={formData}
+              handleInputChange={handleInputChange}
+              nextStep={nextStep}
+            />
+          )}
+          {step === 2 && (
+            <LocationDetailsForm
+              formData={formData}
+              handleInputChange={handleInputChange}
+              nextStep={nextStep}
+              prevStep={prevStep}
+            />
+          )}
+          {step === 3 && renderPropertyProfileForm()}
+          {step === 4 && (
+            <PhotosForm
+              handleImageChange={handleImageChange}
+              handleRemoveImage={handleRemoveImage}
+              selectedImages={selectedImages}
+              nextStep={nextStep}
+              prevStep={prevStep}
+            />
+          )}
+          {step === 5 && (
+            <PricingForm
+              formData={formData}
+              handleInputChange={handleInputChange}
+              prevStep={prevStep}
+              handleSubmit={handleSubmit}
+            />
+          )}
+        </main>
       </div>
       <Footer />
     </div>
