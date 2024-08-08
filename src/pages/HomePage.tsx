@@ -14,8 +14,8 @@ import CityWiseReviews from "../components/CityWiseReviews";
 import Upcoming from "../components/upcoming";
 import EmergingLocalities from "../components/EmergingLocalities";
 import ReviewForm from "../components/ReviewForm";
-import PropertyTypeCarousel from '../components/PropertyTypeCarousel';
-import SearhBar from '../components/SearchBar';
+import PropertyTypeCarousel from "../components/PropertyTypeCarousel";
+import SearhBar from "../components/SearchBar";
 const HomePage: FunctionComponent = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -62,15 +62,12 @@ const HomePage: FunctionComponent = () => {
 
   const fetchProperties = async (query: string = "") => {
     try {
-      const response = await fetch(
-        `http://localhost:5000/api/property?query=${query}`,
-        {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
+      const response = await fetch(`http://localhost:5000/api/allproperty`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
 
       if (!response.ok) {
         throw new Error("Failed to fetch properties");
@@ -159,16 +156,15 @@ const HomePage: FunctionComponent = () => {
           </button>
         </form>
       </div>
-      
+
       <div style={{ display: "flex" }}>
-      <SearhBar />
-      <HistoryCard />
+        <SearhBar />
+        <HistoryCard />
       </div>
-      
-        <PropertyTypeCarousel />
+
+      <PropertyTypeCarousel />
       <div style={{ display: "flex", paddingRight: "2em" }}>
         <div className={styles.popularfeatures}>
-
           <section className={styles.popularProperties}>
             <div className={styles.heading}>POPULAR PROPERTIES</div>
             <div className={styles.listings}>
@@ -202,16 +198,12 @@ const HomePage: FunctionComponent = () => {
                     name="MV Kiran Sooraj"
                     properties="1500+ Properties"
                   />
-                   <BuilderCard
-                    name="Raj"
-                    properties="2000+ Properties"
-                  />
+                  <BuilderCard name="Raj" properties="2000+ Properties" />
                 </Link>
               ))}
             </div>
           </section>
         </div>
-        
       </div>
       <Upcoming />
       <CityWiseReviews />
