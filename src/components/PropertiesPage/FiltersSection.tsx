@@ -17,6 +17,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import DoneIcon from "@mui/icons-material/Done";
 import AddIcon from "@mui/icons-material/Add";
 import { useDispatch, useSelector } from "react-redux";
+import CityDropdown from '../../redux/SearchBox/CityDropDown.jsx'; // Import CityDropdown
 import {
   handleChange,
   handleWithPhotos,
@@ -31,6 +32,7 @@ import {
   handlePostedBy,
   handleFurnitureType,
   handlePurchaseType,
+  handleCity, // Import handleCity action
 } from "../../redux/SearchBox/SearchSlice";
 
 const noOfBedroomsList = [1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -60,6 +62,7 @@ const FiltersSection = () => {
     postedBy,
     furnitureType,
     purchaseType,
+    selectedCity, // Add selectedCity from Redux
   } = useSelector((store) => store.search);
   const dispatch = useDispatch();
 
@@ -70,7 +73,12 @@ const FiltersSection = () => {
       dispatch(handleArea(newValue));
     }
   };
-//abc
+
+  // Update filters on city selection change
+  const handleCityChange = (city) => {
+    dispatch(handleCity(city));
+  };
+
   return (
     <Paper variant="outlined" sx={{ padding: "24px 20px", borderRadius: 2 }}>
       <Box>
@@ -294,28 +302,15 @@ const FiltersSection = () => {
             }}
           >
             {amenitiesList.map((amenity, idx) => (
-              <Chip
+              <FormControlLabel
                 key={idx}
+                control={
+                  <Switch
+                    checked={amenities.includes(amenity)}
+                    onChange={() => dispatch(handleAmenities(amenity))}
+                  />
+                }
                 label={amenity}
-                disableRipple
-                variant={"outlined"}
-                icon={amenities.includes(amenity) ? <DoneIcon /> : <AddIcon />}
-                onClick={() => dispatch(handleAmenities(amenity))}
-                sx={{
-                  color: amenities.includes(amenity) ? "#000" : "#42526E",
-                  backgroundColor: amenities.includes(amenity)
-                    ? "#f0f9ff"
-                    : "#fff",
-                  borderColor: amenities.includes(amenity)
-                    ? "#a3daff"
-                    : "#42526E",
-                  fontWeight: amenities.includes(amenity) ? 600 : 400,
-                  "& .MuiChip-icon": {
-                    fontFamily: "Open Sans",
-                    fontSize: "14px",
-                    color: amenities.includes(amenity) ? "#0078db" : "#42526E",
-                  },
-                }}
               />
             ))}
           </AccordionDetails>
@@ -344,54 +339,24 @@ const FiltersSection = () => {
               Construction Status
             </Typography>
           </AccordionSummary>
-          <AccordionDetails
-            sx={{
-              display: "grid",
-              gap: 1,
-              gridTemplateColumns: "repeat(2, 1fr)",
-            }}
-          >
+          <AccordionDetails>
             {constructionStatusList.map((status, idx) => (
-              <Chip
+              <FormControlLabel
                 key={idx}
-                label={status}
-                disableRipple
-                variant={"outlined"}
-                icon={
-                  constructionStatus.includes(status) ? (
-                    <DoneIcon />
-                  ) : (
-                    <AddIcon />
-                  )
+                control={
+                  <Switch
+                    checked={constructionStatus.includes(status)}
+                    onChange={() => dispatch(handleConstructionStatus(status))}
+                  />
                 }
-                onClick={() => dispatch(handleConstructionStatus(status))}
-                sx={{
-                  color: constructionStatus.includes(status)
-                    ? "#000"
-                    : "#42526E",
-                  backgroundColor: constructionStatus.includes(status)
-                    ? "#f0f9ff"
-                    : "#fff",
-                  borderColor: constructionStatus.includes(status)
-                    ? "#a3daff"
-                    : "#42526E",
-                  fontWeight: constructionStatus.includes(status) ? 600 : 400,
-                  "& .MuiChip-icon": {
-                    fontFamily: "Open Sans",
-                    fontSize: "14px",
-                    color: constructionStatus.includes(status)
-                      ? "#0078db"
-                      : "#42526E",
-                  },
-                  mb: 1,
-                }}
+                label={status}
               />
             ))}
           </AccordionDetails>
         </Accordion>
 
         <Accordion
-          expanded={expanded.includes("panel7")}
+          expanded={expanded.includes("panel7") ? true : false}
           onChange={() => dispatch(handleChange("panel7"))}
           elevation={0}
         >
@@ -413,48 +378,24 @@ const FiltersSection = () => {
               Posted By
             </Typography>
           </AccordionSummary>
-          <AccordionDetails
-            sx={{
-              display: "grid",
-              gap: 1,
-              gridTemplateColumns: "repeat(3, 1fr)",
-            }}
-          >
-            {postedByList.map((postedByItem, idx) => (
-              <Chip
+          <AccordionDetails>
+            {postedByList.map((poster, idx) => (
+              <FormControlLabel
                 key={idx}
-                label={postedByItem}
-                disableRipple
-                variant={"outlined"}
-                icon={
-                  postedBy.includes(postedByItem) ? <DoneIcon /> : <AddIcon />
+                control={
+                  <Switch
+                    checked={postedBy.includes(poster)}
+                    onChange={() => dispatch(handlePostedBy(poster))}
+                  />
                 }
-                onClick={() => dispatch(handlePostedBy(postedByItem))}
-                sx={{
-                  color: postedBy.includes(postedByItem) ? "#000" : "#42526E",
-                  backgroundColor: postedBy.includes(postedByItem)
-                    ? "#f0f9ff"
-                    : "#fff",
-                  borderColor: postedBy.includes(postedByItem)
-                    ? "#a3daff"
-                    : "#42526E",
-                  fontWeight: postedBy.includes(postedByItem) ? 600 : 400,
-                  "& .MuiChip-icon": {
-                    fontFamily: "Open Sans",
-                    fontSize: "14px",
-                    color: postedBy.includes(postedByItem)
-                      ? "#0078db"
-                      : "#42526E",
-                  },
-                  mb: 1,
-                }}
+                label={poster}
               />
             ))}
           </AccordionDetails>
         </Accordion>
 
         <Accordion
-          expanded={expanded.includes("panel8")}
+          expanded={expanded.includes("panel8") ? true : false}
           onChange={() => dispatch(handleChange("panel8"))}
           elevation={0}
         >
@@ -476,56 +417,24 @@ const FiltersSection = () => {
               Furniture Type
             </Typography>
           </AccordionSummary>
-          <AccordionDetails
-            sx={{
-              display: "grid",
-              gap: 1,
-              gridTemplateColumns: "repeat(3, 1fr)",
-            }}
-          >
-            {furnitureTypeList.map((furnitureTypeItem, idx) => (
-              <Chip
+          <AccordionDetails>
+            {furnitureTypeList.map((furniture, idx) => (
+              <FormControlLabel
                 key={idx}
-                label={furnitureTypeItem}
-                disableRipple
-                variant={"outlined"}
-                icon={
-                  furnitureType.includes(furnitureTypeItem) ? (
-                    <DoneIcon />
-                  ) : (
-                    <AddIcon />
-                  )
+                control={
+                  <Switch
+                    checked={furnitureType.includes(furniture)}
+                    onChange={() => dispatch(handleFurnitureType(furniture))}
+                  />
                 }
-                onClick={() => dispatch(handleFurnitureType(furnitureTypeItem))}
-                sx={{
-                  color: furnitureType.includes(furnitureTypeItem)
-                    ? "#000"
-                    : "#42526E",
-                  backgroundColor: furnitureType.includes(furnitureTypeItem)
-                    ? "#f0f9ff"
-                    : "#fff",
-                  borderColor: furnitureType.includes(furnitureTypeItem)
-                    ? "#a3daff"
-                    : "#42526E",
-                  fontWeight: furnitureType.includes(furnitureTypeItem)
-                    ? 600
-                    : 400,
-                  "& .MuiChip-icon": {
-                    fontFamily: "Open Sans",
-                    fontSize: "14px",
-                    color: furnitureType.includes(furnitureTypeItem)
-                      ? "#0078db"
-                      : "#42526E",
-                  },
-                  mb: 1,
-                }}
+                label={furniture}
               />
             ))}
           </AccordionDetails>
         </Accordion>
 
         <Accordion
-          expanded={expanded.includes("panel9")}
+          expanded={expanded.includes("panel9") ? true : false}
           onChange={() => dispatch(handleChange("panel9"))}
           elevation={0}
         >
@@ -547,115 +456,69 @@ const FiltersSection = () => {
               Purchase Type
             </Typography>
           </AccordionSummary>
-          <AccordionDetails
-            sx={{
-              display: "grid",
-              gap: 1,
-              gridTemplateColumns: "repeat(3, 1fr)",
-            }}
-          >
-            {purchaseTypeList.map((purchaseTypeItem, idx) => (
-              <Chip
+          <AccordionDetails>
+            {purchaseTypeList.map((type, idx) => (
+              <FormControlLabel
                 key={idx}
-                label={purchaseTypeItem}
-                disableRipple
-                variant={"outlined"}
-                icon={
-                  purchaseType.includes(purchaseTypeItem) ? (
-                    <DoneIcon />
-                  ) : (
-                    <AddIcon />
-                  )
+                control={
+                  <Switch
+                    checked={purchaseType.includes(type)}
+                    onChange={() => dispatch(handlePurchaseType(type))}
+                  />
                 }
-                onClick={() => dispatch(handlePurchaseType(purchaseTypeItem))}
-                sx={{
-                  color: purchaseType.includes(purchaseTypeItem)
-                    ? "#000"
-                    : "#42526E",
-                  backgroundColor: purchaseType.includes(purchaseTypeItem)
-                    ? "#f0f9ff"
-                    : "#fff",
-                  borderColor: purchaseType.includes(purchaseTypeItem)
-                    ? "#a3daff"
-                    : "#42526E",
-                  fontWeight: purchaseType.includes(purchaseTypeItem)
-                    ? 600
-                    : 400,
-                  "& .MuiChip-icon": {
-                    fontFamily: "Open Sans",
-                    fontSize: "14px",
-                    color: purchaseType.includes(purchaseTypeItem)
-                      ? "#0078db"
-                      : "#42526E",
-                  },
-                  mb: 1,
-                }}
+                label={type}
               />
             ))}
           </AccordionDetails>
         </Accordion>
 
-        <FormControl component="fieldset" sx={{ mt: 2, width: "100%" }}>
-          <FormGroup aria-label="position" row>
-            <FormControlLabel
-              control={
-                <Switch
-                  checked={withPhotos}
-                  onChange={() => dispatch(handleWithPhotos())}
-                  name="withPhotos"
-                  color="primary"
-                />
-              }
-              label="With Photos"
-              labelPlacement="end"
-              sx={{
-                color: "#091E42",
-                fontSize: "16px",
-                lineHeight: "24px",
-                fontWeight: 600,
-                fontFamily: "Open Sans",
-              }}
-            />
-            <FormControlLabel
-              control={
-                <Switch
-                  checked={reraApproved}
-                  onChange={() => dispatch(handleReraApproved())}
-                  name="reraApproved"
-                  color="primary"
-                />
-              }
-              label="RERA Approved"
-              labelPlacement="end"
-              sx={{
-                color: "#091E42",
-                fontSize: "16px",
-                lineHeight: "24px",
-                fontWeight: 600,
-                fontFamily: "Open Sans",
-              }}
-            />
-            <FormControlLabel
-              control={
-                <Switch
-                  checked={verifiedProperties}
-                  onChange={() => dispatch(handleVerifiedProperties())}
-                  name="verifiedProperties"
-                  color="primary"
-                />
-              }
-              label="Verified Properties"
-              labelPlacement="end"
-              sx={{
-                color: "#091E42",
-                fontSize: "16px",
-                lineHeight: "24px",
-                fontWeight: 600,
-                fontFamily: "Open Sans",
-              }}
-            />
-          </FormGroup>
-        </FormControl>
+        {/* Add City Dropdown */}
+        <Box sx={{ mt: 2 }}>
+          <Typography
+            sx={{
+              color: "#091E42",
+              fontSize: "16px",
+              lineHeight: "24px",
+              fontWeight: 600,
+              fontFamily: "Open Sans",
+              mb: 1,
+            }}
+          >
+            City
+          </Typography>
+          <CityDropdown selectedCity={selectedCity} onCityChange={handleCityChange} />
+        </Box>
+
+        {/* Include switches for additional filter options */}
+        <Box sx={{ mt: 2 }}>
+          <FormControlLabel
+            control={
+              <Switch
+                checked={withPhotos}
+                onChange={() => dispatch(handleWithPhotos())}
+              />
+            }
+            label="With Photos"
+          />
+          <FormControlLabel
+            control={
+              <Switch
+                checked={reraApproved}
+                onChange={() => dispatch(handleReraApproved())}
+              />
+            }
+            label="RERA Approved"
+          />
+          <FormControlLabel
+            control={
+              <Switch
+                checked={verifiedProperties}
+                onChange={() => dispatch(handleVerifiedProperties())}
+              />
+            }
+            label="Verified Properties"
+          />
+        </Box>
       </Box>
     </Paper>
   );
