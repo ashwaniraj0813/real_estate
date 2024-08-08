@@ -99,7 +99,7 @@ const FiltersSection = () => {
                 fontSize: "16px",
                 lineHeight: "24px",
                 fontWeight: 600,
-                fontFamily: "Open Sans",
+                fontFamily: "var(--font-montserrat)",
               }}
             >
               No. of Bedrooms
@@ -130,7 +130,7 @@ const FiltersSection = () => {
                     : "#42526E",
                   fontWeight: noOfBedrooms.includes(room) ? 600 : 400,
                   "& .MuiChip-icon": {
-                    fontFamily: "Open Sans",
+                    fontFamily: "var(--font-montserrat)",
                     fontSize: "14px",
                     color: noOfBedrooms.includes(room) ? "#0078db" : "#42526E",
                   },
@@ -157,7 +157,7 @@ const FiltersSection = () => {
                 fontSize: "16px",
                 lineHeight: "24px",
                 fontWeight: 600,
-                fontFamily: "Open Sans",
+                fontFamily: "var(--font-montserrat)",
               }}
             >
               Type of Property
@@ -188,7 +188,7 @@ const FiltersSection = () => {
                     : "#42526E",
                   fontWeight: propertyType.includes(type) ? 600 : 400,
                   "& .MuiChip-icon": {
-                    fontFamily: "Open Sans",
+                    fontFamily: "var(--font-montserrat)",
                     fontSize: "14px",
                     color: propertyType.includes(type) ? "#0078db" : "#42526E",
                   },
@@ -216,7 +216,7 @@ const FiltersSection = () => {
                 fontSize: "16px",
                 lineHeight: "24px",
                 fontWeight: 600,
-                fontFamily: "Open Sans",
+                fontFamily: "var(--font-montserrat)",
               }}
             >
               Budget Range
@@ -253,7 +253,7 @@ const FiltersSection = () => {
                 fontSize: "16px",
                 lineHeight: "24px",
                 fontWeight: 600,
-                fontFamily: "Open Sans",
+                fontFamily: "var(--font-montserrat)",
               }}
             >
               Area
@@ -288,7 +288,7 @@ const FiltersSection = () => {
                 fontSize: "16px",
                 lineHeight: "24px",
                 fontWeight: 600,
-                fontFamily: "Open Sans",
+                fontFamily: "var(--font-montserrat)",
               }}
             >
               Amenities
@@ -333,7 +333,7 @@ const FiltersSection = () => {
                 fontSize: "16px",
                 lineHeight: "24px",
                 fontWeight: 600,
-                fontFamily: "Open Sans",
+                fontFamily: "var(--font-montserrat)",
               }}
             >
               Construction Status
@@ -372,7 +372,7 @@ const FiltersSection = () => {
                 fontSize: "16px",
                 lineHeight: "24px",
                 fontWeight: 600,
-                fontFamily: "Open Sans",
+                fontFamily: "var(--font-montserrat)",
               }}
             >
               Posted By
@@ -411,7 +411,7 @@ const FiltersSection = () => {
                 fontSize: "16px",
                 lineHeight: "24px",
                 fontWeight: 600,
-                fontFamily: "Open Sans",
+                fontFamily: "var(--font-montserrat)",
               }}
             >
               Furniture Type
@@ -450,7 +450,7 @@ const FiltersSection = () => {
                 fontSize: "16px",
                 lineHeight: "24px",
                 fontWeight: 600,
-                fontFamily: "Open Sans",
+                fontFamily: "var(--font-montserrat)",
               }}
             >
               Purchase Type
@@ -480,7 +480,7 @@ const FiltersSection = () => {
               fontSize: "16px",
               lineHeight: "24px",
               fontWeight: 600,
-              fontFamily: "Open Sans",
+              fontFamily: "var(--font-montserrat)",
               mb: 1,
             }}
           >

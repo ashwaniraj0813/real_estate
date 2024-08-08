@@ -87,7 +87,7 @@ const PropertiesListCard = ({ property }) => {
             
             <Typography
               sx={{
-                fontFamily: "Open Sans",
+                fontFamily: "var(--font-montserrat)",
                 fontSize: "20px",
                 lineHeight: "20px",
                 fontWeight: 700,
@@ -102,7 +102,7 @@ const PropertiesListCard = ({ property }) => {
             </Typography>
             <Typography
               sx={{
-                fontFamily: "Open Sans",
+                fontFamily: "var(--font-montserrat)",
                 fontSize: "14px",
                 lineHeight: "20px",
                 cursor: "pointer",
@@ -118,7 +118,7 @@ const PropertiesListCard = ({ property }) => {
                 <Box sx={{ display: "flex", alignItems: "baseline" }}>
                   <Typography
                     sx={{
-                      fontFamily: "Open Sans",
+                      fontFamily: "var(--font-montserrat)",
                       fontSize: "20px",
                       lineHeight: "28px",
                       fontWeight: 600,
@@ -135,7 +135,7 @@ const PropertiesListCard = ({ property }) => {
                   </Typography>
                   <Typography
                     sx={{
-                      fontFamily: "Open Sans",
+                      fontFamily: "var(--font-montserrat)",
                       fontSize: "12px",
                       lineHeight: "16px",
                       fontWeight: 400,
@@ -148,7 +148,7 @@ const PropertiesListCard = ({ property }) => {
 
                 <Typography
                   sx={{
-                    fontFamily: "Open Sans",
+                    fontFamily: "var(--font-montserrat)",
                     fontSize: "10px",
                     lineHeight: "12px",
                     fontWeight: 400,
@@ -162,7 +162,7 @@ const PropertiesListCard = ({ property }) => {
                 <Box sx={{ display: "flex", alignItems: "baseline" }}>
                   <Typography
                     sx={{
-                      fontFamily: "Open Sans",
+                      fontFamily: "var(--font-montserrat)",
                       fontSize: "20px",
                       lineHeight: "28px",
                       fontWeight: 600,
@@ -173,7 +173,7 @@ const PropertiesListCard = ({ property }) => {
                   </Typography>
                   <Typography
                     sx={{
-                      fontFamily: "Open Sans",
+                      fontFamily: "var(--font-montserrat)",
                       fontSize: "12px",
                       lineHeight: "16px",
                       fontWeight: 400,
@@ -186,7 +186,7 @@ const PropertiesListCard = ({ property }) => {
 
                 <Typography
                   sx={{
-                    fontFamily: "Open Sans",
+                    fontFamily: "var(--font-montserrat)",
                     fontSize: "10px",
                     lineHeight: "12px",
                     fontWeight: 400,
@@ -200,7 +200,7 @@ const PropertiesListCard = ({ property }) => {
                 <Box sx={{ display: "flex", alignItems: "baseline" }}>
                   <Typography
                     sx={{
-                      fontFamily: "Open Sans",
+                      fontFamily: "var(--font-montserrat)",
                       fontSize: "20px",
                       lineHeight: "28px",
                       fontWeight: 600,
@@ -213,7 +213,7 @@ const PropertiesListCard = ({ property }) => {
 
                 <Typography
                   sx={{
-                    fontFamily: "Open Sans",
+                    fontFamily: "var(--font-montserrat)",
                     fontSize: "10px",
                     lineHeight: "12px",
                     fontWeight: 400,
@@ -227,11 +227,11 @@ const PropertiesListCard = ({ property }) => {
 
             <Typography
               sx={{
-                fontFamily: "Open Sans",
+                fontFamily: "var(--font-montserrat)",
                 fontSize: "14px",
                 lineHeight: "20px",
                 fontWeight: 400,
-                mt: 4,
+                mt: 0.7,
                 color: "#091E42",
                 mr: 4,
               }}
@@ -251,17 +251,15 @@ const PropertiesListCard = ({ property }) => {
               <Button
                 disableRipple
                 sx={{
-                  padding: "8px 16px",
-                  textTransform: "none",
-                  fontFamily: "Open Sans",
-                  fontSize: "14px",
-                  lineHeight: "20px",
-                  fontWeight: 600,
-                  color: "#fff",
-                  background: "#0078db",
-                  mr: 1,
-                  ":hover": {
-                    background:"#006ac2",
+                  border: "none",
+                  color: "var(--color-white)",
+                  borderRadius: "5px",
+                  padding: "4px 15px", // Reduced padding for smaller size
+                  fontSize: "0.800rem", // Reduced font size
+                  backgroundImage: "linear-gradient(90deg, #2895DF, #764EC6)",
+                  margin: "0 8px", // Adds an 8px gap on the left and right sides
+                  "&:hover": {
+                    backgroundColor: "#006ac2",
                   },
                 }}
               >
@@ -271,16 +269,15 @@ const PropertiesListCard = ({ property }) => {
                 disableRipple
                 variant="contained"
                 sx={{
-                  padding: "8px 16px",
-                  textTransform: "none",
-                  fontFamily: "Open Sans",
-                  fontSize: "14px",
-                  lineHeight: "20px",
-                  fontWeight: 600,
-                  color: "#fff",
-                  background: "#0078db",
-                  ":hover": {
-                    background: "#006ac2",
+                  border: "none",
+                  color: "var(--color-white)",
+                  borderRadius: "5px",
+                  padding: "4px 15px", // Reduced padding for smaller size
+                  fontSize: "0.800rem", // Reduced font size
+                  backgroundImage: "linear-gradient(90deg, #2895DF, #764EC6)",
+                  margin: "0 8px", // Adds an 8px gap on the left and right sides
+                  "&:hover": {
+                    backgroundColor: "#006ac2",
                   },
                 }}
               >
