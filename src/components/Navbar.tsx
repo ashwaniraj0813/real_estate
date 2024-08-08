@@ -34,16 +34,16 @@ const Navbar: FunctionComponent<NavbarProps> = ({
     navigate("/");
   }, [navigate]);
 
-  const onBuyTextClick = useCallback(() => {
-    navigate("/property-listings-page");
-  }, [navigate]);
+  // const onBuyTextClick = useCallback(() => {
+  //   navigate("/property-listings-page");
+  // }, [navigate]);
 
   const onRentTextClick = useCallback(() => {
-    navigate("/rent");
+    navigate("/properties/rent");
   }, [navigate]);
 
   const onSellTextClick = useCallback(() => {
-    navigate("/sell");
+    navigate("/properties/sell");
   }, [navigate]);
 
   const handleLoginClick = () => {
@@ -178,11 +178,23 @@ const Navbar: FunctionComponent<NavbarProps> = ({
           onChange={handleSearchChange}
         />
       </form>
-      <div
+      {/* <div
         className={`${styles.navitem} ${styles.logo}`}
         onClick={onBuyTextClick}
       >
         Buy
+      </div> */}
+      <div
+        className={`${styles.navitem} ${styles.logo}`}
+        onClick={onSellTextClick}
+      >
+        For Buyer
+      </div>
+      <div
+        className={`${styles.navitem} ${styles.logo}`}
+        onClick={onRentTextClick}
+      >
+        For Tenent
       </div>
       <div
         className={`${styles.navitem} ${styles.logo}`}

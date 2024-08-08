@@ -2,12 +2,13 @@ import React, { useState, useEffect } from "react";
 import { Box, Button, Divider, Paper, Typography } from "@mui/material";
 
 
-
+import { useNavigate } from "react-router-dom";
 
 const PropertiesListCard = ({ property }) => {
   const imageProperty="https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
   
- 
+  
+   const navigate = useNavigate();
   const [bhk, setbhk] = useState();
   const {
     address,
@@ -20,7 +21,9 @@ const PropertiesListCard = ({ property }) => {
   } = property;
  
 
-
+  const handleCardClick = () => {
+    navigate(`/property-details-page/${property._id}`, { state: { property } });
+  };
   useEffect(() => {
     if (area < 750) {
       setbhk(1);
@@ -41,7 +44,7 @@ const PropertiesListCard = ({ property }) => {
 
   return (
     <>
-      <Paper
+      <Paper onClick={handleCardClick}
         elevation={1}
         sx={{
           mt: 3,
@@ -81,29 +84,34 @@ const PropertiesListCard = ({ property }) => {
           }}
         >
           <Box>
+            
             <Typography
               sx={{
                 fontFamily: "Open Sans",
-                fontSize: "14px",
+                fontSize: "20px",
                 lineHeight: "20px",
+                fontWeight: 700,
+                mt: 0.1,
+                 ml: -5, 
+                color: "#091E42",
                 cursor: "pointer",
+                
               }}
             >
-              {bhk} BHK Serviced {propertyType} for {propertyOptions} in{" "}
-              {address}, {city}
+              {title}
             </Typography>
             <Typography
               sx={{
                 fontFamily: "Open Sans",
                 fontSize: "14px",
                 lineHeight: "20px",
-                fontWeight: 700,
-                mt: 1,
-                color: "#091E42",
                 cursor: "pointer",
+                mt: 0.5,
+                ml: -5, 
               }}
             >
-              {title}
+              {bhk} BHK Serviced {propertyType} for {propertyOptions} in{" "}
+              {address}, {city}
             </Typography>
             <Box sx={{ mt: 1, display: "flex", gap: 8, cursor: "pointer" }}>
               <Box>
@@ -114,6 +122,7 @@ const PropertiesListCard = ({ property }) => {
                       fontSize: "20px",
                       lineHeight: "28px",
                       fontWeight: 600,
+                      
                       color: "#091E42",
                     }}
                   >
