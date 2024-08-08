@@ -58,7 +58,7 @@ ScrollTop.propTypes = {
 const Properties = (props) => {
   console.log("properprops");
   console.log(props);
-  const [searchQuery, setsearchQuery] = useState("Sell");
+  const [searchQuery, setSearchQuery] = useState({ type: "Sell" || '' });
   const navigate = useNavigate();
   
   const breadcrumbs = [
