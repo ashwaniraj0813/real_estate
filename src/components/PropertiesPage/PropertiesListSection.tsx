@@ -4,7 +4,7 @@ import PropertiesListCard from "./PropertiesListCard";
 import { useDispatch, useSelector } from "react-redux";
 import { getFilteredProperties } from "../../redux/SearchBox/SearchSlice";
 
-const PropertiesListSection = () => {
+const PropertiesListSection = ({ searchQuery }) => {
   const {
     budgetRange,
     propertyType,
@@ -22,7 +22,6 @@ const PropertiesListSection = () => {
   const minArea = area[0];
   const maxArea = area[1];
 
-
   useEffect(() => {
     const filters = {
       minPrice,
@@ -31,6 +30,7 @@ const PropertiesListSection = () => {
       maxArea,
       City: city,
       PropertyType: propertyType,
+      url: `http://localhost:5000/api/property?query=${searchQuery}`
     };
     dispatch(getFilteredProperties(filters));
   }, [minPrice, maxPrice, minArea, maxArea, city, propertyType, dispatch]);
@@ -49,7 +49,7 @@ const PropertiesListSection = () => {
           fontFamily: "Open Sans",
         }}
       >
-        {properties.length} results | Property for {searchOption} in{" "}
+        {properties.length} results | Property for {searchQuery} in{" "}
         {city.address === undefined ? "India" : city.address}
       </Typography>
 
@@ -58,7 +58,7 @@ const PropertiesListSection = () => {
       ) : (
         properties.map((property) => (
           <React.Fragment key={property.propertyId}>
-            <PropertiesListCard property={property} />
+            <PropertiesListCard key={property.id}property={property}  />
           </React.Fragment>
         ))
       )}

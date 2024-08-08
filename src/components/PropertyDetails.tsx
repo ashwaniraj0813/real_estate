@@ -33,7 +33,7 @@ const PropertyDetails: FunctionComponent<PropertyDetailsType> = ({ property }) =
             </tr>
             <tr className={styles.datarow}>
               <td className={styles.basis}>Purpose</td>
-              <td className={styles.info}>Data</td>
+              <td className={styles.info}>{property.purpose}</td>
             </tr>
             <tr className={styles.datarow}>
               <td className={styles.basis}>Area</td>
@@ -45,7 +45,7 @@ const PropertyDetails: FunctionComponent<PropertyDetailsType> = ({ property }) =
             </tr>
             <tr className={styles.datarow}>
               <td className={styles.basis}>Price</td>
-              <td className={styles.info}>£ {property.price}</td>
+              <td className={styles.info}>${property.price}</td>
             </tr>
           </table>
         </div>

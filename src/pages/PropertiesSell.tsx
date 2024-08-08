@@ -1,5 +1,5 @@
 import { Box, Breadcrumbs, Container, Grid, Link } from "@mui/material";
-import React from "react";
+import React, {useState,useEffect} from "react";
 import Navbar from "../components/Navbar";
 import { useNavigate } from "react-router";
 import {
@@ -56,8 +56,11 @@ ScrollTop.propTypes = {
 };
 
 const Properties = (props) => {
+  console.log("properprops");
+  console.log(props);
+  const [searchQuery, setsearchQuery] = useState("Sell");
   const navigate = useNavigate();
-
+  
   const breadcrumbs = [
     <Link
       key="1"
@@ -94,7 +97,7 @@ const Properties = (props) => {
 
   return (
     <>
-     <Navbar />
+     <Navbar/>
       <Box sx={{ background: "#f4f5f7", minHeight: "100vh" }}>
         <Container sx={{ paddingTop: 0.5 }}>
           <Breadcrumbs
@@ -110,7 +113,7 @@ const Properties = (props) => {
               <FiltersSection />
             </Grid>
             <Grid item md={8.3}>
-              <PropertiesListSection />
+             <PropertiesListSection searchQuery={searchQuery} />
             </Grid>
           </Grid>
         </Container>
