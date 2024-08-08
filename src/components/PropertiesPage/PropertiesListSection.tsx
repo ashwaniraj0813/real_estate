@@ -30,7 +30,7 @@ const PropertiesListSection = ({ searchQuery }) => {
       maxArea,
       City: city,
       PropertyType: propertyType,
-      url: `http://localhost:5000/api/property?query=${searchQuery}`
+      url: `http://localhost:5000/api/propertyPurpose?query=${searchQuery}`
     };
     dispatch(getFilteredProperties(filters));
   }, [minPrice, maxPrice, minArea, maxArea, city, propertyType, dispatch]);
