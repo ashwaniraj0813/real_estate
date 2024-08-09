@@ -7,10 +7,8 @@ body html {
     margin: 0;
 }
 
-
 .homepageContainer {
-    padding-top: 70px;
-    padding: 85px 20px 30px 20px;
+    padding: 35px 20px 30px 20px;
     background-color: #fdfdfd;
 }
 
@@ -74,14 +72,11 @@ body html {
     text-decoration: none;
 }
 
-
-
 .searchBox {
     width: 900px;
     margin: 0 auto;
     position: relative;
     align-items: center;
-
     cursor: default;
     flex-wrap: wrap;
 }
@@ -102,7 +97,6 @@ option {
     font-size: 14px !important;
 }
 
-
 .searchInput {
     height: 100%;
 }
@@ -115,8 +109,6 @@ option {
     border: 1px solid #e2e2e2;
     padding-left: 15px;
 }
-
-
 
 .searchButton {
     height: 50px !important;
@@ -170,8 +162,6 @@ option {
 .optiosWithIcon>div {
     padding: 10px 15px;
     cursor: pointer;
-    /* text-decoration: none !important; */
-    /* width: 16.6667%; */
 }
 
 .optiosWithIcon>div img:hover {

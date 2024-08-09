@@ -4,6 +4,7 @@ import React, {
   useState,
   useEffect,
 } from "react";
+import Rent from "../pages/Rent";
 import { useNavigate, useLocation } from "react-router-dom";
 import styles from "./Navbar.module.css";
 import LoginPopup from "./LoginPopup";
@@ -16,8 +17,8 @@ export type NavbarProps = {
 };
 
 const Navbar: FunctionComponent<NavbarProps> = ({
-  className = "",
-  onSearch,
+  // className = "",
+  // onSearch,
 }) => {
   const navigate = useNavigate();
   const location = useLocation();
@@ -40,6 +41,10 @@ const Navbar: FunctionComponent<NavbarProps> = ({
 
   const onRentTextClick = useCallback(() => {
     navigate("/properties/rent");
+  }, [navigate]);
+
+  const onPostPropertyClick = useCallback(() => {
+    navigate("/rent");
   }, [navigate]);
 
   const onSellTextClick = useCallback(() => {
@@ -188,17 +193,17 @@ const Navbar: FunctionComponent<NavbarProps> = ({
         className={`${styles.navitem} ${styles.logo}`}
         onClick={onSellTextClick}
       >
-        For Buyer
+        For Buyers
       </div>
       <div
         className={`${styles.navitem} ${styles.logo}`}
         onClick={onRentTextClick}
       >
-        For Tenent
+        For Tenants
       </div>
       <div
         className={`${styles.navitem} ${styles.logo}`}
-        onClick={onRentTextClick}
+        onClick={onPostPropertyClick}
       >
         Post Property
       </div>

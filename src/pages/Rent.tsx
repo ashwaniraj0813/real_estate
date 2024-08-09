@@ -57,9 +57,10 @@ const Rent: React.FC = () => {
 
   const nextStep = () => setStep(prevStep => prevStep + 1);
   const prevStep = () => {
-    console.log("Current step:", step); 
+    console.log("PrevStep triggered");
     setStep(prevStep => prevStep - 1);
   };
+  
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;

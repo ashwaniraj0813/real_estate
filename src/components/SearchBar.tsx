@@ -61,7 +61,7 @@ function Homepage() {
                 : { borderBottom: "0px solid" }
             }
           >
-            <Link to="/rent">Rent</Link>
+            <Link to="/properties/rent">Rent</Link>
           </Box>
           <Box
             onClick={() => setSelectedOpt("Commercial")}
@@ -81,7 +81,7 @@ function Homepage() {
                 placeholder="Select a city"
                 size="lg"
                 w={"180px"}
-                focusBorderColor="red"
+                focusBorderColor="purple"
                 onChange={handleCityChange}
               >
                 <option value="Mumbai">Mumbai</option>
@@ -95,6 +95,7 @@ function Homepage() {
                 <option value="Greater Noida">Greater Noida</option>
                 <option value="Ghaziabad">Ghaziabad</option>
                 <option value="Faridabad">Faridabad</option>
+                <option value="Vishakhapatnam">Vishakhapatnam</option>
               </Select>
             </Box>
             <Box className={style.searchInput}>

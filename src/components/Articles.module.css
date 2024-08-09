@@ -3,9 +3,9 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  width: 50%;
   padding: 3vw 8vw 4vw 8vw;
-  gap: 40px;
+  gap: 20px;
   background-color: #764EC6;
   color: var(--color-white);
 }
@@ -16,18 +16,18 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  gap: 50px;
+  gap: 20px;
 }
 
 .article > img {
-  height: 400px;
-  width: 400px;
+  height: 300px;
+  width: 300px;
   object-fit: cover;
 }
 
 .heading {
   font-weight: 500;
-  font-size: 50px;
+  font-size: 30px;
 }
 
 .content {
@@ -38,12 +38,12 @@
 }
 
 .title {
-  font-size: 35px;
+  font-size: 20px;
   font-weight: 400;
 }
 
 .info {
-  font-size: 20px;
+  font-size: 15px;
   font-style: italic;
   line-height: 25px;
 }
@@ -52,6 +52,7 @@
   font-size: 20px;
   align-self: flex-end;
 }
+
 
 @media (max-width: 768px) {
   .article {
