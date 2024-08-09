@@ -1,4 +1,3 @@
-/* HomePage.module.css */
 html, body {
   height: 100%;
   margin: 0;
@@ -31,7 +30,7 @@ html, body {
 
 .hero {
   position: relative;
-  height: 100vh;
+  height: 40vh;
   width: 100%;
   padding: 4vw 8vw;
   background: url("bg.jpg") center;
@@ -56,19 +55,20 @@ html, body {
 }
 
 .aptform {
-  width: 500px;
-  padding: 50px;
+  width: 400px;
+  padding: 30px 40px;
   background-color: var(--color-gainsboro-100);
   border-radius: 50px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 25px;
+  gap: 16px;
+  text-align: center;
 }
 
 .aptform * {
-  font-size: 18px;
+  font-size: 15px;
 }
 
 .book {
@@ -110,6 +110,7 @@ input {
   border-radius: 30px;
   padding: 8px 30px;
   background-image: linear-gradient(90deg, #2895DF, #764EC6);
+  text-align: center;
 }
 
 .popularfeatures {
@@ -348,3 +349,5 @@ input {
     gap: 10px;
   }
 }
+
+
