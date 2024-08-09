@@ -14,6 +14,7 @@ const PropertyListingsPage: FunctionComponent = () => {
   const location = useLocation();
 
   const fetchProperties = async (city: string = "", query: string = "") => {
+    
     try {
       const response = await fetch(
         `http://localhost:5000/api/property?city=${encodeURIComponent(

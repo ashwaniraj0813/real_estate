@@ -101,7 +101,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({
   const handlesearch = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     navigate(
-      `/property-listings-page?query=${encodeURIComponent(searchQuery)}`
+      `/SearchPropertiesNavbar?query=${encodeURIComponent(searchQuery)}`
     );
     encodeURIComponent("");
   };

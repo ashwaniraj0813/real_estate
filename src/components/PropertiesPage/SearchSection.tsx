@@ -4,7 +4,7 @@ import PropertiesListCard from "./PropertiesListCard";
 import { useDispatch, useSelector } from "react-redux";
 import { getFilteredProperties } from "../../redux/SearchBox/SearchSlice";
 
-const PropertiesListSection = ({ searchQuery ,filterproperty}) => {
+const SearchSection = ({ searchQuery ,filterproperty}) => {
   const {
     budgetRange,
     propertyType,
@@ -23,6 +23,7 @@ const PropertiesListSection = ({ searchQuery ,filterproperty}) => {
   const maxArea = area[1];
   console.log("filterproperties");
   console.log(filterproperty)
+  console.log(searchQuery)
   useEffect(() => {
     const filters = {
       minPrice,
@@ -33,11 +34,10 @@ const PropertiesListSection = ({ searchQuery ,filterproperty}) => {
       PropertyType: propertyType,
       url: `http://localhost:5000/api/propertyPurpose?query=${searchQuery}`
     };
-    dispatch(getFilteredProperties(filters));
-  }, [minPrice, maxPrice, minArea, maxArea, city, propertyType, dispatch]);
+    
+}, [dispatch, minPrice, maxPrice, minArea, maxArea, city, propertyType, searchQuery]);
+    
 
-  console.log(properties);
-  console.log(propertyType);
 
   return (
     <Box sx={{ mb: 5 }}>
@@ -50,14 +50,14 @@ const PropertiesListSection = ({ searchQuery ,filterproperty}) => {
           fontFamily: "Open Sans",
         }}
       >
-        {properties.length} results | Property for {searchQuery} in{" "}
+        {filterproperty.length} results | Property for " {searchQuery} " in{" "}
         {city.address === undefined ? "India" : city.address}
       </Typography>
 
       {isPropertyLoading ? (
         <CircularProgress />
       ) : (
-        properties.map((property) => (
+        filterproperty.map((property) => (
           <React.Fragment key={property.propertyId}>
             <PropertiesListCard key={property.id}property={property}  />
           </React.Fragment>
@@ -67,4 +67,4 @@ const PropertiesListSection = ({ searchQuery ,filterproperty}) => {
   );
 };
 
-export default PropertiesListSection;
+export default SearchSection;

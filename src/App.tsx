@@ -9,6 +9,7 @@ import HomePage from "./pages/HomePage";
 import AboutUs from "./pages/AboutUs";
 import PropertyExplorePage from "./pages/PropertyExplorePage";
 import PropertyListingsPage from "./pages/PropertyListingsPage";
+import SearchPropertiesNavbar from "./pages/SearchPropertiesNavbar";
 import PropertyDetailsPage from "./pages/PropertyDetailsPage";
 import Rent from "./pages/Rent";
 import AdminLogin from "./pages/AdminLogin";
@@ -131,6 +132,7 @@ function App() {
       <Route path="/aboutus" element={<AboutUs />} />
       <Route path="/property-explore-page" element={<PropertyExplorePage />} />
       <Route path="/property-listings-page" element={<PropertyListingsPage />} />
+      <Route path="/SearchPropertiesNavbar" element={<SearchPropertiesNavbar />} />
       <Route path="/property-details-page/:property_id" element={<PropertyDetailsPage />} />
       <Route path="/rent" element={<Rent />} />
       <Route path="/user-profile" element={<UserProfile />} />
