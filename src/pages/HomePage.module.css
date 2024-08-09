@@ -33,18 +33,23 @@ html, body {
   height: 40vh;
   width: 100%;
   padding: 4vw 8vw;
-  background: url("/image-1@2x.png");
+  background: url("bg.jpg") center;
   background-size: cover;
+  height: 50vh;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  overflow: visible;
+  z-index: 100;
+  margin-bottom: 30vh;
 }
+
 
 .introtext {
   padding: 80px 0px;
-  width: 600px;
-  font-size: 60px;
+  width: 6vw;
+  font-size: 2vw;
   color: var(--color-white);
   font-weight: 700;
 }

@@ -8,8 +8,9 @@ body html {
 }
 
 .homepageContainer {
-    padding: 35px 20px 30px 20px;
-    background-color: #fdfdfd;
+    /* padding-top: 70px; */
+    padding: 10px;
+    background-color: transparent;
 }
 
 .homeTitle {
