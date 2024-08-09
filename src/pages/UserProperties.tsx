@@ -3,7 +3,7 @@ import Sidebar from "../components/Sidebar";
 import styles from "./UserProperties.module.css";
 import LottieAnimation from "../components/LottieAnimation";
 import Navbar from "../components/Navbar";
-import PropertyCard from "../components/PropertyCard";
+import BuilderPropertyCard from "../components/BuilderPropertyCard";
 import { useNavigate, Link } from "react-router-dom";
 import { jwtDecode } from "jwt-decode";
 
@@ -64,18 +64,20 @@ const UserProperties: FunctionComponent = () => {
            
             <div className={styles.listings}>
               {properties.slice(0,4).map((property) => (
+                <div key={property._id}>
+                <BuilderPropertyCard
+                  title={property.title}
+                  city={property.city}
+                  price={property.price.toString()}
+                  area={property.area.toString()}
+                />
                 <Link
-                  key={property._id}
                   to={`/property-details-page/${property._id}`}
-                  className={styles.linkWrapper}
+                  className={styles.viewDetailsLink}
                 >
-                  <PropertyCard
-                    title={property.title}
-                    city={property.city}
-                    price={property.price.toString()}
-                    area={property.area.toString()}
-                  />
+                  View Details
                 </Link>
+              </div>
               ))}
             </div>
           </section>
