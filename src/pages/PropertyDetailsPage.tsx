@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import styles from "./PropertyDetailsPage.module.css";
 import PropertyDetails from "../components/PropertyDetails";
-import ContactForm from "../components/ContactForm";
+import ContactForm from "../components/WhatsappContact";
 import SimilarProperties from "../components/SimilarProperties";
 
 interface Property {

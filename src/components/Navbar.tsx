@@ -50,6 +50,9 @@ const Navbar: FunctionComponent<NavbarProps> = ({
   const onSellTextClick = useCallback(() => {
     navigate("/properties/sell");
   }, [navigate]);
+  const onPostTextClick = useCallback(() => {
+    navigate("/rent");
+  }, [navigate]);
 
   const handleLoginClick = () => {
     if (isLoggedIn) {

@@ -1,7 +1,7 @@
 import { Box, Breadcrumbs, Container, Grid, Link } from "@mui/material";
 import React, {useState,useEffect} from "react";
 import Navbar from "../components/Navbar";
-import { useNavigate } from "react-router";
+import { useNavigate ,useLocation} from "react-router";
 import {
   FiltersSection,
   PropertiesListSection,
@@ -56,10 +56,17 @@ ScrollTop.propTypes = {
 };
 
 const Properties = (props) => {
-  console.log("properprops");
-  console.log(props);
- const [searchQuery, setSearchQuery] = useState({ type: "Rent" || '' });
+//   console.log("properprops");
+//   console.log(props);
+//   const [searchQuery, setsearchQuery] = useState(props);
   const navigate = useNavigate();
+  const location=useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const propertyType = queryParams.get('type');
+  const [searchQuery, setSearchQuery] = useState({ type: propertyType || '' });
+   useEffect(() => {
+    setSearchQuery({ type: propertyType || '' });
+  }, [propertyType]);
 
   const breadcrumbs = [
     <Link
@@ -94,7 +101,8 @@ const Properties = (props) => {
       Properties
     </Link>,
   ];
-
+  console.log("searchQuery");
+    console.log(searchQuery.type);
   return (
     <>
      <Navbar/>

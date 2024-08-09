@@ -59,6 +59,17 @@ const SearchSlice = createSlice({
   name: "search",
   initialState,
   reducers: {
+    handleCity: (state, { payload }) => {
+      state.city = payload;
+    },
+    updateFilters: (state, { payload }) => {
+      const filters = {
+        ...state,
+        ...payload
+      };
+      // Dispatch getFilteredProperties with updated filters
+      return filters;
+    },
     handleChange: (state, { payload }) => {
       if (state.expanded.includes(payload)) {
         const arr = state.expanded.filter((item) => item !== payload);
@@ -73,6 +84,7 @@ const SearchSlice = createSlice({
     handleBudgetRange: (state, { payload }) => {
       state.budgetRange = payload;
     },
+    
     handleNoOfBedrooms: (state, { payload }) => {
       if (state.noOfBedrooms.includes(payload)) {
         const arr = state.noOfBedrooms.filter((item) => item !== payload);
@@ -225,5 +237,7 @@ export const {
   handlePostedBy, // Export this action
   handleFurnitureType, // Export this action
   handlePurchaseType, // Export this action
+  updateFilters,
+  handleCity 
 } = SearchSlice.actions;
 export default SearchSlice.reducer;
