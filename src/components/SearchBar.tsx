@@ -104,7 +104,6 @@ function Homepage() {
                 variant="solid"
                 color="white"
                 className={style.searchButton}
-                mb="-2cm"
                 
               >
                 Search
@@ -112,25 +111,14 @@ function Homepage() {
             </Box>
           </Flex>
         </form>
-        <Flex className={style.filterBox}>
-          <Routes>
+        {/* <Flex className={style.filterBox}>
+          <Routes> */}
             {/* <Route path="/buy" element={<BuyOption />} />
                         <Route path="/rent" element={<RentOption />} />
                         <Route path="/commercial" element={<CommercialOption />} /> */}
-          </Routes>
-        </Flex>
+          {/* </Routes>
+        </Flex> */}
       </Box>
-      <Flex
-        m="20px auto"
-        w="100%"
-        justifyContent="center"
-        alignItems="center"
-        gap={3}
-      >
-        <Text w="60px" h="1px" bgColor="#ccc"></Text>
-        <Text>"Discover Homes"</Text>
-        <Text w="60px" h="1px" bgColor="#ccc"></Text>
-      </Flex>
     </Box>
   );
 }

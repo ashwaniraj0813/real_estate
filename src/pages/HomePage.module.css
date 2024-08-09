@@ -30,7 +30,6 @@ html, body {
 
 .hero {
   position: relative;
-  height: 40vh;
   width: 100%;
   padding: 4vw 8vw;
   background: url("bg.jpg") center;
@@ -42,7 +41,11 @@ html, body {
   align-items: center;
   overflow: visible;
   z-index: 100;
-  margin-bottom: 30vh;
+  margin-bottom: 5vh;
+}
+
+.search{
+  margin-top: 32vh;
 }
 
 
