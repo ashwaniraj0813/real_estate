@@ -63,16 +63,7 @@ function Homepage() {
           >
             <Link to="/rent">Rent</Link>
           </Box>
-          <Box
-            onClick={() => setSelectedOpt("Commercial")}
-            style={
-              selectedOpt === "Commercial"
-                ? { borderBottom: "3px solid #fd3752", color: "#fd3752" }
-                : { borderBottom: "0px solid" }
-            }
-          >
-            <Link to="/commercial">Commercial</Link>
-          </Box>
+          
         </Grid>
         <form onSubmit={handlesearch}>
           <Flex className={style.searchBox}>
@@ -112,6 +103,8 @@ function Homepage() {
                 variant="solid"
                 color="white"
                 className={style.searchButton}
+                mb="-2cm"
+                
               >
                 Search
               </Button>
