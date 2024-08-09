@@ -25,7 +25,7 @@ import Register from "./pages/Register";
 import LogIn from "./pages/LogIn";
 import PropertiesRent from "./pages/PropertiesRent";
 import PropertiesSell from "./pages/PropertiesSell";
-
+import Properties from "./pages/Properties";
 function App() {
   const action = useNavigationType();
   const location = useLocation();
@@ -146,6 +146,7 @@ function App() {
       <Route path="/admin-dashboard" element={<AdminDashboard />} />
       <Route path="/register" element={<Register />} />
       <Route path="/log-in" element={<LogIn />} />
+      <Route path="/properties" element={<Properties/>} />
       <Route path="/properties/sell" element={<PropertiesSell />} />
       <Route path="/properties/rent" element={<PropertiesRent />} />
     </Routes>

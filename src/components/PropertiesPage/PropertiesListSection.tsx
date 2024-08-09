@@ -23,6 +23,14 @@ const PropertiesListSection = ({ searchQuery ,filterproperty}) => {
   const maxArea = area[1];
   console.log("filterproperties");
   console.log(filterproperty)
+  console.log("listcardSearch")
+  console.log(searchQuery);
+  if(searchQuery.type === "Apartments"){
+    searchQuery.type = "Apartment";
+  }
+  if(searchQuery.type === "Independent House" || searchQuery.type === "Independent Builder Floor"){
+    searchQuery.type = "House";
+  }
   useEffect(() => {
     const filters = {
       minPrice,
@@ -31,7 +39,7 @@ const PropertiesListSection = ({ searchQuery ,filterproperty}) => {
       maxArea,
       City: city,
       PropertyType: propertyType,
-      url: `http://localhost:5000/api/propertyPurpose?query=${searchQuery}`
+      url: `http://localhost:5000/api/propertyPurpose?query=${searchQuery.type}`
     };
     dispatch(getFilteredProperties(filters));
   }, [minPrice, maxPrice, minArea, maxArea, city, propertyType, dispatch]);
@@ -50,7 +58,7 @@ const PropertiesListSection = ({ searchQuery ,filterproperty}) => {
           fontFamily: "Open Sans",
         }}
       >
-        {properties.length} results | Property for {searchQuery} in{" "}
+        {properties.length} results | Property for {searchQuery.type} in{" "}
         {city.address === undefined ? "India" : city.address}
       </Typography>
 
@@ -58,8 +66,9 @@ const PropertiesListSection = ({ searchQuery ,filterproperty}) => {
         <CircularProgress />
       ) : (
         properties.map((property) => (
-          <React.Fragment key={property.propertyId}>
-            <PropertiesListCard key={property.id}property={property}  />
+          console.log(property),
+          <React.Fragment key={property._id}>
+            <PropertiesListCard key={property._id} property={property}  />
           </React.Fragment>
         ))
       )}
