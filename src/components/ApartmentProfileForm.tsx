@@ -26,7 +26,6 @@ const ApartmentProfileForm: React.FC<ApartmentProfileFormProps> = ({
   };
 
   const handleSubmit = () => {
-    // Ensure all required fields are filled
     const requiredFields = [
       "numberOfBedrooms",
       "numberOfBathrooms",
@@ -45,9 +44,13 @@ const ApartmentProfileForm: React.FC<ApartmentProfileFormProps> = ({
 
   return (
     <div className={styles.formSection}>
-      <button className={styles.backButton} onClick={prevStep}>
+      <button className={styles.backButton} onClick={() => {
+        console.log("Back button clicked"); // Add this for debugging
+        prevStep();
+          }}>
         Back
       </button>
+
       <h2>Apartment Profile</h2>
 
       <div className={styles.bedrooms}>
@@ -153,6 +156,15 @@ const ApartmentProfileForm: React.FC<ApartmentProfileFormProps> = ({
             value={formData.totalFloorDetails || ""}
             onChange={handleInputChange}
             placeholder="Total Floors"
+          />
+        </div>
+        <div className={styles.totalFloorDetailsInput}>
+          <input
+            type="number"
+            name="propertyFloorDetails"
+            value={formData.propertyFloorDetails || ""}
+            onChange={handleInputChange}
+            placeholder="Property on floor"
           />
         </div>
       </div>

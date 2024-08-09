@@ -114,7 +114,7 @@ const HomePage: FunctionComponent = () => {
       />
 
       <div className={styles.hero}>
-        <div className={styles.introtext}>Your dream home awaits...</div>
+        <div className={styles.introtext}>Your dream property awaits...</div>
         <form className={styles.aptform} onSubmit={handleSubmit}>
           <div className={styles.book}>BOOK APPOINTMENT</div>
           <div className={styles.fullname}>
@@ -156,10 +156,10 @@ const HomePage: FunctionComponent = () => {
           </button>
         </form>
       </div>
-
-      <div style={{ display: "flex" }}>
-        <SearhBar />
-        <HistoryCard />
+      
+      <div className={styles.searchBar}>
+      <SearhBar />
+      {/* <HistoryCard /> */}
       </div>
 
       <PropertyTypeCarousel />
@@ -208,7 +208,7 @@ const HomePage: FunctionComponent = () => {
       <Upcoming />
       <CityWiseReviews />
       <EmergingLocalities />
-      <Articles />
+      {/* <Articles /> */}
       <CardLayout />
 
       <div className={styles.happycustomers}>
