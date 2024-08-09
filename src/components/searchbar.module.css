@@ -9,9 +9,9 @@ body html {
 
 
 .homepageContainer {
-    padding-top: 70px;
-    padding: 85px 20px 30px 20px;
-    background-color: #fdfdfd;
+    /* padding-top: 70px; */
+    padding: 10px;
+    background-color: transparent;
 }
 
 .homeTitle {

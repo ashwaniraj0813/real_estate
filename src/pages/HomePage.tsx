@@ -114,52 +114,7 @@ const HomePage: FunctionComponent = () => {
       />
 
       <div className={styles.hero}>
-        <div className={styles.introtext}>Your dream home awaits...</div>
-        <form className={styles.aptform} onSubmit={handleSubmit}>
-          <div className={styles.book}>BOOK APPOINTMENT</div>
-          <div className={styles.fullname}>
-            <input
-              className={styles.fname}
-              placeholder="First Name"
-              type="text"
-              value={firstName}
-              onChange={(e) => setFirstName(e.target.value)}
-              required
-            />
-            <input
-              className={styles.lname}
-              placeholder="Last Name"
-              type="text"
-              value={lastName}
-              onChange={(e) => setLastName(e.target.value)}
-              required
-            />
-          </div>
-          <input
-            className={styles.email}
-            placeholder="Email"
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-          <input
-            className={styles.phno}
-            placeholder="Phone"
-            type="text"
-            value={phone}
-            onChange={(e) => setPhone(e.target.value)}
-            required
-          />
-          <button className={styles.bookappointment} type="submit">
-            Get Your Appointment
-          </button>
-        </form>
-      </div>
-
-      <div style={{ display: "flex" }}>
         <SearhBar />
-        <HistoryCard />
       </div>
 
       <PropertyTypeCarousel />
@@ -232,7 +187,49 @@ const HomePage: FunctionComponent = () => {
           />
         </div>
       </div>
-      <ReviewForm />
+      <div style={{ display: "flex", flexDirection: "row", gap: "2vw", marginLeft: "10vw" }}>
+        <form className={styles.aptform} onSubmit={handleSubmit}>
+          <div className={styles.book}>BOOK APPOINTMENT</div>
+          <div className={styles.fullname}>
+            <input
+              className={styles.fname}
+              placeholder="First Name"
+              type="text"
+              value={firstName}
+              onChange={(e) => setFirstName(e.target.value)}
+              required
+            />
+            <input
+              className={styles.lname}
+              placeholder="Last Name"
+              type="text"
+              value={lastName}
+              onChange={(e) => setLastName(e.target.value)}
+              required
+            />
+          </div>
+          <input
+            className={styles.email}
+            placeholder="Email"
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+          <input
+            className={styles.phno}
+            placeholder="Phone"
+            type="text"
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
+            required
+          />
+          <button className={styles.bookappointment} type="submit">
+            Get Your Appointment
+          </button>
+        </form>
+        <ReviewForm />
+      </div>
       <Footer />
 
       {isLoginPopupVisible && (
