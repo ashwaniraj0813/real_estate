@@ -58,8 +58,8 @@ const WhatsappContact: FunctionComponent = () => {
                     />
                     <div className={styles.phoneContainer}>
                         <select id="countryCode" className={styles.countryCode}>
-                            <option value="+61">+61</option>
-                            {/* Add more country codes as needed */}
+                            <option value="+91">+91</option>
+                           
                         </select>
                         <input
                             type="tel"
