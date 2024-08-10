@@ -4,10 +4,10 @@ import styles from "./EmployeeCard.module.css";
 const EmployeeCard: FunctionComponent = ({ }) => {
   return (
     <div className={styles.employeeCard}>
-      <img className={styles.image} src="/istockphoto1476170969170667a-1@2x.png" />
+      <img className={styles.image} src="/builder.jpeg" />
       <div className={styles.information}>
           <div className={styles.name}>
-            Ashwani Raj
+            Anil Kumar
           </div>
           <div className={styles.phone}>
             <img className={styles.icon} src="/phone.png"/>
