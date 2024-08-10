@@ -18,7 +18,7 @@ const UserProperties: FunctionComponent = () => {
   const fetchProperties = async (query: string = "") => {
     try {
       const response = await fetch(
-        `http://localhost:5000/api/property/${email}`,
+        `http://localhost:5000/api/property-user/${email}`,
         {
           method: "GET",
           headers: {
@@ -56,14 +56,14 @@ const UserProperties: FunctionComponent = () => {
           myPropertiesFontWeight="bold"
         />
 
-      {properties.length> 0 ? (
+      {properties1.length> 0 ? (
         <div style={{ display: "flex", paddingRight: "2em" }}>
         <div className={styles.popularfeatures}>
 
           <section className={styles.popularProperties}>
            
             <div className={styles.listings}>
-              {properties.slice(0,4).map((property) => (
+              {properties1.slice(0,4).map((property) => (
                 <Link
                   key={property._id}
                   to={`/property-details-page/${property._id}`}
