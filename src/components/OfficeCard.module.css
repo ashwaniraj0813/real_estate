@@ -6,10 +6,10 @@
 }
 
 .officeCard {
-  width: 300px;
-  height: 320px;
+  width: 270px;
+  height: 290px;
   padding: 20px;
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
   cursor: pointer;
   color: black;
@@ -25,10 +25,10 @@
 }
 
 .image {
-  width: 100%;
+  width: 80%;
   object-fit: cover;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-  border-radius: 30px;
+  border-radius: 15px;
 }
 
 .information {
