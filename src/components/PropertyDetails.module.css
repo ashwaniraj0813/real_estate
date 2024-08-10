@@ -1,5 +1,12 @@
  /* * { border: 1px solid green; } */
 
+.breadcrumb {
+    font-family: var(--font-montserrat);
+    width: 100%; 
+    font-size: 16px;
+    font-weight: 600;
+}
+
 .PropertyDetails *,
 .Details,
 .Gallery *,
@@ -19,57 +26,6 @@
     gap: 40px;
 }
 
-.Details {
-    width: 100%;
-    padding: 8vw 8vw 0vw 8vw;
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-}
-
-.PropertyDetails {
-    display: flex;
-    flex: column;
-}
-.left {
-    width: 60%;
-}
-.right {
-    width: 40%;
-}
-
-.Gallery {
-    width: 100vw;
-    padding: 2vw 8vw 0vw ;
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-}
-
-.images {
-    display: flex;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    overflow-y: hidden; /* Hide vertical overflow */
-    gap: 5px;
-    scroll-snap-type: x mandatory; /* Enable horizontal scroll snapping */
-    padding: 10px 0; /* Optional: Padding to adjust the spacing */
-}
-
-.image {
-    flex: 0 0 400px; /* Fixed width for images */
-    height: 400px; /* Fixed height for images */
-    object-fit: cover; /* Cover the container without stretching */
-    scroll-snap-align: start; /* Snap to the start of the container */
-}
-
-.breadcrumb {
-    font-family: var(--font-montserrat);
-    width: 100%; 
-    font-size: 16px;
-    font-weight: 600;
-}
-
 .heading {
     display: flex;
     flex-direction: column;
@@ -86,6 +42,14 @@
     align-items: center;
 }
 
+.Details {
+    width: 100%;
+    padding: 8vw 8vw 0vw 8vw;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
 .title {
     width: 100%;
     display: flex;
@@ -97,6 +61,21 @@
 .propertyname {
     font-size: 30px;
     font-weight: 600;
+}
+
+.details {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0px;
+    font-size: 18px;
+    line-height: 20px;
+}
+
+i {
+    line-height: 20px;
+    padding: 5px;
 }
 
 .ratings {    
@@ -119,60 +98,42 @@
     font-size: 20px;
 }
 
-.details {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 5px 0px;
-    font-size: 18px;
-    line-height: 20px;
-}
-
-i {
-    line-height: 20px;
-    padding: 5px;
-}
-
-.propimage {
+.Gallery {
+    width: 100vw;
+    padding: 2vw 8vw 0vw ;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: flex-end;
-    height: 500px;
-    width: 450px;
+    gap: 40px;
 }
 
-.data {
+.images {
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    width: 650px;
-    gap: 25px;
-    font-size: 20px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden; 
+    gap: 5px;
+    scroll-snap-type: x mandatory;
+    padding: 10px 0;
 }
 
-.datarow {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+.image {
+    flex: 0 0 400px;  
+    height: 400px;  
+    object-fit: cover;  
+    scroll-snap-align: start; 
 }
 
-.basis {
+.PropertyDetails {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 190px;
-    padding: 10px;
+    flex: column;
 }
 
-.info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 440px;
-    font-weight: 600;
-    padding: 10px;
+.left {
+    width: 60%;
+}
+
+.right {
+    width: 40%;
 }
 
 .describe {
@@ -180,20 +141,20 @@ i {
     line-height: 30px;
 }
 
-.list {
+.gridContainer {
     font-size: 18px;
-    line-height: 30px;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
+    line-height: 30px; 
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 10px; 
+    align-items: center;
 }
 
-.datarowfa {
-    width: 50%;
+.gridItem  {
     margin-bottom: 10px;
     display: flex;
     flex-direction: row;
-    gap: 20px;
+    gap: 10px;
 }
 
 .img {
@@ -217,10 +178,4 @@ i {
     height: 500px;
     width: 100%;
     border: none;
-    /* opacity: 0.5; */
-    /* transition: opacity ease-in 200ms ; */
 }
-/* 
-.map:hover {
-    opacity: 1;
-} */
