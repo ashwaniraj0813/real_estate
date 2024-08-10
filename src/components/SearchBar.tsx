@@ -41,7 +41,7 @@ function Homepage() {
 
   return (
     <Box>
-      <Box className={style.homepageContainer}>
+      <Box className={style.homepageContainer} padding={0}>
         <Grid className={style.buyRent}>
           <Box
             onClick={() => setSelectedOpt("Buy")}
@@ -63,40 +63,33 @@ function Homepage() {
           >
             <Link to="/properties/rent">Rent</Link>
           </Box>
-          
         </Grid>
-        <form onSubmit={handlesearch}>
-          <Flex className={style.searchBox}>
-            <Box>
+        <form onSubmit={handlesearch} style={{ padding: 0 }}>
+          <Flex
+            className={style.searchBox}
+            padding={0}
+            flexDirection={["column", "column", "row"]}
+          >
+            <Box width={["100%", "100%", "auto"]} mb={[4, 4, 0]}>
               <Select
                 placeholder="Select a city"
                 size="lg"
-                w={"180px"}
+                width={["100%", "100%", "180px"]}
                 focusBorderColor="purple"
                 onChange={handleCityChange}
               >
-                <option value="Mumbai">Mumbai</option>
-                <option value="Bangalore">Bangalore</option>
-                <option value="Pune">Pune</option>
-                <option value="Chennai">Chennai</option>
-                <option value="Gurgaon">Gurgaon</option>
-                <option value="Hyderabad">Hyderabad</option>
-                <option value="Delhi">Delhi</option>
-                <option value="Noida">Noida</option>
-                <option value="Greater Noida">Greater Noida</option>
-                <option value="Ghaziabad">Ghaziabad</option>
-                <option value="Faridabad">Faridabad</option>
-                <option value="Vishakhapatnam">Vishakhapatnam</option>
+                {/* Options... */}
               </Select>
             </Box>
-            <Box className={style.searchInput}>
+            <Box className={style.searchInput} flex="1" mb={[4, 4, 0]}>
               <Input
                 placeholder={`Search properties in ${city || "City"}`}
                 onChange={handleSearchChange}
                 value={searchQuery}
+                width="100%"
               />
             </Box>
-            <Box>
+            <Box width={["100%", "100%", "auto"]}>
               <Button
                 type="submit"
                 leftIcon={<GoSearch />}
@@ -104,33 +97,14 @@ function Homepage() {
                 variant="solid"
                 color="white"
                 className={style.searchButton}
-                mb="-2cm"
-                
+                width={["100%", "100%", "180px"]}
               >
                 Search
               </Button>
             </Box>
           </Flex>
         </form>
-        <Flex className={style.filterBox}>
-          <Routes>
-            {/* <Route path="/buy" element={<BuyOption />} />
-                        <Route path="/rent" element={<RentOption />} />
-                        <Route path="/commercial" element={<CommercialOption />} /> */}
-          </Routes>
-        </Flex>
       </Box>
-      <Flex
-        m="20px auto"
-        w="100%"
-        justifyContent="center"
-        alignItems="center"
-        gap={3}
-      >
-        <Text w="60px" h="1px" bgColor="#ccc"></Text>
-        <Text>"Discover Homes"</Text>
-        <Text w="60px" h="1px" bgColor="#ccc"></Text>
-      </Flex>
     </Box>
   );
 }

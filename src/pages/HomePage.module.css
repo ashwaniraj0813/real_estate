@@ -31,7 +31,10 @@ html, body {
 
 .hero {
   position: relative;
+<<<<<<< HEAD
   height: 100vh;
+=======
+>>>>>>> a48561a11b30fb59357b6cfc3fd45c87dced4bc9
   width: 100%;
   padding: 4vw 8vw;
   background: url("bg.jpg") center;
@@ -43,7 +46,18 @@ html, body {
   align-items: center;
   overflow: visible;
   z-index: 100;
-  margin-bottom: 30vh;
+  margin-bottom: 5vh;
+}
+
+.search{
+  position: absolute;
+  bottom: -5vh; /* Adjust this value to move the search bar further down */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 
