@@ -1,3 +1,4 @@
+/* HomePage.module.css */
 html, body {
   height: 100%;
   margin: 0;
@@ -30,6 +31,10 @@ html, body {
 
 .hero {
   position: relative;
+<<<<<<< HEAD
+  height: 100vh;
+=======
+>>>>>>> a48561a11b30fb59357b6cfc3fd45c87dced4bc9
   width: 100%;
   padding: 4vw 8vw;
   background: url("bg.jpg") center;
@@ -65,20 +70,19 @@ html, body {
 }
 
 .aptform {
-  width: 400px;
-  padding: 30px 40px;
+  width: 500px;
+  padding: 50px;
   background-color: var(--color-gainsboro-100);
   border-radius: 50px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 16px;
-  text-align: center;
+  gap: 25px;
 }
 
 .aptform * {
-  font-size: 15px;
+  font-size: 18px;
 }
 
 .book {
@@ -120,7 +124,6 @@ input {
   border-radius: 30px;
   padding: 8px 30px;
   background-image: linear-gradient(90deg, #2895DF, #764EC6);
-  text-align: center;
 }
 
 .popularfeatures {
@@ -359,5 +362,3 @@ input {
     gap: 10px;
   }
 }
-
-
