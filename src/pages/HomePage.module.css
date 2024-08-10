@@ -34,18 +34,34 @@ html, body {
   height: 100vh;
   width: 100%;
   padding: 4vw 8vw;
-  background: url("/image-1@2x.png");
+  background: url("bg.jpg") center;
   background-size: cover;
+  height: 50vh;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
+  align-items: center;
+  overflow: visible;
+  z-index: 100;
+  margin-bottom: 5vh;
+}
+
+.search{
+  position: absolute;
+  bottom: -5vh; /* Adjust this value to move the search bar further down */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  display: flex;
+  justify-content: center;
   align-items: center;
 }
 
+
 .introtext {
   padding: 80px 0px;
-  width: 600px;
-  font-size: 60px;
+  width: 6vw;
+  font-size: 2vw;
   color: var(--color-white);
   font-weight: 700;
 }

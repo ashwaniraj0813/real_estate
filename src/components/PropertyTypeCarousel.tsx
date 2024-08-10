@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import styles from './PropertyTypeCarousel.module.css';
-
+import { useNavigate } from 'react-router-dom';
 interface PropertyTypeCardProps {
   title: string;
   description: string;
@@ -8,8 +8,12 @@ interface PropertyTypeCardProps {
 }
 
 const PropertyTypeCard: React.FC<PropertyTypeCardProps> = ({ title, description, imageSrc }) => {
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate(`/properties?type=${title}`);
+  };
   return (
-    <div className={styles.card}>
+    <div className={styles.card}  onClick={handleClick}>
       <img src={imageSrc} alt={title} className={styles.image} />
       <div className={styles.info}>
         <h3 className={styles.title}>{title}</h3>
@@ -22,6 +26,7 @@ const PropertyTypeCard: React.FC<PropertyTypeCardProps> = ({ title, description,
 };
 
 const PropertyTypeCarousel: React.FC = () => {
+  
   const carouselRef = useRef<HTMLDivElement>(null);
 
   const scroll = (scrollOffset: number) => {
@@ -49,7 +54,8 @@ const PropertyTypeCarousel: React.FC = () => {
               key={index}
               title={property.title}
               description={property.description}
-              imageSrc={property.imageSrc}  // Corrected prop name
+              imageSrc={property.imageSrc} 
+             
             />
           ))}
         </div>

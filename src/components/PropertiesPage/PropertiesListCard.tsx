@@ -2,12 +2,13 @@ import React, { useState, useEffect } from "react";
 import { Box, Button, Divider, Paper, Typography } from "@mui/material";
 
 
-
+import { useNavigate } from "react-router-dom";
 
 const PropertiesListCard = ({ property }) => {
   const imageProperty="https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
   
- 
+  
+   const navigate = useNavigate();
   const [bhk, setbhk] = useState();
   const {
     address,
@@ -20,7 +21,9 @@ const PropertiesListCard = ({ property }) => {
   } = property;
  
 
-
+  const handleCardClick = () => {
+    navigate(`/property-details-page/${property._id}`, { state: { property } });
+  };
   useEffect(() => {
     if (area < 750) {
       setbhk(1);
@@ -41,7 +44,7 @@ const PropertiesListCard = ({ property }) => {
 
   return (
     <>
-      <Paper
+      <Paper onClick={handleCardClick}
         elevation={1}
         sx={{
           mt: 3,
@@ -81,39 +84,45 @@ const PropertiesListCard = ({ property }) => {
           }}
         >
           <Box>
+            
             <Typography
               sx={{
-                fontFamily: "Open Sans",
+                fontFamily: "var(--font-montserrat)",
+                fontSize: "20px",
+                lineHeight: "20px",
+                fontWeight: 700,
+                mt: 0.1,
+                 ml: -5, 
+                color: "#091E42",
+                cursor: "pointer",
+                
+              }}
+            >
+              {title}
+            </Typography>
+            <Typography
+              sx={{
+                fontFamily: "var(--font-montserrat)",
                 fontSize: "14px",
                 lineHeight: "20px",
                 cursor: "pointer",
+                mt: 0.5,
+                ml: -5, 
               }}
             >
               {bhk} BHK Serviced {propertyType} for {propertyOptions} in{" "}
               {address}, {city}
-            </Typography>
-            <Typography
-              sx={{
-                fontFamily: "Open Sans",
-                fontSize: "14px",
-                lineHeight: "20px",
-                fontWeight: 700,
-                mt: 1,
-                color: "#091E42",
-                cursor: "pointer",
-              }}
-            >
-              {title}
             </Typography>
             <Box sx={{ mt: 1, display: "flex", gap: 8, cursor: "pointer" }}>
               <Box>
                 <Box sx={{ display: "flex", alignItems: "baseline" }}>
                   <Typography
                     sx={{
-                      fontFamily: "Open Sans",
+                      fontFamily: "var(--font-montserrat)",
                       fontSize: "20px",
                       lineHeight: "28px",
                       fontWeight: 600,
+                      
                       color: "#091E42",
                     }}
                   >
@@ -126,7 +135,7 @@ const PropertiesListCard = ({ property }) => {
                   </Typography>
                   <Typography
                     sx={{
-                      fontFamily: "Open Sans",
+                      fontFamily: "var(--font-montserrat)",
                       fontSize: "12px",
                       lineHeight: "16px",
                       fontWeight: 400,
@@ -139,7 +148,7 @@ const PropertiesListCard = ({ property }) => {
 
                 <Typography
                   sx={{
-                    fontFamily: "Open Sans",
+                    fontFamily: "var(--font-montserrat)",
                     fontSize: "10px",
                     lineHeight: "12px",
                     fontWeight: 400,
@@ -153,7 +162,7 @@ const PropertiesListCard = ({ property }) => {
                 <Box sx={{ display: "flex", alignItems: "baseline" }}>
                   <Typography
                     sx={{
-                      fontFamily: "Open Sans",
+                      fontFamily: "var(--font-montserrat)",
                       fontSize: "20px",
                       lineHeight: "28px",
                       fontWeight: 600,
@@ -164,7 +173,7 @@ const PropertiesListCard = ({ property }) => {
                   </Typography>
                   <Typography
                     sx={{
-                      fontFamily: "Open Sans",
+                      fontFamily: "var(--font-montserrat)",
                       fontSize: "12px",
                       lineHeight: "16px",
                       fontWeight: 400,
@@ -177,7 +186,7 @@ const PropertiesListCard = ({ property }) => {
 
                 <Typography
                   sx={{
-                    fontFamily: "Open Sans",
+                    fontFamily: "var(--font-montserrat)",
                     fontSize: "10px",
                     lineHeight: "12px",
                     fontWeight: 400,
@@ -191,7 +200,7 @@ const PropertiesListCard = ({ property }) => {
                 <Box sx={{ display: "flex", alignItems: "baseline" }}>
                   <Typography
                     sx={{
-                      fontFamily: "Open Sans",
+                      fontFamily: "var(--font-montserrat)",
                       fontSize: "20px",
                       lineHeight: "28px",
                       fontWeight: 600,
@@ -204,7 +213,7 @@ const PropertiesListCard = ({ property }) => {
 
                 <Typography
                   sx={{
-                    fontFamily: "Open Sans",
+                    fontFamily: "var(--font-montserrat)",
                     fontSize: "10px",
                     lineHeight: "12px",
                     fontWeight: 400,
@@ -218,11 +227,11 @@ const PropertiesListCard = ({ property }) => {
 
             <Typography
               sx={{
-                fontFamily: "Open Sans",
+                fontFamily: "var(--font-montserrat)",
                 fontSize: "14px",
                 lineHeight: "20px",
                 fontWeight: 400,
-                mt: 4,
+                mt: 0.7,
                 color: "#091E42",
                 mr: 4,
               }}
@@ -242,17 +251,15 @@ const PropertiesListCard = ({ property }) => {
               <Button
                 disableRipple
                 sx={{
-                  padding: "8px 16px",
-                  textTransform: "none",
-                  fontFamily: "Open Sans",
-                  fontSize: "14px",
-                  lineHeight: "20px",
-                  fontWeight: 600,
-                  color: "#fff",
-                  background: "#0078db",
-                  mr: 1,
-                  ":hover": {
-                    background:"#006ac2",
+                  border: "none",
+                  color: "var(--color-white)",
+                  borderRadius: "5px",
+                  padding: "4px 15px", // Reduced padding for smaller size
+                  fontSize: "0.800rem", // Reduced font size
+                  backgroundImage: "linear-gradient(90deg, #2895DF, #764EC6)",
+                  margin: "0 8px", // Adds an 8px gap on the left and right sides
+                  "&:hover": {
+                    backgroundColor: "#006ac2",
                   },
                 }}
               >
@@ -262,16 +269,15 @@ const PropertiesListCard = ({ property }) => {
                 disableRipple
                 variant="contained"
                 sx={{
-                  padding: "8px 16px",
-                  textTransform: "none",
-                  fontFamily: "Open Sans",
-                  fontSize: "14px",
-                  lineHeight: "20px",
-                  fontWeight: 600,
-                  color: "#fff",
-                  background: "#0078db",
-                  ":hover": {
-                    background: "#006ac2",
+                  border: "none",
+                  color: "var(--color-white)",
+                  borderRadius: "5px",
+                  padding: "4px 15px", // Reduced padding for smaller size
+                  fontSize: "0.800rem", // Reduced font size
+                  backgroundImage: "linear-gradient(90deg, #2895DF, #764EC6)",
+                  margin: "0 8px", // Adds an 8px gap on the left and right sides
+                  "&:hover": {
+                    backgroundColor: "#006ac2",
                   },
                 }}
               >

@@ -1,16 +1,19 @@
 import { Box, Breadcrumbs, Container, Grid, Link } from "@mui/material";
 import React, {useState,useEffect} from "react";
 import Navbar from "../components/Navbar";
-import { useNavigate ,useLocation} from "react-router";
+import { useNavigate,useLocation} from "react-router";
 import {
   FiltersSection,
   PropertiesListSection,
+  SearchSection,
 } from "../components/PropertiesPage";
 import PropTypes from "prop-types";
 import useScrollTrigger from "@mui/material/useScrollTrigger";
 import Fab from "@mui/material/Fab";
 import Fade from "@mui/material/Fade";
 import StraightSharpIcon from "@mui/icons-material/StraightSharp";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function ScrollTop(props) {
   const { children, window } = props;
@@ -19,7 +22,7 @@ function ScrollTop(props) {
     disableHysteresis: true,
     threshold: 300,
   });
-
+  
   const handleClick = (event) => {
     const anchor = (event.target.ownerDocument || document).querySelector(
       "#back-to-top-anchor"
@@ -56,18 +59,76 @@ ScrollTop.propTypes = {
 };
 
 const Properties = (props) => {
-//   console.log("properprops");
-//   console.log(props);
-//   const [searchQuery, setsearchQuery] = useState(props);
-  const navigate = useNavigate();
-  const location=useLocation();
-  const queryParams = new URLSearchParams(location.search);
-  const propertyType = queryParams.get('type');
-  const [searchQuery, setSearchQuery] = useState({ type: propertyType || '' });
-   useEffect(() => {
-    setSearchQuery({ type: propertyType || '' });
-  }, [propertyType]);
+  
+    const [properties, setProperties] = useState([]);
+    const navigate = useNavigate();
+    const location = useLocation();
+  const fetchProperties = async (city: string = "", query: string = "") => {
+    
+    try {
+      const response = await fetch(
+        `http://localhost:5000/api/property?city=${encodeURIComponent(
+          city
+        )}&query=${encodeURIComponent(query)}`,
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
 
+      if (!response.ok) {
+        throw new Error(`Failed to fetch properties: ${response.statusText}`);
+      }
+
+      const result = await response.json();
+
+      if (Array.isArray(result) && result.length === 0) {
+        toast.warn("No properties found. Try another city.", {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
+      } else {
+        setProperties(result);
+      }
+    } catch (error) {
+      console.error("Error fetching property cards:", error.message);
+      toast.error("Error fetching properties. Please try again later.", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+    }
+  };
+  const Params = new URLSearchParams(location.search);
+  const q = Params.get("query") || "";
+  useEffect(() => {
+    const searchParams = new URLSearchParams(location.search);
+    const query = searchParams.get("query") || "";
+    
+    const city = searchParams.get("city") || "";
+    console.log(query)
+    fetchProperties(city, query);
+  }, [location.search]);
+
+  console.log("properprops");
+  console.log(props);
+  console.log(q);
+ 
+
+  console.log("filterproperties");
+  console.log(properties);
+  
   const breadcrumbs = [
     <Link
       key="1"
@@ -101,8 +162,7 @@ const Properties = (props) => {
       Properties
     </Link>,
   ];
-  console.log("searchQuery");
-    console.log(searchQuery.type);
+
   return (
     <>
      <Navbar/>
@@ -121,7 +181,7 @@ const Properties = (props) => {
               <FiltersSection />
             </Grid>
             <Grid item md={8.3}>
-             <PropertiesListSection searchQuery={searchQuery} />
+             <SearchSection searchQuery={q} filterproperty={properties} />
             </Grid>
           </Grid>
         </Container>

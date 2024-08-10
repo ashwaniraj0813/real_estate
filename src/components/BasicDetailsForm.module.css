@@ -57,4 +57,27 @@
    button:hover {
      background-color: #1f6391;
    }
+
+   .propertyTypeInput label, .propertyTypeDetailsInput label {
+    display: flex;
+    align-items: center;
+  }
+  
+  
+  .propertyTypeDetailsInput {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .propertyTypeDetailsInput label {
+    display: flex;
+    align-items: center;
+  }
+  
+  .propertyTypeInput input[type="radio"], 
+  .propertyTypeDetailsInput input[type="radio"] {
+    width: auto;
+    height: auto;
+  }
+  
    

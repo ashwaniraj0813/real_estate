@@ -3,7 +3,7 @@ import Sidebar from "../components/Sidebar";
 import styles from "./UserProperties.module.css";
 import LottieAnimation from "../components/LottieAnimation";
 import Navbar from "../components/Navbar";
-import PropertyCard from "../components/PropertyCard";
+import BuilderPropertyCard from "../components/BuilderPropertyCard";
 import { useNavigate, Link } from "react-router-dom";
 import { jwtDecode } from "jwt-decode";
 
@@ -56,26 +56,28 @@ const UserProperties: FunctionComponent = () => {
           myPropertiesFontWeight="bold"
         />
 
-      {properties1.length> 0 ? (
+      {properties.length> 0 ? (
         <div style={{ display: "flex", paddingRight: "2em" }}>
         <div className={styles.popularfeatures}>
 
           <section className={styles.popularProperties}>
            
             <div className={styles.listings}>
-              {properties1.slice(0,4).map((property) => (
+              {properties.slice(0,4).map((property) => (
+                <div key={property._id}>
+                <BuilderPropertyCard
+                  title={property.title}
+                  city={property.city}
+                  price={property.price.toString()}
+                  area={property.area.toString()}
+                />
                 <Link
-                  key={property._id}
                   to={`/property-details-page/${property._id}`}
-                  className={styles.linkWrapper}
+                  className={styles.viewDetailsLink}
                 >
-                  <PropertyCard
-                    title={property.title}
-                    city={property.city}
-                    price={property.price.toString()}
-                    area={property.area.toString()}
-                  />
+                  View Details
                 </Link>
+              </div>
               ))}
             </div>
           </section>

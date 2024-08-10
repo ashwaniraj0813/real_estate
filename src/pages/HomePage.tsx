@@ -14,8 +14,8 @@ import CityWiseReviews from "../components/CityWiseReviews";
 import Upcoming from "../components/upcoming";
 import EmergingLocalities from "../components/EmergingLocalities";
 import ReviewForm from "../components/ReviewForm";
-import PropertyTypeCarousel from '../components/PropertyTypeCarousel';
-import SearhBar from '../components/SearchBar';
+import PropertyTypeCarousel from "../components/PropertyTypeCarousel";
+import SearhBar from "../components/SearchBar";
 const HomePage: FunctionComponent = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -62,15 +62,12 @@ const HomePage: FunctionComponent = () => {
 
   const fetchProperties = async (query: string = "") => {
     try {
-      const response = await fetch(
-        `http://localhost:5000/api/property?query=${query}`,
-        {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
+      const response = await fetch(`http://localhost:5000/api/allproperty`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
 
       if (!response.ok) {
         throw new Error("Failed to fetch properties");
@@ -117,7 +114,82 @@ const HomePage: FunctionComponent = () => {
       />
 
       <div className={styles.hero}>
-        <div className={styles.introtext}>Your dream home awaits...</div>
+        <div className={styles.search}>
+          <SearhBar />
+        </div>
+      </div>
+
+      <PropertyTypeCarousel />
+      <div style={{ display: "flex", paddingRight: "2em" }}>
+        <div className={styles.popularfeatures}>
+          <section className={styles.popularProperties}>
+            <div className={styles.heading}>POPULAR PROPERTIES</div>
+            <div className={styles.listings}>
+              {properties.slice(0, 4).map((property) => (
+                <Link
+                  key={property._id}
+                  to={`/property-details-page/${property._id}`}
+                  className={styles.linkWrapper}
+                >
+                  <PropertyCard
+                    title={property.title}
+                    city={property.city}
+                    price={property.price.toString()}
+                    area={property.area.toString()}
+                  />
+                </Link>
+              ))}
+            </div>
+          </section>
+
+          <section className={styles.popularBuilders}>
+            <div className={styles.heading}>POPULAR BUILDERS</div>
+            <div className={styles.listings}>
+              {properties.slice(0, 1).map((builder) => (
+                <Link
+                  key={builder._id}
+                  // to={`/property-details-page/${property._id}`}
+                  className={styles.linkWrapper}
+                >
+                  <BuilderCard
+                    name="MV Kiran Sooraj"
+                    properties="1500+ Properties"
+                  />
+                  <BuilderCard name="Raj" properties="2000+ Properties" />
+                </Link>
+              ))}
+            </div>
+          </section>
+        </div>
+      </div>
+      <Upcoming />
+      <CityWiseReviews />
+      <EmergingLocalities />
+      {/* <Articles /> */}
+      <CardLayout />
+
+      <div className={styles.happycustomers}>
+        <div className={styles.heading}>HAPPY CUSTOMERS</div>
+        <div className={styles.subheading}>HAPPY TRADE</div>
+        <div className={styles.reviews}>
+          <CustomerReviewCard
+            imageUrl="./istockphoto1476170969170667a-1@2x.png"
+            name="Raghav"
+            review="I was blown away by the exceptional service I received from your website! The website was easy to navigate, and the real estate agents were knowledgeable and responsive. I found my dream home in no time, and the entire process was stress-free. I highly recommend this to anyone looking to buy or sell a property!"
+          />
+          <CustomerReviewCard
+            imageUrl="./istockphoto1476170969170667a-1@2x.png"
+            name="Kishore"
+            review="As a first-time homebuyer, I was nervous about the process, but this made it a breeze! The website's resources and guides were incredibly helpful, and the agents were patient and understanding. I felt supported every step of the way, and I couldn't be happier with my new home. Thank you,"
+          />
+          <CustomerReviewCard
+            imageUrl="./istockphoto1476170969170667a-1@2x.png"
+            name="Bob"
+            review="I've used several real estate websites in the past, but this is by far the best! The website's advanced search features and real-time updates made it easy to find the perfect property. The agents were professional and courteous, and the entire process was seamless. I highly recommend this to everyone. Thank You"
+          />
+        </div>
+      </div>
+      <div style={{ display: "flex", flexDirection: "row", gap: "2vw", marginLeft: "10vw" }}>
         <form className={styles.aptform} onSubmit={handleSubmit}>
           <div className={styles.book}>BOOK APPOINTMENT</div>
           <div className={styles.fullname}>
@@ -158,89 +230,8 @@ const HomePage: FunctionComponent = () => {
             Get Your Appointment
           </button>
         </form>
+        <ReviewForm />
       </div>
-      
-      <div style={{ display: "flex" }}>
-      <SearhBar />
-      <HistoryCard />
-      </div>
-      
-        <PropertyTypeCarousel />
-      <div style={{ display: "flex", paddingRight: "2em" }}>
-        <div className={styles.popularfeatures}>
-
-          <section className={styles.popularProperties}>
-            <div className={styles.heading}>POPULAR PROPERTIES</div>
-            <div className={styles.listings}>
-              {properties.slice(0, 4).map((property) => (
-                <Link
-                  key={property._id}
-                  to={`/property-details-page/${property._id}`}
-                  className={styles.linkWrapper}
-                >
-                  <PropertyCard
-                    title={property.title}
-                    city={property.city}
-                    price={property.price.toString()}
-                    area={property.area.toString()}
-                  />
-                </Link>
-              ))}
-            </div>
-          </section>
-
-          <section className={styles.popularBuilders}>
-            <div className={styles.heading}>POPULAR BUILDERS</div>
-            <div className={styles.listings}>
-              {properties.slice(0, 1).map((builder) => (
-                <Link
-                  key={builder._id}
-                  // to={`/property-details-page/${property._id}`}
-                  className={styles.linkWrapper}
-                >
-                  <BuilderCard
-                    name="MV Kiran Sooraj"
-                    properties="1500+ Properties"
-                  />
-                   <BuilderCard
-                    name="Raj"
-                    properties="2000+ Properties"
-                  />
-                </Link>
-              ))}
-            </div>
-          </section>
-        </div>
-        
-      </div>
-      <Upcoming />
-      <CityWiseReviews />
-      <EmergingLocalities />
-      <Articles />
-      <CardLayout />
-
-      <div className={styles.happycustomers}>
-        <div className={styles.heading}>HAPPY CUSTOMERS</div>
-        <div className={styles.subheading}>HAPPY TRADE</div>
-        <div className={styles.reviews}>
-          <CustomerReviewCard
-            imageUrl="./istockphoto1476170969170667a-1@2x.png"
-            name="Raghav"
-            review="I was blown away by the exceptional service I received from your website! The website was easy to navigate, and the real estate agents were knowledgeable and responsive. I found my dream home in no time, and the entire process was stress-free. I highly recommend this to anyone looking to buy or sell a property!"
-          />
-          <CustomerReviewCard
-            imageUrl="./istockphoto1476170969170667a-1@2x.png"
-            name="Kishore"
-            review="As a first-time homebuyer, I was nervous about the process, but this made it a breeze! The website's resources and guides were incredibly helpful, and the agents were patient and understanding. I felt supported every step of the way, and I couldn't be happier with my new home. Thank you,"
-          />
-          <CustomerReviewCard
-            imageUrl="./istockphoto1476170969170667a-1@2x.png"
-            name="Bob"
-            review="I've used several real estate websites in the past, but this is by far the best! The website's advanced search features and real-time updates made it easy to find the perfect property. The agents were professional and courteous, and the entire process was seamless. I highly recommend this to everyone. Thank You"
-          />
-        </div>
-      </div>
-      <ReviewForm />
       <Footer />
 
       {isLoginPopupVisible && (

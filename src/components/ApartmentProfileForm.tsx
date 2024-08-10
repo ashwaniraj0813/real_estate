@@ -19,14 +19,13 @@ const ApartmentProfileForm: React.FC<ApartmentProfileFormProps> = ({
     handleInputChange({
       ...e,
       target: {
-        ...e.target,
+        name,
         value: checked,
       },
     });
   };
 
   const handleSubmit = () => {
-    // Ensure all required fields are filled
     const requiredFields = [
       "numberOfBedrooms",
       "numberOfBathrooms",
@@ -45,9 +44,13 @@ const ApartmentProfileForm: React.FC<ApartmentProfileFormProps> = ({
 
   return (
     <div className={styles.formSection}>
-      <button className={styles.backButton} onClick={prevStep}>
+      <button className={styles.backButton} onClick={() => {
+        console.log("Back button clicked"); // Add this for debugging
+        prevStep();
+          }}>
         Back
       </button>
+
       <h2>Apartment Profile</h2>
 
       <div className={styles.bedrooms}>
@@ -155,6 +158,15 @@ const ApartmentProfileForm: React.FC<ApartmentProfileFormProps> = ({
             placeholder="Total Floors"
           />
         </div>
+        <div className={styles.totalFloorDetailsInput}>
+          <input
+            type="number"
+            name="propertyFloorDetails"
+            value={formData.propertyFloorDetails || ""}
+            onChange={handleInputChange}
+            placeholder="Property on floor"
+          />
+        </div>
       </div>
 
       <div className={styles.availability}>
@@ -198,7 +210,7 @@ const ApartmentProfileForm: React.FC<ApartmentProfileFormProps> = ({
         </div>
       )}
 
-      {formData.availability === "Ready to move" && (
+      {formData.availability === "Under construction" && (
         <div className={styles.possessionDate}>
           <div className={styles.possessionDateName}>Possession Date</div>
           <div className={styles.possessionDateInput}>

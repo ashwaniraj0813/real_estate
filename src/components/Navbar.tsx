@@ -4,6 +4,7 @@ import React, {
   useState,
   useEffect,
 } from "react";
+import Rent from "../pages/Rent";
 import { useNavigate, useLocation } from "react-router-dom";
 import styles from "./Navbar.module.css";
 import LoginPopup from "./LoginPopup";
@@ -16,8 +17,8 @@ export type NavbarProps = {
 };
 
 const Navbar: FunctionComponent<NavbarProps> = ({
-  className = "",
-  onSearch,
+  // className = "",
+  // onSearch,
 }) => {
   const navigate = useNavigate();
   const location = useLocation();
@@ -34,16 +35,23 @@ const Navbar: FunctionComponent<NavbarProps> = ({
     navigate("/");
   }, [navigate]);
 
-  const onBuyTextClick = useCallback(() => {
-    navigate("/property-listings-page");
-  }, [navigate]);
+  // const onBuyTextClick = useCallback(() => {
+  //   navigate("/property-listings-page");
+  // }, [navigate]);
 
   const onRentTextClick = useCallback(() => {
+    navigate("/properties/rent");
+  }, [navigate]);
+
+  const onPostPropertyClick = useCallback(() => {
     navigate("/rent");
   }, [navigate]);
 
   const onSellTextClick = useCallback(() => {
-    navigate("/sell");
+    navigate("/properties/sell");
+  }, [navigate]);
+  const onPostTextClick = useCallback(() => {
+    navigate("/rent");
   }, [navigate]);
 
   const handleLoginClick = () => {
@@ -101,7 +109,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({
   const handlesearch = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     navigate(
-      `/property-listings-page?query=${encodeURIComponent(searchQuery)}`
+      `/SearchPropertiesNavbar?query=${encodeURIComponent(searchQuery)}`
     );
     encodeURIComponent("");
   };
@@ -178,15 +186,27 @@ const Navbar: FunctionComponent<NavbarProps> = ({
           onChange={handleSearchChange}
         />
       </form>
-      <div
+      {/* <div
         className={`${styles.navitem} ${styles.logo}`}
         onClick={onBuyTextClick}
       >
         Buy
+      </div> */}
+      <div
+        className={`${styles.navitem} ${styles.logo}`}
+        onClick={onSellTextClick}
+      >
+        For Buyers
       </div>
       <div
         className={`${styles.navitem} ${styles.logo}`}
         onClick={onRentTextClick}
+      >
+        For Tenants
+      </div>
+      <div
+        className={`${styles.navitem} ${styles.logo}`}
+        onClick={onPostPropertyClick}
       >
         Post Property
       </div>
