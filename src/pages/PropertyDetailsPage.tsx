@@ -3,7 +3,6 @@ import { useParams } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import styles from "./PropertyDetailsPage.module.css";
 import PropertyDetails from "../components/PropertyDetails";
-import ContactForm from "../components/WhatsappContact";
 import SimilarProperties from "../components/SimilarProperties";
 
 interface Property {
@@ -60,7 +59,6 @@ const PropertyDetailsPage: FunctionComponent = () => {
         <div>      
           <Navbar/>
           <PropertyDetails property={property}/>
-          <ContactForm/>
           <SimilarProperties/>
         </div>
       ) : (
