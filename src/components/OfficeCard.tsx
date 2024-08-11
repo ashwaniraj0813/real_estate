@@ -4,7 +4,7 @@ import styles from "./OfficeCard.module.css";
 const OfficeCard: FunctionComponent = ({ }) => {
   return (
     <div className={styles.officeCard}>
-      <img className={styles.image} src="/384256-1@2x.png" />
+      <img className={styles.image} src="/Delhi.png" />
       <div className={styles.information}>
           <div className={styles.location}>
             <img className={styles.icon} src="/pin.png"/>

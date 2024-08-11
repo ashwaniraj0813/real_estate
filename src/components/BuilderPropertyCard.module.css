@@ -24,10 +24,10 @@
   }
   
   .image {
-    width: 100%;
+    width: 80%;
     object-fit: cover;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-    border-radius: 15px;
+    border-radius: 20px;
   }
   
   .information {
