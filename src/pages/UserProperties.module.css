@@ -63,6 +63,8 @@
   justify-content: space-around;
   margin: 1em 0;
   padding: 0 var(--padding-xl);
+  margin-top: 200px;
+  margin-left: 200px;
 }
 
 .statCard {

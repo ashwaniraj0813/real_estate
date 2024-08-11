@@ -31,10 +31,7 @@ html, body {
 
 .hero {
   position: relative;
-<<<<<<< HEAD
-=======
   height: 100vh;
->>>>>>> 839ec448732f3670c0cecb9dd445c694876df5a8
   width: 100%;
   padding: 4vw 8vw;
   background: url("bg.jpg") center;
