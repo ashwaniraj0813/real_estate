@@ -63,7 +63,7 @@ const UserProperties: FunctionComponent = () => {
           <section className={styles.popularProperties}>
            
             <div className={styles.listings}>
-              {properties.slice(0,4).map((property) => (
+              {properties.map((property) => (
                 <div key={property._id}>
                 <BuilderPropertyCard
                   title={property.title}
