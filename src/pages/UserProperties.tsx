@@ -96,6 +96,7 @@ const UserProperties: FunctionComponent = () => {
                     city={property.city}
                     price={property.price.toString()}
                     area={property.area.toString()}
+                    pid={property._id}
                   />
                   <Link
                     to={`/property-details-page/${property._id}`}
