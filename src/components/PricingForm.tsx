@@ -49,7 +49,7 @@ const PricingForm: React.FC<PricingFormProps> = ({ formData, handleInputChange, 
             name="price"
             value={formData.price}
             onChange={handleInputChange}
-            placeholder="Price in USD"
+            placeholder="Price in Indian Rupee"
           />
         </div>
       </div>
