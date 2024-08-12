@@ -89,6 +89,7 @@
   bottom: 14px;
   right: 8px;
   border-radius: 50%;
+  width: 42px;
   padding: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
