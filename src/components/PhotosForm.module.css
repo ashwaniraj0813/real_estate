@@ -1,7 +1,6 @@
 .formSection {
   display: flex;
   flex-direction: column;
-  gap: 20px;
   border: 1px solid #ccc;
   padding: 40px 20px 20px 20px; /* Added extra padding at the top */
   border-radius: 10px;
@@ -60,15 +59,13 @@ input[type="file"] {
 }
 
 .backButton {
-  position: absolute;
-  top: 10px;
-  left: 10px;
+  align-self: flex-end;
   background-color: #2980b9;
   color: #fff;
   border: none;
   border-radius: 5px;
   padding: 10px 20px;
-  cursor: pointer; /* Ensure cursor is set to pointer */
+  cursor: pointer; 
   transition: background-color 0.3s;
 }
 
@@ -78,6 +75,7 @@ input[type="file"] {
 
 .nextButton {
   align-self: flex-end;
+  margin-top: 10px;
   background-color: #2980b9;
   color: #fff;
   border: none;

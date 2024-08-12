@@ -47,7 +47,7 @@ const ApartmentProfileForm: React.FC<ApartmentProfileFormProps> = ({
       <button className={styles.backButton} onClick={() => {
         console.log("Back button clicked"); // Add this for debugging
         prevStep();
-          }}>
+      }}>
         Back
       </button>
 
@@ -148,7 +148,7 @@ const ApartmentProfileForm: React.FC<ApartmentProfileFormProps> = ({
       </div>
 
       <div className={styles.floorDetails}>
-        <div className={styles.floorDetailsName}>Floor details</div>
+        <div className={styles.floorDetailsName}>Floor Details</div>
         <div className={styles.totalFloorDetailsInput}>
           <input
             type="number"
@@ -164,7 +164,7 @@ const ApartmentProfileForm: React.FC<ApartmentProfileFormProps> = ({
             name="propertyFloorDetails"
             value={formData.propertyFloorDetails || ""}
             onChange={handleInputChange}
-            placeholder="Property on floor"
+            placeholder="Property on Floor"
           />
         </div>
       </div>
@@ -224,11 +224,57 @@ const ApartmentProfileForm: React.FC<ApartmentProfileFormProps> = ({
         </div>
       )}
 
-      <div className={styles.actions}>
+      <div className={styles.ownershipType}>
+        <div className={styles.ownershipTypeName}>Ownership Type</div>
+        <div className={styles.ownershipTypeInput}>
+          <label>
+            <input
+              type="radio"
+              name="ownershipType"
+              value="Freehold"
+              checked={formData.ownershipType === "Freehold"}
+              onChange={handleInputChange}
+            />
+            Freehold
+          </label>
+          <label>
+            <input
+              type="radio"
+              name="ownershipType"
+              value="Leasehold"
+              checked={formData.ownershipType === "Leasehold"}
+              onChange={handleInputChange}
+            />
+            Leasehold
+          </label>
+          <label>
+            <input
+              type="radio"
+              name="ownershipType"
+              value="Co-operative Society"
+              checked={formData.ownershipType === "Co-operative Society"}
+              onChange={handleInputChange}
+            />
+            Co-operative Society
+          </label>
+          <label>
+            <input
+              type="radio"
+              name="ownershipType"
+              value="Power of Attorney"
+              checked={formData.ownershipType === "Power of Attorney"}
+              onChange={handleInputChange}
+            />
+            Power of Attorney
+          </label>
+        </div>
+      </div>
+
+      
         <button className={styles.nextButton} onClick={handleSubmit}>
           Next
         </button>
-      </div>
+      
     </div>
   );
 };

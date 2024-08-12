@@ -12,7 +12,7 @@
 
 h2 {
   color: #2c3e50;
-  margin-top: 40px; /* Added margin to create gap between back button and header */
+  margin-top: 20px; /* Added margin to create gap between back button and header */
 }
 
 .priceDetails, .checkboxGroup, .amenitiesDetails, .proprietorDetails {
@@ -79,12 +79,13 @@ h2 {
 }
 
 .backButton {
+  align-self: flex-end;
   background-color: #2980b9;
   color: #fff;
   border: none;
   border-radius: 5px;
   padding: 10px 20px;
-  cursor: pointer;
+  cursor: pointer; 
   transition: background-color 0.3s;
 }
 
@@ -93,12 +94,13 @@ h2 {
 }
 
 .submitButton {
-  background-color: #27ae60;
+  align-self: flex-end;
+  background-color: #2980b9;
   color: #fff;
   border: none;
   border-radius: 5px;
   padding: 10px 20px;
-  cursor: pointer;
+  cursor: pointer; 
   transition: background-color 0.3s;
 }
 

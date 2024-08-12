@@ -128,9 +128,9 @@ const PricingForm: React.FC<PricingFormProps> = ({ formData, handleInputChange, 
         </div>
       </div>
 
-      <div className={styles.buttons}>
+      {/* <div className={styles.buttons}> */}
         <button type="submit" className={styles.submitButton} onClick={handleFormSubmit}>Submit</button>
-      </div>
+      {/* </div> */}
     </div>
   );
 };
