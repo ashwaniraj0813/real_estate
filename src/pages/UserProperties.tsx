@@ -59,7 +59,9 @@ const UserProperties: FunctionComponent = () => {
       <Navbar/>
 
       <main className={styles.sidebarContainer}>
-        <Sidebar
+      <div >
+      <Sidebar
+          className={styles.sidebar1}
           currentPage="user-properties0"
           sidebarMarginLeft="unset"
           profileSettingsColor="#000"
@@ -67,6 +69,8 @@ const UserProperties: FunctionComponent = () => {
           myPropertiesColor="#784dc6"
           myPropertiesFontWeight="bold"
         />
+      </div>
+        
 
         <div className={styles.statsContainer}>
           <div className={styles.statCard}>
@@ -82,7 +86,8 @@ const UserProperties: FunctionComponent = () => {
             <p>{stats.availableProperties}</p>
           </div>
         </div>
-        {properties.length> 0 ? (
+      </main>
+      {properties.length> 0 ? (
           <div style={{ display: "flex", paddingRight: "2em" }}>
           <div className={styles.popularfeatures}>
 
@@ -130,7 +135,6 @@ const UserProperties: FunctionComponent = () => {
               </div>
             </div>
           </div> )}
-      </main>
     </div>
   );
 };
