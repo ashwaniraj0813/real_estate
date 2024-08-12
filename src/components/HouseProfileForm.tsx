@@ -9,9 +9,42 @@ interface HouseProfileFormProps {
 }
 
 const HouseProfileForm: React.FC<HouseProfileFormProps> = ({ formData, handleInputChange, nextStep, prevStep }) => {
+  const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, checked } = e.target;
+    handleInputChange({
+      ...e,
+      target: {
+        name,
+        value: checked,
+      },
+    });
+  };
+
+  const handleSubmit = () => {
+    const requiredFields = [
+      "numberOfBedrooms",
+      "numberOfBathrooms",
+      "numberOfBalconies"
+    ];
+
+    for (const field of requiredFields) {
+      if (!formData[field]) {
+        alert("Please fill in all the required fields before proceeding.");
+        return;
+      }
+    }
+
+    nextStep();
+  };
+
   return (
     <div className={styles.formSection}>
-      <button className={styles.backButton} onClick={prevStep}>Back</button>
+      <button className={styles.backButton} onClick={() => {
+        console.log("Back button clicked"); 
+        prevStep();
+      }}>
+        Back
+      </button>
       <h2>House Profile</h2>
       <div className={styles.bedrooms}>
         <div className={styles.bedroomsName}>Number of Bedrooms</div>
@@ -19,7 +52,7 @@ const HouseProfileForm: React.FC<HouseProfileFormProps> = ({ formData, handleInp
           <input
             type="number"
             name="numberOfBedrooms"
-            value={formData.numberOfBedrooms}
+            value={formData.numberOfBedrooms || ""}
             onChange={handleInputChange}
             placeholder='0'
           />
@@ -31,7 +64,7 @@ const HouseProfileForm: React.FC<HouseProfileFormProps> = ({ formData, handleInp
           <input
             type="number"
             name="numberOfBathrooms"
-            value={formData.numberOfBathrooms}
+            value={formData.numberOfBathrooms || ""}
             onChange={handleInputChange}
             placeholder='0'
           />
@@ -43,7 +76,7 @@ const HouseProfileForm: React.FC<HouseProfileFormProps> = ({ formData, handleInp
           <input
             type="number"
             name="numberOfBalconies"
-            value={formData.numberOfBalconies}
+            value={formData.numberOfBalconies || ""}
             onChange={handleInputChange}
             placeholder='0'
           />
@@ -56,7 +89,7 @@ const HouseProfileForm: React.FC<HouseProfileFormProps> = ({ formData, handleInp
           <input
             type="number"
             name="areaDetails"
-            value={formData.areaDetails}
+            value={formData.areaDetails || ""}
             onChange={handleInputChange}
             placeholder='Carpet Area in sq. ft'
           />
@@ -69,10 +102,61 @@ const HouseProfileForm: React.FC<HouseProfileFormProps> = ({ formData, handleInp
           <input
             type="number"
             name="totalFloorDetails"
-            value={formData.totalFloorDetails}
+            value={formData.totalFloorDetails || ""}
             onChange={handleInputChange}
             placeholder='Total Floors'
           />
+        </div>
+        <div className={styles.propertyFloorDetailsInput}>
+          <input
+            type="number"
+            name="propertyFloorDetails"
+            value={formData.propertyFloorDetails || ""}
+            onChange={handleInputChange}
+            placeholder='Property on Floor'
+          />
+        </div>
+      </div>
+
+      <div className={styles.otherRooms}>
+        <div className={styles.otherRoomsName}>Other Rooms (optional)</div>
+        <div className={styles.otherRoomsInput}>
+          <label>
+            <input
+              type="checkbox"
+              name="studyRoom"
+              checked={formData.studyRoom || false}
+              onChange={handleCheckboxChange}
+            />
+            Study Room
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              name="poojaRoom"
+              checked={formData.poojaRoom || false}
+              onChange={handleCheckboxChange}
+            />
+            Pooja Room
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              name="servantRoom"
+              checked={formData.servantRoom || false}
+              onChange={handleCheckboxChange}
+            />
+            Servant Room
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              name="storeRoom"
+              checked={formData.storeRoom || false}
+              onChange={handleCheckboxChange}
+            />
+            Store Room
+          </label>
         </div>
       </div>
 
@@ -109,7 +193,7 @@ const HouseProfileForm: React.FC<HouseProfileFormProps> = ({ formData, handleInp
             <input
               type="number"
               name="ageOfProperty"
-              value={formData.ageOfProperty}
+              value={formData.ageOfProperty || ""}
               onChange={handleInputChange}
               placeholder='0'
             />
@@ -122,9 +206,9 @@ const HouseProfileForm: React.FC<HouseProfileFormProps> = ({ formData, handleInp
           <div className={styles.possessionName}>Possession by</div>
           <div className={styles.possessionInput}>
             <input
-              type="text"
+              type="date"
               name="possessionBy"
-              value={formData.possessionBy}
+              value={formData.possessionBy || ""}
               onChange={handleInputChange}
               placeholder='Month and Year'
             />
@@ -182,7 +266,7 @@ const HouseProfileForm: React.FC<HouseProfileFormProps> = ({ formData, handleInp
         </div>
       </div>
       
-      <button className={styles.nextButton} onClick={nextStep}>Next</button>
+      <button className={styles.nextButton} onClick={handleSubmit}>Next</button>
     </div>
   );
 };

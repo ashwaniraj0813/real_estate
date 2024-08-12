@@ -17,6 +17,11 @@ const LocationDetailsForm: React.FC<LocationDetailsFormProps> = ({ formData, han
     }
   };
 
+  const handlePrevStep = () => {
+    console.log('Back button clicked'); // Debugging log
+    prevStep(); // Ensure this function is working correctly
+  };
+  
   return (
     <div className={styles.formSection}>
       <button className={styles.backButton} onClick={prevStep}>Back</button>

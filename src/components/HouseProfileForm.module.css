@@ -1,13 +1,12 @@
 .formSection {
   display: flex;
+  gap: 10px;
   flex-direction: column;
-  gap: 20px;
   border: 1px solid #ccc;
   padding: 20px;
   border-radius: 10px;
   max-width: 600px;
   width: 400px;
-  position: relative; /* Allows positioning of back button */
 }
 
 .bedrooms, .bathrooms, .balconies, .areaDetails, .floorDetails, .availability, .ageOfProperty, .possession, .ownershipType {
@@ -17,7 +16,7 @@
 }
 
 .bedroomsInput input, .bathroomsInput input, .balconiesInput input, .areaDetailsInput input, 
-.totalFloorDetailsInput input, .ageOfPropertyInput input, .possessionInput input, .ownershipTypeInput input {
+.totalFloorDetailsInput input, .propertyFloorDetailsInput input, .ageOfPropertyInput input, .possessionInput input, .ownershipTypeInput input {
   border-radius: 5px;
   padding: 10px;
   border: 1px solid #ccc;
@@ -26,68 +25,57 @@
   max-width: 500px; /* Adjust as needed */
 }
 
+.areaInput label, .availabilityInput label, .possessionInput label, .ownershipTypeInput label {
+  display: block; /* Ensure label takes full width */
+}
+
+.areaInput input[type="checkbox"], 
+.availabilityInput input[type="radio"], 
+.possessionInput input[type="text"], 
+.ownershipTypeInput input[type="radio"], .otherRoomsInput input[type="checkbox"] {
+  width: auto;
+  height: auto;
+  margin-right: 10px; /* Space between checkbox/radio and text */
+  vertical-align: middle; /* Align input with label text */
+}
+
+.areaInput {
+  display: flex;
+  flex-direction: column; /* Stack labels and inputs vertically */
+  gap: 10px; /* Space between items */
+}
+
+.otherRoomsInput label{
+  display: block;
+}
+
 h2 {
   color: #2c3e50;
   margin-top: 20px; /* Space between the back button and the header */
 }
 
 .bedroomsName, .bathroomsName, .balconiesName, .areaDetailsName, .floorDetailsName, .availabilityName, 
-.ageOfPropertyName, .possessionName, .ownershipTypeName {
+.ageOfPropertyName, .possessionName, .ownershipTypeName, .otherRoomsName {
   color: #34495e;
   font-weight: bold;
 }
 
-.availabilityInput label, .ownershipTypeInput label {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.availabilityInput input[type="radio"], .ownershipTypeInput input[type="radio"] {
-  width: auto;
-  height: auto;
-  margin-right: 5px; /* Adjust margin for alignment */
-}
-
-.ownershipTypeInput input {
-  width: 16px; /* Smaller width for radio buttons */
-  height: 16px; /* Smaller height for radio buttons */
-  margin: 0; /* Remove default margin */
-}
-
-.ownershipTypeInput label {
-  font-size: 14px; /* Smaller font size for labels */
-}
-
-.backButton {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  background-color: #2980b9;
+button {
+  align-self: flex-end;
+  background-image: linear-gradient(90deg, #2895DF, #764EC6);
   color: #fff;
   border: none;
   border-radius: 5px;
   padding: 10px 20px;
   cursor: pointer;
   transition: background-color 0.3s;
-}
-
-.backButton:hover {
-  background-color: #1f6391;
 }
 
 .nextButton {
-  align-self: flex-end;
-  background-color: #2980b9;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  padding: 10px 20px;
-  cursor: pointer;
-  transition: background-color 0.3s;
+  margin-top: 20px; /* Space above the Next button */
 }
 
-.nextButton:hover {
+button:hover {
   background-color: #1f6391;
 }
 

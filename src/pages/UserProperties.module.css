@@ -149,3 +149,51 @@
   min-width: 200px;
   gap: 40px;
 }
+
+.sidebarContainer {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 var(--padding-xl) 0 20vw; /* Adjusted padding */
+  gap: 2em; /* Reduced gap to prevent overlapping */
+  text-align: center;
+  font-size: var(--font-size-xl);
+  color: var(--color-black);
+  font-family: var(--font-montserrat);
+  padding-top: 60px; /* Ensure there's enough space under the navbar */
+}
+
+.statsContainer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; /* Allow wrapping to prevent overlap */
+  margin: 1em 0;
+  padding: 0 var(--padding-xl);
+  max-width: 75%; /* Adjust max-width to fit within the available space */
+  margin-left: 20vw; /* Ensure it's not under the sidebar */
+  padding-top: 1em; /* Add padding to prevent overlap with navbar */
+}
+
+.statCard {
+  background-color: #f8f8f8;
+  padding: 1em;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  flex: 1;
+  margin: 0 1em;
+}
+
+@media screen and (max-width: 925px) {
+  .statsContainer {
+    max-width: 100%; /* Allow the stats container to use full width */
+    margin-left: 0; /* Remove margin for smaller screens */
+    padding: 0 10vw; /* Adjust padding for smaller screens */
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .statsContainer {
+    flex-direction: column; /* Stack the cards vertically on smaller screens */
+  }
+}
+
