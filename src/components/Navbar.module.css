@@ -1,6 +1,6 @@
 .navbar {
   z-index: 1050;
-  position: fixed;
+  position: sticky;
   top: 0;
   width: 100%;
   padding: 0.75vw 8vw;
