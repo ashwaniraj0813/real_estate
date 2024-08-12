@@ -7,8 +7,6 @@ import CustomerReviewCard from "../components/CustomerReviewCard";
 import LoginPopup from "../components/LoginPopup";
 import PropertyCard from "../components/PropertyCard";
 import BuilderCard from "../components/BuilderCard";
-import Articles from "../components/Articles";
-import HistoryCard from "../components/HistoryCard";
 import CardLayout from "../components/Insights";
 import CityWiseReviews from "../components/CityWiseReviews";
 import Upcoming from "../components/upcoming";
@@ -16,6 +14,7 @@ import EmergingLocalities from "../components/EmergingLocalities";
 import ReviewForm from "../components/ReviewForm";
 import PropertyTypeCarousel from "../components/PropertyTypeCarousel";
 import SearhBar from "../components/SearchBar";
+import AppointmentForm from "../components/AppointmentForm";
 const HomePage: FunctionComponent = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -112,13 +111,11 @@ const HomePage: FunctionComponent = () => {
         onLoginClick={() => setIsLoginPopupVisible(true)}
         onSearch={fetchProperties}
       />
-
       <div className={styles.hero}>
         <div className={styles.search}>
           <SearhBar />
         </div>
       </div>
-
       <PropertyTypeCarousel />
       <div style={{ display: "flex", paddingRight: "2em" }}>
         <div className={styles.popularfeatures}>
@@ -167,7 +164,6 @@ const HomePage: FunctionComponent = () => {
       <EmergingLocalities />
       {/* <Articles /> */}
       <CardLayout />
-
       <div className={styles.happycustomers}>
         <div className={styles.heading}>HAPPY CUSTOMERS</div>
         <div className={styles.subheading}>HAPPY TRADE</div>
@@ -189,51 +185,9 @@ const HomePage: FunctionComponent = () => {
           />
         </div>
       </div>
-      <div style={{ display: "flex", flexDirection: "row", gap: "2vw", marginLeft: "10vw" }}>
-        <form className={styles.aptform} onSubmit={handleSubmit}>
-          <div className={styles.book}>BOOK APPOINTMENT</div>
-          <div className={styles.fullname}>
-            <input
-              className={styles.fname}
-              placeholder="First Name"
-              type="text"
-              value={firstName}
-              onChange={(e) => setFirstName(e.target.value)}
-              required
-            />
-            <input
-              className={styles.lname}
-              placeholder="Last Name"
-              type="text"
-              value={lastName}
-              onChange={(e) => setLastName(e.target.value)}
-              required
-            />
-          </div>
-          <input
-            className={styles.email}
-            placeholder="Email"
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-          <input
-            className={styles.phno}
-            placeholder="Phone"
-            type="text"
-            value={phone}
-            onChange={(e) => setPhone(e.target.value)}
-            required
-          />
-          <button className={styles.bookappointment} type="submit">
-            Get Your Appointment
-          </button>
-        </form>
-        <ReviewForm />
-      </div>
+      <AppointmentForm />
+      <ReviewForm />
       <Footer />
-
       {isLoginPopupVisible && (
         <LoginPopup onClose={() => setIsLoginPopupVisible(false)} />
       )}

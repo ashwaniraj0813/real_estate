@@ -1,6 +1,14 @@
-/* * { border: 1px solid green; } */
+ /* * { border: 1px solid green; } */
+
+.breadcrumb {
+    font-family: var(--font-montserrat);
+    width: 100%; 
+    font-size: 16px;
+    font-weight: 600;
+}
 
 .PropertyDetails *,
+.Details,
 .Gallery *,
 .Description *,
 .FacilitiesAmenities *,
@@ -8,23 +16,14 @@
     font-family: var(--font-montserrat);
 }
 
-.PropertyDetails,
-.Gallery,
 .Description,
 .FacilitiesAmenities,
 .Location {
     width: 100%;
-    padding: 6vw 8vw;
+    padding: 4vw 8vw;
     display: flex;
     flex-direction: column;
     gap: 40px;
-}
-
-.breadcrumb {
-    font-family: var(--font-montserrat);
-    width: 100%; 
-    font-size: 16px;
-    font-weight: 600;
 }
 
 .heading {
@@ -43,149 +42,119 @@
     align-items: center;
 }
 
+.Details {
+    width: 100%;
+    padding: 8vw 8vw 0vw 8vw;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
 .title {
+    width: 100%;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 10px;
-}
-
-.name {
-    font-size: 40px;
-    font-weight: 600;
-}
-
-.location {
-    font-size: 25px;
-}
-
-.ratings {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
 }
 
-.reviews {
-    font-size: 20px;
+.propertyname {
+    font-size: 30px;
+    font-weight: 600;
 }
 
 .details {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
+    padding: 5px 0px;
+    font-size: 18px;
+    line-height: 20px;
 }
 
-.propimage {
+i {
+    line-height: 20px;
+    padding: 5px;
+}
+
+.ratings {    
+    align-self: flex-start;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
-    align-items: flex-end;
-    height: 500px;
-    width: 450px;
+    align-items: center;
+    line-height: 40px;
 }
 
-.data {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    width: 650px;
-    gap: 25px;
+.stars {
+    font-size: 25px;
+    color: yellow;              
+    -webkit-text-stroke: 0.5px black;
+    padding: 0px 5px;
+}
+
+.reviews{
     font-size: 20px;
 }
 
-.datarow {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
-.basis {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 190px;
-    padding: 10px;
-}
-
-.info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 440px;
-    font-weight: 600;
-    padding: 10px;
-}
-
-/* .images {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 40px;
-}
-
-.image {
-    height: 300px;
-    width: 350px;
-} */
-
 .Gallery {
-    max-width: 86vw; 
-    margin: 0 auto;
-    padding: 20px;
+    width: 100vw;
+    padding: 2vw 8vw 0vw ;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
 }
 
 .images {
     display: flex;
-    flex-wrap: nowrap; 
-    overflow-x: auto; 
-    gap: 30px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden; 
+    gap: 5px;
+    scroll-snap-type: x mandatory;
+    padding: 10px 0;
 }
 
 .image {
-    flex: 0 0 350px; 
-    height: 300px; 
-    object-fit: cover; 
-    scroll-snap-align: start;
+    flex: 0 0 400px;  
+    height: 400px;  
+    object-fit: cover;  
+    scroll-snap-align: start; 
 }
 
-.images::-webkit-scrollbar {
-    display: block;
-    height: 8px;
+.PropertyDetails {
+    display: flex;
+    flex: column;
 }
 
-.images::-webkit-scrollbar-thumb {
-    background-color: #b8b8b8;
-    border-radius: 4px;
+.left {
+    width: 60%;
 }
 
-.images::-webkit-scrollbar-track {
-    background-color: transparent;
-} 
+.right {
+    width: 40%;
+}
 
 .describe {
     font-size: 18px;
     line-height: 30px;
 }
 
-.list {
+.gridContainer {
     font-size: 18px;
-    line-height: 30px;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
+    line-height: 30px; 
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 10px; 
+    align-items: center;
 }
 
-.datarowfa {
-    width: 50%;
+.gridItem  {
     margin-bottom: 10px;
     display: flex;
     flex-direction: row;
-    gap: 20px;
+    gap: 10px;
 }
 
 .img {
@@ -209,10 +178,4 @@
     height: 500px;
     width: 100%;
     border: none;
-    /* opacity: 0.5; */
-    /* transition: opacity ease-in 200ms ; */
 }
-/* 
-.map:hover {
-    opacity: 1;
-} */

@@ -1,7 +1,6 @@
 .formSection {
   display: flex;
   flex-direction: column;
-  gap: 20px;
   border: 1px solid #ccc;
   padding: 20px;
   border-radius: 10px;
@@ -9,14 +8,14 @@
   width: 400px;
 }
 
-.bedrooms, .bathrooms, .balconies, .areaDetails, .area, .floorDetails, .availability, .ageOfProperty, .possessionDate {
+.bedrooms, .bathrooms, .balconies, .areaDetails, .area, .floorDetails, .availability, .ageOfProperty, .possessionDate, .ownershipType {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
 .bedroomsInput input, .bathroomsInput input, .balconiesInput input, .areaDetailsInput input, 
-.totalFloorDetailsInput input, .propertyFloorDetailsInput input, .ageOfPropertyInput input, .possessionDateInput input {
+.totalFloorDetailsInput input, .propertyFloorDetailsInput input, .ageOfPropertyInput input, .possessionDateInput input, .ownershipTypeInput input {
   border-radius: 5px;
   padding: 10px;
   border: 1px solid #ccc;
@@ -25,7 +24,7 @@
   max-width: 500px; /* Adjust as needed */
 }
 
-.areaInput label, .availabilityInput label, .possessionDateInput label {
+.areaInput label, .availabilityInput label, .possessionDateInput label, .ownershipTypeInput label {
   display: flex;
   align-items: center; /* Vertically center align items */
   gap: 10px; /* Adjust gap as needed */
@@ -33,7 +32,8 @@
 
 .areaInput input[type="checkbox"], 
 .availabilityInput input[type="radio"], 
-.possessionDateInput input[type="radio"] {
+.possessionDateInput input[type="radio"], 
+.ownershipTypeInput input[type="radio"] {
   width: auto;
   height: auto;
   margin-right: 5px; /* Adjust margin for alignment */
@@ -45,7 +45,7 @@ h2 {
 }
 
 .bedroomsName, .bathroomsName, .balconiesName, .areaDetailsName, .areaName, .floorDetailsName, 
-.availabilityName, .ageOfPropertyName, .possessionDateName {
+.availabilityName, .ageOfPropertyName, .possessionDateName, .ownershipTypeName {
   color: #34495e;
   font-weight: bold;
 }
@@ -59,6 +59,10 @@ button {
   padding: 10px 20px;
   cursor: pointer;
   transition: background-color 0.3s;
+}
+
+.nextButton {
+  margin-top: 20px; /* Space above the Next button */
 }
 
 button:hover {

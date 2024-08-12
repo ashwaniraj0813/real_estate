@@ -1,13 +1,11 @@
 import React, { useState, FunctionComponent } from "react";
 import styles from "./ContactForm.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faWhatsapp } from "@fortawesome/free-brands-svg-icons"; // Importing WhatsApp icon
 
-export type ContactFormType = {
-    className?: string;
-};
-
-const ContactForm: FunctionComponent<ContactFormType> = ({ className = ""}) => {
+const ContactForm: FunctionComponent = () => {
     const [formData, setFormData] = useState({
-        name: '',
+        fullName: '',
         email: '',
         phone: '',
         message: ''
@@ -23,25 +21,31 @@ const ContactForm: FunctionComponent<ContactFormType> = ({ className = ""}) => {
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        // Handle form submission here
         console.log('Form submitted:', formData);
     };
-    
+
     return (
-        <section className={styles.ContactForm}>
-            <div className={styles.heading}>Contact Form</div>
-            <div className={styles.contact}>
+        <section className={styles.WhatsappContact}>
+            <div className={styles.contactContainer}>
+                <div className={styles.whatsappSection}>
+                    <a href="https://wa.me/0483913838" className={styles.whatsappLink}>
+                        <button className={styles.whatsappButton}>
+                            <FontAwesomeIcon icon={faWhatsapp} className={styles.whatsappIcon} />
+                            <span className={styles.whatsappNumber}>0483 91 38 38</span>
+                        </button>
+                    </a>
+                </div>
+                <div className={styles.enquiryText}>Or Submit an enquiry</div>
                 <form className={styles.form} onSubmit={handleSubmit}>
                     <input
                         type="text"
-                        id="name"
-                        name="name"
-                        value={formData.name}
+                        id="fullName"
+                        name="fullName"
+                        value={formData.fullName}
                         onChange={handleChange}
                         required
-                        placeholder="Name"
+                        placeholder="Full Name"
                     />
-
                     <input
                         type="email"
                         id="email"
@@ -49,45 +53,37 @@ const ContactForm: FunctionComponent<ContactFormType> = ({ className = ""}) => {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        placeholder="Email Address"
+                        placeholder="Email"
                     />
-
-                    <input
-                        type="tel"
-                        id="phone"
-                        name="phone"
-                        value={formData.phone}
-                        onChange={handleChange}
-                        required
-                        placeholder="Phone Number"
-                    />
-
+                    <div className={styles.phoneContainer}>
+                        <select id="countryCode" className={styles.countryCode}>
+                            <option value="+91">+91</option>
+                           
+                        </select>
+                        <input
+                            type="tel"
+                            id="phone"
+                            name="phone"
+                            value={formData.phone}
+                            onChange={handleChange}
+                            required
+                            placeholder="Number"
+                        />
+                    </div>
                     <textarea
                         id="message"
                         name="message"
                         rows={5}
                         value={formData.message}
                         onChange={handleChange}
-                        required
-                        placeholder="Write your message here..."
+                        placeholder="Your message (optional)"
                     ></textarea>
-
-                    <button className={styles.btn} type="submit">Submit</button>
+                    <button className={styles.btn} type="submit">Send Enquiry</button>
                 </form>
-                <table className={styles.broker}>
-                    <tr className={styles.datarow}>
-                        <td className={styles.basis}>Email</td>
-                        <td className={styles.data}>broker@gmail.com</td>
-                    </tr>
-                    <tr className={styles.datarow}>
-                        <td className={styles.basis}>Phone</td>
-                        <td className={styles.data}>+33 1234 5678</td>
-                    </tr>
-                </table>
             </div>
-
         </section>
     );
 };
 
 export default ContactForm;
+

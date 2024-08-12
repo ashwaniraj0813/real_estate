@@ -151,7 +151,7 @@
 .editableContainer{
   display: flex;
   flex-direction: row;
-  gap: 10vw;
+  gap: 8vw;
   margin: 3vh;
 }
 .detailColumn{

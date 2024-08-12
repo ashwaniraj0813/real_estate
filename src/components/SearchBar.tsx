@@ -78,7 +78,18 @@ function Homepage() {
                 focusBorderColor="purple"
                 onChange={handleCityChange}
               >
-                {/* Options... */}
+                <option value="Mumbai">Mumbai</option>
+                <option value="Bangalore">Bangalore</option>
+                <option value="Pune">Pune</option>
+                <option value="Chennai">Chennai</option>
+                <option value="Gurgaon">Gurgaon</option>
+                <option value="Hyderabad">Hyderabad</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Noida">Noida</option>
+                <option value="Greater Noida">Greater Noida</option>
+                <option value="Ghaziabad">Ghaziabad</option>
+                <option value="Faridabad">Faridabad</option>
+                <option value="Vishakhapatnam">Vishakhapatnam</option>
               </Select>
             </Box>
             <Box className={style.searchInput} flex="1" mb={[4, 4, 0]}>
