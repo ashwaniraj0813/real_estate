@@ -38,7 +38,7 @@ const AppointmentForm: React.FC = () => {
 
   return (
     <div className={styles.container}>
-      <h2 className={styles.heading}>BOOK APPOINTMENT</h2>
+      <h2 className={styles.heading}>Book Appointment</h2>
       <div className={styles.appointmentContainer}>
         <form className={styles.aptform} onSubmit={handleSubmit}>
           <div className={styles.fullname}>
