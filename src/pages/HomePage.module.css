@@ -129,7 +129,7 @@ input {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 6vw 8vw;
+  /* padding: 6vh 8vw; */
   gap: 10px;
 }
 
@@ -183,7 +183,7 @@ input {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 6vw 0vw;
+  padding: 2vh 0vw;
   gap: 20px;
 }
 
@@ -202,7 +202,7 @@ input {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 6vw 4vw;
+  padding: 2vh 0vw;
   gap: 20px;
 }
 

@@ -185,9 +185,9 @@ const HomePage: FunctionComponent = () => {
           />
         </div>
       </div>
-      <div style={{ display: "flex", gap: "38em", flexWrap:"wrap" }}>
-      <AppointmentForm />
-      <ReviewForm />
+      <div style={{ display: "flex", justifyContent: "space-around", alignContent: "center", alignItems: "center",  }}>
+        <AppointmentForm />
+        <ReviewForm />
       </div>
       <Footer />
       {isLoginPopupVisible && (
