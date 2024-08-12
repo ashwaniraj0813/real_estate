@@ -55,62 +55,6 @@
   width: 30px;
 }
 
-
-.filter{
-  color: black;
-  font-size: 13px;
-  text-wrap: nowrap;
-  display: flex;
-  position: relative;
-}
-
-.filterlist {
-  position: absolute; 
-  top: 95%; 
-  left: -4px;
-  width: 530%;
-  /* left:-12px;
-  width:544%; */
-  height: 150px;
-  background:var(--color-white);
-  z-index: 9;
-  border-radius: 12px;
-  overflow: hidden;
-  opacity: 0;
-  transition: max-height 0.3s ease, opacity 0.3s ease;
-  display: flex;
-}
-
-.dropdownfilter {
-  cursor: pointer;
-}
-
-.filterlist.visible {
-  max-height: 200px; 
-  opacity: 1;
-  transition: max-height 0.3s ease, opacity 0.3s ease;
-}
-
-.column{
-  width: 45%;
-  margin-left: 5% ;
-}
-
-
-.filterElement{
-  margin-top: 25px;
-  width: 30%;
-}
-
-.rotate {
-  display: inline-block; /* Ensure the span is treated as a block for transformation */
-  transition: transform 0.3s ease; /* Add transition for smooth rotation */
-}
-
-.rotated {
-  transform: rotate(180deg); /* Rotate the element by 180 degrees */
-}
-
 .logo{
   cursor: pointer;
 }
