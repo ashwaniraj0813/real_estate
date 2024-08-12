@@ -287,7 +287,9 @@ const AdminDashboard = () => {
               </div>
             )}
             {activeSection === "propertyVerification" && (
-              <VerifyPropertiesForm properties={properties} />
+              <VerifyPropertiesForm properties={properties}
+              onAccept={handleAcceptProperty}
+                onReject={handleRejectProperty} />
             )}
             {activeSection === "reviews" && (
               <div>
