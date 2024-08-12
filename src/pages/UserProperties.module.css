@@ -50,7 +50,7 @@
   width: auto;
   flex-direction: row;
   justify-content: space-between;
-  padding: 0 var(--padding-xl) 0 0;
+  padding-left: 10px;
   gap: 60%;
   text-align: center;
   font-size: var(--font-size-xl);
@@ -63,8 +63,8 @@
   justify-content: space-around;
   margin: 1em 0;
   padding: 0 var(--padding-xl);
-  margin-top: 200px;
-  margin-left: 200px;
+ 
+  
 }
 
 .statCard {
@@ -119,9 +119,10 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 2vw 8vw;
+  padding: 1vw 6vw;
   gap: 10px;
   margin-left: 250px;
+  
 }
 
 .popularProperties {
@@ -141,6 +142,7 @@
   justify-content: space-between;
   align-items: flex-start;
   gap: 40px;
+  text-align: center;
 }
 
 .linkWrapper {
@@ -153,24 +155,24 @@
 .sidebarContainer {
   display: flex;
   justify-content: space-between;
-  padding: 0 var(--padding-xl) 0 20vw; /* Adjusted padding */
+  padding-left: 0px; /* Adjusted padding */
   gap: 2em; /* Reduced gap to prevent overlapping */
   text-align: center;
   font-size: var(--font-size-xl);
   color: var(--color-black);
   font-family: var(--font-montserrat);
-  padding-top: 60px; /* Ensure there's enough space under the navbar */
+  padding-top: 50px; /* Ensure there's enough space under the navbar */
 }
 
 .statsContainer {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap; /* Allow wrapping to prevent overlap */
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* Allow wrapping to prevent overlap */
   margin: 1em 0;
-  padding: 0 var(--padding-xl);
-  max-width: 75%; /* Adjust max-width to fit within the available space */
+  
+  width: 100%; /* Adjust max-width to fit within the available space */
   margin-left: 20vw; /* Ensure it's not under the sidebar */
   padding-top: 1em; /* Add padding to prevent overlap with navbar */
+  
 }
 
 .statCard {
@@ -180,7 +182,8 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   text-align: center;
   flex: 1;
-  margin: 0 1em;
+  
+  
 }
 
 @media screen and (max-width: 925px) {
@@ -196,4 +199,7 @@
     flex-direction: column; /* Stack the cards vertically on smaller screens */
   }
 }
-
+.sidebar1 {
+  margin-top: 0px;
+  
+}
