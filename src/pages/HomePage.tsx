@@ -185,8 +185,10 @@ const HomePage: FunctionComponent = () => {
           />
         </div>
       </div>
+      <div style={{ display: "flex", gap: "38em", flexWrap:"wrap" }}>
       <AppointmentForm />
       <ReviewForm />
+      </div>
       <Footer />
       {isLoginPopupVisible && (
         <LoginPopup onClose={() => setIsLoginPopupVisible(false)} />
