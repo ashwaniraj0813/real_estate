@@ -6,28 +6,32 @@
 }
 
 .propertyCard {
-  width: 260px;
-  height: 320px;
-  padding: 20px;
+  width: 18vw;
+  height: 40vh;
   display: flex;
   flex-direction: column;
   cursor: pointer;
   color: black;
   font-family: var(--font-montserrat);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   border-radius: 25px;
   font-size: 18px; 
+  transition: transform 0.3s ease;
 }
 
-.propertyCard > * {
-  width: 100%;
+.propertyCard:hover{
+  transform: scale(1.05);
 }
+
 
 .image {
-  width: 100%;
+  width: inherit;
+  height: 65%;
+  border-radius: 1em 1em 0 0;
   object-fit: cover;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* border-radius: 15px; */
+  background: transparent;
 }
 
 .information {
@@ -36,7 +40,8 @@
   align-items: flex-start;
   justify-content: space-between;
   cursor: pointer;
-  margin-top: 20px;
+  margin-top: 1vh;
+  padding: 1vh 1vw 2vh 1vw;
   height: 100%;
 }
 

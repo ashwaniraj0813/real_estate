@@ -17,7 +17,7 @@ const PropertyCard: FunctionComponent<PropertyCardType> = ({
   city,
   price,
   area,
-  imageUrl = "/image-4@2x.png", // Default image URL
+  imageUrl = "/try3.jpg", // Default image URL
   className = "",
   onPropertyCardContainerClick,
 }) => {
