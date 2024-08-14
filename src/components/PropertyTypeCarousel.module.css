@@ -18,7 +18,7 @@
 
 .card {
   min-width: 250px;
-  width: 15vw;
+  width: 18vw;
   height: 40vh;
   border: 1px solid #ddd;
   border-radius: 10px;
@@ -37,6 +37,7 @@
 .carouselTitle {
   font-size: 40px;
   font-weight: normal;
+  color: black;
 }
 
 .image {
