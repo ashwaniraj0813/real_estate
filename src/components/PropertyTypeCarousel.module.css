@@ -3,23 +3,23 @@
   gap: 2vw;
   overflow-x: auto;
   padding: 10px 0;
-  align-items: stretch; /* Align cards to stretch to the same height */
+  align-items: stretch;
   justify-content: center;
   scroll-behavior: smooth;
 }
 
-.carousel{
+.carousel {
   width: 80vw;
   align-self: center;
   display: flex;
   flex-direction: column;
-  gap: 2vh;
+  gap: 3vh;
 }
 
 .card {
-  min-width: 250px; /* Adjusted size for 4 cards */
-  width: 15vw;      /* Adjusted size for 4 cards */
-  height: 40vh;     /* Fixed height for all cards */
+  min-width: 250px;
+  width: 15vw;
+  height: 40vh;
   border: 1px solid #ddd;
   border-radius: 10px;
   overflow: hidden;
@@ -30,11 +30,11 @@
   flex-direction: column;
 }
 
-.card:hover{
+.card:hover {
   transform: scale(1.05);
 }
 
-.carouselTitle{
+.carouselTitle {
   font-size: 40px;
   font-weight: normal;
 }
@@ -42,7 +42,7 @@
 .image {
   width: 100%;
   height: inherit;
-  max-height: 60%; /* Ensure the image does not exceed 60% of the card height */
+  max-height: 60%;
   object-fit: cover;
   background: none;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -52,11 +52,11 @@
 .info {
   padding: 10px;
   text-align: center;
-  flex-grow: 0; /* Ensure title section has consistent size */
+  flex-grow: 0;
 }
 
 .title {
-  font-size: 20px; /* Font size for title */
+  font-size: 20px;
   margin: 10px 0;
   color: #333;
   font-weight: 500;
@@ -65,13 +65,13 @@
 .descriptionContainer {
   padding: 1vh 0vw 1vh 0vw;
   text-align: center;
-  flex-grow: 1; /* Make description section take up remaining space */
+  flex-grow: 1;
   display: flex;
-  align-items: flex-end; /* Align text at the bottom */
+  align-items: flex-end;
 }
 
 .description {
-  font-size: 14px; /* Adjusted font size */
+  font-size: 14px;
   color: #666;
   margin: 0;
 }

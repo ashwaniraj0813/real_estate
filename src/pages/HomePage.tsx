@@ -118,46 +118,43 @@ const HomePage: FunctionComponent = () => {
       </div>
       <PropertyTypeCarousel />
 
-      <div className={styles.popularfeatures}>
-        <section className={styles.popularProperties}>
-          <div className={styles.heading}>POPULAR PROPERTIES</div>
-          <div className={styles.listings}>
-            {properties.slice(0, 4).map((property) => (
-              <Link
-                key={property._id}
-                to={`/property-details-page/${property._id}`}
-                className={styles.linkWrapper}
-              >
-                <PropertyCard
-                  title={property.title}
-                  city={property.city}
-                  price={property.price.toString()}
-                  area={property.area.toString()}
-                />
-              </Link>
-            ))}
-          </div>
-        </section>
-
-        <section className={styles.popularBuilders}>
-          <div className={styles.heading}>POPULAR BUILDERS</div>
-          <div className={styles.listings}>
-            {properties.slice(0, 1).map((builder) => (
-              <Link
-                key={builder._id}
-                // to={`/property-details-page/${property._id}`}
-                className={styles.linkWrapper}
-              >
-                <BuilderCard
-                  name="MV Kiran Sooraj"
-                  properties="1500+ Properties"
-                />
-                <BuilderCard name="Raj" properties="2000+ Properties" />
-              </Link>
-            ))}
-          </div>
-        </section>
-      </div>
+      <section className={styles.popularProperties}>
+        <div className={styles.heading}>POPULAR PROPERTIES</div>
+        <div className={styles.listings}>
+          {properties.slice(0, 4).map((property) => (
+            <Link
+              key={property._id}
+              to={`/property-details-page/${property._id}`}
+              className={styles.linkWrapper}
+            >
+              <PropertyCard
+                title={property.title}
+                city={property.city}
+                price={property.price.toString()}
+                area={property.area.toString()}
+              />
+            </Link>
+          ))}
+        </div>
+      </section>
+      <section className={styles.popularBuilders}>
+        <div className={styles.heading}>POPULAR BUILDERS</div>
+        <div className={styles.listings}>
+          {properties.slice(0, 1).map((builder) => (
+            <Link
+              key={builder._id}
+              // to={`/property-details-page/${property._id}`}
+              className={styles.linkWrapper}
+            >
+              <BuilderCard
+                name="MV Kiran Sooraj"
+                properties="1500+ Properties"
+              />
+              <BuilderCard name="Raj" properties="2000+ Properties" />
+            </Link>
+          ))}
+        </div>
+      </section>
       <Upcoming />
       <CityWiseReviews />
       <EmergingLocalities />
