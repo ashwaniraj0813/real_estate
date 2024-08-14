@@ -45,7 +45,7 @@ const PropertyTypeCarousel: React.FC = () => {
 
   return (
     <div className={styles.carousel}>
-      <h2 className={styles.carouselTitle}>Apartments, Villas and More</h2>
+      <h2 className={styles.carouselTitle}>APARTMENTS, VILLAS AND MORE</h2>
       <div className={styles.carouselControls}>
         {/* <button className={styles.scrollButton} onClick={() => scroll(-300)}>←</button> */}
         <div className={styles.cardsContainer} ref={carouselRef}>
