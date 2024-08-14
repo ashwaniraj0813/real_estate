@@ -172,6 +172,7 @@
 .adminDashboard {
   width: 100%;
   position: relative;
+  top: 58Px;
   background-color: var(--color-white);
   overflow: hidden;
   /* flex-direction: column; */
