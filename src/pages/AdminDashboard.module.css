@@ -140,6 +140,7 @@
 .profile,
 .profileImage1 {
   display: flex;
+  flex-direction:row ;
   align-items: flex-start;
   justify-content: flex-start;
 }
@@ -171,9 +172,10 @@
 .adminDashboard {
   width: 100%;
   position: relative;
+  top: 58Px;
   background-color: var(--color-white);
   overflow: hidden;
-  flex-direction: column;
+  /* flex-direction: column; */
   padding: 0 0 401px;
   gap: var(--gap-21xl);
   line-height: normal;
@@ -321,4 +323,88 @@
 .heading{
   font-size: larger;
   margin: 20px;
+}
+.adminDashboard {
+  display: flex;
+  width: 100%;
+  background-color: #f0f0f0;
+}
+
+.sidebar {
+  flex-basis: 200px;
+  min-width: 250px;
+  background-color: #444444;
+  position: sticky;
+  /* justify-content: center; */
+  color: white;
+  align-items: center;
+  /* font-weight: bolder; */
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+  /* cursor: pointer; */
+}
+.sidebarText{
+  cursor: pointer;
+}
+.content {
+  flex-grow: 1;
+  padding: 20px;
+}
+
+button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+.reviewItem {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  min-width: 1000px;
+}
+
+.reviewItem h3 {
+  margin: 0;
+  color: #333;
+}
+
+.reviewItem p {
+  font-size: 14px;
+  color: #666;
+}
+
+.reviewItem span {
+  display: block;
+  margin-top: 10px;
+}
+.reviewContent{
+ padding-top: 1rem;
+ padding-bottom: 1rem;
+}
+.reviewItem button {
+  padding: 5px 10px;
+  background-color: #d9534f;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.reviewItem button:hover {
+  background-color: #c9302c;
 }

@@ -33,7 +33,7 @@ const Nav: FunctionComponent<NavType> = ({ className = "" }) => {
     navigate("/property-explore-page");
   }, [navigate]);
   
-  let match = (useLocation().pathname == '/');
+  let match = (useLocation().pathname == '/' || useLocation().pathname != '/admin-dashboard');
 
   return (
     <header className={`${match ? `${styles.navtransparent} ${styles.navbar}` : `${styles.navbar}`}`}>

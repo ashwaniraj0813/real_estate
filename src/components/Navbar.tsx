@@ -11,6 +11,7 @@ import LoginPopup from "./LoginPopup";
 import RegisterPopup from "./RegisterPopup";
 import OtpPopup from "./OtpPopup";
 import CollectEmailPopup from "./CollectEmailPopup";
+import NavSearch from "./NavSearch";
 export type NavbarProps = {
   className?: string;
   onSearch: (query: string) => void;
@@ -141,51 +142,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({
       >
         LOGO
       </div>
-      <form
-        className={`${styles.navitem} ${styles.searchBar}`}
-        onSubmit={handlesearch}
-      >
-          <div className={styles.filter}>
-               <div
-                 className={styles.dropdownfilter}
-                 onClick={toggleFilterListVisibility}
-               >
-                 All Residential <span className={`${styles.rotate} ${isFilterListVisible ? styles.rotated : ''}`}>▼</span>
-               </div>
-               <div
-                 className={`${styles.filterlist} ${isFilterListVisible ? styles.visible : ''}`}
-               >
-                    <div className={`${styles.column}`}>
-                        <input type="checkbox" id="flat" name="flat" value="flat" defaultChecked={true} className={`${styles.filterElement}`}/>
-                        <label htmlFor="flat">Flat/Apartment</label> <br />
-                        <input type="checkbox" id="independent" name="independent" value="independent" defaultChecked={true} className={`${styles.filterElement}`}/>
-                        <label htmlFor="independent">Independent/Builder Floor</label> <br />
-                        <input type="checkbox" id="residentialLand" name="residentialLand" value="residentialLand" defaultChecked={true} className={`${styles.filterElement}`}/>
-                        <label htmlFor="residentialLand">Residential Land</label><br />
-                    </div>
-                    <div>
-                        <input type="checkbox" id="studioApartment" name="studioApartment" value="studioApartment" defaultChecked={true} className={`${styles.filterElement}`}/>
-                        <label htmlFor="studioApartment">Studio Apartment</label> <br />
-                        <input type="checkbox" id="farmHouse" name="farmHouse" value="farmHouse" defaultChecked={true} className={`${styles.filterElement}`}/>
-                        <label htmlFor="farmHouse">Farm House</label><br />
-                        <input type="checkbox" id="servicedApartments" name="servicedApartments" value="servicedApartments" defaultChecked={true}  className={`${styles.filterElement}`}/>
-                        <label htmlFor="servicedApartments">Serviced Apartments</label><br /> 
-                    </div>
-               </div>
-           </div>
-        <img
-          className={styles.searchicon}
-          src="/icbaselinesearch1.svg"
-          alt="search icon"
-        />
-        <input
-          className={styles.searchinput}
-          placeholder="Enter City / Type / No of Bhk needed.."
-          type="text"
-          value={searchQuery}
-          onChange={handleSearchChange}
-        />
-      </form>
+      <NavSearch />
       {/* <div
         className={`${styles.navitem} ${styles.logo}`}
         onClick={onBuyTextClick}

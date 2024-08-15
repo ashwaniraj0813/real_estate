@@ -7,8 +7,6 @@ import CustomerReviewCard from "../components/CustomerReviewCard";
 import LoginPopup from "../components/LoginPopup";
 import PropertyCard from "../components/PropertyCard";
 import BuilderCard from "../components/BuilderCard";
-import Articles from "../components/Articles";
-import HistoryCard from "../components/HistoryCard";
 import CardLayout from "../components/Insights";
 import CityWiseReviews from "../components/CityWiseReviews";
 import Upcoming from "../components/upcoming";
@@ -16,6 +14,7 @@ import EmergingLocalities from "../components/EmergingLocalities";
 import ReviewForm from "../components/ReviewForm";
 import PropertyTypeCarousel from "../components/PropertyTypeCarousel";
 import SearhBar from "../components/SearchBar";
+import AppointmentForm from "../components/AppointmentForm";
 
 const HomePage: FunctionComponent = () => {
   const [firstName, setFirstName] = useState("");
@@ -115,13 +114,11 @@ const HomePage: FunctionComponent = () => {
         onLoginClick={() => setIsLoginPopupVisible(true)}
         onSearch={fetchProperties}
       />
-
       <div className={styles.hero}>
         <div className={styles.search}>
           <SearhBar />
         </div>
       </div>
-
       <PropertyTypeCarousel />
       <div style={{ display: "flex", paddingRight: "2em" }}>
         <div className={styles.popularfeatures}>
@@ -149,7 +146,11 @@ const HomePage: FunctionComponent = () => {
             <div className={styles.heading}>POPULAR BUILDERS</div>
             <div className={styles.listings}>
               {properties.slice(0, 1).map((builder) => (
-                <Link key={builder._id} className={styles.linkWrapper}>
+                <Link
+                  key={builder._id}
+                  // to={`/property-details-page/${property._id}`}
+                  className={styles.linkWrapper}
+                >
                   <BuilderCard
                     name="MV Kiran Sooraj"
                     properties="1500+ Properties"
@@ -165,7 +166,6 @@ const HomePage: FunctionComponent = () => {
       <CityWiseReviews />
       <EmergingLocalities />
       <CardLayout />
-
       <div className={styles.happycustomers}>
         <div className={styles.heading}>HAPPY CUSTOMERS</div>
         <div className={styles.subheading}>HAPPY TRADE</div>
@@ -173,7 +173,7 @@ const HomePage: FunctionComponent = () => {
           <CustomerReviewCard
             imageUrl="./istockphoto1476170969170667a-1@2x.png"
             name="Raghav"
-            review="I was blown away by the exceptional service I received from your website! The website was easy to navigate, and the real estate agents were knowledgeable and responsive. I found my dream home in no time, and the entire process was stress-free. I highly recommend this to anyone looking to buy or sell a property!"
+            review="I was blown away by the exceptional service I received from your website! The website was easy to navigate, and the real estate agents were knowledgeable and responsive. I found my dream home in no time, and the entire process was stress-free. I highly recommend this to anyone looking to buy or sell a property. Thank you for making my real estate journey a pleasant one!"
           />
           <CustomerReviewCard
             imageUrl="./istockphoto1476170969170667a-1@2x.png"
@@ -182,86 +182,24 @@ const HomePage: FunctionComponent = () => {
           />
           <CustomerReviewCard
             imageUrl="./istockphoto1476170969170667a-1@2x.png"
-            name="Bob"
-            review="I've used several real estate websites in the past, but this is by far the best! The website's advanced search features and real-time updates made it easy to find the perfect property. The agents were professional and courteous, and the entire process was seamless. I highly recommend this to everyone. Thank You"
+            name="Ravi"
+            review="I had a great experience using this real estate website. The search functionality was user-friendly, and the property listings were accurate and detailed. The customer support team was always available to assist me with any questions I had. I found the perfect property and closed the deal smoothly. I will definitely use this website again for future real estate needs!"
           />
         </div>
       </div>
       {/* <ReviewForm /> */}
       <Footer />
-
       {isFormVisible && (
-        <div className={styles.formOverlay}>
-          <div className={styles.formContainer}>
-            <form className={styles.aptform} onSubmit={handleSubmit}>
-              <button
-                className={styles.closeButton}
-                onClick={() => setIsFormVisible(false)}
-              >
-                &times;
-              </button>
-              <div className={styles.book}>BOOK APPOINTMENT</div>
-              <div className={styles.fullname}>
-                <input
-                  className={styles.fname}
-                  placeholder="First Name"
-                  type="text"
-                  value={firstName}
-                  onChange={(e) => setFirstName(e.target.value)}
-                  required
-                />
-                <input
-                  className={styles.lname}
-                  placeholder="Last Name"
-                  type="text"
-                  value={lastName}
-                  onChange={(e) => setLastName(e.target.value)}
-                  required
-                />
-              </div>
-              <input
-                className={styles.email}
-                placeholder="Email"
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-              />
-              <input
-                className={styles.phno}
-                placeholder="Phone"
-                type="text"
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
-                required
-              />
-              <div className={styles.buttonContainer}>
-                <button className={styles.bookappointment} type="submit">
-                  Book an Appointment
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
+        <AppointmentForm onClose={() => setIsFormVisible(false)} />
       )}
-
-      <div className={styles.appointmentIcon} onClick={() => setIsFormVisible(true)}>
-        <div className={styles.appointmentText}>
-          Book an
-          <br />
-          Appointment
-        </div>
-        {/* <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          fill="currentColor"
-          width="24px"
-          height="24px"
-        >
-          <path d="M20 15.5c-1.25 0-2.45-.2-3.57-.57-.35-.12-.75-.04-1.03.24l-2.2 2.2c-3.54-1.81-6.42-4.69-8.23-8.23l2.2-2.2c.28-.28.36-.68.24-1.03C8.7 6.45 8.5 5.25 8.5 4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1C3 14.94 9.06 21 16 21c.55 0 1-.45 1-1v-2.5c0-.55-.45-1-1-1z"/>
-        </svg> */}
+      <div
+        className={styles.fixedIcon}
+        onClick={() => setIsFormVisible(!isFormVisible)}
+      >
+        Book an 
+        < br/>
+        Appointment
       </div>
-      {isLoginPopupVisible && <LoginPopup onClose={() => setIsLoginPopupVisible(false)} />}
     </div>
   );
 };

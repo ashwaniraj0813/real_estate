@@ -6,7 +6,7 @@ const Upcoming: React.FC = () => {
     <div className={styles.wrapper}>
       <header className={styles.header}>
         <img src="../upcoming.png" alt="Logo" className={styles.logo} />
-        <h1>New Arrivals</h1>
+        <h1>NEW ARRIVALS</h1>
       </header>
       <div className={styles.container}>
         <div className={styles.card}>

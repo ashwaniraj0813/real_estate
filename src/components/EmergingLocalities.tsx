@@ -38,6 +38,10 @@ const EmergingLocalities: React.FC = () => {
             <LocalityCard />
             <LocalityCard />
             <LocalityCard />
+            <LocalityCard />
+            <LocalityCard />
+            <LocalityCard />
+            <LocalityCard />
           </div>
         </div>
         <button className={styles.navButton} onClick={scrollRight}>

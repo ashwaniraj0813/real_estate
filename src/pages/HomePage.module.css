@@ -1,5 +1,5 @@
-/* HomePage.module.css */
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
 }
@@ -8,6 +8,7 @@ html, body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  gap: 4vh;
 }
 
 .footer {
@@ -24,7 +25,6 @@ html, body {
   margin-top: auto;
 }
 
-/* Existing styles */
 .homePage * {
   font-family: var(--font-montserrat);
 }
@@ -46,9 +46,9 @@ html, body {
   margin-bottom: 5vh;
 }
 
-.search{
+.search {
   position: absolute;
-  bottom: -5vh; /* Adjust this value to move the search bar further down */
+  bottom: -5vh;
   left: 50%;
   transform: translateX(-50%);
   width: 80%;
@@ -56,7 +56,6 @@ html, body {
   justify-content: center;
   align-items: center;
 }
-
 
 .introtext {
   padding: 80px 0px;
@@ -201,17 +200,17 @@ input {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 6vw 0vw;
-  gap: 20px;
+  padding: 2vh 0vw;
+  gap:5vh;
+  width: 80vw;
+  align-self: center;
+  margin: 2vh;
 }
 
 .listings {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 40px;
+  gap: 2vw;
 }
 
 .popularBuilders {
@@ -220,8 +219,20 @@ input {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 6vw 4vw;
-  gap: 20px;
+  padding: 2vh 0vw;
+  gap: 5vh;
+  width: 80vw;
+  align-self: center;
+  margin: 2vh;
+}
+
+.heading {
+  font-size: 40px;
+}
+
+.subheading {
+  font-size: 25px;
+  color: #2457c5;
 }
 
 .happycustomers {
@@ -244,15 +255,6 @@ input {
   gap: 12px;
 }
 
-.listings {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: flex-start;
-  gap: 40px;
-  padding: 20px;
-}
-
 .linkWrapper {
   flex: 1;
   display: flex;
@@ -271,22 +273,6 @@ input {
     width: 100%;
     font-size: 40px;
     padding: 40px 0;
-  }
-
-  .popularfeatures .features {
-    display: flex;
-    flex-wrap: wrap; 
-    gap: 40px; 
-  }
-  
-  .popularfeatures .feature {
-    flex: 1 1 calc(25% - 40px); 
-    box-sizing: border-box; 
-  }
-
-  .popularfeatures .feature {
-    flex: 1 1 calc(25% - 40px);
-    box-sizing: border-box;
   }
 
   .aptform {
@@ -308,26 +294,6 @@ input {
     width: 80%;
   }
 
-  .popularfeatures .features {
-    display: flex;
-    flex-wrap: wrap; 
-    gap: 40px; 
-  }
-  
-  .popularfeatures .feature {
-    flex: 1 1 calc(50% - 40px);
-    box-sizing: border-box;
-  }
-
-  .featuredlocations {
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .featuredlocations .featuredloc {
-    margin: 5px;
-  }
-
   .articles .article {
     flex-direction: column;
   }
@@ -345,13 +311,8 @@ input {
 
   .popularfeatures .features {
     display: flex;
-    flex-wrap: wrap; 
-    gap: 20px; 
-  }
-  
-  .popularfeatures .feature {
-    flex: 1 1 calc(50% - 40px); 
-    box-sizing: border-box; 
+    flex-wrap: wrap;
+    gap: 20px;
   }
 
   .popularfeatures .feature {
@@ -359,9 +320,9 @@ input {
     box-sizing: border-box;
   }
 
-  .feature > img {
-    height: 100px;
-    width: 100px;
+  .popularfeatures .feature {
+    flex: 1 1 calc(50% - 40px);
+    box-sizing: border-box;
   }
 
   .title {
@@ -438,3 +399,23 @@ input {
   margin-top: 10px;
   width: 100%;
 }
+
+.fixedIcon {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  width: 120px;
+  height: 80px;
+  background: white;
+  border-radius: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  text-align: center;
+  font-weight: 700;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+
