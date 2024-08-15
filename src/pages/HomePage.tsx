@@ -16,6 +16,7 @@ import EmergingLocalities from "../components/EmergingLocalities";
 import ReviewForm from "../components/ReviewForm";
 import PropertyTypeCarousel from "../components/PropertyTypeCarousel";
 import SearhBar from "../components/SearchBar";
+
 const HomePage: FunctionComponent = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -23,6 +24,7 @@ const HomePage: FunctionComponent = () => {
   const [phone, setPhone] = useState("");
   const [isLoginPopupVisible, setIsLoginPopupVisible] = useState(false);
   const [properties, setProperties] = useState([]);
+  const [isFormVisible, setIsFormVisible] = useState(false);
 
   const navigate = useNavigate();
 
@@ -51,6 +53,7 @@ const HomePage: FunctionComponent = () => {
         setLastName("");
         setEmail("");
         setPhone("");
+        setIsFormVisible(false); // Close the form after submission
       } else {
         throw new Error("Failed to book appointment.");
       }
@@ -146,11 +149,7 @@ const HomePage: FunctionComponent = () => {
             <div className={styles.heading}>POPULAR BUILDERS</div>
             <div className={styles.listings}>
               {properties.slice(0, 1).map((builder) => (
-                <Link
-                  key={builder._id}
-                  // to={`/property-details-page/${property._id}`}
-                  className={styles.linkWrapper}
-                >
+                <Link key={builder._id} className={styles.linkWrapper}>
                   <BuilderCard
                     name="MV Kiran Sooraj"
                     properties="1500+ Properties"
@@ -165,7 +164,6 @@ const HomePage: FunctionComponent = () => {
       <Upcoming />
       <CityWiseReviews />
       <EmergingLocalities />
-      {/* <Articles /> */}
       <CardLayout />
 
       <div className={styles.happycustomers}>
@@ -189,54 +187,81 @@ const HomePage: FunctionComponent = () => {
           />
         </div>
       </div>
-      <div style={{ display: "flex", flexDirection: "row", gap: "2vw", marginLeft: "10vw" }}>
-        <form className={styles.aptform} onSubmit={handleSubmit}>
-          <div className={styles.book}>BOOK APPOINTMENT</div>
-          <div className={styles.fullname}>
-            <input
-              className={styles.fname}
-              placeholder="First Name"
-              type="text"
-              value={firstName}
-              onChange={(e) => setFirstName(e.target.value)}
-              required
-            />
-            <input
-              className={styles.lname}
-              placeholder="Last Name"
-              type="text"
-              value={lastName}
-              onChange={(e) => setLastName(e.target.value)}
-              required
-            />
-          </div>
-          <input
-            className={styles.email}
-            placeholder="Email"
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-          <input
-            className={styles.phno}
-            placeholder="Phone"
-            type="text"
-            value={phone}
-            onChange={(e) => setPhone(e.target.value)}
-            required
-          />
-          <button className={styles.bookappointment} type="submit">
-            Get Your Appointment
-          </button>
-        </form>
-        <ReviewForm />
-      </div>
+      {/* <ReviewForm /> */}
       <Footer />
 
-      {isLoginPopupVisible && (
-        <LoginPopup onClose={() => setIsLoginPopupVisible(false)} />
+      {isFormVisible && (
+        <div className={styles.formOverlay}>
+          <div className={styles.formContainer}>
+            <form className={styles.aptform} onSubmit={handleSubmit}>
+              <button
+                className={styles.closeButton}
+                onClick={() => setIsFormVisible(false)}
+              >
+                &times;
+              </button>
+              <div className={styles.book}>BOOK APPOINTMENT</div>
+              <div className={styles.fullname}>
+                <input
+                  className={styles.fname}
+                  placeholder="First Name"
+                  type="text"
+                  value={firstName}
+                  onChange={(e) => setFirstName(e.target.value)}
+                  required
+                />
+                <input
+                  className={styles.lname}
+                  placeholder="Last Name"
+                  type="text"
+                  value={lastName}
+                  onChange={(e) => setLastName(e.target.value)}
+                  required
+                />
+              </div>
+              <input
+                className={styles.email}
+                placeholder="Email"
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+              <input
+                className={styles.phno}
+                placeholder="Phone"
+                type="text"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                required
+              />
+              <div className={styles.buttonContainer}>
+                <button className={styles.bookappointment} type="submit">
+                  Book an Appointment
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
       )}
+
+      <div className={styles.appointmentIcon} onClick={() => setIsFormVisible(true)}>
+        <div className={styles.appointmentText}>
+          Book an
+          <br />
+          Appointment
+        </div>
+        {/* <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          width="24px"
+          height="24px"
+        >
+          <path d="M20 15.5c-1.25 0-2.45-.2-3.57-.57-.35-.12-.75-.04-1.03.24l-2.2 2.2c-3.54-1.81-6.42-4.69-8.23-8.23l2.2-2.2c.28-.28.36-.68.24-1.03C8.7 6.45 8.5 5.25 8.5 4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1C3 14.94 9.06 21 16 21c.55 0 1-.45 1-1v-2.5c0-.55-.45-1-1-1z"/>
+        </svg> */}
+      </div>
+      {isLoginPopupVisible && <LoginPopup onClose={() => setIsLoginPopupVisible(false)} />}
     </div>
   );
 };
