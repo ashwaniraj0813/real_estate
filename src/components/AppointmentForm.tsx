@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "./AppointmentForm.module.css";
 
-const AppointmentForm: React.FC = () => {
+const AppointmentForm: React.FC<{ onClose: () => void }> = ({ onClose }) => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -27,6 +27,7 @@ const AppointmentForm: React.FC = () => {
         setLastName("");
         setEmail("");
         setPhone("");
+        onClose(); // Close the form after submission
       } else {
         throw new Error("Failed to book appointment.");
       }
@@ -37,9 +38,10 @@ const AppointmentForm: React.FC = () => {
   };
 
   return (
-    <div className={styles.container}>
-      <h2 className={styles.heading}>Book Appointment</h2>
-      <div className={styles.appointmentContainer}>
+    <div className={styles.formOverlay}>
+      <div className={styles.formContainer}>
+        <button className={styles.closeButton} onClick={onClose}>&times;</button>
+        <h2 className={styles.heading}>Book Appointment</h2>
         <form className={styles.aptform} onSubmit={handleSubmit}>
           <div className={styles.fullname}>
             <input
