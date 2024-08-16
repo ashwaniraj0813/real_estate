@@ -17,7 +17,7 @@ const PhotosForm: React.FC<PhotosFormProps> = ({
   prevStep
 }) => {
   const handleNextStep = () => {
-    if (selectedImages.length >= 4) {
+    if (selectedImages.length >= 2) {
       nextStep();
     } else {
       alert('Please upload at least 4 media items before proceeding.');
