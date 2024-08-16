@@ -39,3 +39,8 @@
 .footitem {
   cursor: pointer;
 }
+.logo1{
+  width: 100px;
+  height:40px;
+  font-weight: 600;
+}
