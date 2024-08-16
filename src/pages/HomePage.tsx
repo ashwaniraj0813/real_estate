@@ -178,7 +178,7 @@ const HomePage: FunctionComponent = () => {
           <CustomerReviewCard
             imageUrl="./istockphoto1476170969170667a-1@2x.png"
             name="Kishore"
-            review="As a first-time homebuyer, I was nervous about the process, but this made it a breeze! The website's resources and guides were incredibly helpful, and the agents were patient and understanding. I felt supported every step of the way, and I couldn't be happier with my new home. Thank you,"
+            review="As a first-time homebuyer, I was nervous about the process, but this made it a breeze! The website's resources and guides were incredibly helpful, and the agents were patient and understanding. I found my dream home in no time, and the entire process was stress-free. I felt supported every step of the way, and I couldn't be happier with my new home. Thank you,"
           />
           <CustomerReviewCard
             imageUrl="./istockphoto1476170969170667a-1@2x.png"

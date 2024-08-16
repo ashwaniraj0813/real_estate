@@ -65,7 +65,7 @@ body {
   font-weight: 700;
 }
 
-.aptform {
+/* .aptform {
   width: 500px;
   padding: 50px;
   background-color: white;
@@ -110,7 +110,7 @@ input {
   border: 3px solid transparent;
   border-radius: 50px; 
   border-image: linear-gradient(90deg, #2895DF, #764EC6) 1;
-}
+} */
 
 /* .bookappointment {
   border: none;
@@ -124,7 +124,7 @@ input {
   text-align: center;
 } */
 
-.buttonContainer {
+/* .buttonContainer {
   display: flex;
   justify-content: center; 
 }
@@ -132,13 +132,12 @@ input {
 .bookappointment {
   border: none;
   color: var(--color-white);
-  /* border-radius: 30px; */
   background-image: linear-gradient(90deg, #2895DF, #764EC6);
   display: flex;
   align-items: center; 
   justify-content: center; 
   text-align: center;
-}
+} */
 
 .popularfeatures {
   display: flex;
@@ -339,7 +338,7 @@ input {
   }
 }
 
-.appointmentIcon {
+/* .appointmentIcon {
   position: fixed;
   right: 20px;
   font-size: smaller;
@@ -364,7 +363,6 @@ input {
   height: 50%;
 }
 
-/* Overlay for the form */
 .formOverlay {
   position: fixed;
   top: 0;
@@ -378,17 +376,6 @@ input {
   z-index: 1001;
 }
 
-/* Container for the form */
-/* .formContainer {
-  background-color: #fff;
-  padding: 2em;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  max-width: 500px;
-  width: 100%;
-} */
-
-/* Close button for the form */
 .formOverlay closeButton {
   background-color: #f44336;
   color: #fff;
@@ -398,7 +385,7 @@ input {
   cursor: pointer;
   margin-top: 10px;
   width: 100%;
-}
+} */
 
 .fixedIcon {
   position: fixed;

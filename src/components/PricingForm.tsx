@@ -22,7 +22,7 @@ const PricingForm: React.FC<PricingFormProps> = ({ formData, handleInputChange, 
 
   const validateForm = () => {
     // Check if required fields are filled
-    if (!formData.price || !formData.proprietorName || !formData.proprietorEmail || !formData.proprietorPhone) {
+    if (!formData.price || !formData.proprietorName || !formData.proprietorEmail || !formData.proprietorPhone || !formData.posterType) {
       alert('Please fill in all the required fields before submitting.');
       return false;
     }
@@ -127,6 +127,46 @@ const PricingForm: React.FC<PricingFormProps> = ({ formData, handleInputChange, 
           />
         </div>
       </div>
+
+      <div className={styles.posterTypeDetails}>
+        <div className={styles.posterTypeDetailsName}>You are:</div>
+        <div className={styles.posterTypeDetailsInput}>
+          <label>
+            <input
+              type="radio"
+              name="posterType"
+              value="Owner"
+              checked={formData.posterType === 'Owner'}
+              onChange={handleInputChange}
+              required
+            />
+            Owner
+          </label>
+          <label>
+            <input
+              type="radio"
+              name="posterType"
+              value="Builder"
+              checked={formData.posterType === 'Builder'}
+              onChange={handleInputChange}
+              required
+            />
+            Builder
+          </label>
+          <label>
+            <input
+              type="radio"
+              name="posterType"
+              value="Agent"
+              checked={formData.posterType === 'Agent'}
+              onChange={handleInputChange}
+              required
+            />
+            Agent
+          </label>
+        </div>
+      </div>
+
 
       {/* <div className={styles.buttons}> */}
         <button type="submit" className={styles.submitButton} onClick={handleFormSubmit}>Submit</button>
