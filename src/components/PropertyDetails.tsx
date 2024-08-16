@@ -9,17 +9,18 @@ export type PropertyDetailsType = {
 const PropertyDetails: FunctionComponent<PropertyDetailsType> = ({ property }) => {
   return (
     <>
+      {console.log(property)}
       <section className={styles.Details}>
         <div className={styles.header}>
           <div className={styles.title}>
             <div className={styles.name}>
               <div className={styles.propertyname}>
-                {property.title}
+                {property.verification ? <img src="/verified.png" className={styles.verify}/> : null} {property.title}
               </div>
               <div className={styles.details}>
                 <i className="fa-solid fa-ruler-combined"></i> {property.area} Sqft. 
                 | <i className="fas fa-bed"></i> {property.Bhk} BHK 
-                | <i className="fa-solid fa-dollar-sign"></i> {property.price} Million 
+                | <i className="fa-solid fa-indian-rupee-sign"></i> {property.price} 
                 | <i className="fas fa-home"></i> {property.type} | {property.status} | {property.purpose}
               </div>
             </div>
@@ -57,7 +58,14 @@ const PropertyDetails: FunctionComponent<PropertyDetailsType> = ({ property }) =
           <section className={styles.Description}>
             <div className={styles.heading}>Description</div>
             <div className={styles.describe}>
-              {property.description} <br />
+              <b>
+              {property.availability_status}
+              <br/>
+              {property.balconies ? `${property.balconies} Balconies` : null} | {property.bathrooms ? `${property.bathrooms} Bathrooms` : null} | {`${property.floors} Floors`}
+              <br/>
+              {property.description} 
+              </b>
+              <br />
               Welcome to our luxurious two-bedroom apartment, ideally situated in downtown's vibrant core. Boasting modern amenities, breathtaking city views facing east, and proximity to key landmarks such as Central Park and renowned dining spots. Perfect for discerning urbanites, offering convenience, culture, and a coveted lifestyle at your doorstep.
             </div>
           </section>
@@ -101,7 +109,7 @@ const PropertyDetails: FunctionComponent<PropertyDetailsType> = ({ property }) =
           </section>
         </div>
         <div className={styles.right}>
-          <ContactForm />
+          <ContactForm email={property.Propreiter_email} phone={property.Propreiter_contact} name={property.Propreiter_name}/>
         </div>
       </section>
 
@@ -111,14 +119,16 @@ const PropertyDetails: FunctionComponent<PropertyDetailsType> = ({ property }) =
           <img className={styles.mapicon} src="/image-13@2x.png" alt="Map Icon" />
           {/* 1 Portal W North Acton, London, England W3 6BX */}
           <div className={styles.location}>
-            {property.city} {property.location}
+            Address : {property.city} {property.location}
+            <br/>
+            Landmark : {property.landmark}
           </div>
         </div>
-        <img className={styles.map} src="/location-on-map@2x.png" alt="Location on Map" />
-        {/* <iframe
-            className={styles.map}
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3718.6175264627154!2d81.3139860785757!3d21.247010130068425!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a293d6791e5f399%3A0xfb39e72b5f4501f5!2sIndian%20Institute%20of%20Technology%20Bhilai!5e0!3m2!1sen!2sin!4v1719549093746!5m2!1sen!2sin"
-          ></iframe> */}
+        {/* <img className={styles.map} src="/location-on-map@2x.png" alt="Location on Map" /> */}
+        <iframe
+          className={styles.map}
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3684.3882263594105!2d88.34073987534423!3d22.56457877949738!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a02779ff7e5b9af%3A0x1d1b1884bdbbbd79!2sEden%20Gardens!5e0!3m2!1sen!2sin!4v1723799966301!5m2!1sen!2sin">
+        </iframe>
       </section>
     </>
   );

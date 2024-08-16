@@ -3,7 +3,7 @@ import styles from "./ContactForm.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons"; // Importing WhatsApp icon
 
-const ContactForm: FunctionComponent = () => {
+const ContactForm: FunctionComponent = (props) => {
     const [formData, setFormData] = useState({
         fullName: '',
         email: '',
@@ -28,10 +28,10 @@ const ContactForm: FunctionComponent = () => {
         <section className={styles.WhatsappContact}>
             <div className={styles.contactContainer}>
                 <div className={styles.whatsappSection}>
-                    <a href="https://wa.me/0483913838" className={styles.whatsappLink}>
+                    <a href={`{https://wa.me/{props.phone}`} className={styles.whatsappLink}>
                         <button className={styles.whatsappButton}>
                             <FontAwesomeIcon icon={faWhatsapp} className={styles.whatsappIcon} />
-                            <span className={styles.whatsappNumber}>0483 91 38 38</span>
+                            <span className={styles.whatsappNumber}>{props.phone}</span>
                         </button>
                     </a>
                 </div>
