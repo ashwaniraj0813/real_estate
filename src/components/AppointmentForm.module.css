@@ -2,7 +2,7 @@
   padding: 2em;
   background-color: #f9f9f9;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgb(38, 151, 224, 0.3);
+  box-shadow: 0 4px 8px rgb(0,0,0,0.1);
   width: 100%;
   max-width: 400px;
   margin: 0 auto;
@@ -18,7 +18,9 @@
   text-align: center;
   margin-bottom: 1em;
   font-size: 1.5em;
-  font-weight: bold;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #000;
 }
 
 .aptform {
