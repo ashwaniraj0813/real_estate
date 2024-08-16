@@ -4,134 +4,8 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import OfficeCard from "../components/OfficeCard";
 import EmployeeCard from "../components/EmployeeCard";
+import employees from "./employees";
 
-const employee1 = {
-  name: "Ashwani Raj",
-  phone: "033 1234 1234",
-  email: "realestate@gmail.com",
-  imageUrl: "/userdefault.jpg",
-};
-
-const employee2 = {
-  name: "Anjali Patil",
-  phone: "044 5678 9012",
-  email: "realestate@gmail.com",
-  imageUrl: "/userdefault.jpg",
-};
-const employee3 = {
-  name: "Rusy",
-  phone: "044 5678 9012",
-  email: "realestate@gmail.com",
-  imageUrl: "/userdefault.jpg",
-};
-const employee4 = {
-  name: "Sooraj",
-  phone: "044 5678 9012",
-  email: "realestate@gmail.com",
-  imageUrl: "/userdefault.jpg",
-};
-const employee5 = {
-  name: "Xaumya",
-  phone: "044 5678 9012",
-  email: "realestate@gmail.com",
-  imageUrl: "/userdefault.jpg",
-};
-const employee6 = {
-  name: "Deepkshitha",
-  phone: "044 5678 9012",
-  email: "realestate@gmail.com",
-  imageUrl: "/userdefault.jpg",
-};
-const employee7 = {
-  name: "Anil Kumar",
-  phone: "044 5678 9012",
-  email: "realestate@gmail.com",
-  imageUrl: "/userdefault.jpg",
-};
-const employee8 = {
-  name: "Jhansi",
-  phone: "044 5678 9012",
-  email: "realestate@gmail.com",
-  imageUrl: "/userdefault.jpg",
-};
-const employee9 = {
-  name: "Kruthi",
-  phone: "044 5678 9012",
-  email: "realestate@gmail.com",
-  imageUrl: "/userdefault.jpg",
-};
-const employee10 = {
-  name: "Vasu",
-  phone: "044 5678 9012",
-  email: "realestate@gmail.com",
-  imageUrl: "/userdefault.jpg",
-};
-const employee11 = {
-  name: "Manopriya",
-  phone: "044 5678 9012",
-  email: "realestate@gmail.com",
-  imageUrl: "/userdefault.jpg",
-};
-const employee12 = {
-  name: "Bhargav",
-  phone: "044 5678 9012",
-  email: "realestate@gmail.com",
-  imageUrl: "/userdefault.jpg",
-};
-const employee13 = {
-  name: "Ramesh",
-  phone: "044 5678 9012",
-  email: "realestate@gmail.com",
-  imageUrl: "/userdefault.jpg",
-};
-const employee14 = {
-  name: "Esha",
-  phone: "044 5678 9012",
-  email: "realestate@gmail.com",
-  imageUrl: "/userdefault.jpg",
-};
-const employee15 = {
-  name: "Rajvardhan",
-  phone: "044 5678 9012",
-  email: "realestate@gmail.com",
-  imageUrl: "/userdefault.jpg",
-};
-const employee16 = {
-  name: "Ayushman Tripathi",
-  phone: "044 5678 9012",
-  email: "realestate@gmail.com",
-  imageUrl: "/userdefault.jpg",
-};
-const employee17 = {
-  name: "Yatika",
-  phone: "044 5678 9012",
-  email: "realestate@gmail.com",
-  imageUrl: "/userdefault.jpg",
-};
-const employee18 = {
-  name: "sanyam Sharma",
-  phone: "044 5678 9012",
-  email: "realestate@gmail.com",
-  imageUrl: "/userdefault.jpg",
-};
-const employee19 = {
-  name: "suraj",
-  phone: "044 5678 9012",
-  email: "realestate@gmail.com",
-  imageUrl: "/userdefault.jpg",
-};
-const employee20 = {
-  name: "Sachin",
-  phone: "044 5678 9012",
-  email: "realestate@gmail.com",
-  imageUrl: "/userdefault.jpg",
-};
-const employee21 = {
-  name: "Dhruv Saini",
-  phone: "044 5678 9012",
-  email: "realestate@gmail.com",
-  imageUrl: "/userdefault.jpg",
-};
 const AboutUs: FunctionComponent = () => {
   return (
     <div className={styles.aboutUs}>
@@ -180,27 +54,9 @@ const AboutUs: FunctionComponent = () => {
         <div className={styles.team}>
           <div className={styles.heading}>Meet Our Team</div>
           <div className={styles.members}>
-            <EmployeeCard {...employee1}/>
-            <EmployeeCard {...employee2}/>
-            <EmployeeCard {...employee3}/>
-            <EmployeeCard {...employee4}/>
-            <EmployeeCard {...employee5}/>
-            <EmployeeCard {...employee6}/>
-            <EmployeeCard {...employee7}/>
-            <EmployeeCard {...employee8}/>
-            <EmployeeCard {...employee9}/>
-            <EmployeeCard {...employee10}/>
-            <EmployeeCard {...employee11}/>
-            <EmployeeCard {...employee12}/>
-            <EmployeeCard {...employee13}/>
-            <EmployeeCard {...employee14}/>
-            <EmployeeCard {...employee15}/>
-            <EmployeeCard {...employee16}/>
-            <EmployeeCard {...employee17}/>
-            <EmployeeCard {...employee18}/>
-            <EmployeeCard {...employee19}/>
-            <EmployeeCard {...employee20}/>
-            <EmployeeCard {...employee21}/>
+            {employees.map((employee, index) => (
+              <EmployeeCard key={index} {...employee} />
+            ))}
           </div>
         </div>
       </div>
