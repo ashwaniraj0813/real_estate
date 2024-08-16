@@ -6,7 +6,7 @@ const CardLayout: React.FC = () => {
     <div className={styles.wrapper}>
       <header className={styles.header}>
         <img src="../insightslogo.jpeg" alt="Logo" className={styles.logo} />
-        <h1>Insights and Tools</h1>
+        <h1>INSIGHTS AND TOOLS</h1>
       </header>
       <div className={styles.container}>
         <div className={styles.card}>

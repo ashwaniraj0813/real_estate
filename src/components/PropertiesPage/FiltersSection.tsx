@@ -36,7 +36,7 @@ import {
 } from "../../redux/SearchBox/SearchSlice";
 
 const noOfBedroomsList = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-const propertyTypeList = ["Flat", "Villa", "Land"];
+const propertyTypeList = ["House", "Apartment", "Plot"];
 const amenitiesList = ["Gym", "Swimming Pool", "Garden", "Play Area"];
 const constructionStatusList = [
   "Under Construction",
@@ -82,6 +82,30 @@ const FiltersSection = () => {
   return (
     <Paper variant="outlined" sx={{ padding: "24px 20px", borderRadius: 2 }}>
       <Box>
+         <FormControlLabel sx={{ marginLeft:"5px"  }}
+            control={
+              <Switch
+                checked={verifiedProperties}
+                onChange={() => dispatch(handleVerifiedProperties())}
+              />
+            }
+            label="Verified Properties"
+          />
+          <Box sx={{ mt: 2 }}>
+          <Typography
+            sx={{
+              color: "#091E42",
+              fontSize: "16px",
+              lineHeight: "24px",
+              fontWeight: 600,
+              fontFamily: "var(--font-montserrat)",
+              mb: 1,
+            }}
+          >
+            City
+          </Typography>
+          <CityDropdown selectedCity={selectedCity} onCityChange={handleCityChange} />
+        </Box>
         <Accordion
           expanded={expanded.includes("panel1") ? true : false}
           onChange={() => dispatch(handleChange("panel1"))}
@@ -473,21 +497,7 @@ const FiltersSection = () => {
         </Accordion>
 
         {/* Add City Dropdown */}
-        <Box sx={{ mt: 2 }}>
-          <Typography
-            sx={{
-              color: "#091E42",
-              fontSize: "16px",
-              lineHeight: "24px",
-              fontWeight: 600,
-              fontFamily: "var(--font-montserrat)",
-              mb: 1,
-            }}
-          >
-            City
-          </Typography>
-          <CityDropdown selectedCity={selectedCity} onCityChange={handleCityChange} />
-        </Box>
+        
 
         {/* Include switches for additional filter options */}
         <Box sx={{ mt: 2 }}>
@@ -509,15 +519,7 @@ const FiltersSection = () => {
             }
             label="RERA Approved"
           />
-          <FormControlLabel
-            control={
-              <Switch
-                checked={verifiedProperties}
-                onChange={() => dispatch(handleVerifiedProperties())}
-              />
-            }
-            label="Verified Properties"
-          />
+         
         </Box>
       </Box>
     </Paper>

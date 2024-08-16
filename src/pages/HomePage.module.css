@@ -112,17 +112,7 @@ input {
   border-image: linear-gradient(90deg, #2895DF, #764EC6) 1;
 } */
 
-/* .bookappointment {
-  border: none;
-  color: var(--color-white);
-  border-radius: 30px;
-  padding: 8px 30px;
-  background-image: linear-gradient(90deg, #2895DF, #764EC6);
-  display: flex;
-  align-items: center; 
-  justify-content: center; 
-  text-align: center;
-} */
+
 
 /* .buttonContainer {
   display: flex;
@@ -139,16 +129,6 @@ input {
   text-align: center;
 } */
 
-.popularfeatures {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  padding: 6vw 8vw;
-  gap: 10px;
-}
-
 .heading {
   font-size: 50px;
 }
@@ -156,41 +136,6 @@ input {
 .subheading {
   font-size: 25px;
   color: #2457C5;
-}
-
-.features {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  gap: 80px;
-  padding: 50px;
-}
-
-.feature {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.feature > img {
-  padding: 25px;
-  height: 150px;
-  width: 150px;
-  border: 2px solid #2457C5;
-}
-
-.feature > p {
-  font-size: 20px;
-}
-
-.featuredlocations {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
 }
 
 .popularProperties {
@@ -250,7 +195,7 @@ input {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   gap: 12px;
 }
 
@@ -363,6 +308,10 @@ input {
   height: 50%;
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1df8c5faef4c9ea02f228105df7ad8013c4e05cf
 .formOverlay {
   position: fixed;
   top: 0;
@@ -376,6 +325,13 @@ input {
   z-index: 1001;
 }
 
+<<<<<<< HEAD
+=======
+
+
+
+
+>>>>>>> 1df8c5faef4c9ea02f228105df7ad8013c4e05cf
 .formOverlay closeButton {
   background-color: #f44336;
   color: #fff;
@@ -391,9 +347,10 @@ input {
   position: fixed;
   right: 10px;
   bottom: 10px;
-  width: 120px;
+  width: 125px;
   height: 80px;
-  background: white;
+  color: white;
+  background-image: linear-gradient(90deg, #2895DF, #764EC6); 
   border-radius: 10%;
   display: flex;
   align-items: center;
@@ -403,6 +360,5 @@ input {
   font-weight: 700;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-
 
 

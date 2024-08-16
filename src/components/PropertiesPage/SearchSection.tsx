@@ -6,6 +6,7 @@ import { getFilteredProperties } from "../../redux/SearchBox/SearchSlice";
 
 const SearchSection = ({ searchQuery ,filterproperty}) => {
   const {
+    noOfBedrooms,
     budgetRange,
     propertyType,
     area,
@@ -13,6 +14,7 @@ const SearchSection = ({ searchQuery ,filterproperty}) => {
     properties,
     searchOption,
     isPropertyLoading,
+    verifiedProperties,
   } = useSelector((store) => store.search);
   const dispatch = useDispatch();
 
@@ -26,16 +28,19 @@ const SearchSection = ({ searchQuery ,filterproperty}) => {
   console.log(searchQuery)
   useEffect(() => {
     const filters = {
+      noOfBedrooms,
       minPrice,
       maxPrice,
       minArea,
       maxArea,
       City: city,
       PropertyType: propertyType,
-      url: `http://localhost:5000/api/propertyPurpose?query=${searchQuery}`
+      verifiedProperties,
+      url:"",
+      searchproperties:filterproperty
     };
-    
-}, [dispatch, minPrice, maxPrice, minArea, maxArea, city, propertyType, searchQuery]);
+    dispatch(getFilteredProperties(filters));
+}, [dispatch, filterproperty,verifiedProperties,noOfBedrooms,minPrice, maxPrice, minArea, maxArea, city, propertyType]);
     
 
 
@@ -50,16 +55,16 @@ const SearchSection = ({ searchQuery ,filterproperty}) => {
           fontFamily: "Open Sans",
         }}
       >
-        {filterproperty.length} results | Property for " {searchQuery} " in{" "}
+        {properties.length} results | Property for " {searchQuery} " in{" "}
         {city.address === undefined ? "India" : city.address}
       </Typography>
 
       {isPropertyLoading ? (
         <CircularProgress />
       ) : (
-        filterproperty.map((property) => (
-          <React.Fragment key={property.propertyId}>
-            <PropertiesListCard key={property.id}property={property}  />
+        properties.map((property) => (
+          <React.Fragment key={property._id}>
+            <PropertiesListCard key={property._id}property={property}  />
           </React.Fragment>
         ))
       )}

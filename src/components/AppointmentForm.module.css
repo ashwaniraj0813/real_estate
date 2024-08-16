@@ -38,9 +38,12 @@
 }
 
 .heading {
-  margin-top: 0;
-  text-align: center; /* Center-align heading */
-  margin-bottom: 30px;
+  text-align: center;
+  margin-bottom: 1em;
+  font-size: 1.5em;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #000;
 }
 
 .aptform {

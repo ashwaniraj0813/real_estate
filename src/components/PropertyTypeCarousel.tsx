@@ -36,7 +36,7 @@ const PropertyTypeCarousel: React.FC = () => {
   };
 
   const propertyTypes = [
-    // { title: 'Residential Land', description: '2,200+ Properties', imageSrc: '/resiplot.png' },
+    
     { title: 'Independent House', description: '1,400+ Properties', imageSrc: '/villa.png' },
     { title: 'Independent Builder Floor', description: '210+ Properties', imageSrc: '/builder.jpg ' },
     { title: 'Plots', description: '800+ Properties', imageSrc: '/istockphoto.png' }, 
@@ -47,7 +47,6 @@ const PropertyTypeCarousel: React.FC = () => {
     <div className={styles.carousel}>
       <h2 className={styles.carouselTitle}>APARTMENTS, VILLAS AND MORE</h2>
       <div className={styles.carouselControls}>
-        {/* <button className={styles.scrollButton} onClick={() => scroll(-300)}>←</button> */}
         <div className={styles.cardsContainer} ref={carouselRef}>
           {propertyTypes.map((property, index) => (
             <PropertyTypeCard
@@ -59,7 +58,6 @@ const PropertyTypeCarousel: React.FC = () => {
             />
           ))}
         </div>
-        {/* <button className={styles.scrollButton} onClick={() => scroll(300)}>→</button> */}
       </div>
     </div>
   );
