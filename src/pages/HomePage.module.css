@@ -65,7 +65,7 @@ body {
   font-weight: 700;
 }
 
-.aptform {
+/* .aptform {
   width: 500px;
   padding: 50px;
   background-color: white;
@@ -110,11 +110,11 @@ input {
   border: 3px solid transparent;
   border-radius: 50px; 
   border-image: linear-gradient(90deg, #2895DF, #764EC6) 1;
-}
+} */
 
 
 
-.buttonContainer {
+/* .buttonContainer {
   display: flex;
   justify-content: center; 
 }
@@ -127,7 +127,7 @@ input {
   align-items: center; 
   justify-content: center; 
   text-align: center;
-}
+} */
 
 .heading {
   font-size: 50px;
@@ -283,7 +283,7 @@ input {
   }
 }
 
-.appointmentIcon {
+/* .appointmentIcon {
   position: fixed;
   right: 20px;
   font-size: smaller;
@@ -308,7 +308,10 @@ input {
   height: 50%;
 }
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> 1df8c5faef4c9ea02f228105df7ad8013c4e05cf
 .formOverlay {
   position: fixed;
   top: 0;
@@ -322,10 +325,13 @@ input {
   z-index: 1001;
 }
 
+<<<<<<< HEAD
+=======
 
 
 
 
+>>>>>>> 1df8c5faef4c9ea02f228105df7ad8013c4e05cf
 .formOverlay closeButton {
   background-color: #f44336;
   color: #fff;
@@ -335,7 +341,7 @@ input {
   cursor: pointer;
   margin-top: 10px;
   width: 100%;
-}
+} */
 
 .fixedIcon {
   position: fixed;
