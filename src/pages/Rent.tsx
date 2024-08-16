@@ -80,28 +80,29 @@ const Rent: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
+    const combinedFormData = new FormData();
+    Object.keys(formData).forEach(key => {
+        combinedFormData.append(key, formData[key]);
+    });
+
+    selectedImages.forEach((image, index) => {
+        combinedFormData.append(`propertyImage`, image);
+    });
+
     try {
-      const propertyResponse = await axios.post('http://localhost:5000/api/property', formData);
-      const propertyId = propertyResponse.data._id;
-
-      const imageUploadPromises = selectedImages.map(image => {
-        const formData = new FormData();
-        formData.append('property_id', propertyId);
-        formData.append('image_url', image);
-        return axios.post('http://localhost:5000/api/property-image', formData, {
-          headers: {
-            'Content-Type': 'multipart/form-data'
-          }
+        const response = await axios.post('http://localhost:5000/api/property', combinedFormData, {
+            headers: {
+                'Content-Type': 'multipart/form-data'
+            }
         });
-      });
 
-      await Promise.all(imageUploadPromises);
-      alert('Property listed successfully!');
+        alert('Property listed successfully!');
     } catch (error) {
-      console.error("Error uploading property or images:", error);
-      alert('Failed to list property.');
+        console.error("Error uploading property or images:", error);
+        alert('Failed to list property.');
     }
-  };
+};
+
 
   const renderPropertyProfileForm = () => {
     switch (formData.propertyType) {
