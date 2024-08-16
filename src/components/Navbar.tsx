@@ -140,7 +140,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({
         className={`${styles.navitem} ${styles.logo}`}
         onClick={onLOGOTextClick}
       >
-        LOGO
+        <img src="../logo.png" alt="Logo" className={styles.logo1} />
       </div>
       <NavSearch />
       {/* <div
