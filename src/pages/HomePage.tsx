@@ -15,6 +15,7 @@ import ReviewForm from "../components/ReviewForm";
 import PropertyTypeCarousel from "../components/PropertyTypeCarousel";
 import SearhBar from "../components/SearchBar";
 import AppointmentForm from "../components/AppointmentForm";
+
 const HomePage: FunctionComponent = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -22,6 +23,7 @@ const HomePage: FunctionComponent = () => {
   const [phone, setPhone] = useState("");
   const [isLoginPopupVisible, setIsLoginPopupVisible] = useState(false);
   const [properties, setProperties] = useState([]);
+  const [isFormVisible, setIsFormVisible] = useState(false);
 
   const navigate = useNavigate();
 
@@ -50,6 +52,7 @@ const HomePage: FunctionComponent = () => {
         setLastName("");
         setEmail("");
         setPhone("");
+        setIsFormVisible(false); // Close the form after submission
       } else {
         throw new Error("Failed to book appointment.");
       }
@@ -117,48 +120,51 @@ const HomePage: FunctionComponent = () => {
         </div>
       </div>
       <PropertyTypeCarousel />
+      <div style={{ display: "flex", paddingRight: "2em" }}>
+        <div className={styles.popularfeatures}>
+          <section className={styles.popularProperties}>
+            <div className={styles.heading}>POPULAR PROPERTIES</div>
+            <div className={styles.listings}>
+              {properties.slice(0, 4).map((property) => (
+                <Link
+                  key={property._id}
+                  to={`/property-details-page/${property._id}`}
+                  className={styles.linkWrapper}
+                >
+                  <PropertyCard
+                    title={property.title}
+                    city={property.city}
+                    price={property.price.toString()}
+                    area={property.area.toString()}
+                  />
+                </Link>
+              ))}
+            </div>
+          </section>
 
-      <section className={styles.popularProperties}>
-        <div className={styles.heading}>POPULAR PROPERTIES</div>
-        <div className={styles.listings}>
-          {properties.slice(0, 4).map((property) => (
-            <Link
-              key={property._id}
-              to={`/property-details-page/${property._id}`}
-              className={styles.linkWrapper}
-            >
-              <PropertyCard
-                title={property.title}
-                city={property.city}
-                price={property.price.toString()}
-                area={property.area.toString()}
-              />
-            </Link>
-          ))}
+          <section className={styles.popularBuilders}>
+            <div className={styles.heading}>POPULAR BUILDERS</div>
+            <div className={styles.listings}>
+              {properties.slice(0, 1).map((builder) => (
+                <Link
+                  key={builder._id}
+                  // to={`/property-details-page/${property._id}`}
+                  className={styles.linkWrapper}
+                >
+                  <BuilderCard
+                    name="MV Kiran Sooraj"
+                    properties="1500+ Properties"
+                  />
+                  <BuilderCard name="Raj" properties="2000+ Properties" />
+                </Link>
+              ))}
+            </div>
+          </section>
         </div>
-      </section>
-      <section className={styles.popularBuilders}>
-        <div className={styles.heading}>POPULAR BUILDERS</div>
-        <div className={styles.listings}>
-          {properties.slice(0, 1).map((builder) => (
-            <Link
-              key={builder._id}
-              // to={`/property-details-page/${property._id}`}
-              className={styles.linkWrapper}
-            >
-              <BuilderCard
-                name="MV Kiran Sooraj"
-                properties="1500+ Properties"
-              />
-              <BuilderCard name="Raj" properties="2000+ Properties" />
-            </Link>
-          ))}
-        </div>
-      </section>
+      </div>
       <Upcoming />
       <CityWiseReviews />
       <EmergingLocalities />
-      {/* <Articles /> */}
       <CardLayout />
       <div className={styles.happycustomers}>
         <div className={styles.heading}>HAPPY CUSTOMERS</div>
@@ -167,7 +173,7 @@ const HomePage: FunctionComponent = () => {
           <CustomerReviewCard
             imageUrl="./istockphoto1476170969170667a-1@2x.png"
             name="Raghav"
-            review="I was blown away by the exceptional service I received from your website! The website was easy to navigate, and the real estate agents were knowledgeable and responsive. I found my dream home in no time, and the entire process was stress-free. I highly recommend this to anyone looking to buy or sell a property!"
+            review="I was blown away by the exceptional service I received from your website! The website was easy to navigate, and the real estate agents were knowledgeable and responsive. I found my dream home in no time, and the entire process was stress-free. I highly recommend this to anyone looking to buy or sell a property. Thank you for making my real estate journey a pleasant one!"
           />
           <CustomerReviewCard
             imageUrl="./istockphoto1476170969170667a-1@2x.png"
@@ -176,26 +182,24 @@ const HomePage: FunctionComponent = () => {
           />
           <CustomerReviewCard
             imageUrl="./istockphoto1476170969170667a-1@2x.png"
-            name="Bob"
-            review="I've used several real estate websites in the past, but this is by far the best! The website's advanced search features and real-time updates made it easy to find the perfect property. The agents were professional and courteous, and the entire process was seamless. I highly recommend this to everyone. Thank You"
+            name="Ravi"
+            review="I had a great experience using this real estate website. The search functionality was user-friendly, and the property listings were accurate and detailed. The customer support team was always available to assist me with any questions I had. I found the perfect property and closed the deal smoothly. I will definitely use this website again for future real estate needs!"
           />
         </div>
       </div>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-around",
-          alignContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <AppointmentForm />
-        <ReviewForm />
-      </div>
+      {/* <ReviewForm /> */}
       <Footer />
-      {isLoginPopupVisible && (
-        <LoginPopup onClose={() => setIsLoginPopupVisible(false)} />
+      {isFormVisible && (
+        <AppointmentForm onClose={() => setIsFormVisible(false)} />
       )}
+      <div
+        className={styles.fixedIcon}
+        onClick={() => setIsFormVisible(!isFormVisible)}
+      >
+        Book an 
+        < br/>
+        Appointment
+      </div>
     </div>
   );
 };
