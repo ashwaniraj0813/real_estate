@@ -32,42 +32,81 @@ export const getFilteredPropertiesThunk = async (url, filters, ThunkAPI) => {
   console.log(filters);
 
   try {
-    const response = await fetch(filters.url);
-    if (!response.ok) {
-      throw new Error("Network response was not ok");
+    if (filters.url !== "") {
+      const response = await fetch(filters.url);
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      const properties = await response.json();
+      const filteredProperties = properties.filter((property) => {
+        const isCityMatch =
+          filters.City === "" ||
+          filters.City === "None" ||
+          property.city.toLowerCase() === filters.City.toLowerCase();
+
+        const isPropertyTypeMatch =
+          filters.PropertyType.length === 0 ||
+          filters.PropertyType.includes(property.type);
+        const isAreaMatch =
+          property.area >= minArea && property.area <= maxArea;
+        const isPriceMatch =
+          property.price >= minPrice && property.price <= maxPrice;
+
+        // Handle the number of bedrooms filter
+        const isnoOfBedroomsMatch =
+          filters.noOfBedrooms.length === 0 ||
+          filters.noOfBedrooms.includes(property.Bhk);
+        const isVerified =
+          filters.verifiedProperties === false ||
+          (property.verification === "verified" &&
+            filters.verifiedProperties === true);
+        return (
+          isCityMatch &&
+          isPropertyTypeMatch &&
+          isAreaMatch &&
+          isPriceMatch &&
+          isnoOfBedroomsMatch &&
+          isVerified
+        );
+      });
+
+      return filteredProperties;
+    } else {
+      const properties = filters.searchproperties;
+      const filteredProperties = properties.filter((property) => {
+        const isCityMatch =
+          filters.City === "" ||
+          filters.City === "None" ||
+          property.city.toLowerCase() === filters.City.toLowerCase();
+
+        const isPropertyTypeMatch =
+          filters.PropertyType.length === 0 ||
+          filters.PropertyType.includes(property.type);
+        const isAreaMatch =
+          property.area >= minArea && property.area <= maxArea;
+        const isPriceMatch =
+          property.price >= minPrice && property.price <= maxPrice;
+
+        // Handle the number of bedrooms filter
+        const isnoOfBedroomsMatch =
+          filters.noOfBedrooms.length === 0 ||
+          filters.noOfBedrooms.includes(property.Bhk);
+        const isVerified =
+          filters.verifiedProperties === false ||
+          (property.verification === "verified" &&
+            filters.verifiedProperties === true);
+        return (
+          isCityMatch &&
+          isPropertyTypeMatch &&
+          isAreaMatch &&
+          isPriceMatch &&
+          isnoOfBedroomsMatch &&
+          isVerified
+        );
+      });
+
+      return filteredProperties;
     }
-    const properties = await response.json();
-    const filteredProperties = properties.filter((property) => {
-      const isCityMatch =
-        filters.City === "" ||
-        property.city.toLowerCase() === filters.City.toLowerCase();
-
-      const isPropertyTypeMatch =
-        filters.PropertyType.length === 0 ||
-        filters.PropertyType.includes(property.type);
-      const isAreaMatch = property.area >= minArea && property.area <= maxArea;
-      const isPriceMatch =
-        property.price >= minPrice && property.price <= maxPrice;
-
-      // Handle the number of bedrooms filter
-      const isnoOfBedroomsMatch =
-        filters.noOfBedrooms.length === 0 ||
-        filters.noOfBedrooms.includes(property.Bhk);
-      const isVerified =
-        filters.verifiedProperties === false ||
-        (property.verification === "verified" &&
-          filters.verifiedProperties === true);
-      return (
-        isCityMatch &&
-        isPropertyTypeMatch &&
-        isAreaMatch &&
-        isPriceMatch &&
-        isnoOfBedroomsMatch &&
-        isVerified
-      );
-    });
-
-    return filteredProperties;
     // return buyProperties;
     // return pr;
   } catch (error) {

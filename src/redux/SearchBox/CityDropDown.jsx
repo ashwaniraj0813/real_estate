@@ -6,7 +6,7 @@ import { handleSearchCity, updateFilters } from './SearchSlice';
 const CityDropdown = () => {
   const dispatch = useDispatch();
   const selectedCity = useSelector((state) => state.search.city);
-  const cities = ['Bhopal', 'Hyderabad','Patna', 'Pune','Chennai','Bhilai', 'Kolkata', 'Dholakpur','Mumbai']; // Add your city list here
+  const cities = ['Bhopal', 'Hyderabad','Patna', 'Pune','Chennai','Bhilai', 'Kolkata', 'Dholakpur','Mumbai','None']; // Add your city list here
 
   const handleChange = (event) => {
     const city = event.target.value;
