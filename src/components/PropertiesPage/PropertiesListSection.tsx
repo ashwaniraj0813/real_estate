@@ -6,6 +6,7 @@ import { getFilteredProperties } from "../../redux/SearchBox/SearchSlice";
 
 const PropertiesListSection = ({ searchQuery ,filterproperty}) => {
   const {
+    noOfBedrooms,
     budgetRange,
     propertyType,
     area,
@@ -13,6 +14,7 @@ const PropertiesListSection = ({ searchQuery ,filterproperty}) => {
     properties,
     searchOption,
     isPropertyLoading,
+    verifiedProperties,
   } = useSelector((store) => store.search);
   const dispatch = useDispatch();
 
@@ -21,10 +23,10 @@ const PropertiesListSection = ({ searchQuery ,filterproperty}) => {
   const maxPrice = budgetRange[1];
   const minArea = area[0];
   const maxArea = area[1];
-  console.log("filterproperties");
-  console.log(filterproperty)
-  console.log("listcardSearch")
-  console.log(searchQuery);
+  // console.log("filterproperties");
+  // console.log(filterproperty)
+  // console.log("verifiedProperties")
+  // console.log(verifiedProperties);
   if(searchQuery.type === "Apartments"){
     searchQuery.type = "Apartment";
   }
@@ -33,19 +35,21 @@ const PropertiesListSection = ({ searchQuery ,filterproperty}) => {
   }
   useEffect(() => {
     const filters = {
+      noOfBedrooms,
       minPrice,
       maxPrice,
       minArea,
       maxArea,
       City: city,
       PropertyType: propertyType,
+      verifiedProperties,
       url: `http://localhost:5000/api/propertyPurpose?query=${searchQuery.type}`
     };
     dispatch(getFilteredProperties(filters));
-  }, [minPrice, maxPrice, minArea, maxArea, city, propertyType, dispatch]);
+  }, [verifiedProperties,noOfBedrooms,minPrice, maxPrice, minArea, maxArea, city, propertyType, dispatch]);
 
-  console.log(properties);
-  console.log(propertyType);
+  // console.log(properties);
+  // console.log(propertyType);
 
   return (
     <Box sx={{ mb: 5 }}>
@@ -56,6 +60,7 @@ const PropertiesListSection = ({ searchQuery ,filterproperty}) => {
           fontWeight: 600,
           color: "#091E42",
           fontFamily: "Open Sans",
+          
         }}
       >
         {properties.length} results | Property for {searchQuery.type} in{" "}

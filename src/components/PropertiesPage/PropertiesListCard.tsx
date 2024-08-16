@@ -9,7 +9,7 @@ const PropertiesListCard = ({ property }) => {
   
   
    const navigate = useNavigate();
-  const [bhk, setbhk] = useState();
+  // const [bhk, setbhk] = useState();
   const {
     address,
     city,
@@ -18,29 +18,30 @@ const PropertiesListCard = ({ property }) => {
     title,
     propertyOptions,
     propertyType,
+    Bhk,
   } = property;
  
 
   const handleCardClick = () => {
     navigate(`/property-details-page/${property._id}`, { state: { property } });
   };
-  useEffect(() => {
-    if (area < 750) {
-      setbhk(1);
-    } else if (area >= 750 && area < 1500) {
-      setbhk(2);
-    } else if (area >= 1500 && area < 2500) {
-      setbhk(3);
-    } else if (area >= 2500 && area < 4000) {
-      setbhk(4);
-    } else if (area >= 4000 && area < 5400) {
-      setbhk(5);
-    } else if (area >= 5400 && area < 7000) {
-      setbhk(6);
-    } else if (area >= 7000) {
-      setbhk(7);
-    }
-  }, [area]);
+  // useEffect(() => {
+  //   if (area < 750) {
+  //     setbhk(1);
+  //   } else if (area >= 750 && area < 1500) {
+  //     setbhk(2);
+  //   } else if (area >= 1500 && area < 2500) {
+  //     setbhk(3);
+  //   } else if (area >= 2500 && area < 4000) {
+  //     setbhk(4);
+  //   } else if (area >= 4000 && area < 5400) {
+  //     setbhk(5);
+  //   } else if (area >= 5400 && area < 7000) {
+  //     setbhk(6);
+  //   } else if (area >= 7000) {
+  //     setbhk(7);
+  //   }
+  // }, [area]);
 
   return (
     <>
@@ -110,7 +111,7 @@ const PropertiesListCard = ({ property }) => {
                 ml: -5, 
               }}
             >
-              {bhk} BHK Serviced {propertyType} for {propertyOptions} in{" "}
+              {Bhk} BHK Serviced {propertyType} for {propertyOptions} in{" "}
               {address}, {city}
             </Typography>
             <Box sx={{ mt: 1, display: "flex", gap: 8, cursor: "pointer" }}>
@@ -207,7 +208,7 @@ const PropertiesListCard = ({ property }) => {
                       color: "#091E42",
                     }}
                   >
-                    {bhk} BHK
+                    {Bhk} BHK
                   </Typography>
                 </Box>
 
@@ -220,7 +221,7 @@ const PropertiesListCard = ({ property }) => {
                     color: "#8993a4",
                   }}
                 >
-                  {bhk > 3 ? (bhk > 5 ? bhk - 2 : bhk - 1) : bhk} Baths
+                  {Bhk > 3 ? (Bhk > 5 ? Bhk - 2 : Bhk - 1) : Bhk} Baths
                 </Typography>
               </Box>
             </Box>
@@ -236,13 +237,13 @@ const PropertiesListCard = ({ property }) => {
                 mr: 4,
               }}
             >
-              Amazing {bhk} bedroom{" "}
-              {bhk > 3 ? (bhk > 5 ? bhk - 2 : bhk - 1) : bhk} bathroom{" "}
+              Amazing {Bhk} bedroom{" "}
+              {Bhk > 3 ? (Bhk > 5 ? Bhk - 2 :Bhk- 1) :Bhk} bathroom{" "}
               {propertyType} in {title} located in {address}, {city}, .
               Utilities include Cable, High Speed Fiber Internet, Electricity,
               Water Tank and Complete Power Backup and Gas also have{" "}
-              {bhk > 3 ? (bhk > 5 ? bhk - 2 : bhk - 1) : bhk} Balcony, {bhk}{" "}
-              Wardrobe, {bhk + 1} Fan, in a pet-friendly society. All Rooms are
+              {Bhk > 3 ? (Bhk > 5 ? Bhk - 2 : Bhk - 1) : Bhk} Balcony, {Bhk}{" "}
+              Wardrobe, {Bhk + 1} Fan, in a pet-friendly society. All Rooms are
               spacious and properly ventilated. Construction Quality is also
               High End with High Quality Fittings.
             </Typography>

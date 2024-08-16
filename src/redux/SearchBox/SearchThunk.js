@@ -19,34 +19,52 @@ export const searchSuggestionsThunk = async (url, searchTerm, thunkAPI) => {
 
 export const getFilteredPropertiesThunk = async (url, filters, ThunkAPI) => {
   const {
-    city = "",
-    propertyType = [],
+    City = "",
+    PropertyType = [],
     minArea = 0,
     maxArea = Infinity,
     minPrice = 0,
     maxPrice = Infinity,
+    noOfBedrooms = [],
+    verifiedProperties = false,
   } = filters;
   console.log("filtrs");
   console.log(filters);
-  console.log("url");
-  console.log(filters.url);
+
   try {
     const response = await fetch(filters.url);
     if (!response.ok) {
       throw new Error("Network response was not ok");
     }
     const properties = await response.json();
-
     const filteredProperties = properties.filter((property) => {
-      const isCityMatch = !city || property.city === city;
+      const isCityMatch =
+        filters.City === "" ||
+        property.city.toLowerCase() === filters.City.toLowerCase();
+
       const isPropertyTypeMatch =
-        propertyType.length === 0 ||
-        propertyType.includes(property.propertyType);
+        filters.PropertyType.length === 0 ||
+        filters.PropertyType.includes(property.type);
       const isAreaMatch = property.area >= minArea && property.area <= maxArea;
       const isPriceMatch =
         property.price >= minPrice && property.price <= maxPrice;
 
-      return isCityMatch && isPropertyTypeMatch && isAreaMatch && isPriceMatch;
+      // Handle the number of bedrooms filter
+      const isnoOfBedroomsMatch =
+        filters.noOfBedrooms.length === 0 ||
+        filters.noOfBedrooms.includes(property.Bhk);
+      const isVerified =
+        filters.verifiedProperties === false ||
+        (property.verification === "verified" &&
+          filters.verifiedProperties === true);
+      return (
+        isCityMatch &&
+        isPropertyTypeMatch &&
+        isAreaMatch &&
+        isPriceMatch &&
+        isnoOfBedroomsMatch &&
+        isVerified
+      );
     });
 
     return filteredProperties;
