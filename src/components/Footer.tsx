@@ -32,10 +32,12 @@ const Footer: FunctionComponent<FooterType> = ({ className = "" }) => {
   return (
     <section className={[styles.footer, className].join(" ")}>
       <div className={styles.left}>
-        <a className={styles.logo}>LOGO</a>
+        <a className={styles.logo}>
+        <img src="../logo.png" alt="Logo" className={styles.logo1} />
+        </a>
         <div className={styles.text}>
-        Welcome to LOGO, your trusted partner in the real estate market. 
-        Whether you're buying, selling, or renting, we offer personalized services to meet your unique needs. Discover your dream property with LOGO today.
+        Welcome to BasilAbode, your trusted partner in the real estate market. 
+        Whether you're buying, selling, or renting, we offer personalized services to meet your unique needs. Discover your dream property with BasilAbode today.
         </div>
         <a className={styles.aboutUs} onClick={onAboutUsTextClick}>About us</a>
       </div>
