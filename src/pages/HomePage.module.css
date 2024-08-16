@@ -112,17 +112,7 @@ input {
   border-image: linear-gradient(90deg, #2895DF, #764EC6) 1;
 }
 
-/* .bookappointment {
-  border: none;
-  color: var(--color-white);
-  border-radius: 30px;
-  padding: 8px 30px;
-  background-image: linear-gradient(90deg, #2895DF, #764EC6);
-  display: flex;
-  align-items: center; 
-  justify-content: center; 
-  text-align: center;
-} */
+
 
 .buttonContainer {
   display: flex;
@@ -132,22 +122,11 @@ input {
 .bookappointment {
   border: none;
   color: var(--color-white);
-  /* border-radius: 30px; */
   background-image: linear-gradient(90deg, #2895DF, #764EC6);
   display: flex;
   align-items: center; 
   justify-content: center; 
   text-align: center;
-}
-
-.popularfeatures {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  padding: 6vw 8vw;
-  gap: 10px;
 }
 
 .heading {
@@ -157,41 +136,6 @@ input {
 .subheading {
   font-size: 25px;
   color: #2457C5;
-}
-
-.features {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  gap: 80px;
-  padding: 50px;
-}
-
-.feature {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.feature > img {
-  padding: 25px;
-  height: 150px;
-  width: 150px;
-  border: 2px solid #2457C5;
-}
-
-.feature > p {
-  font-size: 20px;
-}
-
-.featuredlocations {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
 }
 
 .popularProperties {
@@ -364,7 +308,7 @@ input {
   height: 50%;
 }
 
-/* Overlay for the form */
+
 .formOverlay {
   position: fixed;
   top: 0;
@@ -378,17 +322,10 @@ input {
   z-index: 1001;
 }
 
-/* Container for the form */
-/* .formContainer {
-  background-color: #fff;
-  padding: 2em;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  max-width: 500px;
-  width: 100%;
-} */
 
-/* Close button for the form */
+
+
+
 .formOverlay closeButton {
   background-color: #f44336;
   color: #fff;
