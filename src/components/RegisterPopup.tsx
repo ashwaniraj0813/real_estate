@@ -120,6 +120,7 @@ const RegisterPopup: FunctionComponent<RegisterPopupProps> = ({ onClose, onSwitc
             <label>Are you a real estate agent or a builder?*</label>
             <div className={styles.radioGroup}>
               <input
+              className={styles.circle}
                 type="radio"
                 id="agent"
                 name="role"
@@ -130,6 +131,7 @@ const RegisterPopup: FunctionComponent<RegisterPopupProps> = ({ onClose, onSwitc
               />
               <label htmlFor="agent">Yes</label>
               <input
+              className={styles.circle}
                 type="radio"
                 id="builder"
                 name="role"
