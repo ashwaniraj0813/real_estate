@@ -41,9 +41,9 @@ const OtpPopup: FunctionComponent<OtpPopupProps> = ({ email, onClose, onVerifyOt
   return (
     <div className={styles.popupBackground}>
       <div className={styles.popupContent}>
-        <button className={styles.closeButton} onClick={onClose}>
+        <div className={styles.closeButton} onClick={onClose}>
           &times;
-        </button>
+        </div>
         <h2>Enter OTP</h2>
         <p>A 6-digit OTP has been sent to <strong>{email}</strong>. </p>
         <p>Please enter it below to complete your registration.</p>
