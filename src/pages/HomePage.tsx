@@ -11,6 +11,7 @@ import CardLayout from "../components/Insights";
 import CityWiseReviews from "../components/CityWiseReviews";
 import Upcoming from "../components/upcoming";
 import EmergingLocalities from "../components/EmergingLocalities";
+import Articles from "../components/Articles";
 import ReviewForm from "../components/ReviewForm";
 import PropertyTypeCarousel from "../components/PropertyTypeCarousel";
 import SearhBar from "../components/SearchBar";
@@ -167,12 +168,12 @@ const HomePage: FunctionComponent = () => {
           <CustomerReviewCard
             imageUrl="./istockphoto1476170969170667a-1@2x.png"
             name="Raghav"
-            review="I was blown away by the exceptional service I received from your website! The website was easy to navigate, and the real estate agents were knowledgeable and responsive. I found my dream home in no time, and the entire process was stress-free. I highly recommend this to anyone looking to buy or sell a property. Thank you for making my real estate journey a pleasant one!"
+            review="I was blown away by the exceptional service I received from your website! The website was easy to navigate, and the real estate agents were knowledgeable and responsive. I found my dream home in no time, and the entire process was stress-free. I highly recommend this to anyone looking to buy or sell a property. Thanks a lot to the team of BasilAbode."
           />
           <CustomerReviewCard
             imageUrl="./istockphoto1476170969170667a-1@2x.png"
             name="Kishore"
-            review="As a first-time homebuyer, I was nervous about the process, but this made it a breeze! The website's resources and guides were incredibly helpful, and the agents were patient and understanding. I found my dream home in no time, and the entire process was stress-free. I felt supported every step of the way, and I couldn't be happier with my new home. Thank you,"
+            review="As a first-time homebuyer, I was nervous about the process, but this made it a breeze! The website's resources and guides were incredibly helpful, and the agents were patient and understanding. I found my dream home in no time, and the entire process was stress-free. I felt supported every step of the way, and I couldn't be happier with my new home."
           />
           <CustomerReviewCard
             imageUrl="./istockphoto1476170969170667a-1@2x.png"
@@ -182,6 +183,7 @@ const HomePage: FunctionComponent = () => {
         </div>
       </div>
       {/* <ReviewForm /> */}
+      <Articles />
       <Footer />
       {isFormVisible && (
         <AppointmentForm onClose={() => setIsFormVisible(false)} />
