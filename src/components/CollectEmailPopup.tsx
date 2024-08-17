@@ -41,9 +41,9 @@ const CollectEmailPopup: FunctionComponent<CollectEmailPopupProps> = ({ onClose,
   return (
     <div className={styles.popupBackground}>
       <div className={styles.popupContent}>
-        <button className={styles.closeButton} onClick={onClose}>
+        <div className={styles.closeButton} onClick={onClose}>
           &times;
-        </button>
+        </div>
         <h2>Enter Email</h2>
         <form onSubmit={handleSendOtp}>
           <div className={styles.section}>

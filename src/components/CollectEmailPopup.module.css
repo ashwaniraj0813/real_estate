@@ -38,7 +38,7 @@
      color: var(--color-white);
      border-radius: 30px;
      padding: 8px 30px;
-     margin: 10%;
+     margin-top: 10%;
      background-image: linear-gradient(90deg, #2895DF, #764EC6);
    }
    
@@ -47,6 +47,6 @@
    }
    
    .section input {
-     margin: 10px;
+     margin-top: 10px;
      text-align: left;
    }

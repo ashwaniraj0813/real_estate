@@ -308,10 +308,6 @@ input {
   height: 50%;
 }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 1df8c5faef4c9ea02f228105df7ad8013c4e05cf
 .formOverlay {
   position: fixed;
   top: 0;
@@ -325,13 +321,6 @@ input {
   z-index: 1001;
 }
 
-<<<<<<< HEAD
-=======
-
-
-
-
->>>>>>> 1df8c5faef4c9ea02f228105df7ad8013c4e05cf
 .formOverlay closeButton {
   background-color: #f44336;
   color: #fff;

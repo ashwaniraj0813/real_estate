@@ -55,9 +55,9 @@ const LoginPopup: FunctionComponent<LoginPopupProps> = ({
   return (
     <div className={styles.popupBackground}>
       <div className={styles.popupContent}>
-        <button className={styles.closeButton} onClick={onClose}>
+        <div className={styles.closeButton} onClick={onClose}>
           &times;
-        </button>
+        </div>
         <h2>Login</h2>
         <form onSubmit={handleLogin}>
           <div className={styles.section}>
