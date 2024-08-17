@@ -120,7 +120,7 @@ const employees = [
     imageUrl: "/userdefault.jpg",
     },
     {
-    name: "Dhruv Saini",
+    name: "Ramesh",
     phone: "044 5678 9012",
     email: "realestate@gmail.com",
     imageUrl: "/userdefault.jpg",
