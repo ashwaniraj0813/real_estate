@@ -7,17 +7,10 @@
   width: 100%;
   height: 100%;
 }
-.cameraIcon {
-  position: absolute;
-  top: 142px;
-  left: 153px;
-  width: 29px;
-  height: 29px;
-  overflow: hidden;
-  z-index: 1;
-}
+
 .profileImage {
-  height: 190px;
+  height: 22vh;
+  width: 22vh;
   flex: 1;
   position: relative;
 }
@@ -25,23 +18,11 @@
   width: 190px;
   min-width: 190px;
 }
-.editButtonChild {
-  height: 33px;
-  width: 85px;
-  position: relative;
-  border-radius: var(--br-10xs);
-  background-color: var(--color-white);
-  border: 1px solid var(--color-gray-400);
-  box-sizing: border-box;
-  display: none;
-}
 .edit {
-  text-decoration: none;
-  position: relative;
   font-size: var(--font-size-base);
-  font-family: var(--font-montserrat);
+
   color: var(--color-black);
-  text-align: center;
+
   z-index: 1;
 }
 .materialSymbolseditIcon {
@@ -53,21 +34,13 @@
 }
 .editButton {
   cursor: pointer;
-  border: 1px solid var(--color-gray-400);
   padding: var(--padding-9xs) var(--padding-8xs) var(--padding-8xs)
     var(--padding-base);
   background-color: var(--color-white);
-  align-self: stretch;
   border-radius: var(--br-10xs);
-  flex-direction: row;
   justify-content: space-between;
-  gap: var(--gap-4xs);
 }
-.editButton:hover {
-  background-color: #e6e6e6;
-  border: 1px solid rgba(51, 51, 51, 0.5);
-  box-sizing: border-box;
-}
+
 .editButton,
 .editProfile,
 .profileDetails {
@@ -75,21 +48,23 @@
   align-items: flex-start;
 }
 .editProfile {
-  width: 85px;
+  width: 5.5vw;
   flex-direction: column;
-  justify-content:  space-between;
+  justify-content: space-between;
   padding: var(--padding-55xl) 0 0;
   box-sizing: border-box;
+  cursor: pointer;
 }
 .cameraButton {
   border: none;
   background: white;
   cursor: pointer;
   position: absolute;
-  bottom: 14px;
-  right: 8px;
+  bottom: 1vh;
+  right: 0.1vw;
   border-radius: 50%;
-  width: 42px;
+  width: 2.3vw;
+  height: 2.3vw;
   padding: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
@@ -140,58 +115,59 @@
   border: 1px solid black;
   border-radius: 20px;
   margin-top: 2vh;
+  width: 70vw;
 }
 .indDetail {
   display: grid;
   grid-template-columns: 1fr 2fr;
-  gap: 2vw;
+  gap: 1.5vw;
   text-align: left;
   white-space: nowrap;
   align-items: center;
 }
-.editableContainer{
+.editableContainer {
   display: flex;
   flex-direction: row;
   gap: 8vw;
   margin: 3vh;
 }
-.detailColumn{
+.detailColumn {
   display: flex;
   flex-direction: column;
-  gap: 2vw;
+  gap: 2vh;
   width: 30vw;
 }
-.other{
+.other {
   display: flex;
   flex-direction: column;
   gap: 2vh;
   margin: 2vh;
   margin-left: 3vh;
 }
-.subscribeContainer{
+.subscribeContainer {
   display: flex;
   flex-direction: column;
   gap: 1vw;
   font-size: 18px;
 }
-.checkContainer{
+.checkContainer {
   display: flex;
   flex-direction: row;
   gap: 1vw;
   margin-left: 2vw;
 }
-.checkbox{
+.checkbox {
   width: 16px;
   transition: 0.3s;
   cursor: pointer;
 }
-.TC{
+.TC {
   display: flex;
   flex-direction: row;
   white-space: nowrap;
   gap: 0.4vw;
 }
-.TCtext{
+.TCtext {
   color: #2697e0;
   text-decoration: underline;
   cursor: pointer;
@@ -231,33 +207,32 @@
 .DeleteButton {
   background-color: #ffffff;
   color: black;
-  border: 1px solid #2697E0;
+  border: 1px solid #2697e0;
 }
 
 .cancelButton {
-  background-color: #2697E0;
+  background-color: #2697e0;
   color: white;
 }
-.saveProfile{
+.saveProfile {
   width: 9vw;
   height: 2.5vw;
   display: block;
-  margin-left: 30vw;
   border-radius: 2vw;
   border: 1px transparent;
-  background-image: linear-gradient(125.33deg, #2697e0, #784dc6);
   color: white;
   font-family: var(--font-montserrat);
   font-size: 16px;
+  align-self: center;
 }
-.saveProfile:disabled{
+.saveProfile:disabled {
   opacity: 0.9;
   cursor: not-allowed;
 }
-.saveProfile:enabled{
+.saveProfile:enabled {
   cursor: pointer;
 }
-.deleteContainer{
+.deleteContainer {
   display: flex;
   flex-direction: row;
   gap: 0.4vw;
@@ -272,18 +247,24 @@
   border-radius: 6px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   z-index: 10;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  gap: none;
 }
 
 .profilePicMenu button {
-  display: block;
+  display: flex;
   width: 100%;
-  padding: 8px;
+  padding: 1vh 0vw 0vh 0.4vw;
+  text-wrap: nowrap;
   background: none;
   border: none;
   text-align: left;
   cursor: pointer;
   font: var(--font-montserrat);
   font-size: 14px;
+  color: black;
 }
 
 .profilePicMenu button:hover {

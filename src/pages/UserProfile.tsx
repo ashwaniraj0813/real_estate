@@ -180,7 +180,7 @@ const UserProfile: React.FC = () => {
       <Navbar />
       <section className={styles.sidebarParent}>
         <Sidebar currentPage="profile-settings" />
-        <div className={styles.lastNameRow} style={{ marginTop: "4vh" }}>
+        <div className={styles.lastNameRow} style={{ marginTop: "3vh" }}>
           <div className={styles.userContainer}>
             <div style={{ display: "flex", flexDirection: "row", gap: "12vw" }}>
               <div className={styles.header}>
@@ -219,7 +219,7 @@ const UserProfile: React.FC = () => {
               <div className={styles.editProfile}>
                 {!isEditable && (
                   <button className={styles.editButton} onClick={handleEditClick}>
-                    <div className={styles.editButtonChild} />
+                    {/* <div className={styles.editButtonChild} /> */}
                     <a className={styles.edit}>Edit</a>
                     <img
                       className={styles.materialSymbolseditIcon}
