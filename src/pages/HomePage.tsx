@@ -160,7 +160,9 @@ const HomePage: FunctionComponent = () => {
       <Upcoming />
       <CityWiseReviews />
       <EmergingLocalities />
-      <CardLayout />
+      <div id="insights" style={{ alignSelf: "center", padding: "0", margin: "0" }}>
+        <CardLayout />
+      </div>
       <div className={styles.happycustomers}>
         <div className={styles.heading}>HAPPY CUSTOMERS</div>
         <div className={styles.subheading}>HAPPY TRADE</div>

@@ -13,39 +13,60 @@ const Footer: FunctionComponent<FooterType> = ({ className = "" }) => {
     navigate("/aboutus");
   }, [navigate]);
 
-  const onBuyTextClick = useCallback(() => {
-    navigate("/property-listings-page");
-  }, [navigate]);
-
-  const onRentTextClick = useCallback(() => {
-    navigate("/rent");
-  }, [navigate]);
-
-  const onSellTextClick = useCallback(() => {
-    navigate("/sell");
-  }, [navigate]);
-
-  const onAdminTextClick = useCallback(() => {
-    navigate("/admin-login");
-  }, [navigate]);
-
   return (
     <section className={[styles.footer, className].join(" ")}>
-      <div className={styles.left}>
-        <a className={styles.logo}>
-        <img src="../logo.png" alt="Logo" className={styles.logo1} />
-        </a>
-        <div className={styles.text}>
-        Welcome to BasilAbode, your trusted partner in the real estate market. 
-        Whether you're buying, selling, or renting, we offer personalized services to meet your unique needs. Discover your dream property with BasilAbode today.
+      <div className={styles.container}>
+        <div className={styles.section}>
+          <img src="../logo.png" alt="Logo" style={{height: "7vh", width: "8vw"}}/>
+          <ul>
+            <li>Mobile Apps</li>
+            <li>Our Services</li>
+            <li>Price Trends</li>
+            <li>Post your Property</li>
+            <li>Real Estate Investments</li>
+            <li>Builders in India</li>
+            <li>Area Converter</li>
+            <li>Articles</li>
+            <li>Rent Receipt</li>
+            <li>Customer Service</li>
+            <li>Sitemap</li>
+          </ul>
         </div>
-        <a className={styles.aboutUs} onClick={onAboutUsTextClick}>About us</a>
-      </div>
 
-      <div className={styles.right}>        
-        <a className={`${styles.footitem} ${styles.buy}`} onClick={onBuyTextClick}>Buy</a>
-        <a className={`${styles.footitem} ${styles.rent}`} onClick={onRentTextClick}>Post Property</a>
-        <a className={`${styles.footitem} ${styles.admin}`} onClick={onAdminTextClick}>Admin</a>
+        <div className={styles.section}>
+          <h4>Company</h4>
+          <ul>
+            <li onClick={onAboutUsTextClick}>About us</li>
+            <li>Contact us</li>
+            <li>Careers with us</li>
+            <li>Terms & Conditions</li>
+            <li>Request Info</li>
+            <li>Feedback</li>
+            <li>Report a problem</li>
+            <li>Testimonials</li>
+            <li>Privacy Policy</li>
+            <li>Grievances</li>
+          </ul>
+        </div>
+
+        <div className={styles.section}>
+          <h4>Our Partners</h4>
+          <ul>
+            <li>Naukri.com</li>
+            <li>Jeevansathi.com</li>
+            <li>Brijj.com</li>
+            <li>Shiksha.com</li>
+            <li>Policybazaar.com</li>
+            <li>AmbitionBox.com</li>
+          </ul>
+        </div>
+
+        <div className={styles.section}>
+          <h4>Contact Us</h4>
+          <p>Toll-Free: 1800 41 99099</p>
+          <p>9:30 AM to 6:30 PM (Mon-Sun)</p>
+          <p>Email: feedback@99acres.com</p>
+        </div>
       </div>
     </section>
   );

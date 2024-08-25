@@ -167,6 +167,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({
       >
         Post Property
       </div>
+      <a href="#insights" className={`${styles.navitem} ${styles.logo}`} style={{color: "white"}}>Insights</a>
       <div
         className={`${styles.navitem} ${styles.profile} ${styles.logo}`}
         onClick={handleLoginClick}
