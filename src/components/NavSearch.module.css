@@ -19,6 +19,12 @@
   margin-top: 1.2vh;
 }
 
+.searchinput:focus{
+  border: none;
+  outline: none;
+}
+
+
 .homeIcon {
   height: 30px;
   width: 30px;
