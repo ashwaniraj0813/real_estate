@@ -1,20 +1,13 @@
 import React from 'react';
 import styles from './ApartmentProfileForm.module.css';
 
-interface ApartmentProfileFormProps {
-  formData: any;
-  handleInputChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  nextStep: () => void;
-  prevStep: () => void;
-}
-
-const ApartmentProfileForm: React.FC<ApartmentProfileFormProps> = ({
+const ApartmentProfileForm = ({
   formData,
   handleInputChange,
   nextStep,
   prevStep,
 }) => {
-  const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleCheckboxChange = (e) => {
     const { name, checked } = e.target;
     handleInputChange({
       ...e,
@@ -44,69 +37,81 @@ const ApartmentProfileForm: React.FC<ApartmentProfileFormProps> = ({
 
   return (
     <div className={styles.formSection}>
-      <button className={styles.backButton} onClick={() => {
-        console.log("Back button clicked"); // Add this for debugging
-        prevStep();
-      }}>
+      <button className={styles.backButton} onClick={prevStep}>
         Back
       </button>
 
       <h2>Apartment Profile</h2>
 
       <div className={styles.bedrooms}>
-        <div className={styles.bedroomsName}>Number of Bedrooms</div>
-        <div className={styles.bedroomsInput}>
-          <input
-            type="number"
-            name="numberOfBedrooms"
-            value={formData.numberOfBedrooms || ""}
-            onChange={handleInputChange}
-            placeholder="0"
-          />
-        </div>
+        <label>Number of Bedrooms</label>
+        <input
+          type="number"
+          name="numberOfBedrooms"
+          value={formData.numberOfBedrooms || ""}
+          onChange={handleInputChange}
+          placeholder="0"
+        />
       </div>
 
       <div className={styles.bathrooms}>
-        <div className={styles.bathroomsName}>Number of Bathrooms</div>
-        <div className={styles.bathroomsInput}>
-          <input
-            type="number"
-            name="numberOfBathrooms"
-            value={formData.numberOfBathrooms || ""}
-            onChange={handleInputChange}
-            placeholder="0"
-          />
-        </div>
+        <label>Number of Bathrooms</label>
+        <input
+          type="number"
+          name="numberOfBathrooms"
+          value={formData.numberOfBathrooms || ""}
+          onChange={handleInputChange}
+          placeholder="0"
+        />
       </div>
 
       <div className={styles.balconies}>
-        <div className={styles.balconiesName}>Number of Balconies</div>
-        <div className={styles.balconiesInput}>
-          <input
-            type="number"
-            name="numberOfBalconies"
-            value={formData.numberOfBalconies || ""}
-            onChange={handleInputChange}
-            placeholder="0"
-          />
-        </div>
+        <label>Number of Balconies</label>
+        <input
+          type="number"
+          name="numberOfBalconies"
+          value={formData.numberOfBalconies || ""}
+          onChange={handleInputChange}
+          placeholder="0"
+        />
       </div>
 
+      {/* Area Details with Dropdown for Units */}
       <div className={styles.areaDetails}>
-        <div className={styles.areaDetailsName}>Add Area Details</div>
+        <label>Add Area Details</label>
         <div className={styles.areaDetailsInput}>
           <input
             type="number"
             name="areaDetails"
             value={formData.areaDetails || ""}
             onChange={handleInputChange}
-            placeholder="Carpet Area in sq. ft"
+            placeholder="Enter Area"
           />
+          <div className={styles.areastyle}>
+          {/* <span className={styles.selectedUnit}>
+            {formData.areaUnit || "sq ft"}
+          </span> */}
+          <select
+            name="areaUnit"
+            value={formData.areaUnit || "sq ft"}
+            onChange={handleInputChange}
+            className={styles.unitDropdown}
+          >
+            <option value="sq ft">Sq Ft</option>
+            <option value="sq yard">Sq Yard</option>
+            <option value="sq m">Sq M</option>
+            <option value="acres">Acres</option>
+            <option value="marla">Marla</option>
+            <option value="cents">Cents</option>
+          </select>
+          </div>
         </div>
       </div>
 
       <div className={styles.area}>
-        <div className={styles.areaName}>Other Rooms (optional)</div>
+        <div className={styles.areaLabel}>
+        <label>Other Rooms (optional)</label>
+        </div>
         <div className={styles.areaInput}>
           <label>
             <input
@@ -148,8 +153,10 @@ const ApartmentProfileForm: React.FC<ApartmentProfileFormProps> = ({
       </div>
 
       <div className={styles.floorDetails}>
-        <div className={styles.floorDetailsName}>Floor Details</div>
-        <div className={styles.totalFloorDetailsInput}>
+        <div className={styles.floorlabel}>
+        <label>Floor Details</label>
+        </div>
+        <div className={styles.floorInput}>
           <input
             type="number"
             name="totalFloorDetails"
@@ -157,8 +164,6 @@ const ApartmentProfileForm: React.FC<ApartmentProfileFormProps> = ({
             onChange={handleInputChange}
             placeholder="Total Floors"
           />
-        </div>
-        <div className={styles.totalFloorDetailsInput}>
           <input
             type="number"
             name="propertyFloorDetails"
@@ -170,7 +175,9 @@ const ApartmentProfileForm: React.FC<ApartmentProfileFormProps> = ({
       </div>
 
       <div className={styles.availability}>
-        <div className={styles.availabilityName}>Availability Status</div>
+        <div className={styles.availabilityLabel}>
+        <label>Availability Status</label>
+        </div>
         <div className={styles.availabilityInput}>
           <label>
             <input
@@ -197,35 +204,37 @@ const ApartmentProfileForm: React.FC<ApartmentProfileFormProps> = ({
 
       {formData.availability === "Ready to move" && (
         <div className={styles.ageOfProperty}>
-          <div className={styles.ageOfPropertyName}>Age of Property</div>
-          <div className={styles.ageOfPropertyInput}>
-            <input
-              type="number"
-              name="ageOfProperty"
-              value={formData.ageOfProperty || ""}
-              onChange={handleInputChange}
-              placeholder="Age of property in years"
-            />
+          <div className={styles.ageLabel}>
+          <label>Age of Property</label>
           </div>
+          <input
+            type="number"
+            name="ageOfProperty"
+            value={formData.ageOfProperty || ""}
+            onChange={handleInputChange}
+            placeholder="Age of property in years"
+          />
         </div>
       )}
 
       {formData.availability === "Under construction" && (
         <div className={styles.possessionDate}>
-          <div className={styles.possessionDateName}>Possession Date</div>
-          <div className={styles.possessionDateInput}>
-            <input
-              type="date"
-              name="possessionDate"
-              value={formData.possessionDate || ""}
-              onChange={handleInputChange}
-            />
+          <div className={styles.posessionLabel}>
+          <label>Possession Date</label>
           </div>
+          <input
+            type="date"
+            name="possessionDate"
+            value={formData.possessionDate || ""}
+            onChange={handleInputChange}
+          />
         </div>
       )}
 
       <div className={styles.ownershipType}>
-        <div className={styles.ownershipTypeName}>Ownership Type</div>
+      <div className={styles.ownershipLabel}>
+        <label>Ownership Type</label>
+        </div>
         <div className={styles.ownershipTypeInput}>
           <label>
             <input
@@ -270,11 +279,9 @@ const ApartmentProfileForm: React.FC<ApartmentProfileFormProps> = ({
         </div>
       </div>
 
-      
-        <button className={styles.nextButton} onClick={handleSubmit}>
-          Next
-        </button>
-      
+      <button className={styles.nextButton} onClick={handleSubmit}>
+        Next
+      </button>
     </div>
   );
 };

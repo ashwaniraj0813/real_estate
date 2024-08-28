@@ -40,7 +40,8 @@ const PricingForm: React.FC<PricingFormProps> = ({ formData, handleInputChange, 
     <div className={styles.formSection}>
       <button className={styles.backButton} onClick={prevStep}>Back</button>
       <h2>Pricing and Other Details</h2>
-
+      <div className={styles.twoColumnLayout}>
+      <div className={styles.partOne}>
       <div className={styles.priceDetails}>
         <div className={styles.priceDetailsName}>Price</div>
         <div className={styles.priceDetailsInput}>
@@ -96,7 +97,8 @@ const PricingForm: React.FC<PricingFormProps> = ({ formData, handleInputChange, 
           />
         </div>
       </div>
-
+      </div>
+      <div className={styles.partOne}>
       <div className={styles.proprietorDetails}>
         <div className={styles.proprietorDetailsName}>Proprietor Details</div>
         <div className={styles.proprietorName}>Proprietor Name</div>
@@ -166,8 +168,8 @@ const PricingForm: React.FC<PricingFormProps> = ({ formData, handleInputChange, 
           </label>
         </div>
       </div>
-
-
+      </div>
+      </div>
       {/* <div className={styles.buttons}> */}
         <button type="submit" className={styles.submitButton} onClick={handleFormSubmit}>Submit</button>
       {/* </div> */}

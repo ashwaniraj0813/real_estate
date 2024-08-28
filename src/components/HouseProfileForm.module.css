@@ -1,63 +1,57 @@
 .formSection {
   display: flex;
-  gap: 10px;
   flex-direction: column;
   border: 1px solid #ccc;
   padding: 20px;
   border-radius: 10px;
-  max-width: 600px;
-  width: 400px;
+  width: 100%;
+  margin: 10 auto;
+  max-width: 800px;
 }
 
-.bedrooms, .bathrooms, .balconies, .areaDetails, .floorDetails, .availability, .ageOfProperty, .possession, .ownershipType {
+.twoColumnLayout {
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+  gap: 10px; 
+}
+
+.formGroup {
   display: flex;
   flex-direction: column;
-  gap: 10px;
 }
 
-.bedroomsInput input, .bathroomsInput input, .balconiesInput input, .areaDetailsInput input, 
-.totalFloorDetailsInput input, .propertyFloorDetailsInput input, .ageOfPropertyInput input, .possessionInput input, .ownershipTypeInput input {
+.areagroup {
+  display: flex;
+  flex-direction: row;
+}
+
+.formLabel {
+  color: #34495e;
+  font-weight: bold;
+}
+
+.formInput {
   border-radius: 5px;
   padding: 10px;
   border: 1px solid #ccc;
   width: 100%;
-  height: 40px; /* Common height */
-  max-width: 500px; /* Adjust as needed */
+  height: 40px;
 }
 
-.areaInput label, .availabilityInput label, .possessionInput label, .ownershipTypeInput label {
-  display: block; /* Ensure label takes full width */
-}
-
-.areaInput input[type="checkbox"], 
-.availabilityInput input[type="radio"], 
-.possessionInput input[type="text"], 
-.ownershipTypeInput input[type="radio"], .otherRoomsInput input[type="checkbox"] {
-  width: auto;
-  height: auto;
-  margin-right: 10px; /* Space between checkbox/radio and text */
-  vertical-align: middle; /* Align input with label text */
-}
-
-.areaInput {
+.doubleInputContainer {
   display: flex;
-  flex-direction: column; /* Stack labels and inputs vertically */
-  gap: 10px; /* Space between items */
+  gap: 5px;
 }
 
-.otherRoomsInput label{
-  display: block;
+.checkboxGroup, .radioGroup {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
-h2 {
-  color: #2c3e50;
-  margin-top: 20px; /* Space between the back button and the header */
-}
-
-.bedroomsName, .bathroomsName, .balconiesName, .areaDetailsName, .floorDetailsName, .availabilityName, 
-.ageOfPropertyName, .possessionName, .ownershipTypeName, .otherRoomsName {
-  color: #34495e;
-  font-weight: bold;
+.inlineLabel {
+  display: flex;
+  align-items: center;
 }
 
 button {
@@ -72,7 +66,7 @@ button {
 }
 
 .nextButton {
-  margin-top: 20px; /* Space above the Next button */
+  margin-top: 20px;
 }
 
 button:hover {
@@ -80,7 +74,52 @@ button:hover {
 }
 
 @media (max-width: 600px) {
-  .formSection {
-    width: 100%;
+  .twoColumnLayout {
+    grid-template-columns: 1fr;
   }
 }
+
+.checkboxGroup input[type="checkbox"], 
+.radioGroup input[type="radio"] {
+  /* margin-top: 5px; */
+  width: auto;
+  height: auto;
+  margin:0;
+  vertical-align: middle; 
+}
+
+.checkboxGroup, .radioGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.checkboxGroup label, .radioGroup label {
+  flex: 1 1 calc(33.333% - 20px); /* Adjusts width to fit up to three items per line */
+  box-sizing: border-box; /* Ensures padding and border are included in the width */
+}
+
+.checkboxGroup input[type="checkbox"], 
+.radioGroup input[type="radio"] {
+  margin-right: 5px;
+}
+
+.checkboxGroup:only-child, .radioGroup:only-child {
+  display: flex;
+}
+
+.checkboxGroup:only-child label, .radioGroup:only-child label {
+  flex: 1;
+}
+
+@media (max-width: 600px) {
+  .checkboxGroup, .radioGroup {
+    flex-direction: column; /* Stacks items vertically on smaller screens */
+  }
+
+  .checkboxGroup label, .radioGroup label {
+    flex: 1 1 100%; /* Ensures each item takes full width */
+    max-width: 100%;
+  }
+}
+

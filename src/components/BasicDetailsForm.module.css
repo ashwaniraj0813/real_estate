@@ -80,4 +80,25 @@
     height: auto;
   }
   
-   
+  .propertyTypeInput,
+  .propertyTypeDetailsInput {
+    display: flex;
+    flex-direction: row; /* Aligns radio buttons and labels horizontally */
+    gap: 20px; /* Space between radio button groups */
+    flex-wrap: wrap; /* Allows wrapping if the screen size is small */
+  }
+  
+  .propertyTypeInput label,
+  .propertyTypeDetailsInput label {
+    display: flex;
+    align-items: center; /* Aligns radio button and text on the same line */
+    gap: 10px; /* Space between the radio button and label text */
+  }
+  
+  .propertyTypeInput input[type="radio"], 
+  .propertyTypeDetailsInput input[type="radio"] {
+    width: auto;
+    height: auto;
+    margin: 0; /* Removes default margin, ensuring alignment */
+  }
+  
