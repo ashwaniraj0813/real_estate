@@ -6,7 +6,7 @@ const ReviewPage: React.FC = () => {
     <div className="review-page">
       {/* Main rating summary section */}
       <div className="rating-summary">
-        <h2>Property Ratings and Reviews</h2>
+        <h2> Rating Overview </h2>
         <div className="overall-rating">
           <div className="rating-value">4.88</div>
         </div>
@@ -41,12 +41,12 @@ const ReviewPage: React.FC = () => {
 
       {/* Reviews list section */}
       <div className="reviews-list">
-        <h3>Reviews <span className="review-count">951</span></h3>
+        <h3>Reviews <span className="review-count"></span></h3>
 
         {/* Example of a review item */}
         <div className="review-item">
           <div className="review-header">
-            <span className="review-author">Julia, Berlin</span>
+            <span className="review-author">Sitara,Hyderabad</span>
             <span className="review-date">Jul 29</span>
           </div>
           <div className="review-stars">★★★★☆</div>
@@ -59,7 +59,7 @@ const ReviewPage: React.FC = () => {
 
         <div className="review-item">
           <div className="review-header">
-            <span className="review-author">Kim, Frankfurt</span>
+            <span className="review-author">Avansh,Bombay</span>
             <span className="review-date">Aug 25</span>
           </div>
           <div className="review-stars">★★★☆☆</div>
