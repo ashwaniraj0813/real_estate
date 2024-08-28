@@ -1,9 +1,31 @@
 import { FunctionComponent } from "react";
 import styles from "./PropertyDetails.module.css";
 import ContactForm from "./ContactForm";
+import ReviewPage from "./ReviewPage";  // Import the ReviewPage component
 
 export type PropertyDetailsType = {
   className?: string;
+  property: {
+    verification: boolean;
+    title: string;
+    area: number;
+    Bhk: number;
+    price: number;
+    type: string;
+    status: string;
+    purpose: string;
+    availability_status: string;
+    balconies: number;
+    bathrooms: number;
+    floors: number;
+    description: string;
+    Propreiter_email: string;
+    Propreiter_contact: string;
+    Propreiter_name: string;
+    city: string;
+    location: string;
+    landmark: string;
+  };
 };
 
 const PropertyDetails: FunctionComponent<PropertyDetailsType> = ({ property }) => {
@@ -117,18 +139,23 @@ const PropertyDetails: FunctionComponent<PropertyDetailsType> = ({ property }) =
         <div className={styles.heading}>Location</div>
         <div className={styles.address}>
           <img className={styles.mapicon} src="/image-13@2x.png" alt="Map Icon" />
-          {/* 1 Portal W North Acton, London, England W3 6BX */}
           <div className={styles.location}>
             Address : {property.city} {property.location}
             <br/>
             Landmark : {property.landmark}
           </div>
         </div>
-        {/* <img className={styles.map} src="/location-on-map@2x.png" alt="Location on Map" /> */}
         <iframe
           className={styles.map}
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3684.3882263594105!2d88.34073987534423!3d22.56457877949738!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a02779ff7e5b9af%3A0x1d1b1884bdbbbd79!2sEden%20Gardens!5e0!3m2!1sen!2sin!4v1723799966301!5m2!1sen!2sin">
-        </iframe>
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3684.3882263594105!2d88.34073987534423!3d22.56457877949738!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a02779ff7e5b9af%3A0x1d1b1884bdbbbd79!2sEden%20Gardens!5e0!3m2!1sen!2sin!4v1723799966301!5m2!1sen!2sin"
+          allowFullScreen
+          loading="lazy"
+        ></iframe>
+      </section>
+
+      {/* Add Review Page Section */}
+      <section className={styles.ReviewPage}>
+        <ReviewPage propertyId={property.id} />
       </section>
     </>
   );
