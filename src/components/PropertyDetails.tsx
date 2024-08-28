@@ -2,6 +2,7 @@ import { FunctionComponent } from "react";
 import styles from "./PropertyDetails.module.css";
 import ContactForm from "./ContactForm";
 import ReviewPage from "./ReviewPage";  // Import the ReviewPage component
+import ReviewForm from "../components/ReviewForm";
 
 export type PropertyDetailsType = {
   className?: string;
@@ -132,6 +133,7 @@ const PropertyDetails: FunctionComponent<PropertyDetailsType> = ({ property }) =
         </div>
         <div className={styles.right}>
           <ContactForm email={property.Propreiter_email} phone={property.Propreiter_contact} name={property.Propreiter_name}/>
+          <div className={styles.right1}><ReviewForm /></div>
         </div>
       </section>
 
