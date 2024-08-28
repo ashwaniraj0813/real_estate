@@ -2,9 +2,9 @@
   display: flex;
   flex-direction: row;
   gap: 20px;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   line-height: 1.5;
-  margin-top:
+  margin-top: 20px;
   padding: 20px;
   font-family: Arial, sans-serif;
   background-color: #f7faff;
@@ -51,16 +51,16 @@
 .rating-item span {
   flex: 1;
   font-size: 1.5em;
-  text-align: left; /* Changed to left align */
+  text-align: left; 
 }
 
 /* Updated bar classes based on percentage */
 .bar1 {
-  width: 68%;
+  width: 67%;
   height: 12px;
   background: #ffc107;
   border-radius: 4px;
-  margin-right:10px;
+  margin-right: 10px;
 }
 
 .bar2 {
@@ -68,7 +68,7 @@
   height: 12px;
   background: #ffc107;
   border-radius: 4px;
-  margin-right:60px;
+  margin-right: 60px;
 }
 
 .bar3 {
@@ -76,7 +76,7 @@
   height: 12px;
   background: #ffc107;
   border-radius: 4px;
-  margin-right:195px;
+  margin-right: 195px;
 }
 
 .bar4 {
@@ -84,21 +84,20 @@
   height: 12px;
   background: #ffc107;
   border-radius: 4px;
-  margin-right:330px;
-  
- }
+  margin-right: 330px;
+}
 
 .bar5 {
   width: 10%;
   height: 12px;
   background: #ffc107;
   border-radius: 4px;
-  margin-right:400px;
+  margin-right: 400px;
 }
 
 .rating-score {
   flex: 0.5;
-  text-align: right; /* Keep right aligned for score */
+  text-align: right; 
 }
 
 .show-summary {
@@ -117,6 +116,8 @@
   background: white;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  /* Moved the right box slightly to the left */
+  margin-left: 10px; /* Adjust this value for desired spacing */
 }
 
 .review-filters {
@@ -154,4 +155,4 @@
   padding: 10px;
   margin-top: 10px;
   border-radius: 5px;
-} 
+}            
