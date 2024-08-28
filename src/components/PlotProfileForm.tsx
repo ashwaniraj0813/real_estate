@@ -13,35 +13,49 @@ const PlotProfileForm: React.FC<PlotProfileFormProps> = ({ formData, handleInput
     <div className={styles.formSection}>
       <button className={styles.backButton} onClick={prevStep}>Back</button>
       <h2>Plot Profile</h2>
+
       <div className={styles.plotArea}>
-        <div className={styles.plotAreaName}>Plot Area (in sq. ft)</div>
+        <label>Plot Area</label>
         <div className={styles.plotAreaInput}>
           <input
-            type="text"
-            name="Plot Area"
-            value={formData["Plot Area"]}
+            type="number"
+            name="plotArea"
+            value={formData.plotArea || ""}
             onChange={handleInputChange}
-            placeholder="Plot Area"
+            placeholder="Enter Area"
           />
+          <div className={styles.areastyles}>
+          <select
+            name="areaUnit"
+            value={formData.areaUnit || "sq ft"}
+            onChange={handleInputChange}
+            className={styles.unitDropdown}
+          >
+            <option value="sq ft">Sq Ft</option>
+            <option value="sq yard">Sq Yard</option>
+            <option value="sq m">Sq M</option>
+            <option value="acres">Acres</option>
+            <option value="marla">Marla</option>
+            <option value="cents">Cents</option>
+          </select>
+          </div>
         </div>
       </div>
 
       <div className={styles.floors}>
-        <div className={styles.floorsName}>Floors allowed for Construction</div>
-        <div className={styles.floorsInput}>
-          <input
-            type="text"
-            name="No. of floors"
-            value={formData["No. of floors"]}
-            onChange={handleInputChange}
-            placeholder="No. of floors"
-          />
-        </div>
+        <label>Floors allowed for Construction</label>
+        <input
+          type="number"
+          name="noOfFloors"
+          value={formData.noOfFloors || ""}
+          onChange={handleInputChange}
+          placeholder="No. of floors"
+        />
       </div>
 
       <div className={styles.boundary}>
-        <div className={styles.boundaryName}>Is there a boundary wall around the property?</div>
-        <div className={styles.boundaryInput}>
+        <label>Is there a Boundary Wall around the property?</label>
+        <div className={styles.radioGroup}>
           <label>
             <input
               type="radio"
@@ -66,8 +80,8 @@ const PlotProfileForm: React.FC<PlotProfileFormProps> = ({ formData, handleInput
       </div>
 
       <div className={styles.construction}>
-        <div className={styles.constructionName}>Any construction done on the property?</div>
-        <div className={styles.constructionInput}>
+        <label>Any construction on the property?</label>
+        <div className={styles.radioGroup}>
           <label>
             <input
               type="radio"
@@ -92,21 +106,19 @@ const PlotProfileForm: React.FC<PlotProfileFormProps> = ({ formData, handleInput
       </div>
 
       <div className={styles.possession}>
-        <div className={styles.possessionName}>Expected Possession by</div>
-        <div className={styles.possessionInput}>
-          <input
-            type="text"
-            name="Month and year"
-            value={formData["Month and year"]}
-            onChange={handleInputChange}
-            placeholder="Month and year"
-          />
-        </div>
+        <label>Expected Possession by</label>
+        <input
+          type="text"
+          name="possessionDate"
+          value={formData.possessionDate || ""}
+          onChange={handleInputChange}
+          placeholder="Month and year"
+        />
       </div>
 
       <div className={styles.ownershipType}>
-        <div className={styles.ownershipTypeName}>Ownership</div>
-        <div className={styles.ownershipTypeInput}>
+        <label>Ownership Type</label>
+        <div className={styles.radioGroup}>
           <label>
             <input
               type="radio"
@@ -114,7 +126,6 @@ const PlotProfileForm: React.FC<PlotProfileFormProps> = ({ formData, handleInput
               value="Freehold"
               checked={formData.ownership === "Freehold"}
               onChange={handleInputChange}
-              required
             />
             Freehold
           </label>
@@ -125,7 +136,6 @@ const PlotProfileForm: React.FC<PlotProfileFormProps> = ({ formData, handleInput
               value="Leasehold"
               checked={formData.ownership === "Leasehold"}
               onChange={handleInputChange}
-              required
             />
             Leasehold
           </label>
@@ -136,7 +146,6 @@ const PlotProfileForm: React.FC<PlotProfileFormProps> = ({ formData, handleInput
               value="Co-operative Society"
               checked={formData.ownership === "Co-operative Society"}
               onChange={handleInputChange}
-              required
             />
             Co-operative Society
           </label>
@@ -147,7 +156,6 @@ const PlotProfileForm: React.FC<PlotProfileFormProps> = ({ formData, handleInput
               value="Power of Attorney"
               checked={formData.ownership === "Power of Attorney"}
               onChange={handleInputChange}
-              required
             />
             Power of Attorney
           </label>
