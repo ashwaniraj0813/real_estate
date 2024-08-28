@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styles from "./ReviewForm.module.css";
 
 const ReviewForm: React.FC = () => {
-  const [email, setEmail] = useState("");
+  const [Name, setName] = useState("");
   const [review, setReview] = useState("");
 
   const handleSubmit = (event: React.FormEvent) => {
@@ -16,10 +16,10 @@ const ReviewForm: React.FC = () => {
       <div className={styles.reviewFormContainer}>
         <form onSubmit={handleSubmit} className={styles.reviewForm}>
           <input
-            type="email"
-            placeholder="Your Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            type="Name"
+            placeholder="Your name"
+            value={Name}
+            onChange={(e) => setName(e.target.value)}
             required
             className={styles.input}
           />
