@@ -144,6 +144,10 @@ i {
 .right {
     width: 40%;
 }
+.right1{
+    margin-top: 30px;
+    margin-right: 90px;
+}
 
 .describe {
     font-size: 18px;
