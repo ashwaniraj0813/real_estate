@@ -47,6 +47,7 @@
   border-radius: 40px;
   text-align: left;
   margin-top: 10px; /* Add margin to all sections for consistency */
+  transition: transform 0.3s;
 }
 
 .aboutus {
@@ -57,6 +58,18 @@
 .mission {
   width: 40vw;
 }
+
+
+.aboutus:hover {
+  transform: scale(1.05);
+}
+
+.vision:hover {
+  transform: scale(1.05);
+}
+.mission:hover {
+  transform: scale(1.05);
+}  
 
 .offices {
   width: 100%;
