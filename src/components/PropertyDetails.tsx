@@ -3,6 +3,8 @@ import styles from "./PropertyDetails.module.css";
 import ContactForm from "./ContactForm";
 import ReviewPage from "./ReviewPage";  // Import the ReviewPage component
 import ReviewForm from "../components/ReviewForm";
+import priceHistoryChart from "../components/priceHistoryChart";
+import PriceHistoryChart from "./priceHistoryChart";
 
 export type PropertyDetailsType = {
   className?: string;
@@ -30,7 +32,7 @@ export type PropertyDetailsType = {
 };
 
 const PropertyDetails: FunctionComponent<PropertyDetailsType> = ({ property }) => {
-  return (
+    return (
     <>
       {console.log(property)}
       <section className={styles.Details}>
@@ -132,6 +134,7 @@ const PropertyDetails: FunctionComponent<PropertyDetailsType> = ({ property }) =
           </section>
         </div>
         <div className={styles.right}>
+          <PriceHistoryChart/>
           <ContactForm email={property.Propreiter_email} phone={property.Propreiter_contact} name={property.Propreiter_name}/>
           <div className={styles.right1}><ReviewForm /></div>
         </div>
