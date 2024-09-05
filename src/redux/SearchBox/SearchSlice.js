@@ -19,10 +19,10 @@ const initialState = {
   ],
   city: "",
   searchOption: "Buy",
-  budgetRange: [0, 20000000],
+  budgetRange: [0, 2000000000],
   noOfBedrooms: [],
   propertyType: [],
-  area: [0, 4000],
+  area: [0, 400000000],
   withPhotos: false,
   reraApproved: false,
   verifiedProperties: false,
@@ -65,7 +65,7 @@ const SearchSlice = createSlice({
     updateFilters: (state, { payload }) => {
       const filters = {
         ...state,
-        ...payload
+        ...payload,
       };
       // Dispatch getFilteredProperties with updated filters
       return filters;
@@ -84,7 +84,7 @@ const SearchSlice = createSlice({
     handleBudgetRange: (state, { payload }) => {
       state.budgetRange = payload;
     },
-    
+
     handleNoOfBedrooms: (state, { payload }) => {
       if (state.noOfBedrooms.includes(payload)) {
         const arr = state.noOfBedrooms.filter((item) => item !== payload);
@@ -238,6 +238,6 @@ export const {
   handleFurnitureType, // Export this action
   handlePurchaseType, // Export this action
   updateFilters,
-  handleCity 
+  handleCity,
 } = SearchSlice.actions;
 export default SearchSlice.reducer;
