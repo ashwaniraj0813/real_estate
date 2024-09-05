@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar";
 import styles from "./PropertyDetailsPage.module.css";
 import PropertyDetails from "../components/PropertyDetails";
 import SimilarProperties from "../components/SimilarProperties";
+import Footer from "../components/Footer";
 
 interface Property {
   _id: string;
@@ -64,6 +65,7 @@ const PropertyDetailsPage: FunctionComponent = () => {
       ) : (
         <p className={styles.loading}>Loading...</p>
       )}
+      {/* <Footer /> */}
     </div>
   );
 };

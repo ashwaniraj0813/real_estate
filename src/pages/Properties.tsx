@@ -11,6 +11,7 @@ import useScrollTrigger from "@mui/material/useScrollTrigger";
 import Fab from "@mui/material/Fab";
 import Fade from "@mui/material/Fade";
 import StraightSharpIcon from "@mui/icons-material/StraightSharp";
+import Footer from "../components/Footer";
 
 function ScrollTop(props) {
   const { children, window } = props;
@@ -141,6 +142,7 @@ const Properties = (props) => {
           <StraightSharpIcon sx={{ color: "#0078db", fontSize: "20px" }} />
         </Fab>
       </ScrollTop>
+      <Footer />
     </>
   );
 };

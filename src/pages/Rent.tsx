@@ -55,16 +55,17 @@ const Rent: React.FC = () => {
   });
   const [selectedImages, setSelectedImages] = useState<File[]>([]);
 
-  const nextStep = () => setStep(prevStep => prevStep + 1);
+  const nextStep = () => setStep((prevStep) => prevStep + 1);
   const prevStep = () => {
     console.log("PrevStep triggered");
-    setStep(prevStep => prevStep - 1);
+    setStep((prevStep) => prevStep - 1);
   };
-  
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
     const { name, value } = e.target;
-    setFormData(prevState => ({ ...prevState, [name]: value }));
+    setFormData((prevState) => ({ ...prevState, [name]: value }));
   };
 
   const handleImageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -81,28 +82,31 @@ const Rent: React.FC = () => {
     e.preventDefault();
 
     const combinedFormData = new FormData();
-    Object.keys(formData).forEach(key => {
-        combinedFormData.append(key, formData[key]);
+    Object.keys(formData).forEach((key) => {
+      combinedFormData.append(key, formData[key]);
     });
 
     selectedImages.forEach((image, index) => {
-        combinedFormData.append(`propertyImage`, image);
+      combinedFormData.append(`propertyImage`, image);
     });
 
     try {
-        const response = await axios.post('http://localhost:5000/api/property', combinedFormData, {
-            headers: {
-                'Content-Type': 'multipart/form-data'
-            }
-        });
+      const response = await axios.post(
+        "http://localhost:5000/api/property",
+        combinedFormData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
 
-        alert('Property listed successfully!');
+      alert("Property listed successfully!");
     } catch (error) {
-        console.error("Error uploading property or images:", error);
-        alert('Failed to list property.');
+      console.error("Error uploading property or images:", error);
+      alert("Failed to list property.");
     }
-};
-
+  };
 
   const renderPropertyProfileForm = () => {
     switch (formData.propertyType) {
@@ -139,51 +143,56 @@ const Rent: React.FC = () => {
   };
 
   return (
-    <div className={styles.rent}>
-      <Navbar />
-      <div className={styles.body}>
-        <main className={styles.content}>
-          <div className={styles.box}>
-            <h3>Few more steps to get your property posted</h3>
-            <p>Providing clear details about your property finds you good buyers</p>
-          </div>
-          {step === 1 && (
-            <BasicDetailsForm
-              formData={formData}
-              handleInputChange={handleInputChange}
-              nextStep={nextStep}
-            />
-          )}
-          {step === 2 && (
-            <LocationDetailsForm
-              formData={formData}
-              handleInputChange={handleInputChange}
-              nextStep={nextStep}
-              prevStep={prevStep}
-            />
-          )}
-          {step === 3 && renderPropertyProfileForm()}
-          {step === 4 && (
-            <PhotosForm
-              handleImageChange={handleImageChange}
-              handleRemoveImage={handleRemoveImage}
-              selectedImages={selectedImages}
-              nextStep={nextStep}
-              prevStep={prevStep}
-            />
-          )}
-          {step === 5 && (
-            <PricingForm
-              formData={formData}
-              handleInputChange={handleInputChange}
-              prevStep={prevStep}
-              handleSubmit={handleSubmit}
-            />
-          )}
-        </main>
+    <>
+      <div className={styles.rent}>
+        <Navbar />
+        <div className={styles.body}>
+          <main className={styles.content}>
+            <div className={styles.box}>
+              <h3>Few more steps to get your property posted</h3>
+              <p>
+                Providing clear details about your property finds you good
+                buyers
+              </p>
+            </div>
+            {step === 1 && (
+              <BasicDetailsForm
+                formData={formData}
+                handleInputChange={handleInputChange}
+                nextStep={nextStep}
+              />
+            )}
+            {step === 2 && (
+              <LocationDetailsForm
+                formData={formData}
+                handleInputChange={handleInputChange}
+                nextStep={nextStep}
+                prevStep={prevStep}
+              />
+            )}
+            {step === 3 && renderPropertyProfileForm()}
+            {step === 4 && (
+              <PhotosForm
+                handleImageChange={handleImageChange}
+                handleRemoveImage={handleRemoveImage}
+                selectedImages={selectedImages}
+                nextStep={nextStep}
+                prevStep={prevStep}
+              />
+            )}
+            {step === 5 && (
+              <PricingForm
+                formData={formData}
+                handleInputChange={handleInputChange}
+                prevStep={prevStep}
+                handleSubmit={handleSubmit}
+              />
+            )}
+          </main>
+        </div>
       </div>
       <Footer />
-    </div>
+    </>
   );
 };
 
