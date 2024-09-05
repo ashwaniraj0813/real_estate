@@ -12,27 +12,27 @@ const ReviewPage: React.FC = () => {
         </div>
         <div className="ratings-detail">
           <div className="rating-item">
-            <span role="img" aria-label="Excellent" style={{ fontSize: "1.5em" }}>😄</span>
+            <div><span role="img" aria-label="Excellent" style={{ fontSize: "1.5em" }}>😄</span></div>
             <div className="bar1"></div>
             <span className="rating-score">85%</span>
           </div>
           <div className="rating-item">
-            <span role="img" aria-label="Good" style={{ fontSize: "1.5em" }}>😊</span>
+            <div><span role="img" aria-label="Good" style={{ fontSize: "1.5em" }}>😊</span></div>
             <div className="bar2"></div>
             <span className="rating-score">60%</span>
           </div>
           <div className="rating-item">
-            <span role="img" aria-label="Average" style={{ fontSize: "1.5em" }}>😐</span>
+            <div><span role="img" aria-label="Average" style={{ fontSize: "1.5em" }}>😐</span></div>
             <div className="bar3"></div>
             <span className="rating-score">40%</span>
           </div>
           <div className="rating-item">
-            <span role="img" aria-label="Poor" style={{ fontSize: "1.5em" }}>😕</span>
+            <div><span role="img" aria-label="Poor" style={{ fontSize: "1.5em" }}>😕</span></div>
             <div className="bar4"></div>
             <span className="rating-score">20%</span>
           </div>
           <div className="rating-item">
-            <span role="img" aria-label="Terrible" style={{ fontSize: "1.5em" }}>😭</span>
+            <div><span role="img" aria-label="Terrible" style={{ fontSize: "1.5em" }}>😭</span></div>
             <div className="bar5"></div>
             <span className="rating-score">10%</span>
           </div>
