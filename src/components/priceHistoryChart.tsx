@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import styles from '../components/priceHistoryChart.module.css';
-// import Chart from 'chart.js/auto';
+import Chart from 'chart.js/auto';
 import priceHistory from './priceHistory';
-// import { format } from 'date-fns'; // Import date formatting function
+import { format } from 'date-fns'; // Import date formatting function
 
 const PriceHistoryChart = () => {
   const chartRef = useRef(null); // Create a reference to the canvas element
