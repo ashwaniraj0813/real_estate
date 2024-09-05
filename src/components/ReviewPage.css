@@ -60,7 +60,7 @@
   height: 12px;
   background: #ffc107;
   border-radius: 4px;
-  margin-right: 10px;
+  margin-right: 20px;
 }
 
 .bar2 {
@@ -68,7 +68,7 @@
   height: 12px;
   background: #ffc107;
   border-radius: 4px;
-  margin-right: 60px;
+  margin-right: 20px;
 }
 
 .bar3 {
@@ -76,7 +76,7 @@
   height: 12px;
   background: #ffc107;
   border-radius: 4px;
-  margin-right: 195px;
+  margin-right: 20px;
 }
 
 .bar4 {
@@ -84,7 +84,7 @@
   height: 12px;
   background: #ffc107;
   border-radius: 4px;
-  margin-right: 330px;
+  margin-right: 20px;
 }
 
 .bar5 {
@@ -92,7 +92,7 @@
   height: 12px;
   background: #ffc107;
   border-radius: 4px;
-  margin-right: 400px;
+  margin-right: 20px;
 }
 
 .rating-score {
