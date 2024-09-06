@@ -55,6 +55,7 @@ const PropertyDetailsPage: FunctionComponent = () => {
   }
 
   return (
+    <>
     <div className={styles.propertyDetailsPage}>
       {property ? (
         <div>      
@@ -65,8 +66,9 @@ const PropertyDetailsPage: FunctionComponent = () => {
       ) : (
         <p className={styles.loading}>Loading...</p>
       )}
-      {/* <Footer /> */}
     </div>
+    <div><Footer /></div>
+    </>
   );
 };
 
